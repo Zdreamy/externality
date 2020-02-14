@@ -1,0 +1,432 @@
+\chapter{具有社交意识的数据库辅助频谱访问：位置隐私、分布式学习和频谱共享}
+
+\textbf{本章摘要：} 
+Database assisted spectrum sharing is envisaged to be a promising solution to the spectrum shortage, caused by the immense growth of devices in both industrial and commercial wireless networks. Meanwhile, the lack of effective location privacy protection remains to be a concern for the potential participants in spectrum sharing. In this paper, we consider socially-aware database assisted spectrum access with location privacy protection, where mobile users jointly take into account their physical coupling (due to locational proximity) and social coupling while making spectrum sharing decisions. In particular, to mitigate RSS-based PHY-layer location privacy threat, we employ a power perturbation approach where each secondary user judiciously ``reduces'' its transmission power by choosing a power level following a statistical distribution (with a negative bias). Accordingly, we cast the privacy-preserving spectrum sharing among users as a stochastic channel selection game, where strategic players (secondary users) adjust their strategies dynamically aiming to maximize their social group utilities. Specifically, we devise a two-time-scale distributed learning algorithm based on no regret-based rule, and show that it converges almost surely to the set of socially-aware correlated equilibrium. The numerical results corroborate that the higher the privacy protection level, the more significant the degradation of the network throughput would be.
+
+\textbf{关键词：}频谱接入；ICPS安全；分布式算法；博弈论
+%\keywords{毫米波通信；Massive MIMO；整数规划}
+
+\section{引言}
+
+Recent years have witnessed the innovation of modern industrial environment driven by the technology advancement of wireless communication, industrial control, artificial intelligence, and big data, etc. Under the support of the next-generation cyber-physical system (CPS)\cite{CPSIndustry4}, Industrial Internet of Things (IIoT) has become one of the key building blocks of smart industrial applications including smart grid, smart factory, smart logistic management, and intelligent transportation system \cite{IIOTsurvey}. In these applications, the interconnected IoT devices continuously send the real-time industrial data to the IoT gateways that forward the data to the cloud/fog server for  further processing and analysis \cite{cloudfog}.
+
+\begin{figure}[!t]
+%\hspace{-0.35cm}
+\centering
+\includegraphics[scale=0.48]{./pic/Diagram22.pdf}
+\caption{An illustration of RSS based adversarial localization attack on an unmanned ground delivery system consisting of robotic vehicles belonging to two companies (differentiated by the colors). $d_1, d_2, d_3$ are distance estimations extracted from RSS measurements at three different positions, and are utilized to localize the target via trilateration technique.}\label{fg:trilate}
+\end{figure}
+
+With the expanding scale of IoT devices, the tremendous industrial data generated has put an increasing demand on bandwidth resources, which poses a significant challenge on the industrial spectrum management. To address the spectrum shortage, database-assisted spectrum access has been introduced where IoT are informed with the dynamic spectrum availability by a geo-location database, and access vacant licensed channels opportunistically \cite{TII-dynamic, TII-game}. The key challenge of dynamic spectrum access remains as how to coordinate the spectrum sharing in a distributed way, so that the mutual interference between devices having access to the same vacant channel can be effectively mitigated \cite{TII-game}. To this end, game theoretic models have been adopted for solving dynamic spectrum access problem, where devices are interpreted as selfish players making channel access decisions strategically to maximize their payoffs \cite{wang2010game}. 
+
+
+In addition to the spectrum scarcity, cyber-physical security remains to be another challenge for reliable operation of IIoT. As a main building block of industrial CPS, IIoT integrates the control, networking and computing components, providing fundamental supports for generation, collection and exchange of security-critical and privacy-sensitive data. The critical importance of IIoT makes itself an attractive and valuable target for cyber-physical attacks \cite{securitysuvey}. While extensive studies have been concerning the cyber-attacks and corresponding defenses, relatively less attention has been paid to the physical-layer attacks in IIoT. 
+%Among the many potential security attacks, the adversarial localization attack utilizing physical-layer information of victim's signals has been shown to be effective   []. 
+As a key vulnerability, the geo-location information of IoT devices, once being compromised, would put the device into great danger, which is extremely harmful for the reliability and safety of IIoT system. 
+
+In this study, we consider a practical RSS based adversarial localization attack that has been shown to be effective in pinpointing wireless IoT devices \cite{LocalizationLi}. 
+As illustrated in Fig. \ref{fg:trilate}, given a few RSS measurements collected within the vicinity of the victim, the adversary can easily carry out the localization attack using existing triangulation technique \cite{TOARSS}. Compared with localization approaches using other physical-layer informations (e.g., time of arrival (TOA), time difference of arrival (TDOA), angle of arrival (AOA) \cite{Gezici:08}), RSS based localization requires neither complex hardware nor active communication with the victim, which can be easily implemented by the adversary in practice.
+
+Many efforts have been made on developing countermeasures to mitigate physical-layer localization attacks, such as deploying directional antenna to limit transmission coverage \cite{antenna} and creating ghost locations to misguide adversaries via device-level cooperation \cite{Sangho12}. However, these approaches might be costly and difficult for widely system deployment, given the fact that IoT devices are generally of small size with limited computation and energy resources. Therefore, we consider using the light-weight power perturbation approach to combat the RSS based localization attack \cite{Jiang07}. The main idea behind is to add random noise to the transmission power level of IoT devices, with the aim to effectively lower the adversaries' localization accuracy \cite{EI10}. 
+
+Despite its practicability and effectiveness, the random power perturbation approach would result in inaccurate interference evaluation at IoT devices, which inevitably incurs performance degradation (e.g., throughput reduction) to the spectrum sharing system. Thus motivated, the goal of this study is to develop an effective spectrum sharing scheme in IIoT that can at the same time protect device's location privacy via transmission power perturbation. 
+
+Following \cite{Chenjournal}, we formulate the privacy-preserving spectrum access problem as a stochastic game where IoT devices update their channel selection choices dynamically with the objective of maximizing their utilities, as will be defined in Section \ref{sec:system-model}. 
+%To preserve the location privacy, IoT devices are allowed to judiciously add random noise to their transmission power levels.
+We analyze the dynamics of the game based on the characterization of the equilibrium criteria. Specifically, we consider the correlated equilibrium (CE), a generalization of Nash equilibrium, which allows for dependencies among players' strategies and is easily amenable to distributed implementation \cite{Lasaulce2011}. 
+
+To solve for the CE of the channel selection game under the impact of random power perturbation, in this study we devise a two-timescale distributed learning algorithm. Specifically, at a slower timescale, each IoT device evolves her channel selection strategy according to a \emph{modified regret-based rule} \cite{Hart_areinforcement} using the locally maintained estimated utility. At a relatively faster timescale, the estimated utility keeps being updated via a learning process to address the randomness introduced by the power perturbation, which facilitates more effective strategy learning at the slower timescale. We show that under mild conditions on the learning timescales, the empirical frequency of users' joint actions converges to the set of CE. The simulation results show that, under the random power perturbation, our two-timescale learning algorithm outperforms the single timescale learning algorithm involving only the strategy adaptation of channel selection, which corroborates that the proposed two-timescale learning algorithm helps strike a balance between the system throughput and location privacy.
+
+Summarizing, we have made the following contributions:
+\begin{itemize}
+\item We identify the issue of RSS based adversarial localization attacks against IoT devices in database-assisted spectrum access, and consider a light-weight power perturbation approach to reduce the localization accuracy.
+\item We jointly study the dynamic spectrum access and location privacy protection by formulating a privacy-preserving channel selection game where IoT devices use perturbed transmission power level and strategically make channel selection decisions to maximize their utilities.
+\item We propose a two-timescale learning algorithm based on regret learning rule, which converges weakly to the set of correlated equilibria and is shown to outperform the single timescale learning approach in alleviating the system throughput degradation from random power perturbation.
+\end{itemize}
+
+The remainder of the paper is organized as follows. We first discuss the related work in Section \ref{sec:related}. In Section \ref{sec:model}, we describe the system model of socially-aware privacy-preserving spectrum sharing scheme. In Section \ref{sec:game}, we present the SGUM game formulation for spectrum sharing and introduce the no-regret based learning rule. Then we describe the two-time-scale regret-based learning algorithm for privacy-preserving spectrum sharing in Section \ref{sec:algorithm}, followed by the Section \ref{sec:simulation} which evaluates the effectiveness of the proposed algorithm. Finally, we conclude the paper in Section \ref{sec:con}.
+
+\section{研究现状}
+%Spectrum management techniques have been widely adopted into smart IIoT designs to meet the high QoS requirement for data communication, which helps to establish strong interconnection among industrial sensor, actuators and systems. For instances, Cao {\em et al.} in \cite{CaoCR} explored opportunistic accessibility of multiple channels to enhance the state estimation performance in a CPS with linear state dynamics. In \cite{TIICR}, Chiwewe {\em et al.} provided an overview of different techniques for spectrum management in cognitive radio based industrial wireless sensor network, and also explored the application of game theoretic modeling for spectrum sharing schemes.
+
+We start with a brief review on related work on socially-aware spectrum sharing. Xing \emph{et al.}~proposed to use anthropological models in human society to enhance the performance of cognitive radio networks \cite{xing2008human}. Li \emph{et al.} \cite{li2011propagation} carried out social network analysis of the social behavior in cognitive radio networks. Another common approach for spectrum sharing based on social interactions is to model secondary users' interactions as noncooperative game (e.g., \cite{wang2010game} and many others) assuming they are \emph{selfish yet rational}. Notably, 
+%Nie \emph{et al.} \cite{nie2005adaptive} designed a self-enforcing distributed spectrum access mechanism based on potential games. 
+%Law \emph{et al.} in \cite{law2009price} studied the system performance degradation due to the competition of secondary users in a distributed spectrum access game. 
+Chen \emph{et al.} \cite{chen2012spatial} developed a spatial spectrum access game framework to model the competitive spectrum access among the secondary users by taking the spatial reuse effect into account. 
+
+%Along a different avenue, industrial cyber-physical security issues have recently garnered much attention by both industry and academic communities, with great efforts focusing on the cyberattacks over industrial CPS \cite{securitysuvey}. In \cite{CPSsecurity}, the authors proposed a CPS security framework that distinguished the cyber, cyber-physical, and physical components in a CPS system, and surveyed over both potential and reported attacks as well as existing solutions. Particularly, in \cite{smartmeter}, the authors focused on the data privacy vulnerability of smart meters in smart grid system, and provided a thorough discussion on the state-of-the-art mitigation solutions. And in \cite{smartcity}, the authors discussed the the security and privacy challenges within emerging smart city applications such as intelligent healthcare and transportation system. 
+
+%By contrast, the adversarial localization attack considered in this study is a typical physical-layer attack targeting on wireless sensor networks in general \cite{Jiang07}. To combat such threats, one main approach is to obfuscate the physical information of the transmitted signal that can be potentially utilized by adversaries to infer the users' locations. In \cite{Jiang07} and \cite{EI10}, mobile devices were designed to strategically reduce their transmission power so as to reduce the number of adversaries that can collaboratively carry out RSS-based localization attacks, or to degrade the accuracy of the adversarial localization. In \cite{Ting11}, 
+%Oh {\em et al.} \cite{Sangho12} and Taha {\em et al.} \cite{Xuemin13} proposed solutions that create fake locations to mitigate the RSS-based localization attacks. 
+
+Along a different avenue, location privacy has recently garnered much attention with great efforts focusing on privacy protection  at the application layer. 
+%The major approaches include location obfuscation (e.g., \cite{Agrawal:Privacy}), anonymization (e.g., \cite{Beresford:Mix, Gongjournal, Shin:AnonySense}), differential privacy (e.g., \cite{Dwork:Differential}) and cryptographic-based transformation (e.g., \cite{Ghinita:Private, Khoshgozaran:Blind}), each being suitable for different type of applications. 
+%Location-obfuscation schemes perturb users' location information by adding random noises to their locations. In anonymization, there are two different approaches: pseudonym (e.g., \cite{Beresford:Mix}) and $k$-anonymity (e.g., \cite{Shin:AnonySense}). The former decouples the link between users' real identity and their location information, while the latter ensures that there are at least $k$ users whose locations are indistinguishable. Differential privacy protects the information of each individual in the database while publishing statistical information (e.g., average) about the database. Cryptographic-based transformation encrypts users' location information to make it confidential. 
+%Nevertheless, these application-layer solutions have very limited effectiveness against the physical-layer location privacy attacks in wireless networks, which aim at localizing users based on the measurements of their transmitted signals.
+As for the physical-layer location privacy attacks in wireless networks, one main approach is to obfuscate the physical information of the transmitted signal that can be potentially utilized by adversaries to infer the users' locations. In \cite{Jiang07} and \cite{EI10}, mobile devices are allowed to strategically reduce their transmission power so as to reduce the number of adversaries that can collaboratively carry out RSS-based localization attacks, or to degrade the accuracy of the RSS-based localization. Wang {\em et al.} focused on the design of directional antenna to address the physical-layer location privacy attacks. In \cite{location}, Gao {\em et al.}  considered the location privacy protection in a cognitive radio network similar to ours. While instead of the RSS-based attack, they considered an attack model that inferred a secondary user's location through her used channels, and the threat was mitigated by choosing channels in favor of the most stable ones.
+
+Different from most of the existing works, in this paper we jointly consider the spectrum management and locational privacy protection. The idea of the proposed two-timescale learning algorithm is inspired by \cite{Bennis13}, which studied the interference mitigation in decentralized small-cells networks using a reinforcement learning based algorithms. Perhaps The most related work to ours is \cite{ZhangGlobe}, which investigated the location privacy protection under the scenario of socially-aware dynamic spectrum access by using game theoretic modeling. In this study, we consider a different equilibrium criteria (i.e., correlated equilibrium) which generalizes the Nash equilibrium considered in \cite{ZhangGlobe} by relaxing the independence assumption on the players' channel selection strategies. In addition, the IoT devices are designed to adapt strategy following the regret-based rule\cite{Hart00asimple} instead of the Stochastic Fictitious Play dynamics used in \cite{ZhangGlobe}. 
+
+\section{System Model for Locational Privacy Preserving Spectrum Sharing}\label{sec:model}
+
+
+
+\subsection{Basic Setting}\label{sec:system-model}
+根据FCC\cite{FCC}的规定，在数据库辅助频谱访问中，每个空白用户将首先向数据库发送频谱访问请求，然后数据库将向该用户显示在特定位置处空闲的TV信道。我们考虑这样的一个由主信道（例如电视频道）频谱集合$\mathcal{A}=\{1,2,\cdots,M\}$组成的频谱接入网络。在这个网络中有一组次级用户$\mathcal{V}=\{1,2,\cdots,N\}$会去尝试在信道未被主用户占用的情况下访问这些空闲的信道。具体来说，每个用户$n\in\mathcal{V}$可以访问数据库公布的一个可用信道子集$\mathcal{M}_n\subseteq\mathcal{A}$。显然，如果次级用户之间没有适当的协调，则可能会发生信道使用的冲突，且所产生的信道干扰会严重影响网络的性能。 {\kaishu 因此，在存在时变信道占用和干扰的环境中，数据库辅助频谱接入可以被归结为次级用户之间的动态信道分配。}
+%According to the recent ruling by FCC \cite{FCC}, in database-assisted spectrum access, each white-space user will first send a spectrum access request to a database, and the database will reveal the vacant TV channels at a particular location to that user. We consider such a spectrum access network with a set $\mathcal{A}=\{1,2,\cdots,M\}$ of primary channels (e.g., TV channels). And a set $\mathcal{V}=\{1,2,\cdots,N\}$ of secondary users (i.e., IoT devices) try to access these channels when the channels are not occupied by licensed users. In particular, each user $n\in\mathcal{V}$ can access a subset of available channels $\mathcal{M}_n\subseteq\mathcal{A}$, as revealed by the database. Apparently, without proper coordination among secondary users, the conflict on channel usage may occur, and the generated interference could severely degrade the network performance. {\em Accordingly,  database-assisted spectrum access boils down to the dynamic channel allocation among secondary users, in a time-varying channel occupancy and interference environment.}
+\begin{figure}[!t]
+%\hspace{-0.35cm}
+\centering
+\includegraphics[scale=0.43]{./pic/sysfig1.pdf}
+\caption{认知无线电网络的社交域-地理域说明。}\label{fg:domain}
+\end{figure}
+
+参照文献\cite{Chenjournal}，我们考虑一个具有社交意识的认知无线电网络（如图\ref{fg:domain}所示），其中每个次级用户在选择频道时都考虑了地理位置和社交因素。
+%Following \cite{Chenjournal}, we consider a socially-aware cognitive radio network (as illustrated in Fig. \ref{fg:domain}), where each secondary user takes both physical and social aspects into account during channel selection. 
+%In particular, the social relationships among secondary users are leveraged to facilitate cooperation in spectrum sharing. 
+一方面，由于数据传输产生的信道干扰，次级用户在地理域中耦合，并希望通过减弱干扰来增加其传输效用。另一方面，次级用户通过他们之间的社交联系而在社交域中相互耦合。对于具有社交意识的次级用户，在进行通信时考虑与其有社交联系的其他次级用户的效用，将形成一种双赢的局面。
+%On the one hand, secondary users are coupled in the physical domain due to the interference relationship in data transmissions, and would like to increase their utilities through interference mitigation. On the other hand, secondary users are coupled in the social domain via the social ties among them. It would be a win-win case for socially-aware secondary users to consider the utilities of those users having social trust with him (her).
+
+我们使用一个信道干扰模型来刻画设备之间的地理位置上的耦合。具体来说，我们令$a_n\in\mathcal{M}_n$表示为用户$n\in\mathcal{V}$所访问的信道，并将其通信链接上的信道增益表示为$g_{nn}^{a_n}$。然后我们令$g_{mn}^{a_n}$表示用户$m\in\mathcal{V}$和用户$n$的通信链路之间在信道$a_n$上的干扰增益。我们用$N_{a_n}$表示用户$n$的链路在信道$a_n$上的噪声，对应的信噪比（SINR）$\gamma_n(P_n)$可以表示为
+%To capture the physical coupling among devices, we assume a physical interference model. Specifically, we denote $a_n\in\mathcal{M}_n$ as the channel that user $n\in\mathcal{V}$ have accessed, and denote the channel gain on her communication link as $g_{nn}^{a_n}$. We then let $g_{mn}^{a_n}$ denote the channel gain of $a_n$ over the interference link between user $m\in\mathcal{V}$ and user $n$. The noise of channel $a_n$ on the link of user $n$ is denoted as $N_{a_n}$. The Signal-to-Interference and Noise Ratio (SINR) $\gamma_n(P_n)$ of user $n$ can be written as
+\begin{equation}
+\small
+\gamma_n(P_n)=\frac{P_{n}g_{nn}^{a_n}}{\sum_{m\in \mathcal{V}/\{n\}}P_{m}g_{mn}^{a_n}\mathds{1}_{\{a_m=a_n\}}+N_{a_n}},
+\end{equation}
+其中$P_n$是用户$n$使用的传输功率；当用户$m$和用户$n$访问同一信道时，指示函数$\mathds{1}_{\{a_m = a_n\}}$等于1，反之等于零。我们用$W$表示带宽，并将功率水平为$P_n$时的吞吐量定义为用户$n$的个体效用函数，即
+%where $P_n$ is the transmission power used by user $n$; the indicator function $\mathds{1}_{\{a_m=a_n\}}$ is equal to 1 when user $m$ and user $n$ access to the same channel (i.e., $a_m=a_n$), and zero otherwise. We let $W$ denote the bandwidth, and define the individual utility of user $n$ as her throughput with power level $P_n$,
+\vspace{-0.2cm}
+\begin{equation}\label{indiu}
+U_n=W\log[1+\gamma_n(P_n)].
+\end{equation}
+
+我们使用无向社交图$G^S=\{\mathcal{V},E\}$来对用户之间的社交耦合进行建模。其中每个顶点对应于集合$\mathcal{V}$中的一个用户，用图中无向的边表示用户之间的社交关系。特别的，我们对于联结任意两个用户$n$和$m$的边赋予一个权重$e_{nm}\in [0,1]$来量化两个用户之间社交关系的亲密程度。此外，我们所定义的权重具有以下特性：$e_{nm}=e_{mn},e_{nn}=1, \forall n,m\in\mathcal{V}$。
+%The social coupling among users is modeled by using an undirected social graph $G^S=\{\mathcal{V},E\}$, with each vertex corresponding to a user within set $\mathcal{V}$, and undirected edges indicating the social relationship among users. In particular, we assign a weight $e_{nm}\in [0,1]$ to the edge connecting two arbitrary users $n$ and $m$ to quantify the closeness of the social relationship between the two users. Further, the edge weights have the following characteristics: $e_{nm}=e_{mn},e_{nn}=1, \forall n,m\in\mathcal{V}$.
+%\subsection{Social Group Utility Maximization (SGUM) for Spectrum Access}
+%As hand-held devices are carried by human beings, the social relationships among users can be leveraged to enable such collaborations among users. Intuitively, by taking into consideration of the social aspect, users are expected to select channels more wisely instead of in a fully selfish manner. 
+我们使用社交群体效用模型来刻画存在社交联系的设备之间潜在的社交耦合，在这里，我们定义用户$n$的社交群体效用函数为
+\vspace{-0.2cm}
+\begin{equation}\label{sgu}
+S_n=U_n+\sum_{m\in \mathcal{V}/\{n\}}e_{nm}U_m.
+\end{equation}
+%。直观地，$e_n$的值越大，设备$n$与其所关联的群体之间的社交联系越强。
+%We use such a group utility model to capture the underlying social coupling among homogeneous IoT devices within the same group. Intuitively, the larger the value of $e_n$, the stronger the social connection that device $n$ has with respect to the group she is associated with.
+
+
+%\subsection{Random Power Perturbation against RSS-based Location Privacy Attack}\label{sec:privacy-model}
+\subsection{针对基于RSS的位置隐私攻击的随机功率扰动}\label{sec:privacy-model}
+\subsubsection{基于RSS的位置隐私攻击}
+在这项研究中，我们考虑了一个物理层攻击者模型，该模型采用基于接收信号强度（RSS）的定位技术来获取目标用户的位置隐私。基于RSS的定位可以捕获传输的信号，并可以根据信号传播模型\cite{Jiang07,EI10}建立距离与RSS之间的映射。如图\ref{fg:trilate}中所示，每个攻击者可以采集一系列目标用户发射信号的RSS电平\footnote{例如，通过采集信号RSS并结合RF指纹技术\cite{TIEYuanchao}，信号接收者可以通过分析信号模拟分量中的瑕疵来识别无线网卡。}，并使用通过最大似然估计\cite{RSSguang}获得距离的估计。
+%In this study, we consider a PHY-layer adversary model that employs the Received Signal Strength (RSS) based localization technique to compromise target users' location privacy. RSS-based localization captures the transmitted signal and can establish the mapping between the distance and the RSS according to the signal propagation model \cite{Jiang07,EI10}. As illustrated in Fig. \ref{fg:trilate}, each adversary can collect a sequence of RSS levels of the transmitted signal from the target user\footnote{For instance, through the RF fingerprint technique\cite{TIEYuanchao}, a receiver can identify a wireless card by analyzing imperfections in the analog components of the signal.}, and obtain an estimation of the distance using via Maximum Likelihood estimation \cite{RSSguang}. 
+%According to the propagation model (e.g., the log-normal model), each adversary can obtain an estimation of the distance between the target user and herself.  sequence of RSS measurements
+然后，攻击者可以通过使用一组距离估计结合其自身地理位置使用三角测量的方法近似地确定目标用户的位置。
+%Then an approximate location of the target user can be jointly determined by a trilateration using a set of distance estimations and the corresponding physical positions of the adversary.
+
+
+\subsubsection{传输功率随机扰动}
+为了对抗基于RSS的位置隐私攻击，我们采用了一种本地传输功率随机扰动的方法，旨在增加攻击者定位结果的不确定性\cite{EI10}。为此，每个用户可以动态地随机改变其传输功率水平。攻击者收集到的带有噪声的RSS测量值会有效地扩大目标用户定位的不确定性区域，从而降低定位精度。
+%To combat RSS-based location privacy attack, we employ a local random power perturbation approach aiming to introduce uncertainties to adversaries' localization outcome\cite{EI10}. To this end, each user is allowed to dynamically and randomly change her transmission power level on purpose. The noisy measurements of RSS obtained at the adversary could effectively enlarge the uncertainty region of target user's position, which reduces the localization accuracy.
+
+为了避免对主用户的额外干扰，我们限制随机功率扰动分量为负偏值。具体来说，用户$n$扰动后的传输功率可表示为$P_n=p+\Delta p_n$，即常规传输功率电平$p> 0$和扰动项$\Delta p_n$的加和。扰动项可被表示为一个服从单边截断指数分布的随机变量，其\emph{pdf}表达式为
+%To avoid extra interference to the primary users, we restrict the random power perturbation component to be negative biased. Specifically, the perturbed transmission power of user $n$ is given by $P_n=p+\Delta p_n$, which is the sum of the regular transmission power level $p>0$ and a perturbation term $\Delta p_n$, generated following one-side truncated exponential distribution whose \emph{pdf} is given as
+\begin{equation}\label{eq:noise}
+%\small
+f(\Delta p_n|b,\bar{p})=\frac{\frac{1}{b}\exp(\Delta p_n/b)}{1-\exp(\bar{p}/b)},~\Delta p_n\in(-\bar{p},0],
+\end{equation}
+其中$\bar{p}$表示最大扰动量。当扰动超出该范围时，将导致SINR过小而不满足正常数据传输的要求。参数$b>0$则刻画了用户指定的一个“平均“功率扰动水平，我们将在节\ref{sec:simulation}中对其做进一步讨论。
+
+%with $\bar{p}$ denotes the maximum perturbation level beyond which the SINR of IoT device might be unacceptable for normal data transmission. The parameter $b>0$ characterizes the ``expected'' power perturbation level specified by the user, as will be further discussed in Section \ref{sec:simulation}.
+
+%\section{Socially-aware Privacy-preserving Spectrum Sharing}\label{sec:game}
+\section{隐私保护下带有社交意识的频谱共享}\label{sec:game}
+在本节中，我们将频谱共享问题转换为社会团体效用最大化（SGUM）博弈，并介绍了无悔匹配规则，该规则可以以分布式方式计算非合作博弈的相关均衡。
+%In this section, we cast the spectrum sharing problem as a social group utility maximization (SGUM) game, and introduce the no-regret matching rule, which can calculate the correlated equilibrium of a non-cooperative game in a distributed manner.
+
+%\subsection{Social Group Utility Maximization (SGUM) Game for Spectrum Sharing}\label{sec:SGUM}
+\subsection{频谱共享中的社交群体效用最大化（SGUM）博弈}\label{sec:SGUM}
+在我们的研究中，我们将系统中的每一对接收发射端视为一个用户，他们之间存在持续的策略性的交互，旨在从长远来看最大化他们各自的社交群体效用。
+为此，我们将隐私保护下的频谱共享问题建模为一个社交群体效用最大化（SGUM）博弈，每一个用户对应于博弈中的一个玩家\footnote{是本章中，术语上“用户”和“玩家”可以互换。}。
+%In our study, all the transmitter-receiver pairs in the system are modeled as self-interested users interacting strategically and repeatedly with each other, aiming to maximize their social group utilities in the long run. 
+%To this end, we formulate the privacy-preserving spectrum sharing problem as a \emph{social group utility maximization (SGUM) game} with the players corresponding to the users\footnote{We use the terms ``user'' and ``player'' interchangeably throughout the paper.}.
+%In addition, each $TR$ will actively perturb her transmission power in order to mitigate the threat of RSS based location privacy attack.
+每个玩家$n\in\mathcal{V}$的行为空间在这里被定义为用户$n$可以接入的可用信道集合$\mathcal{M}_n$。我们令$\A=(a_1,a_2,\cdots,a_N)\in\mathcal{M}$表示所有用户的联合频谱接入选择方案，其中$\mathcal{M}\triangleq\prod_{n=1}^N\mathcal{M}_n$。
+%The action space of each player $n\in\mathcal{V}$ is the set of available channels $\mathcal{M}_n$ that user $n$ can access. We let $\A=(a_1,a_2,\cdots,a_N)\in\mathcal{M}$ denote the joint spectrum access profile of all the users, where $\mathcal{M}\triangleq\prod_{n=1}^N\mathcal{M}_n$. 
+%Since the observed social group utility is noisy due to the power perturbation implemented by each user, it makes more sense for each user to target on maximizing its 
+为了便于评估每个用户的长期社交群组效用期望，我们令$\Delta\M_n$表示用户$n$的混合策略空间，并令$\pi_n=\left(\pi(a_{n,1}),\pi(a_{n,2}),\cdots,\pi(a_{n,|\mathcal{M}_n|})\right)\in\Delta\mathcal{M}_n$表示用户$n$的混合策略。其本质上可看作为是定义在$\mathcal{M}_n$上的一个概率分布，其中$q(a_{n,i})$代表用户选择信道$a_{n,i}$的概率。因此，所有玩家的联合混合策略可以被表示为$\p=(\pi_1,\pi_2,\cdots,\pi_N)\in\Delta\mathcal{M}\triangleq\prod_{n=1}^N\Delta\M_n$，而按照管理除用户$n$外的其他玩家的联合策略可以表示为$\p_{-n}=(\pi_1,\cdots,\pi_{n-1},\pi_{n+1},\cdots,\pi_N)$ 。我们进一步令$\pi(\A)$表示联合决策$\A\in\M$在博弈中出现的概率。
+
+
+%To facilitate the evaluation of each user's long-term expected group utilities, we denote $\Delta\M_n$ as the mixed strategy space of user $n$, and let $\pi_n=\left(\pi(a_{n,1}),\pi(a_{n,2}),\cdots,\pi(a_{n,|\mathcal{M}_n|})\right)\in\Delta\mathcal{M}_n$ denote user $n$'s mixed strategy, a probability distribution over $\mathcal{M}_n$ with $q(a_{n,i})$ representing the probability of selecting the channel $a_{n,i}$. It follows that the joint mixed-strategy over all players is $\p=(\pi_1,\pi_2,\cdots,\pi_N)\in\Delta\mathcal{M}\triangleq\prod_{n=1}^N\Delta\M_n$, and the joint strategy of players excluding user $n$ can be denoted as $\p_{-n}=(\pi_1,\cdots,\pi_{n-1},\pi_{n+1},\cdots,\pi_N)$ by convention. We further denote $\pi(\A)$ as the probability of joint action $\A\in\M$ being played. 
+
+基于以上模型，我们将隐私保护下的频谱共享问题视为一个非合作信道选择博弈，用一个三元组$\Gamma=\left(\mathcal{V},\Delta\mathcal{M},\{S_n\}_{n=1}^N\right)$来表示，博弈中每个玩家旨在最大化自身的期望社交群体效用。我们研究中考虑的均衡标准是{\kaishu 相关均衡（correlated equilibrium）}。由于相关均衡允许不同玩家的之间的策略存在相关性，因此可被看做是{\kaishu 纳什均衡（Nash equilibrium）}的一个泛化。数学上来看，一个相关均衡对应一个凸多面体，凸面体的极值点对应于纳什均衡。因此，通常系统可以在达到相关均衡时比达到纳什均衡时获得更好的总体性能。
+%Summarizing, we cast the privacy-preserving spectrum sharing problem as a non-cooperative game denoted by a 3-tuple $\Gamma=\left(\mathcal{V},\Delta\mathcal{M},\{S_n\}_{n=1}^N\right)$. The equilibrium criteria considered in our study is the \textsl{correlated equilibrium}, which generalizes the Nash equilibrium by permitting players' strategies to be dependent. Mathematically, a correlated equilibrium is a convex polytope with its extrema points corresponding to the set of Nash equilibria. Thereby, in general, a better overall performance can be achieved under the correlated equilibrium than that under a Nash equilibrium. 
+我们在下面给出相关均衡的正式定义。
+%The formal definition of correlated equilibrium is given below.
+
+
+\begin{df}[相关均衡]
+我们称定义在$\Delta\M$上的概率分布$\pi^*$为信道选择博弈$\Gamma$的一个相关均衡（CE），如果$\forall n\in\V$，$\forall a_{n,i},a_{n,j}\in\M_n$，社交群体效用$S_n$满足以下不等式，
+%A probability distribution $\pi^*$ on $\Delta\M$ is a socially-aware correlated equilibrium (CE) of game $\Gamma$ if, $\forall n\in\V$, $\forall a_{n,i},a_{n,j}\in\M_n$, the expected group utility satisfies the following,
+\begin{equation}
+\sum_{\textbf{a}\in\mathcal{M}:a_n=a_{n,i}}\pi^*(\textbf{a})\left[S_n(a_{n,j},\textbf{a}_{-n})-S_n(\textbf{a})\right]\leq0.
+\end{equation}
+\end{df}
+
+\noindent{\bf 备注}
+为了获得对相关均衡更具体理解，我们可以将$\pi^*$看作频谱数据库提供的一个信道接入策略推荐。则对于每个用户而言，假设其他用户都遵循频谱数据库所推荐的相应均衡策略，则同样遵循频谱数据库所推荐的策略会是对于该用户最有利的选择。换句话说，用户不能依靠单方面背离CE推荐的策略获得期望社交群体效用的提升。
+%To get a concrete sense of the correlated equilibrium herein, one can view $\pi^*$ as a strategy recommendation provided by the trusted spectrum database. With the implicit assumption that other users' strategies follow the given recommendation, it is of best interest of each user to also follow the recommended strategy. In other words, a user could not obtain a better expected group utility by deviating from the CE unilaterally. 
+
+\begin{thm}(CE的存在性)
+信道选择博弈$\Gamma$至少存在一个相关均衡（CE）。
+%There exists at least a SCE in the stochastic channel selection game $\Gamma$.
+\end{thm}
+由于我们的信道选择博弈$\Gamma$中的玩家集合和策略集合都为有限集，因此属于有限博弈的范畴，继而保证存在一个非空的相关均衡集合\cite{Lasaulce2011}。
+%Since our channel selection game $\Gamma$ consists of finite player set and action set, it falls into the category of finite game, which is guaranteed to possess a nonempty set of correlated equilibria\cite{Lasaulce2011}.
+
+
+\subsection{无悔配对规则}\label{sec:noregret}
+在本节中，我们简要介绍无悔匹配规则，该规则是为以分布式的方式搜索非合作博弈的相关均衡而提出的\cite{Hart00asimple}。通过此规则，可以使用“遗憾度量”来量化玩家的策略调整所带来的性能收益或损失。
+该规则的核心思想是让每个用户从每个特定策略的遗憾中学习，目的是最小化长期的平均遗憾度量。
+%In this section, we briefly introduce the no-regret matching rule which is developed for searching a correlated equilibrium of a non-cooperative game in a distributed way\cite{Hart00asimple}. By this rule, a regret measure is used to quantify the performance gain or loss of players' action adjustments. 
+%The key idea is to let each user learns the regret of playing each particular action, aiming to minimize the average regret over time. 
+
+具体来说，对于每个用户$n\in\V$，给定其对手的策略$\A_{-n}$，则截止到$t$时刻，其在当前策略$a^t_n=a_{n,i}$与某一其他策略$a_{n,j}\neq a_{n,i}$下的平均群体效用之差为
+%Specifically, for each user $n\in\V$, given her opponents' actions $\A_{-n}$, the difference between averaged group utility under current action $a^t_n=a_{n,i}$ and that under any other action $a_{n,j}\neq a_{n,i}$ until time $t$ can be measured as
+\begin{align}\label{eq:reg1}
+\small
+D_n^t&(a_{n,j},a_{n,i})=\nonumber\\
+&\frac{\sum_{l\leq t}S_n(a_{n,j},\A^l_{-n})\mathds{1}_{\{a^l_n=a_{n,i}\}}}{t}-\frac{\sum_{l\leq t}S_n(\A^l)\mathds{1}_{\{a^l_n=a_{n,i}\}}}{t},
+\end{align}
+其中第二项量化了用户$n$在策略$a_{n,i}$下截止到时间$t$时刻的平均群组效用，而第一项表明了如果用户如果在之前每次选择策略$a_{n,i}$时都换为使用策略$a_{n,j}$所能获得的平均群组效用。直观地来说，用户$n$会产生“遗憾”如果一个替代的策略可以带来更高的效用。在这里，我们就用$R^t_n(a_{n,j},a_{n,i})=\max\left\{D^t_n(a_{n,j},a_{n,i}),0\right\}$来表示用户因未使用$a_{n,j}$替代$a_{n,i}$所产生的“遗憾”。
+%where the second term quantifies the average group utility perceived by user $n$ under action $a_{n,i}$ until time $t$, and the first term indicates the average utility she would have obtained if she had chosen $a_{n,j}$ every time when $a_{n,i}$ was played. Then user $n$'s ``regret'' for not having played action $a_{n,j}$, instead of $a_{n,i}$ in the previous plays, is given as $R^t_n(a_{n,j},a_{n,i})=\max\left\{D^t_n(a_{n,j},a_{n,i}),0\right\}$. Intuitively, user $n$ would regret if an alternate action could have brought her higher utility.
+
+根据时间$t$时刻的遗憾度量，用户$n$将根据以下概率调整其策略，
+%Based on the regret measures at time $t$, user $n$ adapts her action according to the probabilistic strategy given as follows,
+\vspace{-0.3cm}
+\begin{equation}\label{eq:st1}
+\begin{cases}
+q^{t+1}_n(a_{n,j})=\frac{1}{\mu}R^t_n(a_{n,j},a_{n,i}), ~~~~\forall a_{n,j}\in\M_n/\{a_{n,i}\}, \\
+q^{t+1}_n(a_{n,i})=1-\sum_{a_{n,j}\neq a_{n,i}}q^{t+1}_n(a_{n,j}).
+\end{cases}
+\end{equation}
+这里，选择某一替代策略$a_{n,j}\in\M_n/\{a_{n,i}\}$的概率正比于相应的遗憾度量$R^{t}_n(a_{n,j},a_{n,i})$。我们设定参数$\mu$为一个较大的值，以确保用户始终会以一定非负的概率维持当前所选择的信道。较大的$\mu$值会降低切换到其他可选信道的概率，因此$\mu$可以被视为一个“惯性”参数。类似的，在算法进行过程中用户不断地更新自己的遗憾度量。
+%Here the probability of changing to an alternate action $a_{n,j}\in\M_n/\{a_{n,i}\}$ is proportional to the corresponding regret measure $R^{t}_n(a_{n,j},a_{n,i})$. The parameter $\mu$ is chosen to be a large value to guarantee that there is always a positive probability of remaining at the currently selected channel. A higher $\mu$ lowers the probability of switching to an alternate channel, therefore can be treated as an `inertia' parameter. The algorithm then moves on by users updating their regret measures at time step $t+1$. 
+我们令$f^t(\A)\in\Delta\M$表示联合决策$\A\in\M$截止到$t$时刻的经验分布，表示为
+%For each joint action $\A\in\M$, we let $f^t(\A)\in\Delta\M$ denote its empirical distribution by time slot $t$, expressed as
+\vspace{-0.2cm}
+\begin{equation}\label{eq:empi}
+%\small
+f^t(\A)=\frac{1}{t}\sum_{l\leq t}\mathds{1}_{\{\A^l=\A\}}.
+%f^t(\A)=\frac{|l\leq t:\A^l=\A|}{t}.
+\end{equation}
+%\vspace{-0.2cm}
+根据已有结果我们知道，对于一个非合作博弈，如果玩家遵循无悔匹配规则来更新其策略，则当$t\rightarrow\infty$时，经验分布$f^t$会以概率1收敛到相关均衡的集合\cite{Hart00asimple}。
+%It is well-known that for a non-cooperative game, with players updating their strategies following the no-regret matching rule, the empirical distributions $f^t$ converges (with probability one) to the set of correlated equilibria as $t\rightarrow\infty$\cite{Hart00asimple}. 
+
+当我们尝试直接使用无悔匹配规则来求解我们的随机信道选择博弈问题时会遇到了两个主要挑战。
+%由于两个挑战的存在使得我们无法直接使用无悔匹配规则来解决我们的随机信道选择博弈。
+首先，由于使用了随机功率扰动程序用以保护隐私，每个用户的群体效用会因随机噪声的引入而遭到损坏，这不可避免地导致了遗憾度量的不准确，并可能导致得到的CE实际表现较差。
+%There are two challenges that hinders us from directly using the no-regret matching rule in solving our stochastic channel selection game. Firstly, due to the use of random power perturbation procedure, the group utility of each user is corrupted with random noise, which inevitably leads to inaccurate `regret' measurements and possibly problematic CE of the game.
+
+此外，根据（\ref{eq:reg1}）的定义，在计算未使用信道$a_{n,j}$所产生的遗憾时，用户$n$需要评估先前每次使用策略$a_{n,i}$时，若使用替代信道$a_{n,j}$所可以获得的社交群体效用$S_n(a_{n,j},\A^l_{-n})$。而这在实际中是不可行的，因为用户并不掌握其他用户的信道选择策略$\A_{-n}$，以及他们的群体效用函数这些系统全局信息。
+
+%$ S_n（a_每次在时间步骤$ l <t $播放动作$ a_ {n，i} $时，$ a_ {n，j} $以下的{n，j}，\ A ^ l _ {-n}）$这是不可行的，因为用户$ n $不拥有其他用户的单个实用程序功能及其所选通道$ \ A _ {-n} $的全局信息。
+%Further, according to (\ref{eq:reg1}), to compute the regret for not having chosen an alternative channel $a_{n,j}$ , user $n$ needs to evaluate her potentially perceivable group utility $S_n(a_{n,j},\A^l_{-n})$ under $a_{n,j}$ every time when action $a_{n,i}$ was played at time step $l<t$, which is infeasible since user $n$ does not possess the global information of other users' individual utility functions as well as their selected channels $\A_{-n}$. 
+
+为了解决这两个挑战，在下一部分中，我们将设计一种双时间尺度的学习算法，通过该算法，用户可以在相对较快的时间尺度上学习其夹带有噪声的社交群体效用，同时在相对较慢的时间尺度上通过一种经过修正的无悔规则来调整其信道选择策略。
+%To tackle these two challenges, in the next section, we devise a two-timescale learning algorithm, by which users learn their underlying noisy group utilities in the `faster' learning process, while adapting their channel selection strategies following a modified regret-based rule in the `slower' learning process. 
+
+%\section{Distributed Regret-based Learning for Privacy-Preserving Spectrum Sharing}\label{sec:algorithm}
+\section{用于隐私保护下频谱共享的分布式无悔学习算法}\label{sec:algorithm}
+在本节中，我们将提出一个双时间尺度的用于寻找信道选择博弈的CE的分布式算法，并对算法在温和条件下的长期弱收敛性进行理论上的分析。
+%In this section, we introduce the two-timescale distributed algorithm for finding the CE for our channel selection game, and provide a theoretic analysis on the long-run weak convergence of the algorithm under mild conditions. 
+
+\vspace{-0.2cm}
+
+\subsection{双时间尺度无悔学习算法}
+
+如算法\ref{alg:RCS}中所述，我们设计的学习算法包括一个在相对较快和一个相对较慢的学习过程。具体地，在较快的时间尺度上，每个用户会持续地在每个时间步长内基于观察到的带有噪声的效用不断更新对应于每个可用信道的群体效用期望。以这些长期更新的期望团体效用为参照，每个用户同时在相对较慢的时间尺度上使用无憾学习规则来调整其策略。接下来，我们分别详细介绍两个时间尺度上的学习过程。
+%The learning algorithm, as outlined in Algorithm \ref{alg:RCS}, consists of a `faster' and a `slower' learning process. Specifically, on a faster timescale, each user continuously updates the expected group utility corresponding to each available channel given the noisy utility observation at each time step. Calibrating to the maintained expected group utility, each user adapts her strategy by following the regret-based learning rule at the `slower' time scale. In what follows, we elaborate further on `faster' and `slower' learning processes, respectively.
+
+\subsubsection{较快时间尺度上的效用学习}
+在较快的时间尺度上，用户$n$持续更新一个向量$\mathbf{\hat{s}^t_n}=\left(\hat{S}^t_n(a_{n,1}),\hat{S}^t_n(a_{n,2}),\cdots,\hat{S}^t_n(a_{n,|\mathcal{M}_n|})\right)$，其中每个元素$\hat{S}^t_n(a_{n,i})$表示在$t$时刻对于信道$a_{n,i}$所对应的群体效用的估计。随着算法的推进，群体效用的估计更新如下式所示
+%In the `faster' learning process, user $n$ maintains a vector $\mathbf{\hat{s}^t_n}=\left(\hat{S}^t_n(a_{n,1}),\hat{S}^t_n(a_{n,2}),\cdots,\hat{S}^t_n(a_{n,|\mathcal{M}_n|})\right)$, with each element $\hat{S}^t_n(a_{n,i})$ denoting the estimated group utility under action $a_{n,i}$ at time step $t$. As time evolves, the estimated group utility is updated as follows:
+\begin{equation}\label{estimation}
+\hat{S}^t_n(a_{n,i})=(1-\lambda^t)\hat{S}^{t-1}_n(a_{n,i})+\lambda^t\mathds{1}_{\{a^t_n=a_{n,i}\}}S^t_n(a_n^t),
+\end{equation}
+其中$0<\lambda^t<1$表示学习率。具体地，为了得到$S^t_n(a^t_n)$，每个用户$n$首先观测自己受到的干扰并计算个体效用$U^t_n(a^t_n)$，并查询每个用户$m\in\mathcal{N}_n$所获得的效用$U^t_n(a^t_n)$\footnote{两个有社交关系的用户之间的信息交换可以通过一个公共控制信道来完成。}，然后根据式（\ref{sgu}）进行求和。在每次迭代$t$中，向量$\mathbf{s^t_n}$中只有元素$\hat{S}^t_n(a_{n,i})$会被更新。通过这种效用学习过程，用户$n$可以渐近地形成对期望群体效用的准确评估，从而确保在较慢的时间尺度所进行的策略学习最终可以收敛到CE的集合中。
+%where $0<\lambda^t<1$ denotes the learning rate. Specifically, for each user $n$, $S^t_n(a^t_n)$ is obtained by first measuring its own received interference $U^t_n(a^t_n)$, querying the $U^t_m$ received by each user $m\in\mathcal{N}_n$ \footnote{The information exchange among two users within a same group could be fulfilled via a common control channel.}, and then conducting the summation according to (\ref{sgu}). Note that at each iteration $t$, only the element $\hat{S}^t_n(a_{n,i})$ of vector $\mathbf{s^t_n}$ is actually updated. Through this recursive utility learning process, user $n$ can asymptotically form accurate evaluation of the expected group utility which ensures that the strategy learning on slower timescale can finally reach the set of CE.
+\begin{algorithm}
+\caption{双时间尺度分布式学习算法}
+\label{alg:RCS}
+\begin{algorithmic}[1]
+\STATE \textbf{initialization:} 对于每个用户$n$,
+\STATE 初始化$\mathbf{s^0_n}$和遗憾度量$R_n^0(a_{n,j},a_{n,i}), \forall a_{n,i}, a_{n,j}\in\M_n$.
+\STATE 每个用户$i$以概率$q^0_n(a_{n,i})=\frac{1}{|\M_n|}$随机选择一个信道$a_{n,i}\in\A_n$。
+\STATE 初始化学习率$\lambda^0$和$\epsilon^0$；初始化参数$\gamma$.
+\STATE \textbf{end initialization}
+\FOR {$n\in\mathcal{V}$}
+\STATE \emph{效用学习（较快时间尺度）：}
+\STATE 观测受到的干扰并计算个体效用$U_n^t(a^t_n)$ by (\ref{indiu}).
+\STATE 查询社交邻居的个体效用并根据式（\ref{sgu}）计算即时社交群体效用$S_{n}^t(a^t_n)$
+%Enquiry the individual utility of neighbors and compute instantaneous group utility $S_{n}^t(a^t_n)$ by (\ref{sgu}).
+\STATE 基于式（\ref{estimation}）更新对于期望群体效用$\hat{S}_{n}^t(a^t_n)$的估计
+%Update the estimation of expected utility $\hat{S}_{n}^t(a^t_n)$ by (\ref{estimation}).
+\STATE \emph{策略学习（较慢时间尺度）：}
+\STATE 基于式（\ref{eq:insreg}）计算即时遗憾$Q^t_n(a_{n,j},a_{n,i})$，基于式（\ref{eq:reg2}）计算遗憾度量$D^t_n(a_{n,j},a_{n,i})$。
+% according to (\ref{eq:insreg}), and compute the regret measures $D^t_n(a_{n,j},a_{n,i})$ according to (\ref{eq:reg2}).
+\STATE 根据（\ref{eq:str2}）更新信道选择策略$\{q^t_n(a_n)\}$，并基于$\{q^t_n(a_n)\}$随机选择下一时刻的信道$a^{t+1}_n$
+%Update the channel selection strategy $\{q^t_n(a_n)\}$ according to (\ref{eq:str2}), and randomly select a channel $a^{t+1}_n$ based on $\{q^t_n(a_n)\}$.
+\STATE $t\leftarrow t+1$.
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+%\vspace{-0.2cm}
+
+%\subsubsection{Strategy adaptation on a slower timescale}\label{sec:single}
+\subsubsection{较慢时间尺度上的策略学习}\label{sec:single}
+我们对于节\ref{sec:noregret}中所介绍的标准无悔规则进行修正以用于较慢时间尺度上的策略学习。
+%At the slower timescale, we implement a modified regret-based learning procedure developed based on the standard no-regret rule as introduced in Section \ref{sec:noregret}. 
+
+特别的，每个用户$n$更新其在当前决策$a^t_n=a_{n,i}$与某一其他决策$a_{n,j}\neq a_{n,i}$下的平均群体效用之差如下
+%In particular, each user $n$ updates the averaged group utility difference $D^t_n(a_{n,j},a_{n,i})$ between each alternative action $a_{n,j}\in\M_n/\{a_{n,i}\}$ and the current action $a_{n,i}$ recursively as follows,
+\begin{equation}\label{eq:reg2}
+D^t_n(a_{n,j},a_{n,i})=(1-\epsilon^t)D^{t-1}_n(a_{n,j},a_{n,i})+\epsilon^tQ^t_n(a_{n,j},a_{n,i}),
+\end{equation}
+其中$Q^t_n(a_{n,j},a_{n,i})\triangleq[S_n(a_{n,j},\A^t_{-n})-S_n(\A^t)]\mathds{1}_{\{a^t_n=a_{n,i}\}}$定义了在时刻$t$使用了决策$a_{n,i}$而不是$a_{n,j}$所产生的即时遗憾。学习率$0<\epsilon^t<1$的取值决定了无悔策略学习的时间尺度，且应当在设置时与$\lambda^t$的值相对应以保证算法收敛到博弈的CE，这一点将在下文进一步讨论。值得注意的是，式（\ref{eq:reg2}）是对式（\ref{eq:reg1}）的推广，并且当学习率$\epsilon^t=1/t$时可以约简为式（\ref{eq:reg1}）。
+%where $Q^t_n(a_{n,j},a_{n,i})\triangleq[S_n(a_{n,j},\A^t_{-n})-S_n(\A^t)]\mathds{1}_{\{a^t_n=a_{n,i}\}}$ is defined as the instantaneous regret for not playing actions $a_{n,j}$ instead of $a_{n,i}$ at time $t$. The learning rate $0<\epsilon^t<1$ determines the timescale of the regret-based strategy learning, and should be set in accordance with the value of $\lambda^t$ to guarantee the convergence to the CE, to be discussed next.
+%Note that (\ref{eq:reg2}) generalizes (\ref{eq:reg1}) and can reduce to (\ref{eq:reg1}) with learning rate $\epsilon^t$ being set to $1/t$.  
+
+如上一节所提到的，时刻$t$时，在不知道其他用户的决策$\A^t_{-n}$以及他们的个体效用函数的情况下，计算某一替代决策$a_{n,j}\neq a_{n,i}$所对应的效用是非常困难的。
+%As mentioned in the previous section, the perceivable utility under an alternate action $a_{n,j}\neq a_{n,i}$ at time $t$, $S_n(a_{n,j},\A^t_{-n})\mathds{1}_{\{a^t_n=a_{n,i}\}}$, is challenging to compute without the knowledge of other users' actions $\A^t_{-n}$ and their individual utility functions.
+%\footnote{It is challenging to directly calculate the regret since the computation of group utility requires the information about group neighbors' individual utilities, which is difficult to get in practice.}. 
+因此，我们使用一种经过修正的无悔匹配规则\cite{Hart_areinforcement}，并用估计项$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathds{1}_{\{a^t_n=a_{n,j}\}}S_n(\A^t)$来代替所需的明确群体效用，其中$q^t_n(a_{n,j})$和$q^t_n(a_{n,i})$分别为选择对应两个决策的概率。特别的，用户$n$将根据下式计算时刻$t$的瞬时遗憾度量：
+%Thus, we resort to the modified no-regret matching rule \cite{Hart_areinforcement}, and replace the explicit perceivable utility with an estimated term $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathds{1}_{\{a^t_n=a_{n,j}\}}S_n(\A^t)$, where $q^t_n(a_{n,j})$ and $q^t_n(a_{n,i})$ are the probabilities of choosing the two actions being considered.
+%In particular, user $n$ calculates her instantaneous regret at time $t$ according to the following equation:
+\begin{equation}\label{eq:insreg}
+Q^t_n(a_{n,j},a_{n,i})\triangleq\left[\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathds{1}_{\{a^t_n=a_{n,j}\}}-\mathds{1}_{\{a^t_n=a_{n,i}\}}\right]\hat{S}^t_n(a_{n,i}).
+\end{equation}
+这里我们依旧定义用户因未使用$a_{n,j}$替代$a_{n,i}$所产生的“遗憾”度量为$R_n^t(a_{n,j},a_{n,i})=\max\{D_n^t(a_{n,j},a_{n,i}),0\}$。简单说来，遗憾度量表征了平均群体效用在决策$a_{n,j}$和决策$a_{n,i}$下的差异。而权值$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$的作用则是对即时群体效用进行归一化，以使得式（\ref{eq:insreg}）中的两项具有可比性。
+%And we again define the ``regret'' measure for not having played $a_{n,j}$ instead of $a_{n,i}$ as $R_n^t(a_{n,j},a_{n,i})=\max\{D_n^t(a_{n,j},a_{n,i}),0\}$. Simply put, the regret measure characterizes the difference of the averaged group utility between $a_{n,j}$ and $a_{n,i}$. And the weight $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$ is employed to normalize the instantaneous group utility to make the two terms in the brackets comparable.
+
+基于遗憾度量$R_n^t(a_{n,j},a_{n,i})$，每个用户按照下式对其策略进行更新：
+%With the regret measure $R_n^t(a_{n,j},a_{n,i})$, each user updates her strategy as follows:
+\vspace{-0.1cm}
+\begin{equation}\label{eq:str2}
+\begin{cases}
+q^{t}_n(a_{n,j})=&(1-\delta^t)\min\left\{\frac{R^t_n(a_{n,j},a_{n,i})}{\mu},\frac{1}{|\M_n|-1}\right\}+\frac{\delta^t}{|\M_n|},\\ &~~\forall a_{n,j}\neq a_{n,i}, \\
+q^{t}_n(a_{n,i})=&1-\sum_{a_{n,j}\neq a_{n,i}}q^t_n(a_{n,j}),
+\end{cases}
+\end{equation}
+其中$\mu>2S_{max}(|\M|-1)$，$S_{max}$表示用户群组效用的上限。由于$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$的数值可以无限大，为保证$q^{t}_n(a_{n,i})\geq0$，我们采用加权遗憾项和$\frac{1}{|\M_n|-1}$中的较小的一个。每个用户基于这周策略更新的规则调整其信道选择，并在下一个时间步长内继续更新其遗憾度量。
+%where $\mu>2S_{max}(|\M|-1)$ with $S_{max}$ denotes an upper bound on a user's group utiltiy. Since $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$ can go unbounded, to guarantee that $q^{t}_n(a_{n,i})\geq0$,  we take the minimum of the weighted regret term and $\frac{1}{|\M_n|-1}$. Given the updated strategy, each user then adjusts her channel selection and proceeds to update her regret measures in the next time step.
+
+通过引入参数$\delta$，我们的策略更新规则（\ref{eq:str2}）实现了探索与利用（exploration and exploitation）之间的权衡。一方面，导致更大“遗憾”的替代行动将有更大的概率被选择，这可以被视为对于更好策略的充分利用。另一方面，每个替代决策都会以至少$\frac{\delta^t}{|\M_n|}$的概率被选择，实现对于策略空间的充分探索。因此，每个决策可以被尝试足够多的次数，这是使策略学习和效用学习收敛所需要的。这里为保证策略学习的收敛性能，我们将权重参数设置为数值上递减的形式$\delta^t=1/t^\rho$ with $\rho<1/4$。
+%Notice that by introducing the parameter $\delta$, the strategy update rule (\ref{eq:str2}) strikes an exploration-exploitation trade-off. On one hand, an alternate action with a larger `regret' will have a larger probability of being chosen, which can be regarded as the exploitation process for a better strategy. On the other hand, each of the alternate actions will be selected with a probability of at least $\frac{\delta^t}{|\M_n|}$, enabling the exploration of the strategy space. As a result, each action could be visited for enough amount of times, which is the necessity for the convergence of both strategy adaptation and utility learning. By standard, we set a diminishing weight $\delta^t=1/t^\rho$ with $\rho<1/4$ in order to guarantee the convergence of the strategy adaptation. 
+\begin{figure}[!t]
+%\hspace{-0.35cm}
+\centering
+\includegraphics[scale=0.46]{./pic/scheme2.pdf}
+%\caption{Illustration of the coupling of utility learning (on faster timescale) and strategy adaptation (on slower timescale) at time $t$.}\label{fg:scheme}
+\caption{$t$时刻时效用学习与策略学习之间耦合关系的示意图}\label{fg:scheme}
+\end{figure}
+我们使用图\ref{fg:scheme}来进一步说明在任意时间步长$t$内效用学习与策略学习之间的耦合。简而言之，在提出的基于遗憾度量的双时间尺度学习算法中，用户在对其长期社交群体效用进行学习的同时，同步地进行策略上的迭代以调整到具有较高“遗憾”度量的信道选择上。在每次迭代中，每个用户都使用其维护的平均遗憾矩阵来计算瞬时遗憾度量（计算复杂度为$O(|\M_n|)$）。接下来，我们对于所提出的学习算法的收敛性能进行评估。
+%For clarification, we use Fig. \ref{fg:scheme} to illustrate the coupling of the two learning processes at an arbitrary time step $t$. Simply put, in the proposed regret-based two-timescale learning algorithm, users synchronously learn their long-term group utilities in parallel to the adaptation of their strategies in favor of channels with higher `regret'. At each iteration, each user makes use of her maintained average regret matrix to calculate the instantaneous regret measure, leading to a computational complexity of $O(|\M_n|)$. Next, we evaluate the convergence performance of our proposed learning algorithm.
+\vspace{-0.2cm}
+
+\subsection{Convergence Analysis}\label{sec:conv}
+
+In this section, we analyze the convergence behavior of Algorithm \ref{alg:RCS}. We resort to the two-timescale extension of standard Stochastic approximation theory to show the weakly convergence of game $\Gamma$ to the set of correlated equilibria. The idea is to let the utility learning and regret-based strategy adaptation proceed simultaneously with different step-size schedules so that the regret-based strategy learning runs on a slower effective timescale and sees the utility learning as quasi-static. Our main result is given in the following theorem.
+\begin{as}\label{as1}
+For each user $n\in\V$, the conditions \textbf{C1-C3} are satisfied,
+\vspace{-0.2cm}
+\begin{align}
+&\textbf{C1}:\lim_{t\rightarrow\infty}\sum_{t\geq0}\lambda^t_n=+\infty,~\lim_{t\rightarrow\infty}\sum_{t\geq0}(\lambda^t_n)^2<+\infty.\\
+&\textbf{C2}:\lim_{t\rightarrow\infty}\sum_{t\geq0}\epsilon^t_n=+\infty,~\lim_{t\rightarrow\infty}\sum_{t\geq0}(\epsilon^t_n)^2<+\infty.\\
+&\textbf{C3}:\lim_{t\rightarrow\infty}\frac{\epsilon^t_n}{\lambda^t_n}=0.
+\end{align}
+\end{as}
+\vspace{-0.3cm}
+\begin{thm}(Convergence of Algorithm 1)
+Let $f^t\in\Delta\M$ be the empirical distribution as defined in (\ref{eq:empi}). With $\epsilon^t=1/t$ in (\ref{eq:reg2}) and Assumption \ref{as1} being satisfied, Algorithm 1 converges almost surely to the set of CE $\{\p^*\}$ of the game $\Gamma$ with $\pi^*=(\pi^*_1,\pi^*_2,\cdots,\pi^*_N)\in\Delta\mathcal{M}$. In particular, we have,
+\begin{align}\label{sne}
+&\lim_{t\rightarrow\infty}\hat{S}^t_n(a_{n,i})=\bar{S}_n(a_{n,i},\p^*_{-n}),~\forall n\in\mathcal{V},~\forall i=1,\cdots,|\mathcal{M}_n|,\\
+&\mbox{and}~~f^t\xrightarrow[\text{}]{\text{a.s.}}\{\pi^*\}~\mbox{as}~t\rightarrow\infty.
+\end{align}
+where $\bar{S}_n(a_{n,i},\p^*_{-n})$ is the expected group utility of user $n$ with action $a_{n,i}$ and others' strategies $\pi^*_{-n}$.
+\end{thm}
+
+%\textbf{Outline of the proof.}
+The main idea of the proof is to first introduce the continuous time interpolated process of the discrete learning process (\ref{estimation}) and (\ref{eq:reg2}), which can be shown to be the asymptotic pseudotrajectory of the semiflow corresponding to the differential inclusion defined by the two learning dynamics\cite{Yin}. Thus the limiting behaviors of the sequences $\{S_n(\A)\}$ and $\{\pi(\A)\}$ can be studied via the differential inclusion. By combining the asynchronous stochastic approximation framework \cite{Borkar1997}, and under the Assumption \ref{as1}, we can obtain the asymptotic weak convergence result of the two concurrent learning processes. Due to the lack of space, we leave the detailed proof to the online appendix \cite{MY18}.
+
+%\vspace{-0.2cm}
+\section{Performance Evaluation}\label{sec:simulation}
+
+In this section, we evaluate the performance of the proposed two-timescale distributed learning algorithm for the privacy-preserving spectrum sharing.
+%\vspace{-0.4cm}
+\subsection{Simulation Setup}
+We consider a database-assisted spectrum access network consisting of $N=80$ IoT devices that are randomly scattered in a square area of 1 km $\times$ 1 km and are categorized into either one of two groups with equal probability. For each secondary user $n$, we set the transmission power before being perturbed as $P_n=100$ mW \cite{FCC} and the available channel set $\mathcal{M}_n=\mathcal{A}$ with $M=5$ by default. We consider a Rayleigh fading channel environment where the channel gain between user $n$ and $m$ is inversely proportional to their physical distance powered by the path-loss factor $\alpha=4$. The background interference power $N_{a_n}$ for each user $n$ using channel $a_n$ is uniformly assigned in the interval of [-100,-90] dBm. The weight factor $e_{n}$ for each user $n$ in either group is generated following a uniform distribution $\mathcal{U}(e_{min},1)$ with $e_{min}=0.5$ by default.
+
+In our experiment, we let each user randomly perturb her transmission power level to combat the RSS based localization attack (as introduced in Section \ref{sec:privacy-model}), where each user's privacy protection level is quantified by the expected value of power perturbation $E(\Delta p_n)$. According to (\ref{eq:noise}), we can derive the expression for the expected value of power perturbation term as $E(\Delta p_n)=b\left[\frac{1-(k+1)\exp(-k)}{1-\exp(-k)}\right]$, where $k=\bar{p}/b>0$. We fix $\bar{p}=15$mW and set $b=12$ by default such that the mean perturbation level is about -6mW.
+For the two-timescale learning algorithm, we set the learning rate $\lambda^t=t^{-0.5}$ and $\epsilon^t=t^{-0.2}$ in Algorithm 1. The value of hyperparameters are determined through a tuning process so that the conditions \textbf{C1-C3} are satisfied. In addition, we let $\rho=1/8$ as it is used in \cite{Hart_areinforcement}. 
+
+%\vspace{-0.2cm}
+\subsection{Results and Discussions}
+\subsubsection{Convergence performance}
+We first examine the convergence performance of our algorithm. We adjust the value of $b$ so that the mean value of power perturbation magnitude is -5 mW and the minimum group-relationship strength $e_{min}=0.5$. We first run the experiment with different number of available channels, $M=4,5,6$. The network throughput $T=\frac{1}{N}\sum_{n\in\mathcal{V}} T_n$ is used as the performance metric, where $T_n$ denotes the average throughput of user $n$. From Fig. \ref{fg:conv1}, we observe that the proposed algorithm converges within 1500 iterations in general with increased number of channels leading to longer convergence time. It can be observed that changing the size of channel set does not impact the maximum achievable network throughput, which accounts for about 90\% of the optimal network throughput. For an arbitrary selected user \#10, we further evaluate the convergence of her strategies over each of the available channels, as shown in Fig. \ref{fg:conv2}.
+%\begin{figure}[htb]
+%\centering
+%\subfloat[]{
+%	\includegraphics[scale=0.41]{./pic/conv_ch3.eps}\label{fg:conv1}}
+%\vfill
+%%\vspace{-0.3cm}
+%\centering
+%\subfloat[]{
+%	\includegraphics[scale=0.4]{./pic/str_conv4.eps}\label{fg:conv2}}
+%%\hfill
+%\caption{Convergence performance of two-timescale distributed learning algorithm.}\label{fg:Fig11}
+%\end{figure}
+
+\begin{figure*}[!t]
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[scale=0.41]{./pic/conv_ch3.eps}
+		\caption{Convergence of Network Throughput}\label{fg:conv1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[scale=0.4]{./pic/str_conv4.eps}
+		\caption{Convergence of User \#10's Strategies (M=4)}\label{fg:conv2}
+	\end{minipage}
+	\caption{Convergence performance of two-timescale distributed learning algorithm.}
+	\label{fg:Fig11}
+\end{figure*}
+
+
+
+
+\subsubsection{Comparative studies on the throughput-privacy tradeoff}
+We next investigate the tradeoffs between network throughput and location privacy under different levels of power perturbation. We use the default setting of $M=5$, $e_{min}=0.5$, and run the experiment under different levels of power perturbation. Specifically, we change the value of parameter $b$ so that the mean value of perturbation power level varies from 0mW to -9mW. For the comparative study, we consider two benchmarks: (a) the single timescale learning algorithm that merely consists of strategy adaptation based on modified regret based learning (RBL) as introduced in Section \ref{sec:single}; (b) the two-timescale learning algorithm involving a utility learning as well as a strategy adaptation following the Stochastic Fictitious Play (SFP) \cite{ZhangGlobe}. 
+
+As shown in Fig. \ref{fg:Fig33}, in general, the system throughput decreases as expected with the increase of mean power perturbation level. Meanwhile, it is clear that the throughput of single timescale learning using RBL degrades much faster as the privacy preserving level increases, compared with other two approaches that involve both utility learning and strategy adaptation. This indicates the effectiveness of using a parallel utility learning to calibrate the noisy utility observation, which helps balance the location privacy protection with the network performance (i.e., system throughput). 
+
+It can also be seen that the throughput obtained by our proposed algorithm outweighs the one obtained using the two-timescale learning approach introduced in \cite{ZhangGlobe} by 5\% in average. This can be explained by the different  Equilibrium criteria used in the two studies. By definition, Nash equilibrium uses an underlying assumption that players' strategies are mutually independent. While the correlated equilibrium considered in this study generalizes the Nash equilibrium by allowing the strategies to be dependent among players. As the correlated equilibrium is mathematically equivalent to a convex polytope with its extrema points corresponding to the set of Nash equilibria, it is likely to exhibits better performance in general. 
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.37]{./pic/thp_pert_new3.eps}
+%\vspace{-0.0cm}
+\caption{Performance comparisons among different learning algorithms under varying power perturbation level.}\label{fg:Fig33}
+\end{figure}
+%\vspace{-0.2cm}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.37]{./pic/thp_soc_new3.eps}
+%\vspace{-0.3cm}
+\caption{Impact of total number of users $N$ and minimum in-group relationship strength $\mu_{min}$ on network throughput.}\label{fg:Fig22}
+\end{figure}
+\subsubsection{The impact of system scale and group-relationship strength} We finally examine the network impact to the system performance. We run the experiment with increasing $e_{min}$ from 0.5 to 0.9 for three cases with different network scale, i.e., $N=80, 100, 120$. As illustrated in Fig. \ref{fg:Fig22}, the network throughput grows in general as the system scale enlarges. Also, it can be seen that the throughput experiences a monotonically increase as the strength of in-group relationship increases. For the cases with $N=80, 100, 120$, approximately 14.5\%, 15\%, and 16.4\% performance gains are achieved, respectively, when $e_{min}$ is increased from 0.5 to 0.9, which indicates that the system would benefit from users behaving more altruistically. 
+
+%\vspace{-0.2cm}
+\section{Conclusion}\label{sec:con}
+In this paper, we studied database-assisted spectrum sharing in the system of Industrial Internet of Things (IIoT). To address the RSS-based location privacy attack, a random power perturbation approach is applied to reduce the localization accuracy of adversaries. We cast the privacy-preserving spectrum sharing as a stochastic channel selection game among socially coupled IoT devices. Based on no regret dynamics, we develop a two-timescale distributed learning algorithm in which each device continuously estimates her group utility and adapts her strategy in favor of reduced regrets. Our proposed algorithm is shown to weakly converge towards the set of correlated equilibria and exhibits significant outperformance against the single timescale learning approach involving only strategy adaptation. Thereby, our approach helps to strike a balance between location privacy protection and enhancing network performance in IIoT system.
+

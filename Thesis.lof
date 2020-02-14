@@ -1,0 +1,30 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 全文组织结构图\relax }}{9}{figure.caption.7}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 基于拍卖模型框架的保隐私数据聚合\relax }}{16}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 不同准确性约束下的平台支付（消极隐私保护情况）\relax }}{32}{figure.caption.13}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 数据隐私与准确性之间的关系\relax }}{33}{figure.caption.14}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 不同准确性约束下用户总量的影响（消极隐私保护情况）\relax }}{33}{figure.caption.15}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 积极隐私保护与消极隐私保护之间的结果对比（归一化失真度要求 = 0.2）\relax }}{34}{figure.caption.16}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 不同参数设置下DPDA的运算耗时。\relax }}{36}{figure.caption.18}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 认知无线电网络的社交域-地理域说明\relax }}{40}{figure.caption.19}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces $t$时刻时效用学习与策略学习之间耦合关系的示意图\relax }}{48}{figure.caption.21}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 网络吞吐量的收敛表现\relax }}{50}{figure.caption.22}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 用户\#10的策略收敛表现 (M=4)\relax }}{50}{figure.caption.23}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 几种学习算法在不同功率扰动水平下的性能比较\relax }}{51}{figure.caption.24}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 社交联系强度对吞吐量的影响\relax }}{52}{figure.caption.25}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 系统模型以及服务提供商和移动用户之间的交互关系示意图。\relax }}{57}{figure.caption.26}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 包含三个服务提供商和四个移动用户的系统示意图，系统中存在9条链接。\relax }}{59}{figure.caption.27}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 失真参数$\alpha $不同取值下的概率失真函数。\relax }}{64}{figure.caption.28}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 不同效用规避参数$\beta $和损失惩罚参数$\lambda $下的框架函数。\relax }}{64}{figure.caption.28}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 社交联结权值平均值$\mu _{G}$对总数据使用量的影响。\relax }}{70}{figure.caption.30}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 归一化最佳收益与用户数量$N$变化关系。\relax }}{70}{figure.caption.31}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 归一化的最佳收益与服务成本差异之间的关系。\relax }}{71}{figure.caption.32}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 有限理性对服务提供商总收益的影响。\relax }}{71}{figure.caption.33}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

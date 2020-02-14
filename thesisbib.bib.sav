@@ -1,0 +1,2195 @@
+% Encoding: UTF-8
+%% This BibTeX bibliography file was created using BibDesk.
+%% http://bibdesk.sourceforge.net/
+
+%% Created for 李超 at 2018-11-25 00:41:26 +0800 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+
+@phdthesis{wangxinshui,
+  title={面向 5G 的大规模 MIMO 关键技术及性能分析研究},
+  author={王心水},
+  year={2017},
+  school={北京邮电大学}
+}
+
+@inproceedings{popa2010cost,
+	Author = {Popa, Lucian and Ratnasamy, Sylvia and Iannaccone, Gianluca and Krishnamurthy, Arvind and Stoica, Ion},
+	Booktitle = {Proceedings of the 6th International Conference},
+	Number = {16},
+	Organization = {ACM},
+	Pages = {1--12},
+	Title = {A cost comparison of datacenter network architectures},
+	Year = {2010}}
+
+@misc{mosek,
+	Author = {MOSEK},
+	Howpublished = {\url{https://https://www.mosek.com/}},
+	Note = {[Online; accessed 1-Oct-2018]},
+	Title = {{MOSEK} solves all your {LP}s, {QP}s, {SOCP}s, {SDP}s and {MIP}s},
+	Year = {2018}}
+
+@inproceedings{Lofberg2004,
+	Address = {Taipei, Taiwan},
+	Author = {L{\"{o}}fberg, J.},
+	Booktitle = {Proceedings of 2004 IEEE International Conference on Robotics and Automation},
+	Title = {YALMIP : A Toolbox for Modeling and Optimization in {MATLAB}},
+	Year = {2004}}
+
+@article{verma2016machine,
+	Author = {Verma, Pawan Kumar and Verma, Rajesh and Prakash, Arun and Agrawal, Ashish and Naik, Kshirasagar and Tripathi, Rajeev and Alsabaan, Maazen and Khalifa, Tarek and Abdelkader, Tamer and Abogharaf, Abdulhakim},
+	Journal = {Journal of Network and Computer Applications},
+	Pages = {83--105},
+	Publisher = {Elsevier},
+	Title = {Machine-to-Machine (M2M) communications: A survey},
+	Volume = {66},
+	Year = {2016}}
+
+@article{asadi2014survey,
+	Author = {Asadi, Arash and Wang, Qing and Mancuso, Vincenzo},
+	Journal = {IEEE Communications Surveys and Tutorials},
+	Number = {4},
+	Pages = {1801--1819},
+	Publisher = {IEEE},
+	Title = {A survey on device-to-device communication in cellular networks},
+	Volume = {16},
+	Year = {2014}}
+
+@article{ping2006interleave,
+	Author = {Ping, Li and Liu, Lihai and Wu, Keying and Leung, Wai Kong},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {4},
+	Pages = {938--947},
+	Publisher = {IEEE},
+	Title = {Interleave division multiple-access},
+	Volume = {5},
+	Year = {2006}}
+
+@inproceedings{nikopour2013sparse,
+	Author = {Nikopour, Hosein and Baligh, Hadi},
+	Booktitle = {2013 IEEE 24th International Symposium on Personal Indoor and Mobile Radio Communications (PIMRC)},
+	Organization = {IEEE},
+	Pages = {332--336},
+	Title = {Sparse code multiple access},
+	Year = {2013}}
+
+@inproceedings{khormuji2015generalized,
+	Author = {Khormuji, Majid Nasiri},
+	Booktitle = {2015 IEEE 81st Vehicular Technology Conference (VTC Spring)},
+	Organization = {IEEE},
+	Pages = {1--5},
+	Title = {Generalized semi-orthogonal multiple-access for massive {MIMO}},
+	Year = {2015}}
+
+@inproceedings{saito2013non,
+	Author = {Saito, Yuya and Kishiyama, Yoshihisa and Benjebbour, Anass and Nakamura, Takehiro and Li, Anxin and Higuchi, Kenichi},
+	Booktitle = {2013 IEEE 77thVehicular Technology Conference (VTC Spring)},
+	Organization = {IEEE},
+	Pages = {1--5},
+	Title = {Non-orthogonal multiple access ({NOMA}) for cellular future radio access},
+	Year = {2013}}
+
+@article{dai2015non,
+	Author = {Dai, Linglong and Wang, Bichai and Yuan, Yifei and Han, Shuangfeng and Chih-Lin, I and Wang, Zhaocheng},
+	Journal = {IEEE Communications Magazine},
+	Number = {9},
+	Pages = {74--81},
+	Publisher = {IEEE},
+	Title = {Non-orthogonal multiple access for 5{G}: solutions, challenges, opportunities, and future research trends},
+	Volume = {53},
+	Year = {2015}}
+
+@book{holma2009lte,
+	Author = {Holma, Harri and Toskala, Antti},
+	Publisher = {John Wiley \& Sons},
+	Title = {LTE for UMTS: OFDMA and SC-FDMA based radio access},
+	Year = {2009}}
+
+@article{spencer2004zero,
+	Author = {Spencer, Quentin H and Swindlehurst, A Lee and Haardt, Martin},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {2},
+	Pages = {461--471},
+	Publisher = {IEEE},
+	Title = {Zero-forcing methods for downlink spatial multiplexing in multiuser {MIMO} channels},
+	Volume = {52},
+	Year = {2004}}
+
+@inproceedings{wei2015mtrack,
+	Author = {Wei, Teng and Zhang, Xinyu},
+	Booktitle = {Proceedings of the 21st Annual International Conference on Mobile Computing and Networking},
+	Organization = {ACM},
+	Pages = {117--129},
+	Title = {mtrack: High-precision passive tracking using millimeter wave radios},
+	Year = {2015}}
+
+@article{cui2016vehicle,
+	Author = {Cui, Xuerong and Gulliver, Thomas Aaron and Li, Juan and Zhang, Hao},
+	Journal = {IEEE Access},
+	Pages = {6964--6973},
+	Publisher = {IEEE},
+	Title = {Vehicle positioning using 5{G} millimeter-wave systems},
+	Volume = {4},
+	Year = {2016}}
+
+@article{koivisto2017high,
+	Author = {Koivisto, Mike and Hakkarainen, Aki and Costa, M{\'a}rio and Kela, Petteri and Leppanen, Kari and Valkama, Mikko},
+	Journal = {IEEE Communications Magazine},
+	Number = {8},
+	Pages = {188--195},
+	Publisher = {IEEE},
+	Title = {High-efficiency device positioning and location-aware communications in dense 5{G} networks},
+	Volume = {55},
+	Year = {2017}}
+
+@article{koivisto2017joint,
+	Author = {Koivisto, Mike and Costa, M{\'a}rio and Werner, Janis and Heiska, Kari and Talvitie, Jukka and Lepp{\"a}nen, Kari and Koivunen, Visa and Valkama, Mikko},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {5},
+	Pages = {2866--2881},
+	Publisher = {IEEE},
+	Title = {Joint device positioning and clock synchronization in 5{G} ultra-dense networks},
+	Volume = {16},
+	Year = {2017}}
+
+@article{kim2018beam,
+	Author = {Kim, Yeong Jun and Cho, Yong Soo},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Pages = {7806--7810},
+	Publisher = {IEEE},
+	Title = {Beam-Tracking Technique for Millimeter-Wave Cellular Systems Using Subarray Structures},
+	Year = {2018}}
+
+@article{jayaprakasam2017robust,
+	Author = {Jayaprakasam, Suhanya and Ma, Xiaoxue and Choi, Jun Won and Kim, Sunwoo},
+	Journal = {IEEE Communications Letters},
+	Number = {12},
+	Pages = {2654--2657},
+	Publisher = {IEEE},
+	Title = {Robust Beam-Tracking for mmWave Mobile Communications},
+	Volume = {21},
+	Year = {2017}}
+
+@inproceedings{va2016beam,
+	Author = {Va, Vutha and Vikalo, Haris and Heath, Robert W},
+	Booktitle = {2016 IEEE Global Conference on Signal and Information Processing (GlobalSIP)},
+	Organization = {IEEE},
+	Pages = {743--747},
+	Title = {Beam tracking for mobile millimeter wave communication systems},
+	Year = {2016}}
+
+@inproceedings{tateishi2016indoor,
+	Author = {Tateishi, Kiichi and Kurita, Daisuke and Harada, Atsushi and Kishiyama, Yoshihisa and Itoh, Shoji and Murai, Hideshi and Simonsson, Arne and {\"O}kvist, Peter},
+	Booktitle = {2016 IEEE 27th Annual International Symposium on Personal, Indoor, and Mobile Radio Communications (PIMRC)},
+	Organization = {IEEE},
+	Pages = {1--6},
+	Title = {Indoor experiment on 5{G} radio access using beam tracking at 15 {GH}z band},
+	Year = {2016}}
+
+@article{yu2012beam,
+	Author = {Yu, Heejung and Sung, Youngchul and Kim, Haksoo and Lee, Yong H},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {4},
+	Pages = {1910--1926},
+	Publisher = {IEEE},
+	Title = {Beam tracking for interference alignment in slowly fading {MIMO} interference channels: A perturbations approach under a linear framework},
+	Volume = {60},
+	Year = {2012}}
+
+@inproceedings{weiler2014enabling,
+	Author = {Weiler, Richard J and Peter, Michael and Keusgen, Wilhelm and Calvanese-Strinati, Emilio and De Domenico, Antonio and Filippini, Ilario and Capone, Antonio and Siaud, Isabelle and Ulmer-Moll, Anne-Marie and Maltsev, Alexander and others},
+	Booktitle = {2014 European Conference on Networks and Communications (EuCNC)},
+	Organization = {IEEE},
+	Pages = {1--5},
+	Title = {Enabling 5{G} backhaul and access with millimeter-waves},
+	Year = {2014}}
+
+@inproceedings{inoue2015experimental,
+	Author = {Inoue, Yuki and Kishiyama, Yoshihisa and Okumura, Yukihiko and Kepler, James and Cudak, Mark},
+	Booktitle = {2015 IEEE 26th Annual International Symposium on Personal, Indoor, and Mobile Radio Communications (PIMRC)},
+	Organization = {IEEE},
+	Pages = {862--866},
+	Title = {Experimental evaluation of downlink transmission and beam tracking performance for 5{G} mm{W} radio access in indoor shielded environment},
+	Year = {2015}}
+
+@inproceedings{obara2016experiment,
+	Author = {Obara, Tatsunori and Inoue, Yuki and Aoki, Yuuichi and Suyama, Satoshi and Lee, Jaekon and Okumurav, Yukihiko},
+	Booktitle = {2016 IEEE 27th Annual International Symposium on Personal, Indoor, and Mobile Radio Communications (PIMRC)},
+	Organization = {IEEE},
+	Pages = {1--5},
+	Title = {Experiment of 28 {GH}z band 5{G} super wideband transmission using beamforming and beam tracking in high mobility environment},
+	Year = {2016}}
+
+@inproceedings{jacobsen2014fpga,
+	Author = {Jacobsen, Matthew and Meng, Pingfan and Sampangi, Siddarth and Kastner, Ryan},
+	Booktitle = {2014 IEEE 22nd Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM)},
+	Organization = {IEEE},
+	Pages = {165--168},
+	Title = {{FPGA} accelerated online boosting for multi-target tracking},
+	Year = {2014}}
+
+@article{zhang2017free,
+	Author = {Zhang, Chaoli and Wu, Fan and Gao, Xiaofeng and Chen, Guihai},
+	Journal = {IEEE/ACM Transactions on Networking},
+	Pages = {3723--3737},
+	Publisher = {IEEE},
+	Title = {Free talk in the air: A hierarchical topology for 60 {GH}z wireless data center networks},
+	Year = {2017}}
+
+@phdthesis{vardhan2014polycell,
+	Author = {Vardhan, Hars},
+	School = {The University of Texas at Dallas},
+	Title = {Polycell: A wireless data center design with millimeter-wave network},
+	Year = {2014}}
+
+@inproceedings{atesal2010x,
+	Author = {Atesal, Yusuf A and Cetinoneri, Berke and Koh, Kwang-Jin and Rebeiz, Gabriel M},
+	Booktitle = {Microwave Symposium Digest (MTT), 2010 IEEE MTT-S International},
+	Organization = {IEEE},
+	Pages = {1258--1261},
+	Title = {X/Ku-band 8-element phased arrays based on single silicon chips},
+	Year = {2010}}
+
+@article{vardhan201460,
+	Author = {Vardhan, Hars and Ryu, Seong-Ryong and Banerjee, Bhaskar and Prakash, Ravi},
+	Journal = {Computer Networks},
+	Pages = {192--205},
+	Publisher = {Elsevier},
+	Title = {60 {GH}z wireless links in data center networks},
+	Volume = {58},
+	Year = {2014}}
+
+@article{kandula2009flyways,
+	Author = {Kandula, Srikanth and Padhye, Jitendra and Bahl, Paramvir},
+	Pages = {1--6},
+	Publisher = {Citeseer},
+	Title = {Flyways to de-congest data center networks},
+	Year = {2009}}
+
+@inproceedings{benson2010network,
+	Author = {Benson, Theophilus and Akella, Aditya and Maltz, David A},
+	Booktitle = {Proceedings of the 10th ACM SIGCOMM Conference on Internet Measurement},
+	Organization = {ACM},
+	Pages = {267--280},
+	Title = {Network traffic characteristics of data centers in the wild},
+	Year = {2010}}
+
+@article{shin2013feasibility,
+	Author = {Shin, Ji-Yong and Sirer, Emin Gn and Weatherspoon, Hakim and Kirovski, Darko},
+	Journal = {IEEE/ACM Transactions on Networking},
+	Number = {5},
+	Pages = {1666--1679},
+	Publisher = {IEEE Press},
+	Title = {On the feasibility of completely wirelesss datacenters},
+	Volume = {21},
+	Year = {2013}}
+
+@article{pinel200960GHz,
+	Author = {Pinel, Stephane and Sen, Padmanava and Sarkar, Saikat and Perumana, B and Dawn, Debasis and Yeh, David and Barale, Francesco and Leung, Matthew and Juntunen, Eric and Vadivelu, P and others},
+	Journal = {IEEE Journal on Selected Areas in Communications},
+	Number = {8},
+	Pages = {1347--1357},
+	Publisher = {IEEE},
+	Title = {60{GH}z single-chip {CMOS} digital radios and phased array solutions for gaming and connectivity},
+	Volume = {27},
+	Year = {2009}}
+
+@article{cui2013dynamic,
+	Author = {Cui, Yong and Wang, Hongyi and Cheng, Xiuzhen and Li, Dan and Yla-Jaaski, Antti},
+	Journal = {IEEE Transactions on Parallel and Distributed Systems},
+	Number = {12},
+	Pages = {2365--2374},
+	Publisher = {IEEE},
+	Title = {Dynamic scheduling for wireless data center networks},
+	Volume = {24},
+	Year = {2013}}
+
+@inproceedings{zhu2014cutting,
+	Author = {Zhu, Yibo and Zhou, Xia and Zhang, Zengbin and Zhou, Lin and Vahdat, Amin and Zhao, Ben Y and Zheng, Haitao},
+	Booktitle = {Proceedings of the 20th annual international conference on Mobile computing and networking},
+	Organization = {ACM},
+	Pages = {581--592},
+	Title = {Cutting the cord: A robust wireless facilities network for data centers},
+	Year = {2014}}
+
+@inproceedings{barker2005feasibility,
+	Author = {Barker, Kevin J and Benner, Alan and Hoare, Ray and Hoisie, Adolfy and Jones, Alex K and Kerbyson, Darren K and Li, Dan and Melhem, Rami and Rajamony, Ramakrishnan and Schenfeld, Eugen and others},
+	Booktitle = {Proceedings of the 2005 ACM/IEEE Conference on Supercomputing},
+	Organization = {IEEE},
+	Pages = {1--22},
+	Title = {On the feasibility of optical circuit switching for high performance computing systems},
+	Year = {2005}}
+
+@inproceedings{wang2009your,
+	Author = {Wang, Guohui and Andersen, David G and Kaminsky, Michael and Kozuch, Michael and Ng, TS Eugene and Papagiannaki, Konstantina and Glick, Madeleine and Mummert, Lily B},
+	Booktitle = {HotNets},
+	Organization = {Citeseer},
+	Pages = {1--6},
+	Title = {Your Data Center Is a Router: The Case for Reconfigurable Optical Circuit Switched Paths},
+	Year = {2009}}
+
+@article{cui2018diamond,
+	Author = {Cui, Yong and Xiao, Shihan and Wang, Xin and Yang, Zhenjie and Yan, Shenghui and Zhu, Chao and Li, Xiang-Yang and Ge, Ning},
+	Journal = {IEEE/ACM Transactions on Networking},
+	Number = {1},
+	Pages = {145--160},
+	Publisher = {IEEE},
+	Title = {Diamond: Nesting the data center network with wireless rings in 3-d space},
+	Volume = {26},
+	Year = {2018}}
+
+@article{xia2017survey,
+	Author = {Xia, Wenfeng and Zhao, Peng and Wen, Yonggang and Xie, Haiyong},
+	Journal = {IEEE Communications Surveys and Tutorials},
+	Number = {1},
+	Pages = {640--656},
+	Publisher = {IEEE},
+	Title = {A survey on data center networking (DCN): Infrastructure and operations},
+	Volume = {19},
+	Year = {2017}}
+
+@article{chen2016features,
+	Author = {Chen, Tao and Gao, Xiaofeng and Chen, Guihai},
+	Journal = {Journal of Parallel and Distributed Computing},
+	Pages = {45--74},
+	Publisher = {Elsevier},
+	Title = {The features, hardware, and architectures of data center networks: A survey},
+	Volume = {96},
+	Year = {2016}}
+
+@article{zhou2012mirror,
+	Author = {Zhou, Xia and Zhang, Zengbin and Zhu, Yibo and Li, Yubo and Kumar, Saipriya and Vahdat, Amin and Zhao, Ben Y and Zheng, Haitao},
+	Journal = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Pages = {443--454},
+	Publisher = {ACM},
+	Title = {Mirror mirror on the ceiling: Flexible wireless links for data centers},
+	Volume = {42},
+	Year = {2012}}
+
+@inproceedings{zhang20113d,
+	Author = {Zhang, Weile and Zhou, Xia and Yang, Lei and Zhang, Zengbin and Zhao, Ben Y and Zheng, Haitao},
+	Booktitle = {Proceedings of the 10th ACM Workshop on Hot Topics in Networks},
+	Organization = {ACM},
+	Pages = {1--6},
+	Title = {{3D} beamforming for wireless data centers},
+	Year = {2011}}
+
+@inproceedings{halperin2011augmenting,
+	Author = {Halperin, Daniel and Kandula, Srikanth and Padhye, Jitendra and Bahl, Paramvir and Wetherall, David},
+	Booktitle = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Organization = {ACM},
+	Pages = {38--49},
+	Title = {Augmenting data center networks with multi-gigabit wireless links},
+	Volume = {41},
+	Year = {2011}}
+
+@inproceedings{hamedazimi2014firefly,
+	Author = {Hamedazimi, Navid and Qazi, Zafar and Gupta, Himanshu and Sekar, Vyas and Das, Samir R and Longtin, Jon P and Shah, Himanshu and Tanwer, Ashish},
+	Booktitle = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Organization = {ACM},
+	Pages = {319--330},
+	Title = {Firefly: A reconfigurable wireless data center fabric using free-space optics},
+	Volume = {44},
+	Year = {2014}}
+
+@article{chen2014osa,
+	Author = {Chen, Kai and Singla, Ankit and Singh, Atul and Ramachandran, Kishore and Xu, Lei and Zhang, Yueping and Wen, Xitao and Chen, Yan},
+	Journal = {IEEE/ACM Transactions on Networking},
+	Number = {2},
+	Pages = {498--511},
+	Publisher = {IEEE},
+	Title = {{OSA}: An optical switching architecture for data center networks with unprecedented flexibility},
+	Volume = {22},
+	Year = {2014}}
+
+@inproceedings{al2010hedera,
+	Author = {Al-Fares, Mohammad and Radhakrishnan, Sivasankar and Raghavan, Barath and Huang, Nelson and Vahdat, Amin},
+	Booktitle = {NSDI},
+	Number = {8},
+	Pages = {89--92},
+	Title = {Hedera: dynamic flow scheduling for data center networks},
+	Volume = {10},
+	Year = {2010}}
+
+@article{wang2011c,
+	Author = {Wang, Guohui and Andersen, David G and Kaminsky, Michael and Papagiannaki, Konstantina and Ng, TS and Kozuch, Michael and Ryan, Michael},
+	Journal = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Pages = {327--338},
+	Publisher = {ACM},
+	Title = {c-Through: Part-time optics in data centers},
+	Volume = {41},
+	Year = {2011}}
+
+@article{farrington2010helios,
+	Author = {Farrington, Nathan and Porter, George and Radhakrishnan, Sivasankar and Bazzaz, Hamid Hajabdolali and Subramanya, Vikram and Fainman, Yeshaiahu and Papen, George and Vahdat, Amin},
+	Journal = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Pages = {339--350},
+	Publisher = {ACM},
+	Title = {Helios: a hybrid electrical/optical switch architecture for modular data centers},
+	Volume = {40},
+	Year = {2010}}
+
+@article{guo2009bcube,
+	Author = {Guo, Chuanxiong and Lu, Guohan and Li, Dan and Wu, Haitao and Zhang, Xuan and Shi, Yunfeng and Tian, Chen and Zhang, Yongguang and Lu, Songwu},
+	Journal = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Pages = {63--74},
+	Publisher = {ACM},
+	Title = {BCube: A high performance, server-centric network architecture for modular data centers},
+	Volume = {39},
+	Year = {2009}}
+
+@inproceedings{costa2013camcubeos,
+	Author = {Costa, Paolo and Donnelly, Austin and O'Shea, Greg and Rowstron, Antony},
+	Booktitle = {Proceedings of the 22nd international symposium on High-performance parallel and distributed computing},
+	Organization = {ACM},
+	Pages = {73--84},
+	Title = {Camcubeos: A key-based network stack for 3{D} torus cluster topologies},
+	Year = {2013}}
+
+@inproceedings{umamaheswaran2017reducing,
+	Author = {Umamaheswaran, Sree Gowrishankar and Mamun, Sayed Ashraf and Ganguly, Amlan and Kwon, Minseok and Kwasinski, Andres},
+	Booktitle = {2017 IEEE Global Communications Conference(GLOBECOM)},
+	Organization = {IEEE},
+	Pages = {1--7},
+	Title = {Reducing Power Consumption of Datacenter Networks with 60{GH}z Wireless Server-to-Server Links},
+	Year = {2017}}
+
+@inproceedings{wu2009mdcube,
+	Author = {Wu, Haitao and Lu, Guohan and Li, Dan and Guo, Chuanxiong and Zhang, Yongguang},
+	Booktitle = {Proceedings of the 5th international conference on Emerging networking experiments and technologies},
+	Organization = {ACM},
+	Pages = {25--36},
+	Title = {MDCube: a high performance network structure for modular data center interconnection},
+	Year = {2009}}
+
+@inproceedings{li2009ficonn,
+	Author = {Li, Dan and Guo, Chuanxiong and Wu, Haitao and Tan, Kun and Lu, Songwu},
+	Booktitle = {INFOCOM},
+	Pages = {2276--2285},
+	Title = {FiConn: Using Backup Port for Server Interconnection in Data Centers},
+	Volume = {9},
+	Year = {2009}}
+
+@inproceedings{guo2008dcell,
+	Author = {Guo, Chuanxiong and Wu, Haitao and Tan, Kun and Shi, Lei and Zhang, Yongguang and Lu, Songwu},
+	Booktitle = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Organization = {ACM},
+	Pages = {75--86},
+	Title = {Dcell: a scalable and fault-tolerant network structure for data centers},
+	Volume = {38},
+	Year = {2008}}
+
+@inproceedings{walraed2013aspen,
+	Author = {Walraed-Sullivan, Meg and Vahdat, Amin and Marzullo, Keith},
+	Booktitle = {Proceedings of the ninth ACM Conference on Emerging Networking Experiments and Technologies},
+	Organization = {ACM},
+	Pages = {85--96},
+	Title = {Aspen trees: balancing data center fault tolerance, scalability and cost},
+	Year = {2013}}
+
+@inproceedings{singla2012jellyfish,
+	Author = {Singla, Ankit and Hong, Chi-Yao and Popa, Lucian and Godfrey, Philip Brighten},
+	Booktitle = {NSDI},
+	Pages = {1--6},
+	Title = {Jellyfish: Networking Data Centers, Randomly},
+	Volume = {12},
+	Year = {2012}}
+
+@inproceedings{al2008scalable,
+	Author = {Al-Fares, Mohammad and Loukissas, Alexander and Vahdat, Amin},
+	Booktitle = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Organization = {ACM},
+	Pages = {63--74},
+	Title = {A scalable, commodity data center network architecture},
+	Volume = {38},
+	Year = {2008}}
+
+@inproceedings{greenberg2009vl2,
+	Author = {Greenberg, Albert and Hamilton, James R and Jain, Navendu and Kandula, Srikanth and Kim, Changhoon and Lahiri, Parantap and Maltz, David A and Patel, Parveen and Sengupta, Sudipta},
+	Booktitle = {ACM SIGCOMM Computer Communication Review},
+	Number = {4},
+	Organization = {ACM},
+	Pages = {51--62},
+	Title = {VL2: a scalable and flexible data center network},
+	Volume = {39},
+	Year = {2009}}
+
+@article{pi2011introduction,
+	Author = {Pi, Zhouyue and Khan, Farooq},
+	Journal = {IEEE Communications Magazine},
+	Number = {6},
+	Pages = {101--107},
+	Publisher = {IEEE},
+	Title = {An introduction to millimeter-wave mobile broadband systems},
+	Volume = {49},
+	Year = {2011}}
+
+@article{anderson2004building,
+	Author = {Anderson, Christopher R and Rappaport, Theodore S},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {3},
+	Pages = {922--928},
+	Publisher = {IEEE},
+	Title = {In-building wideband partition loss measurements at 2.5 and 60 {GH}z},
+	Volume = {3},
+	Year = {2004}}
+
+@misc{macom2017,
+	Author = {MACOM},
+	Howpublished = {\url{https://www.macom.com/blog/phased-array-antennas--the-roadm}},
+	Note = {[Online; accessed 26-July-2018]},
+	Title = {Phased Array Antennas and The Roadmap to 5{G} Wireless},
+	Year = {2017}}
+
+@misc{cisco2018cloud,
+	Author = {Cisco},
+	Howpublished = {\url{https://www.cisco.com/c/en/us/solutions/collateral/service-provider/global-cloud-index-gci/white-paper-c11-738085}},
+	Note = {[Online; accessed 26-June-2018]},
+	Title = {Cisco {G}lobal {C}loud {I}ndex: Forecast and {M}ethodology, 2016--2021 {W}hite {P}aper},
+	Year = {2018}}
+
+@misc{hornantenna,
+	Author = {Miwv},
+	Howpublished = {\url{http://www.miwv.com/millimeter-wave-products/antenna-products/}},
+	Note = {[Online; accessed 26-June-2018]},
+	Title = {Millimeter Wave Antenna Products},
+	Year = {2018}}
+
+@misc{802153,
+	Author = {IEEE},
+	Howpublished = {\url{http://www.ieee802.org/15/pub/TG3c.html}},
+	Note = {[Online; accessed 24-June-2018]},
+	Title = {{802.15.3c}},
+	Year = {2018}}
+
+@misc{80211ad,
+	Author = {Qualcomm},
+	Howpublished = {\url{https://www.qualcomm.com/solutions/networking/features/80211ad}},
+	Note = {[Online; accessed 19-July-2018]},
+	Title = {{802.11ad}},
+	Year = {2018}}
+
+@misc{80211ay,
+	Author = {IEEE},
+	Howpublished = {\url{http://www.ieee802.org/11/Reports/tgay_update}},
+	Note = {[Online; accessed 19-July-2018]},
+	Title = {{802.11ay}},
+	Year = {2018}}
+
+@article{ghasempour2017ieee,
+	Author = {Ghasempour, Yasaman and da Silva, Claudio RCM and Cordeiro, Carlos and Knightly, Edward W},
+	Journal = {IEEE Communications Magazine},
+	Number = {12},
+	Pages = {186--192},
+	Publisher = {IEEE},
+	Title = {{IEEE} 802.11 ay: Next-generation 60{GH}z communication for 100 Gb/s {W}i-{F}i},
+	Volume = {55},
+	Year = {2017}}
+
+@article{adhikary2013joint,
+	Author = {Adhikary, Ansuman and Nam, Junyoung and Ahn, Jae-Young and Caire, Giuseppe},
+	Journal = {IEEE Transactions on Information Theory},
+	Number = {10},
+	Pages = {6441--6463},
+	Publisher = {IEEE},
+	Title = {Joint spatial division and multiplexing--The large-scale array regime},
+	Volume = {59},
+	Year = {2013}}
+
+@article{nam2014joint,
+	Author = {Nam, Junyoung and Adhikary, Ansuman and Ahn, Jae-Young and Caire, Giuseppe},
+	Journal = {IEEE Journal of Selected Topics in Signal Processing},
+	Number = {5},
+	Pages = {876--890},
+	Publisher = {IEEE},
+	Title = {Joint spatial division and multiplexing: Opportunistic beamforming, user grouping and simplified downlink scheduling},
+	Volume = {8},
+	Year = {2014}}
+
+@article{jin2015cell,
+	Author = {Jin, Shi and Wang, Jue and Sun, Qiang and Matthaiou, Michail and Gao, Xiqi},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Number = {12},
+	Pages = {5713--5727},
+	Publisher = {IEEE},
+	Title = {Cell coverage optimization for the multicell massive {MIMO} uplink},
+	Volume = {64},
+	Year = {2015}}
+
+@article{maccartney2017rural,
+	Author = {MacCartney, George R and Rappaport, Theodore S},
+	Journal = {IEEE Journal on Selected Areas in Communications},
+	Number = {7},
+	Pages = {1663--1677},
+	Publisher = {IEEE},
+	Title = {Rural macrocell path loss models for millimeter wave wireless communications},
+	Volume = {35},
+	Year = {2017}}
+
+@article{ngo2013energy,
+	Author = {Ngo, Hien Quoc and Larsson, Erik G and Marzetta, Thomas L},
+	Journal = {IEEE Transactions on Communications},
+	Number = {4},
+	Pages = {1436--1449},
+	Publisher = {IEEE},
+	Title = {Energy and spectral efficiency of very large multiuser {MIMO} systems},
+	Volume = {61},
+	Year = {2013}}
+
+@article{bjornson2015optimal,
+	Author = {Bj{\"o}rnson, Emil and Sanguinetti, Luca and Hoydis, Jakob and Debbah, M{\'e}rouane},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {6},
+	Pages = {3059--3075},
+	Publisher = {IEEE},
+	Title = {Optimal design of energy-efficient multi-user {MIMO} systems: Is massive {MIMO} the answer?},
+	Volume = {14},
+	Year = {2015}}
+
+@inproceedings{maccartney2017study,
+	Author = {MacCartney, George R and Rappaport, Theodore S},
+	Booktitle = {2017 IEEE International Conference on Communications (ICC)},
+	Organization = {IEEE},
+	Pages = {1--7},
+	Title = {Study on 3GPP rural macrocell path loss models for millimeter wave wireless communications},
+	Year = {2017}}
+
+@article{fettweis20145g,
+	Author = {Fettweis, Gerhard and Alamouti, Siavash},
+	Journal = {IEEE Communications Magazine},
+	Number = {2},
+	Pages = {140--145},
+	Publisher = {IEEE},
+	Title = {5{G}: Personal mobile internet beyond what cellular did to telephony},
+	Volume = {52},
+	Year = {2014}}
+
+@inproceedings{marzetta1999blast,
+	Author = {Marzetta, Thomas L},
+	Booktitle = {Proceedings of the Annual Allerton Conference on Communication Control and Computing},
+	Organization = {Citeseer},
+	Pages = {958--966},
+	Title = {BLAST training: Estimating channel characteristics for high capacity space-time wireless},
+	Volume = {37},
+	Year = {1999}}
+
+@article{bjornson2016massive,
+	Author = {Bj{\"o}rnson, Emil and Larsson, Erik G and Marzetta, Thomas L},
+	Journal = {IEEE Communications Magazine},
+	Number = {2},
+	Pages = {114--123},
+	Publisher = {IEEE},
+	Title = {Massive {MIMO}: Ten myths and one critical question},
+	Volume = {54},
+	Year = {2016}}
+
+@inproceedings{marzetta2006much,
+	Author = {Marzetta, Thomas L},
+	Booktitle = {2006 Fortieth Asilomar Conference on Signals, Systems and Computers (ACSSC)},
+	Organization = {IEEE},
+	Pages = {359--363},
+	Title = {How much training is required for multiuser {MIMO}?},
+	Year = {2006}}
+
+@inproceedings{hochwald2002space,
+	Author = {Hochwald, Bertrand and Vishwanath, Sriram},
+	Booktitle = {in Proceedings 40th Annual Allerton Conference on Communication, Control, and Computing},
+	Organization = {Citeseer},
+	Pages = {1--10},
+	Title = {Space-time multiple access: Linear growth in the sum rate},
+	Year = {2002}}
+
+@article{hochwald2004multiple,
+	Author = {Hochwald, Bertrand M and Marzetta, Thomas L and Tarokh, Vahid},
+	Journal = {IEEE Transactions on Information Theory},
+	Number = {9},
+	Pages = {1893--1909},
+	Publisher = {IEEE},
+	Title = {Multiple-antenna channel hardening and its implications for rate feedback and scheduling},
+	Volume = {50},
+	Year = {2004}}
+
+@article{bogale2016massive,
+	Author = {Bogale, Tadilo Endeshaw and Le, Long Bao},
+	Journal = {IEEE Vehicular Technology Magazine},
+	Number = {1},
+	Pages = {64--75},
+	Publisher = {IEEE},
+	Title = {Massive {MIMO} and mmWave for 5{G} wireless HetNet: Potential benefits and challenges},
+	Volume = {11},
+	Year = {2016}}
+
+@article{marzetta2010noncooperative,
+	Author = {Marzetta, Thomas L},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {11},
+	Pages = {3590--3600},
+	Publisher = {IEEE},
+	Title = {Noncooperative cellular wireless with unlimited numbers of base station antennas},
+	Volume = {9},
+	Year = {2010}}
+
+@article{rusek2013scaling,
+	Author = {Rusek, Fredrik and Persson, Daniel and Lau, Buon Kiong and Larsson, Erik G and Marzetta, Thomas L and Edfors, Ove and Tufvesson, Fredrik},
+	Journal = {IEEE Signal Processing Magazine},
+	Number = {1},
+	Pages = {40--60},
+	Publisher = {IEEE},
+	Title = {Scaling up {MIMO}: Opportunities and challenges with very large arrays},
+	Volume = {30},
+	Year = {2013}}
+
+@article{xiong2002multi,
+	Author = {Xiong, Ning and Svensson, Per},
+	Journal = {Information fusion},
+	Number = {2},
+	Pages = {163--186},
+	Publisher = {Elsevier},
+	Title = {Multi-sensor management for information fusion: issues and approaches},
+	Volume = {3},
+	Year = {2002}}
+
+@article{bar1975tracking,
+	Author = {Bar-Shalom, Yaakov and Tse, Edison},
+	Journal = {Automatica},
+	Number = {5},
+	Pages = {451--460},
+	Publisher = {Elsevier},
+	Title = {Tracking in a cluttered environment with probabilistic data association},
+	Volume = {11},
+	Year = {1975}}
+
+@article{zyweck1996radar,
+	Author = {Zyweck, Anthony and Bogner, Robert E},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {2},
+	Pages = {598--606},
+	Publisher = {IEEE},
+	Title = {Radar target classification of commercial aircraft},
+	Volume = {32},
+	Year = {1996}}
+
+@inproceedings{blackman1993applications,
+	Author = {Blackman, Samuel S and Busch, MT and Cantrell, SW and Musial, CJ},
+	Booktitle = {Optical Engineering and Photonics in Aerospace Sensing},
+	Organization = {International Society for Optics and Photonics},
+	Pages = {361--375},
+	Title = {Applications of signal and data processing technology to vehicular traffic monitoring},
+	Year = {1993}}
+
+@inproceedings{gilmore1998airborne,
+	Author = {Gilmore, John F and Garren, David A},
+	Booktitle = {SPIE Proceedings},
+	Pages = {2--10},
+	Title = {Airborne video surveillance},
+	Volume = {3371},
+	Year = {1998}}
+
+@article{kan1996model,
+	Author = {Kan, Wai Ying and Krogmeier, James V and Doerschuk, Peter C},
+	Journal = {Optical Engineering},
+	Number = {6},
+	Pages = {1723--1729},
+	Publisher = {International Society for Optics and Photonics},
+	Title = {Model-based vehicle tracking from image sequences with an application to road surveillance},
+	Volume = {35},
+	Year = {1996}}
+
+@article{fortmann1983sonar,
+	Author = {Fortmann, Thomas and Bar-Shalom, Yaakov and Scheffe, Molly},
+	Journal = {IEEE Journal of Oceanic Engineering},
+	Number = {3},
+	Pages = {173--184},
+	Publisher = {IEEE},
+	Title = {Sonar tracking of multiple targets using joint probabilistic data association},
+	Volume = {8},
+	Year = {1983}}
+
+@article{mahler2003multitarget,
+	Author = {Mahler, Ronald PS},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {4},
+	Pages = {1152--1178},
+	Publisher = {IEEE},
+	Title = {Multitarget Bayes filtering via first-order multitarget moments},
+	Volume = {39},
+	Year = {2003}}
+
+@book{mahler2007statistical,
+	Address = {Norwood, MA, USA},
+	Author = {Mahler, Ronald PS},
+	Publisher = {Artech House, Inc.},
+	Title = {Statistical multisource-multitarget information fusion},
+	Year = {2007}}
+
+@inproceedings{fanbin2009particle,
+	Author = {Fanbin, Meng and Yanling, Hao and Quanxi, Xia and Taishan, OuYang and Wei, Zou},
+	Booktitle = {Proceedings of IEEE ICIECS 2009},
+	Organization = {IEEE},
+	Pages = {1--5},
+	Title = {A particle {PHD} filter for multi-sensor multi-target tracking based on sequential fusion},
+	Year = {2009}}
+
+@article{li2003survey1,
+	Author = {Li, X Rong and Jilkov, Vesselin P},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {4},
+	Pages = {1333--1364},
+	Publisher = {[New York, Institute of Electrical and Electronics Engineers]},
+	Title = {Survey of maneuvering target tracking. Part I: Dynamic models},
+	Volume = {39},
+	Year = {2003}}
+
+@inproceedings{li2003survey5,
+	Author = {Li, X Rong and Jilkov, Vesselin P},
+	Booktitle = {Proceedings SPIE Conference on Signal and Data Processing of Small Targets},
+	Pages = {559--581},
+	Title = {A survey of maneuvering target tracking. part V. multiple-model methods},
+	Year = {2003}}
+
+@article{mazor1998interacting,
+	Author = {Mazor, Efim and Averbuch, Amir and Bar-Shalom, Yakov and Dayan, Joshua},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {1},
+	Pages = {103--123},
+	Publisher = {IEEE},
+	Title = {Interacting multiple model methods in target tracking: a survey},
+	Volume = {34},
+	Year = {1998}}
+
+@article{vo2009cardinality,
+	Author = {Vo, Ba-Tuong and Vo, Ba-Ngu and Cantoni, Antonio},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {2},
+	Pages = {409--423},
+	Publisher = {IEEE},
+	Title = {The cardinality balanced multi-target multi-{B}ernoulli filter and its implementations},
+	Volume = {57},
+	Year = {2009}}
+
+@article{reuter2014labeled,
+	Author = {Reuter, Stephan and Vo, Ba-Tuong and Vo, Ba-Ngu and Dietmayer, Klaus},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {12},
+	Pages = {3246--3260},
+	Publisher = {IEEE},
+	Title = {The labeled multi-{B}ernoulli filter},
+	Volume = {62},
+	Year = {2014}}
+
+@article{singer1970estimating,
+	Author = {Singer, Robert A},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {4},
+	Pages = {473--483},
+	Publisher = {IEEE},
+	Title = {Estimating optimal tracking filter performance for manned maneuvering targets},
+	Year = {1970}}
+
+@article{kumar1984current,
+	Author = {KUMAR, KSP and Zhou, H},
+	Journal = {Journal of Guidance, Control, and Dynamics},
+	Pages = {596--602},
+	Title = {A'current' statistical model and adaptive algorithm for estimating maneuvering targets},
+	Volume = {7},
+	Year = {1984}}
+
+@article{hu2012maneuvering,
+	Author = {Hu, Zhentao and Jin, Yong and Li, Jie and Liu, Xianxing},
+	Journal = {system},
+	Numbers = {4},
+	Pages = {1941---1948},
+	Title = {Maneuvering Target Tracking Algorithm Based on Multiple Model Rao-Blackwellised Particle Filter?},
+	Volume = {3},
+	Year = {2012}}
+
+@inproceedings{laneuville2012maneuvering,
+	Author = {Laneuville, Dann and Bar-Shalom, Yaakov},
+	Booktitle = {Aerospace Conference, 2012 IEEE},
+	Organization = {IEEE},
+	Pages = {1--12},
+	Title = {Maneuvering target tracking: A Gaussian mixture based IMM estimator},
+	Year = {2012}}
+
+@article{liu2012multiple,
+	Author = {Liu, Jing and Han, ChongZhao and Han, Feng and Hu, Yu},
+	Journal = {Mathematical Problems in Engineering},
+	Pages = {1--26},
+	Publisher = {Hindawi Publishing Corporation},
+	Title = {Multiple Maneuvering Target Tracking by Improved Particle Filter Based on Multiscan JPDA},
+	Volume = {2012},
+	Year = {2012}}
+
+@article{athalye2005generic,
+	Author = {Athalye, Akshay and Boli{\'c}, Miodrag and Hong, Sangjin and Djuri{\'c}, Petar M},
+	Journal = {EURASIP Journal on Advances in Signal Processing},
+	Number = {17},
+	Pages = {476167},
+	Publisher = {Springer},
+	Title = {Generic hardware architectures for sampling and resampling in particle filters},
+	Volume = {2005},
+	Year = {2005}}
+
+@article{alsabti1997efficient,
+	Author = {Alsabti, Khaled and Ranka, Sanjay and Singh, Vineet},
+	Pages = {1--6},
+	Title = {An efficient k-means clustering algorithm},
+	Year = {1997}}
+
+@inproceedings{guha1998cure,
+	Author = {Guha, Sudipto and Rastogi, Rajeev and Shim, Kyuseok},
+	Booktitle = {ACM SIGMOD Record},
+	Number = {2},
+	Organization = {ACM},
+	Pages = {73--84},
+	Title = {CURE: an efficient clustering algorithm for large databases},
+	Volume = {27},
+	Year = {1998}}
+
+@inproceedings{sheikholeslami1998wavecluster,
+	Author = {Sheikholeslami, Gholamhosein and Chatterjee, Surojit and Zhang, Aidong},
+	Booktitle = {Proceedings of the International Conference on Very Large Data Bases},
+	Organization = {INSTITUTE OF ELECTRICAL \& ELECTRONICS ENGINEERS},
+	Pages = {428--439},
+	Title = {Wavecluster: A multi-resolution clustering approach for very large spatial databases},
+	Year = {1998}}
+
+@article{schuhmacher2008consistent,
+	Author = {Schuhmacher, Dominic and Vo, B-T and Vo, B-N},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {8},
+	Pages = {3447--3457},
+	Publisher = {IEEE},
+	Title = {A consistent metric for performance evaluation of multi-object filters},
+	Volume = {56},
+	Year = {2008}}
+
+@article{vo2006gaussian,
+	Author = {Vo, Ba-Ngu and Ma, Wing-Kin},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {11},
+	Pages = {4091--4104},
+	Publisher = {IEEE},
+	Title = {The Gaussian mixture probability hypothesis density filter},
+	Volume = {54},
+	Year = {2006}}
+
+@inproceedings{chan2007vehicle,
+	Author = {Chan, Yi-Ming and Huang, Shih-Shinh and Fu, Li-Chen and Hsiao, Pei-Yung},
+	Booktitle = {IEEE ITSC 2007},
+	Organization = {IEEE},
+	Pages = {534--539},
+	Title = {Vehicle detection under various lighting conditions by incorporating particle filter},
+	Year = {2007}}
+
+@inproceedings{alarcon2006new,
+	Author = {Alarc{\'o}n, Jaime and Salvador, Rub{\'e}n and Moreno, F{\'e}lix and Cobos, Pedro and L{\'o}pez, Ignacio},
+	Booktitle = {32nd Annual Conference on IEEE Industrial Electronics, IECON 2006},
+	Organization = {IEEE},
+	Pages = {736--741},
+	Title = {A new real-time hardware architecture for road line tracking using a particle filter},
+	Year = {2006}}
+
+@inproceedings{cho2006real,
+	Author = {Cho, Jung Uk and Jin, Seung Hun and Dai Pham, Xuan and Jeon, Jae Wook and Byun, Jong Eun and Kang, Hoon},
+	Booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems, 2006},
+	Organization = {IEEE},
+	Pages = {2822--2827},
+	Title = {A real-time object tracking system using a particle filter},
+	Year = {2006}}
+
+@article{sankaranarayanan2008algorithmic,
+	Author = {Sankaranarayanan, Aswin C and Srivastava, Ankur and Chellappa, Rama},
+	Journal = {IEEE Transactions on Image Processing},
+	Number = {5},
+	Pages = {737--748},
+	Publisher = {IEEE},
+	Title = {Algorithmic and architectural optimizations for computationally efficient particle filtering},
+	Volume = {17},
+	Year = {2008}}
+
+@article{shi2013threshold,
+	Author = {Shi, Zhiguo and Zheng, Yunmei and Bian, Xiaomeng and Yu, Zhengde},
+	Journal = {Progress In Electromagnetics Research},
+	Pages = {369--383},
+	Publisher = {EMW Publishing},
+	Title = {Threshold-based resampling for high-speed particle {PHD} filter},
+	Volume = {136},
+	Year = {2013}}
+
+@article{coue2006bayesian,
+	Author = {Cou{\'e}, Christophe and Pradalier, C{\'e}dric and Laugier, Christian and Fraichard, Thierry and Bessi{\`e}re, Pierre},
+	Journal = {The International Journal of Robotics Research},
+	Number = {1},
+	Pages = {19--30},
+	Publisher = {SAGE Publications},
+	Title = {Bayesian occupancy filtering for multitarget tracking: an automotive application},
+	Volume = {25},
+	Year = {2006}}
+
+@inproceedings{schulz2001tracking,
+	Author = {Schulz, Dirk and Burgard, Wolfram and Fox, Dieter and Cremers, Armin B},
+	Booktitle = {IEEE International Conference on Robotics and Automation, 2001},
+	Organization = {IEEE},
+	Pages = {1665--1670},
+	Title = {Tracking multiple moving targets with a mobile robot using particle filters and statistical data association},
+	Volume = {2},
+	Year = {2001}}
+
+@inproceedings{jun2008tracking,
+	Author = {Jun, Goo and Aggarwal, JK and Gokmen, Muhittin},
+	Booktitle = {IEEE Workshop on Applications of Computer Vision, 2008},
+	Organization = {IEEE},
+	Pages = {1--6},
+	Title = {Tracking and segmentation of highway vehicles in cluttered and crowded scenes},
+	Year = {2008}}
+
+@inproceedings{zhang2013phd,
+	Author = {Zhang, Hui and Xu, Hui and Wang, Xue-Ying and An, Wei},
+	Booktitle = {16th International Conference on Information Fusion (FUSION), 2013},
+	Organization = {IEEE},
+	Pages = {1558--1565},
+	Title = {A {PHD} filter for tracking closely spaced objects with elliptic Random Hypersurface models},
+	Year = {2013}}
+
+@article{clark2007particle,
+	Author = {Clark, Daniel and Ruiz, Ioseba Tena and Petillot, Yvan and Bell, Judith},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {1},
+	Pages = {409--416},
+	Publisher = {IEEE},
+	Title = {Particle {PHD} filter multiple target tracking in sonar image},
+	Volume = {43},
+	Year = {2007}}
+
+@article{shi2014pose,
+	Author = {Shi, Zhiguo and Liu, Yongkang and Hong, Shaohua and Chen, Jiming and Shen, Xuemin},
+	Journal = {IEEE Transactions on Industrial Electronics},
+	Number = {4},
+	Pages = {1944--1956},
+	Publisher = {IEEE},
+	Title = {POSE: Design of Hardware-Friendly Particle-Based Observation Selection {PHD} Filter},
+	Volume = {61},
+	Year = {2014}}
+
+@article{hong2011simplified,
+	Author = {Hong, Shaohua and Wang, Lin and Shi, Zhiguo and Chen, KangSheng},
+	Journal = {Progress In Electromagnetics Research},
+	Pages = {481--498},
+	Publisher = {EMW Publishing},
+	Title = {Simplified particle {PHD} filter for multiple-target tracking: Algorithm and architecture},
+	Volume = {120},
+	Year = {2011}}
+
+@article{shi2011Optimal,
+	Author = {Chen, Yichao and He, Shibo and Hou, Fen and Shi Zhiguo and Chen, Xu},
+	Journal = {IET Communications},
+	Publisher = {IET},
+	Title = {Optimal User-Centric Relay Assisted Device-to-Device Communications: An Auction Approach},
+	Year = {2014}}
+
+@article{jo2012interacting,
+	Author = {Jo, Kichun and Chu, Keounyup and Sunwoo, Myoungho},
+	Journal = {IEEE Transactions on Intelligent Transportation Systems},
+	Number = {1},
+	Pages = {329--343},
+	Publisher = {IEEE},
+	Title = {Interacting multiple model filter-based sensor fusion of GPS with in-vehicle sensors for real-time vehicle positioning},
+	Volume = {13},
+	Year = {2012}}
+
+@article{tan2006dgps,
+	Author = {Tan, Han-Shue and Huang, Jihua},
+	Journal = {IEEE Transactions on Intelligent Transportation Systems},
+	Number = {4},
+	Pages = {415--428},
+	Publisher = {IEEE},
+	Title = {DGPS-based vehicle-to-vehicle cooperative collision warning: Engineering feasibility viewpoints},
+	Volume = {7},
+	Year = {2006}}
+
+@article{alam2013cooperative,
+	Author = {Alam, Nima and Kealy, Allison and Dempster, Andrew G},
+	Pages = {1370--1379},
+	Publisher = {IEEE},
+	Title = {Cooperative Inertial Navigation for GNSS-Challenged Vehicular Environments},
+	Year = {2013}}
+
+@inproceedings{del2014parallel,
+	Author = {Del Coco, Marco and Cavallaro, Andrea},
+	Booktitle = {Proceedings on International Conference on Acoustics, Speech, and Signal Processing (ICASSP)},
+	Organization = {IEEE},
+	Pages = {6578--6582},
+	Title = {Parallel particle-{PHD} filter},
+	Year = {2014}}
+
+@article{svensson2011jpda,
+	Author = {Svensson, Lennart and Svensson, Daniel and Guerriero, Marco and Willett, Peter},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {10},
+	Pages = {4677--4691},
+	Publisher = {IEEE},
+	Title = {Set JPDA filter for multitarget tracking},
+	Volume = {59},
+	Year = {2011}}
+
+@inproceedings{vo2003sequential,
+	Author = {Vo, Ba-Ngu and Singh, Sumeetpal and Doucet, Arnaud},
+	Booktitle = {Proceedings on International Conference on Information Fusion},
+	Pages = {792--799},
+	Title = {Sequential Monte Carlo implementation of the {PHD} filter for multi-target tracking},
+	Year = {2003}}
+
+@article{hong2013adaptive,
+	Author = {Hong, Shaohua and Shi, Zhiguo and Wang, Lin and Gu, Yujie and Chen, Kangsheng},
+	Journal = {Circuits, Systems, and Signal Processing},
+	Number = {2},
+	Pages = {825--841},
+	Publisher = {Springer},
+	Title = {Adaptive regularized particle filter for synchronization of chaotic Colpitts circuits in an AWGN channel},
+	Volume = {32},
+	Year = {2013}}
+
+@inproceedings{li2015multi,
+	Author = {Li, Tiancheng and Corchado, Juan M and Bajo, Javier and Chen, Genshe},
+	Booktitle = {SPIE Defense+ Security},
+	Organization = {International Society for Optics and Photonics},
+	Pages = {94690G--94690G},
+	Title = {Multi-target detection and estimation with the use of massive independent identical sensors},
+	Year = {2015}}
+
+@article{rappaport2011state,
+	Author = {Rappaport, Theodore S and Murdock, James N and Gutierrez, Felix},
+	Journal = {Proceedings of the IEEE},
+	Number = {8},
+	Pages = {1390--1436},
+	Publisher = {IEEE},
+	Title = {State of the art in 60{GH}z integrated circuits and systems for wireless communications},
+	Volume = {99},
+	Year = {2011}}
+
+@article{guldogan2014multi,
+	Author = {Guldogan, Mehmet B and Lindgren, David and Gustafsson, Fredrik and Habberstad, Hans and Orguner, Umut},
+	Journal = {Digital Signal Processing},
+	Pages = {1--11},
+	Publisher = {Elsevier},
+	Title = {Multi-target tracking with {PHD} filter using Doppler-only measurements},
+	Volume = {27},
+	Year = {2014}}
+
+@article{vo2014labeled,
+	Author = {Vo, Ba-Ngu and Vo, Ba-Tuong and Phung, Dinh},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {24},
+	Pages = {6554--6567},
+	Publisher = {IEEE},
+	Title = {Labeled random finite sets and the Bayes multi-target tracking filter},
+	Volume = {62},
+	Year = {2014}}
+
+@article{chang1984joint,
+	Author = {Chang, Kuo-Chu and Bar-Shalom, Yaakov},
+	Journal = {IEEE Transactions on Automatic Control},
+	Number = {7},
+	Pages = {585--594},
+	Publisher = {IEEE},
+	Title = {Joint probabilistic data association for multitarget tracking with possibly unresolved measurements and maneuvers},
+	Volume = {29},
+	Year = {1984}}
+
+@article{koch1997multiple,
+	Author = {Koch, Wolfgang and van Keuk, G{\"u}nter},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {3},
+	Pages = {883--892},
+	Publisher = {Institute of Electrical and Electronics Engineers},
+	Title = {Multiple hypothesis track maintenance with possibly unresolved measurements},
+	Volume = {33},
+	Year = {1997}}
+
+@article{chen2003bayesian,
+	Author = {Chen, Zhe},
+	Journal = {Statistics},
+	Number = {1},
+	Pages = {1--69},
+	Title = {Bayesian filtering: From Kalman filters to particle filters, and beyond},
+	Volume = {182},
+	Year = {2003}}
+
+@article{hong2010low,
+	Author = {Hong, ShaoHua and Shi, ZhiGuo and Chen, JiMing and Chen, KangSheng},
+	Journal = {Circuits, Systems and Signal Processing},
+	Number = {1},
+	Pages = {155--167},
+	Publisher = {Springer},
+	Title = {A low-power memory-efficient resampling architecture for particle filters},
+	Volume = {29},
+	Year = {2010}}
+
+@article{shi2008tracking,
+	Author = {Shi, ZhiGuo and Hong, ShaoHua and Chen, KangSheng},
+	Journal = {Progress In Electromagnetics Research},
+	Pages = {227--240},
+	Publisher = {EMW Publishing},
+	Title = {Tracking airborne targets hidden in blind doppler using current statistical model particle filter},
+	Volume = {82},
+	Year = {2008}}
+
+@article{li2015resampling,
+	Author = {Li, Tiancheng and Bolic, Miodrag and Djuric, Petar M},
+	Journal = {IEEE Signal Processing Magazine},
+	Number = {3},
+	Pages = {70--86},
+	Publisher = {IEEE},
+	Title = {Resampling Methods for Particle Filtering: Classification, implementation, and strategies},
+	Volume = {32},
+	Year = {2015}}
+
+@inproceedings{clark2006gm,
+	Author = {Clark, Daniel and Panta, Kusha and Vo, Ba-Ngu},
+	Booktitle = {Proceedings of International Conference on Information Fusion},
+	Pages = {1--8},
+	Title = {The GM-{PHD} filter multiple target tracker},
+	Year = {2006}}
+
+@article{zhou2014gm,
+	Author = {Zhou, Xiaolong and Li, Youfu and He, Bingwei and Bai, Tianxiang},
+	Journal = {Transactions on Industrial Informatics},
+	Number = {2},
+	Pages = {1064--1076},
+	Publisher = {IEEE},
+	Title = {GM-{PHD}-based multi-target visual tracking using entropy distribution and game theory},
+	Volume = {10},
+	Year = {2014}}
+
+@article{li2016algorithm,
+	Author = {Li, Tiancheng and Sun, Shudong and Boli{\'c}, Miodrag and Corchado, Juan M},
+	Journal = {Signal Processing},
+	Pages = {115--127},
+	Publisher = {Elsevier},
+	Title = {Algorithm design for parallel implementation of the {SMC}-{PHD} filter},
+	Volume = {119},
+	Year = {2016}}
+
+@article{gan2014parallel,
+	Author = {Gan, Qifeng and Langlois, JM Pierre and Savaria, Yvon},
+	Journal = {Circuits, Systems and Signal Processing},
+	Number = {11},
+	Pages = {3591--3602},
+	Publisher = {Springer},
+	Title = {A Parallel Systematic Resampling Algorithm for High-Speed Particle Filters in Embedded Systems},
+	Volume = {33},
+	Year = {2014}}
+
+@article{zheng2015energy,
+	Author = {Zheng, Zhongming and Liu, Anfeng and Cai, Lin and Chen, Zhigang and Shen, Xuemin},
+	Journal = {IEEE Transactions on Mobile Computing},
+	Number = {5},
+	Pages = {1130--1143},
+	Publisher = {IEEE},
+	Title = {Energy and memory efficient clone detection in wireless sensor networks},
+	Volume = {15},
+	Year = {2016}}
+
+@article{yang2015energy,
+	Author = {Yang, Qianqian and He, Shibo and Li, Junkun and Chen, Jiming and Sun, Youxian},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Number = {1},
+	Pages = {367--377},
+	Publisher = {IEEE},
+	Title = {Energy-efficient probabilistic area coverage in wireless sensor networks},
+	Volume = {64},
+	Year = {2015}}
+
+@article{el2015implementation,
+	Author = {El Amine, Cheriet Mohammed and Mohamed, Ouslim and Boualam, Belaidi},
+	Journal = {Peer-to-Peer Network Applications},
+	Pages = {1--14},
+	Publisher = {Springer},
+	Title = {The implementation of indoor localization based on an experimental study of RSSI using a wireless sensor network},
+	Year = {2015}}
+
+@article{joshi2003parallel,
+	Author = {Joshi, Manasi},
+	Journal = {Computer},
+	Pages = {1--12},
+	Publisher = {Citeseer},
+	Title = {Parallel k-means algorithm on distributed memory multiprocessors},
+	Volume = {9},
+	Year = {2003}}
+
+@article{he2016full,
+	Author = {He, Shibo and Shin, Dong-Hoon and Zhang, Junshan and Chen, Jiming and Sun, Youxian},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Number = {9},
+	Pages = {7448--7461},
+	Publisher = {IEEE},
+	Title = {Full-view area coverage in camera sensor networks: dimension reduction and near-optimal solutions},
+	Volume = {65},
+	Year = {2016}}
+
+@article{liu2016specified,
+	Author = {Liu, Yongfang and Zhao, Yu and Shi, Zhongke and Wei, Dongmei},
+	Journal = {IET Control Theory and Applications},
+	Pages = {576--585},
+	Publisher = {IET},
+	Title = {Specified-time containment control of multi-agent systems over directed topologies},
+	Year = {2016}}
+
+@article{meng2014integrated,
+	Author = {Meng, Wei and He, Zhirong and Teo, Rodney and Su, Rong and Xie, Lihua},
+	Journal = {IET Control Theory and Applications},
+	Number = {3},
+	Pages = {493--502},
+	Publisher = {IET},
+	Title = {Integrated multi-agent system framework: decentralised search, tasking and tracking},
+	Volume = {9},
+	Year = {2014}}
+
+@article{Hespanha2007NCS,
+	Author = {Hespanha, Joo P and Naghshtabrizi, Payam and Xu, Yonggang},
+	Journal = {Proceedings of the IEEE},
+	Number = {1},
+	Pages = {138-162},
+	Title = {A survey of recent results in networked control systems},
+	Volume = {95},
+	Year = {2007}}
+
+@inproceedings{savic2015fingerprinting,
+	Author = {Savic, Vladimir and Larsson, Erik G},
+	Booktitle = {2015 IEEE 82nd Vehicular Technology Conference (VTC Fall)},
+	Organization = {IEEE},
+	Pages = {1--5},
+	Title = {Fingerprinting-based positioning in distributed massive {MIMO} systems},
+	Year = {2015}}
+
+@inproceedings{benmimoune2015joint,
+	Author = {M. Benmimounce and E. Driouch and W. Ajib and D. Massicotte},
+	Booktitle = {IEEE Wireless Communications and Networking Conference (WCNC)},
+	Pages = {381-386},
+	Title = {Joint transmit antenna selection and user scheduling for massive {MIMO} systems},
+	Year = {2015}}
+
+@article{rangan2014millimeter,
+	Author = {Rangan, Sundeep and Rappaport, Theodore S and Erkip, Elza},
+	Journal = {Proceedings of the IEEE},
+	Number = {3},
+	Pages = {366-385},
+	Publisher = {IEEE},
+	Title = {Millimeter-wave cellular wireless networks: Potentials and challenges},
+	Volume = {102},
+	Year = {2014}}
+
+@article{gershman2010convex,
+	Author = {A. Gershman and N. Sidiropoulos and S. Shahbazpanahi and M. Bengtsson and B. Ottersten},
+	Journal = {IEEE Signal Processing Magazine},
+	Number = {3},
+	Pages = {62-75},
+	Title = {Convex optimization-based beamforming: From receive to transmit and network designs},
+	Volume = {27},
+	Year = {2010}}
+
+@inproceedings{muharar2011downlink,
+	Author = {Muharar, Rusdha and Evans, Jamie},
+	Booktitle = {IEEE International Conference on Communications (ICC)},
+	Pages = {1-5},
+	Title = {Downlink beamforming with transmit-side channel correlation: A large system analysis},
+	Year = {2011}}
+
+@article{dimic2005downlink,
+	Author = {Dimic, Goran and Sidiropoulos, Nicholas D},
+	Journal = {IEEE Transactions on Signal Processing},
+	Pages = {3857-3868},
+	Title = {On downlink beamforming with greedy user selection: performance analysis and a simple new algorithm},
+	Year = {2008}}
+
+@article{xu2012pricing,
+	Author = {Xu, Weiqiang and Wang, Xiaodong},
+	Journal = {IEEE Journal on Selected Areas in Communications},
+	Number = {9},
+	Pages = {1605-1613},
+	Title = {Pricing-Based Distributed Downlink Beamforming in Multi-Cell OFDMA Networks},
+	Volume = {30},
+	Year = {2012}}
+
+@article{gharavir2004selection,
+	Author = {Gharavi-Alkhansari, Mohammad and Gershman, Alex B},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {2},
+	Pages = {339-347},
+	Title = {Fast antenna subset selection in {MIMO} systems},
+	Volume = {52},
+	Year = {2004}}
+
+@article{driouch2012efficient,
+	Author = {Driouch, Elmahdi and Ajib, Wessam},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Number = {2},
+	Pages = {521-532},
+	Publisher = {IEEE},
+	Title = {Efficient scheduling algorithms for multiantenna {CDMA} systems},
+	Volume = {61},
+	Year = {2012}}
+
+@article{li2014energy,
+	Author = {Li, Hui and Song, Lingyang and Debbah, M{\'e}rouane},
+	Journal = {IEEE Transaction on Communications},
+	Number = {2},
+	Pages = {638-647},
+	Publisher = {IEEE},
+	Title = {Energy efficiency of large-scale multiple antenna systems with transmit antenna selection},
+	Volume = {62},
+	Year = {2014}}
+
+@inproceedings{lee2013energy,
+	Author = {Lee, Byung Moo and Choi, JinHyeock and Bang, JongHo and Kang, Byung-Chang},
+	Booktitle = {IEEE International Symposium on Circuits and Systems (ISCAS)},
+	Pages = {950-953},
+	Publisher = {IEEE},
+	Title = {An energy efficient antenna selection for large scale green {MIMO} systems},
+	Year = {2013}}
+
+@inproceedings{gorokhov2002antenna,
+	Author = {Gorokhov, Alexei},
+	Booktitle = {IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)},
+	Pages = {2857-2860},
+	Title = {Antenna selection algorithms for {MEA} transmission systems},
+	Volume = {3},
+	Year = {2002}}
+
+@article{carlson1988covariance,
+	Author = {Carlson, Blair D},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {4},
+	Pages = {397-401},
+	Title = {Covariance matrix estimation errors and diagonal loading in adaptive arrays},
+	Volume = {24},
+	Year = {1988}}
+
+@article{akdeniz2014millimeter,
+	Author = {Akdeniz, Mustafa Riza and Liu, Yuanpeng and Samimi, Mathew K and Sun, Shu and Rangan, Sundeep and Rappaport, Theodore S and Erkip, Elza},
+	Journal = {IEEE Journal on Selected Areas in Communications},
+	Number = {6},
+	Pages = {1164-1179},
+	Publisher = {IEEE},
+	Title = {Millimeter wave channel modeling and cellular capacity evaluation},
+	Volume = {32},
+	Year = {2014}}
+
+@manual{cisco2014millimeter,
+	Author = {B. Thomas and S. Arielle and J. Shruti and A. Usha},
+	Institution = {Cisco},
+	Title = {Cisco visual networking index (VNI) update global mobile data traffic forecast, 2014-2019},
+	Year = {2014}}
+
+@article{chen2015optimal,
+	Author = {Y. Chen and S. He and F. Hou and Z. Shi and X. Chen},
+	Journal = {IET Communications},
+	Number = {3},
+	Pages = {386-395},
+	Publisher = {IET},
+	Title = {Optimal user-centric relay assisted device-to-device communications: an auction approach},
+	Volume = {9},
+	Year = {2015}}
+
+@article{zhou2013exploiting,
+	Author = {Zhou, Huan and Chen, Jiming and Zhao, Hongyang and Gao, Wei and Cheng, Peng},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Number = {9},
+	Pages = {4629-4642},
+	Publisher = {IEEE},
+	Title = {On exploiting contact patterns for data forwarding in duty-cycle opportunistic mobile networks},
+	Volume = {62},
+	Year = {2013}}
+
+@article{li2009robust,
+	Author = {Li, Yu and Gu, Yujie and Shi, Zhi-Guo and Chen, Kang Sheng},
+	Journal = {Progress In Electromagnetics Research},
+	Pages = {151--169},
+	Publisher = {EMW Publishing},
+	Title = {Robust adaptive beamforming based on particle filter with noise unknown},
+	Volume = {90},
+	Year = {2009}}
+
+@article{fan2013geocommunity,
+	Author = {Fan, Jialu and Chen, Jiming and Du, Yuan and Gao, Wei and Wu, Jie and Sun, Youxian},
+	Journal = {IEEE Transactions on Parallel and Distributed Systems},
+	Number = {4},
+	Pages = {734-743},
+	Publisher = {IEEE},
+	Title = {Geocommunity-based broadcasting for data dissemination in mobile social networks},
+	Volume = {24},
+	Year = {2013}}
+
+@book{kellerer2004knapsack,
+	Author = {H. Kellerer and U. Pferschy and D. Pisinger},
+	Publisher = {Springer},
+	Title = {Knapsack problem},
+	Year = {2004}}
+
+@article{heng2015tac,
+	Author = {Zhang, Heng and Cheng, Peng and Shi, Ling and Chen, Jiming},
+	Journal = {IEEE Transactions on Automatic Control},
+	Number = {11},
+	Pages = {3023-3028},
+	Title = {{Optimal Denial-of-Service Attack Scheduling with Energy Constraint}},
+	Volume = {60},
+	Year = {2015}}
+
+@article{cai2014optimal,
+	Author = {Cai, Yifeng and Mo, Yijun and Ota, Kaoru and Luo, Changqing and Dong, Mianxiong and Yang, Laurence},
+	Journal = {IEEE Network},
+	Number = {1},
+	Pages = {17--23},
+	Publisher = {IEEE},
+	Title = {Optimal data fusion of collaborative spectrum sensing under attack in cognitive radio networks},
+	Volume = {28},
+	Year = {2014}}
+
+@article{zhang2016data,
+	Author = {Zhang, Yongmin and He, Shibo and Chen, Jiming},
+	Journal = {IEEE/ACM Transactions on Networking},
+	Number = {3},
+	Pages = {1632--1646},
+	Publisher = {IEEE},
+	Title = {Data gathering optimization by dynamic sensing and routing in rechargeable sensor networks},
+	Volume = {24},
+	Year = {2016}}
+
+@article{zhang2016optimal,
+	Author = {Zhang, Heng and Cheng, Peng and Shi, Ling and Chen, Jiming},
+	Journal = {IEEE Transactions on Control Systems Technology},
+	Number = {3},
+	Pages = {843--852},
+	Publisher = {IEEE},
+	Title = {Optimal DoS attack scheduling in wireless networked control system},
+	Volume = {24},
+	Year = {2016}}
+
+@article{zhao2015resource,
+	Author = {Zhao, Dan and Huang, Chuan and Chen, Yue and Alsaadi, Fuad and Cui, Shuguang},
+	Journal = {IEEE Journal on Selected Areas in Communications},
+	Number = {3},
+	Pages = {423--437},
+	Publisher = {IEEE},
+	Title = {Resource allocation for multiple access channel with conferencing links and shared renewable energy sources},
+	Volume = {33},
+	Year = {2015}}
+
+@inproceedings{zhou2015doa,
+	Address = {Brisbane, Australia},
+	Author = {Zhou, Chengwei and Shi, Zhiguo and Gu, Yujie and Goodman, Nathan A},
+	Booktitle = {Proceedings of IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+	Month = {Apr},
+	Pages = {2369-2373},
+	Title = {{DOA} estimation by covariance matrix sparse reconstruction of coprime array},
+	Year = {2015}}
+
+@article{bansal2004improved,
+	Author = {Bansal, M and Venkaiah, V},
+	Journal = {International Institute of Information Technology Tech Report},
+	Pages = {1--10},
+	Publisher = {Citeseer},
+	Title = {Improved fully polynomial time approximation scheme for the 0-1 multiple-choice knapsack problem},
+	Year = {2004}}
+
+@article{steinberg1997strip,
+	Author = {Steinberg, A},
+	Journal = {SIAM Journal on Computing},
+	Number = {2},
+	Pages = {401--409},
+	Publisher = {SIAM},
+	Title = {A strip-packing algorithm with absolute performance bound 2},
+	Volume = {26},
+	Year = {1997}}
+
+@article{zhang2015massive,
+	Author = {Zhang, Jian A and Huang, Xiaojing and Dyadyuk, Val and Guo, Y Jay},
+	Journal = {IEEE Wireless Communications},
+	Number = {1},
+	Pages = {79--87},
+	Publisher = {IEEE},
+	Title = {Massive hybrid antenna array for millimeter-wave cellular communications},
+	Volume = {22},
+	Year = {2015}}
+
+@article{heath2016overview,
+	Author = {Heath, Robert W and Gonzalez-Prelcic, Nuria and Rangan, Sundeep and Roh, Wonil and Sayeed, Akbar M},
+	Journal = {IEEE Journal of Selected Topics in Signal Processing},
+	Number = {3},
+	Pages = {436--453},
+	Publisher = {IEEE},
+	Title = {An overview of signal processing techniques for millimeter wave {MIMO} systems},
+	Volume = {10},
+	Year = {2016}}
+
+@article{lu2014overview,
+	Author = {Lu, Lu and Li, Geoffrey Ye and Swindlehurst, A Lee and Ashikhmin, Alexei and Zhang, Rui},
+	Journal = {IEEE Journal of Selected Topics in Signal Processing},
+	Number = {5},
+	Pages = {742--758},
+	Publisher = {IEEE},
+	Title = {An overview of massive {MIMO}: Benefits and challenges},
+	Volume = {8},
+	Year = {2014}}
+
+@article{han2015large,
+	Author = {Han, Shuangfeng and Chih-Lin, I and Xu, Zhikun and Rowell, Corbett},
+	Journal = {IEEE Communications Magazine},
+	Number = {1},
+	Pages = {186--194},
+	Publisher = {IEEE},
+	Title = {Large-scale antenna systems with hybrid analog and digital beamforming for millimeter wave 5{G}},
+	Volume = {53},
+	Year = {2015}}
+
+@article{doan2004design,
+	Author = {Doan, Chinh H and Emami, Sohrab and Sobel, David A and Niknejad, Ali M and Brodersen, Robert W},
+	Journal = {IEEE Communications Magazine},
+	Number = {12},
+	Pages = {132--140},
+	Publisher = {IEEE},
+	Title = {Design considerations for 60 {GH}z {CMOS} radios},
+	Volume = {42},
+	Year = {2004}}
+
+@article{wang2009beam,
+	Author = {Wang, Junyi},
+	Journal = {IEEE Journal on Selected Areas in Communications},
+	Number = {8},
+	Pages = {1390--1399},
+	Publisher = {IEEE},
+	Title = {Beam codebook based beamforming protocol for multi-Gbps millimeter-wave {WPAN} systems},
+	Volume = {27},
+	Year = {2009}}
+
+@article{el2014spatially,
+	Author = {El Ayach, Omar and Rajagopal, Sridhar and Abu-Surra, Shadi and Pi, Zhouyue and Heath, Robert W},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {3},
+	Pages = {1499--1513},
+	Publisher = {IEEE},
+	Title = {Spatially sparse precoding in millimeter wave {MIMO} systems},
+	Volume = {13},
+	Year = {2014}}
+
+@article{hoydis2013massive,
+	Author = {Hoydis, Jakob and Ten Brink, Stephan and Debbah, M{\'e}rouane},
+	Journal = {IEEE Journal on selected Areas in Communications},
+	Number = {2},
+	Pages = {160--171},
+	Publisher = {IEEE},
+	Title = {Massive {MIMO} in the {UL}/{DL} of cellular networks: How many antennas do we need?},
+	Volume = {31},
+	Year = {2013}}
+
+@article{sulyman2016directional,
+	Author = {Sulyman, Ahmed Iyanda and Alwarafy, Abdulmalik and MacCartney, George R and Rappaport, Theodore S and Alsanie, Abdulhameed},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {10},
+	Pages = {6939--6947},
+	Publisher = {IEEE},
+	Title = {Directional Radio Propagation Path Loss Models for Millimeter-Wave Wireless Networks in the 28-, 60-, and 73-{GH}z Bands},
+	Volume = {15},
+	Year = {2016}}
+
+@article{molisch2016hybrid,
+	Author = {Molisch, Andreas F and Ratnam, Vishnu V and Han, Shengqian and Li, Zheda and Nguyen, Sinh Le Hong and Li, Linsheng and Haneda, Katsuyuki},
+	Journal = {IEEE Communications Magazine},
+	Number = {9},
+	Pages = {134--141},
+	Publisher = {IEEE},
+	Title = {Hybrid beamforming for massive {MIMO}: A survey},
+	Volume = {55},
+	Year = {2017}}
+
+@article{huang2010hybrid,
+	Author = {Huang, Xiaojing and Guo, Y Jay and Bunton, John D},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {5},
+	Pages = {1770--1779},
+	Publisher = {IEEE},
+	Title = {A hybrid adaptive antenna array},
+	Volume = {9},
+	Year = {2010}}
+
+@article{rappaport2013broadband,
+	Author = {Rappaport, Theodore S and Gutierrez, Felix and Ben-Dor, Eshar and Murdock, James N and Qiao, Yijun and Tamir, Jonathan I},
+	Journal = {IEEE Transactions on Antennas and Propagation},
+	Number = {4},
+	Pages = {1850--1859},
+	Publisher = {IEEE},
+	Title = {Broadband millimeter-wave propagation measurements and models using adaptive-beam antennas for outdoor urban cellular communications},
+	Volume = {61},
+	Year = {2013}}
+
+@inproceedings{kim2013multi,
+	Author = {Kim, Chanhong and Kim, Taeyoung and Seol, Ji-Yun},
+	Booktitle = {2013 IEEE Globecom Workshops (GC Wkshps)},
+	Organization = {IEEE},
+	Pages = {61--65},
+	Title = {Multi-beam transmission diversity with hybrid beamforming for {MIMO-OFDM} systems},
+	Year = {2013}}
+
+@article{venkateswaran2010analog,
+	Author = {Venkateswaran, Vijay and van der Veen, Alle-Jan},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {8},
+	Pages = {4131--4143},
+	Publisher = {IEEE},
+	Title = {Analog beamforming in {MIMO} communications with phase shift networks and online channel estimation},
+	Volume = {58},
+	Year = {2010}}
+
+@article{sun2014mimo,
+	Author = {Sun, Shu and Rappaport, Theodore S and Heath, Robert W and Nix, Andrew and Rangan, Sundeep},
+	Journal = {IEEE Communications Magazine},
+	Number = {12},
+	Pages = {110--121},
+	Publisher = {IEEE},
+	Title = {{MIMO} for millimeter-wave wireless communications: beamforming, spatial multiplexing, or both?},
+	Volume = {52},
+	Year = {2014}}
+
+@inproceedings{alkhateeb2013hybrid,
+	Author = {Alkhateeb, Ahmed and El Ayach, Omar and Leus, Geert and Heath, Robert W},
+	Booktitle = {2013 Information Theory and Applications Workshop (ITA)},
+	Organization = {IEEE},
+	Pages = {1--5},
+	Title = {Hybrid precoding for millimeter wave cellular systems with partial channel knowledge},
+	Year = {2013}}
+
+@article{andrews2014will,
+	Author = {Andrews, Jeffrey G and Buzzi, Stefano and Choi, Wan and Hanly, Stephen V and Lozano, Angel and Soong, Anthony CK and Zhang, Jianzhong Charlie},
+	Journal = {IEEE Journal on selected areas in Communications},
+	Number = {6},
+	Pages = {1065--1082},
+	Publisher = {IEEE},
+	Title = {What will 5{G} be?},
+	Volume = {32},
+	Year = {2014}}
+
+@article{roh2014millimeter,
+	Author = {Roh, Wonil and Seol, Ji-Yun and Park, Jeongho and Lee, Byunghwan and Lee, Jaekon and Kim, Yungsoo and Cho, Jaeweon and Cheun, Kyungwhoon and Aryanfar, Farshid},
+	Journal = {IEEE Communications Magazine},
+	Number = {2},
+	Pages = {106--113},
+	Publisher = {IEEE},
+	Title = {Millimeter-wave beamforming as an enabling technology for 5{G} cellular communications: theoretical feasibility and prototype results},
+	Volume = {52},
+	Year = {2014}}
+
+@inproceedings{nie201372,
+	Author = {Nie, Shuai and MacCartney, George R and Sun, Shu and Rappaport, Theodore S},
+	Booktitle = {2013 IEEE 24th International Symposium on Personal Indoor and Mobile Radio Communications (PIMRC)},
+	Organization = {IEEE},
+	Pages = {2429--2433},
+	Title = {72 {GH}z millimeter wave indoor measurements for wireless and backhaul communications},
+	Year = {2013}}
+
+@article{sulyman2014radio,
+	Author = {Sulyman, Ahmed Iyanda and Nassar, AlMuthanna T and Samimi, Mathew K and MacCartney, George R and Rappaport, Theodore S and Alsanie, Abdulhameed},
+	Journal = {IEEE Communications Magazine},
+	Number = {9},
+	Pages = {78--86},
+	Publisher = {IEEE},
+	Title = {Radio propagation path loss models for 5{G} cellular networks in the 28 {GH}z and 38 {GH}z millimeter-wave bands},
+	Volume = {52},
+	Year = {2014}}
+
+@article{hamza2016wireless,
+	Author = {Hamza, Abdelbaset S and Deogun, Jitender S and Alexander, Dennis R},
+	Journal = {IEEE Communications Surveys \& Tutorials},
+	Number = {3},
+	Pages = {1572--1595},
+	Publisher = {IEEE},
+	Title = {Wireless communication in data centers: {A} survey},
+	Volume = {18},
+	Year = {2016}}
+
+@article{li2014efficient,
+	Author = {Li, Bin and Zhou, Zheng and Zhang, Haijun and Nallanathan, Arumugam},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Number = {2},
+	Pages = {703--717},
+	Publisher = {IEEE},
+	Title = {Efficient beamforming training for 60-{GH}z millimeter-wave communications: A novel numerical optimization framework},
+	Volume = {63},
+	Year = {2014}}
+
+@article{rappaport2013millimeter,
+	Author = {Rappaport, Theodore S and Sun, Shu and Mayzus, Rimma and Zhao, Hang and Azar, Yaniv and Wang, Kevin and Wong, George N and Schulz, Jocelyn K and Samimi, Mathew and Gutierrez Jr, Felix},
+	Journal = {IEEE Access},
+	Pages = {335--349},
+	Publisher = {IEEE},
+	Title = {Millimeter wave mobile communications for 5{G} cellular: It will work!},
+	Volume = {1},
+	Year = {2013}}
+
+@article{qian2017joint,
+	Author = {Qian, Li Ping and Wu, Yuan and Zhou, Haibo and Shen, Xuemin Sherman},
+	Journal = {IEEE Transactions on Wireless Communications},
+	Number = {9},
+	Pages = {5567--5582},
+	Publisher = {IEEE},
+	Title = {Joint Uplink Base Station Association and Power Control for Small-Cell Networks with Non-Orthogonal Multiple Access},
+	Volume = {16},
+	Year = {2017}}
+
+@article{wu2017energy,
+	Author = {Wu, Yuan and Chen, Jiachao and Qian, Li Ping and Huang, Jianwei and Shen, Xuemin Sherman},
+	Journal = {IEEE Transactions on Mobile Computing},
+	Number = {1},
+	Pages = {97--114},
+	Publisher = {IEEE},
+	Title = {Energy-aware cooperative traffic offloading via device-to-device cooperations: an analytical approach},
+	Volume = {16},
+	Year = {2017}}
+
+@article{araujo2016massive,
+	Author = {Araujo, Daniel C and Maksymyuk, Taras and de Almeida, Andr{\'e} LF and Maciel, Tarcisio and Mota, Jo{\~a}o CM and Jo, Minho},
+	Journal = {IET Communications},
+	Number = {15},
+	Pages = {1938--1946},
+	Publisher = {IET},
+	Title = {Massive {MIMO}: survey and future research topics},
+	Volume = {10},
+	Year = {2016}}
+
+@article{noh2016zero,
+	Author = {Noh, Jeehwan and Kim, Taeyoung and Seol, Ji-Yun and Lee, Chungyong},
+	Journal = {IET Communications},
+	Number = {18},
+	Pages = {2670--2677},
+	Publisher = {IET},
+	Title = {Zero-Forcing Based Hybrid Beamforming for Multi-User Millimeter Wave Systems},
+	Volume = {10},
+	Year = {2016}}
+
+@inproceedings{li2016optimizing,
+	Author = {Li, Chao and He, Shibo and Shi, Zhiguo and Chen, Jiming},
+	Booktitle = {2016 IEEE International Conference on Communications (ICC)},
+	Organization = {IEEE},
+	Pages = {1--6},
+	Title = {Optimizing the throughput of millimeter wave wireless communications},
+	Year = {2016}}
+
+@article{shu2017joint,
+	Author = {Shu, Yuanchao and Shin, Kang G and Chen, Jiming and Sun, Youxian},
+	Journal = {IEEE Transactions on Industrial Informatics},
+	Number = {1},
+	Pages = {125--134},
+	Publisher = {IEEE},
+	Title = {Joint Energy Replenishment and Operation Scheduling in Wireless Rechargeable Sensor Networks},
+	Volume = {13},
+	Year = {2017}}
+
+@article{sohrabi2016hybrid,
+	Author = {Sohrabi, Foad and Yu, Wei},
+	Journal = {IEEE Journal of Selected Topics in Signal Processing},
+	Number = {3},
+	Pages = {501--513},
+	Publisher = {IEEE},
+	Title = {Hybrid digital and analog beamforming design for large-scale antenna arrays},
+	Volume = {10},
+	Year = {2016}}
+
+@article{zhou1,
+	Author = {C. Zhou and Y. Gu and S. He and Z. Shi},
+	Issn = {0018-9545},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Number = {99},
+	Pages = {1-1},
+	Title = {A Robust and Efficient Algorithm for Coprime Array Adaptive Beamforming},
+	Volume = {PP},
+	Year = {2017}}
+
+@article{zhou2,
+	Author = {Z. Shi and C. Zhou and Y. Gu and N. A. Goodman and F. Qu},
+	Doi = {10.1109/JSEN.2016.2637059},
+	Issn = {1530-437X},
+	Journal = {IEEE Sensors Journal},
+	Month = {Feb},
+	Number = {3},
+	Pages = {755-765},
+	Title = {Source Estimation Using Coprime Array: A Sparse Reconstruction Perspective},
+	Volume = {17},
+	Year = {2017},
+	Bdsk-Url-1 = {https://doi.org/10.1109/JSEN.2016.2637059}}
+
+@article{liang2014low,
+	Author = {Liang, Le and Xu, Wei and Dong, Xiaodai},
+	Journal = {IEEE Wireless Communications Letters},
+	Number = {6},
+	Pages = {653--656},
+	Publisher = {IEEE},
+	Title = {Low-complexity hybrid precoding in massive multiuser {MIMO} systems},
+	Volume = {3},
+	Year = {2014}}
+
+@inproceedings{li2012energy,
+	Author = {Li, Junkun and Chen, Jiming and Lai, Ten H},
+	Booktitle = {INFOCOM, 2012 Proceedings IEEE},
+	Organization = {IEEE},
+	Pages = {118--126},
+	Title = {Energy-efficient intrusion detection with a barrier of probabilistic sensors},
+	Year = {2012}}
+
+@article{marzetta2015massive,
+	Author = {Marzetta, Thomas L},
+	Journal = {Bell Labs Technical Journal},
+	Pages = {11--22},
+	Publisher = {Nokia Bell Labs},
+	Title = {Massive {MIMO}: an introduction},
+	Volume = {20},
+	Year = {2015}}
+
+@article{prof1889theory,
+	Author = {Prof. Cayley},
+	Journal = {American Journal of Mathematics},
+	Pages = {139--157},
+	Publisher = {JSTOR},
+	Title = {On the theory of groups},
+	Year = {1889}}
+
+@article{chen2013trapping,
+	Author = {Chen, Jiming and Li, Junkun and Lai, Ten H},
+	Journal = {IEEE Transactions on Vehicular Technology},
+	Number = {7},
+	Pages = {3287--3300},
+	Publisher = {IEEE},
+	Title = {Trapping mobile targets in wireless sensor networks: An energy-efficient perspective},
+	Volume = {62},
+	Year = {2013}}
+
+@article{sun2014diamond,
+	Author = {Sun, Yantao and Chen, Jing and Lu, Q and Fang, Weiwei},
+	Journal = {Journal of Communications},
+	Number = {1},
+	Pages = {91--98},
+	Title = {Diamond: An improved fat-tree architecture for large-scale data centers},
+	Volume = {9},
+	Year = {2014}}
+
+@inproceedings{milan2017online,
+	Author = {Milan, Anton and Rezatofighi, Seyed Hamid and Dick, Anthony R and Reid, Ian D and Schindler, Konrad},
+	Booktitle = {AAAI},
+	Pages = {4225--4232},
+	Title = {Online Multi-Target Tracking Using Recurrent Neural Networks},
+	Year = {2017}}
+
+@article{musicki1994integrated,
+	Author = {Musicki, Darko and Evans, Robin and Stankovic, Srdjan},
+	Journal = {IEEE Transactions on automatic control},
+	Number = {6},
+	Pages = {1237--1241},
+	Publisher = {IEEE},
+	Title = {Integrated probabilistic data association},
+	Volume = {39},
+	Year = {1994}}
+
+@article{musicki2004joint,
+	Author = {Musicki, Darko and Evans, Robin},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {3},
+	Pages = {1093--1099},
+	Publisher = {IEEE},
+	Title = {Joint integrated probabilistic data association: JIPDA},
+	Volume = {40},
+	Year = {2004}}
+
+@article{reid1979algorithm,
+	Author = {Reid, Donald},
+	Journal = {IEEE Transactions on Automatic Control},
+	Number = {6},
+	Pages = {843--854},
+	Publisher = {IEEE},
+	Title = {An algorithm for tracking multiple targets},
+	Volume = {24},
+	Year = {1979}}
+
+@book{blackman1999design,
+	Author = {Blackman, Samuel and Popoli, Robert},
+	Publisher = {Norwood, MA: Artech House},
+	Title = {Design and analysis of modern tracking systems(Book)},
+	Year = {1999}}
+
+@article{blackman2004multiple,
+	Author = {Blackman, Samuel S},
+	Journal = {IEEE Aerospace and Electronic Systems Magazine},
+	Number = {1},
+	Pages = {5--18},
+	Publisher = {IEEE},
+	Title = {Multiple hypothesis tracking for multiple target tracking},
+	Volume = {19},
+	Year = {2004}}
+
+@article{mahler2007phd,
+	Author = {Mahler, Ronald},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {4},
+	Pages = {1523--1543},
+	Publisher = {IEEE},
+	Title = {{PHD} filters of higher order in target number},
+	Volume = {43},
+	Year = {2007}}
+
+@article{kirubarajan1995low,
+	Author = {Kirubarajan, Thiagalingam and Bar-Shalom, Y},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Pages = {1367--1384},
+	Publisher = {IEEE},
+	Title = {Low observable target motion analysis using amplitude information},
+	Volume = {32},
+	Year = {1996}}
+
+@article{jauffret1990track,
+	Author = {Jauffret, C and Bar-Shalom, Y},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {6},
+	Pages = {999--1010},
+	Publisher = {IEEE},
+	Title = {Track formation with bearing and frequency measurements in clutter},
+	Volume = {26},
+	Year = {1990}}
+
+@article{nannuru2013computationally,
+	Author = {Nannuru, Santosh and Coates, Mark and Mahler, Ronald},
+	Journal = {IEEE Journal of Selected Topics in Signal Processing},
+	Number = {3},
+	Pages = {410--420},
+	Publisher = {IEEE},
+	Title = {Computationally-tractable approximate {PHD} and {CPHD} filters for superpositional sensors},
+	Volume = {7},
+	Year = {2013}}
+
+@article{vallender1974calculation,
+	Author = {Vallender, SS},
+	Journal = {Theory of Probability \& Its Applications},
+	Number = {4},
+	Pages = {784--786},
+	Publisher = {SIAM},
+	Title = {Calculation of the Wasserstein distance between probability distributions on the line},
+	Volume = {18},
+	Year = {1974}}
+
+@inproceedings{singer1971optimal,
+	Author = {Singer, Robert A and Stein, John J},
+	Booktitle = {1971 IEEE Conference on Decision and Control(CDC)},
+	Organization = {IEEE},
+	Pages = {171--175},
+	Title = {An optimal tracking filter for processing sensor data of imprecisely determined origin in surveillance systems},
+	Volume = {10},
+	Year = {1971}}
+
+@article{sinha2012track,
+	Author = {Sinha, Abhijit and Ding, Zhen and Kirubarajan, Thia and Farooq, Mohamad},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {2},
+	Pages = {1179--1191},
+	Publisher = {IEEE},
+	Title = {Track quality based multitarget tracking approach for global nearest-neighbor association},
+	Volume = {48},
+	Year = {2012}}
+
+@article{clark2007convergence,
+	Author = {Clark, Daniel and Vo, Ba-Ngu},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {4},
+	Pages = {1204--1212},
+	Publisher = {IEEE},
+	Title = {Convergence analysis of the Gaussian mixture {PHD} filter},
+	Volume = {55},
+	Year = {2007}}
+
+@article{vo2005sequential,
+	Author = {Vo, B-N and Singh, Sumeetpal and Doucet, Arnaud},
+	Journal = {IEEE Transactions on Aerospace and electronic systems},
+	Number = {4},
+	Pages = {1224--1245},
+	Publisher = {IEEE},
+	Title = {Sequential {M}onte {C}arlo methods for multitarget filtering with random finite sets},
+	Volume = {41},
+	Year = {2005}}
+
+@article{vo2013labeled,
+	Author = {Vo, Ba-Tuong and Vo, Ba-Ngu},
+	Journal = {IEEE Transactions on Signal Processing},
+	Number = {13},
+	Pages = {3460--3475},
+	Publisher = {IEEE},
+	Title = {Labeled random finite sets and multi-object conjugate priors},
+	Volume = {61},
+	Year = {2013}}
+
+@article{si2016multi,
+	Author = {Si, Weijian and Wang, Liwei and Qu, Zhiyu},
+	Journal = {Sensors},
+	Number = {6},
+	Pages = {901--916},
+	Publisher = {Multidisciplinary Digital Publishing Institute},
+	Title = {Multi-target state extraction for the {SMC}-{PHD} filter},
+	Volume = {16},
+	Year = {2016}}
+
+@article{clark2007multi,
+	Author = {Clark, Daniel E and Bell, Judith},
+	Journal = {IEEE Transactions on Aerospace and Electronic Systems},
+	Number = {4},
+	Pages = {1441--1453},
+	Publisher = {IEEE},
+	Title = {Multi-target state estimation and track continuity for the particle {PHD} filter},
+	Volume = {43},
+	Year = {2007}}
+
+@article{tobias2008techniques,
+	Author = {Tobias, M and Lanterman, AD},
+	Journal = {IET Radar, Sonar \& Navigation},
+	Number = {5},
+	Pages = {351--365},
+	Publisher = {IET},
+	Title = {Techniques for birth-particle placement in the probability hypothesis density particle filter applied to passive radar},
+	Volume = {2},
+	Year = {2008}}
+
+@article{marco2018,
+	Author = {Marco Giodani, Michele Polese},
+	Eprint = {arXiv:1804.01908v1},
+	Title = {A Tutorial on Beam Management for 3GPP NR at mmWave Frequencies},
+	Year = {2018}}
+
+@article{shafi20175g,
+	Author = {Shafi, Mansoor and Molisch, Andreas F and Smith, Peter J and Haustein, Thomas and Zhu, Peiying and De Silva, Prasan and Tufvesson, Fredrik and Benjebbour, Anass and Wunder, Gerhard},
+	Journal = {IEEE Journal on Selected Areas in Communications},
+	Number = {6},
+	Pages = {1201--1221},
+	Publisher = {IEEE},
+	Title = {5{G}: A tutorial overview of standards, trials, challenges, deployment, and practice},
+	Volume = {35},
+	Year = {2017}}
+
+@Comment{jabref-meta: databaseType:bibtex;}
+
+@comment{BibDesk Static Groups{
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>group name</key>
+		<string>Group</string>
+		<key>keys</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
+}}

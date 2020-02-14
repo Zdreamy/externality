@@ -1,0 +1,150 @@
+\chapter{第三章相关推导证明}
+\section{asdf}
+
+\section{Proof of Theorem \ref{thm:ratio} and Corollary \ref{cor:ratio}}\label{pf:thm:ratio}
+To show Theorem \ref{thm:ratio}, we will first characterize the optimal allocation $\mathbf{x}^{R*}$ of problem (\ref{eq:problem3}), based on which we can establish the relationship between the outputs of DPDA and the optimal solution to problem (\ref{eq:problem1}). 
+	
+	First, we need to establish the equivalence between problem (\ref{eq:problem3}) and the following problem: 
+	\begin{equation}%
+	\hspace{-0.0cm}
+	\begin{array}
+	[c]{lll}%
+	&{\text{minimize}}&~\sum_{i=1}^{N}b_iw_ix_i-C\sum_{i=1}^{N}w_i(1-x_i)
+	\\
+	&\text{subject to}&~ \sum_{i\in\N}w_ix_i\ge W,\\
+	&&~ 0\le x_i\le 1, \forall i\in\N.
+	\end{array}
+	\label{eq:problem4}
+	\end{equation}
+	
+	\begin{lm}\label{lm:equivalence}
+		The optimal allocation $\mathbf{x}^{R*}$ of problem (\ref{eq:problem3}) is the same as the optimal allocation of problem (\ref{eq:problem4}).
+	\end{lm}
+	\begin{proof}
+		Since problem (\ref{eq:problem3}) and problem (\ref{eq:problem4}) have the same feasible set, any feasible $\mathbf{x}$ for problem (\ref{eq:problem3}) must be feasible for (\ref{eq:problem4}). Note that $C$ is the optimal value of problem (\ref{eq:problem3}), i.e., $C=\sum_{i=1}^{N}b_iw_ix_i^{R*}/\sum_{i=1}^{N}w_i(1-x_i^{R*})$. Therefore, for any feasible $\mathbf{x}$, we have $C\le\sum_{i=1}^{N}b_iw_ix_i/\sum_{i=1}^{N}w_i(1-x_i)$. By some algebra, we have $\sum_{i=1}^{N}b_iw_ix_i-C\sum_{i=1}^{N}w_i(1-x_i)\ge 0$, which holds with equality at $\mathbf{x}^{R*}$. In other words, $\mathbf{x}^{R*}$ is the optimal solution to problem (\ref{eq:problem4}). Therefore, the lemma holds.
+	\end{proof}
+	
+	Based on Lemma \ref{lm:equivalence}, to characterize the optimal allocation $\mathbf{x}^{R*}$, we can characterize the optimal solution to problem (\ref{eq:problem4}) by leveraging the monotonicity property,
+	which is given by the following lemma.
+	
+	\begin{lm}\label{lm:optx}
+		Define $l=\max\{j:\sum_{i=1}^{j}b_iw_i-C(\sum_{i=j+1}^{N}w_i)\le 0,~\forall j=1,\dots,N\}$. The optimal solution $\mathbf{x}^{R*}$ to problem (\ref{eq:problem4}) is given as follows:
+		\begin{equation}\label{eq:xR}
+		x_i^{R*}=\left\{
+		\begin{array}{*{20}c}
+		1, & \text{if}~i\le l  \\
+		\frac{C\sum_{i=l+1}^N w_i-\sum_{i=1}^l b_iw_i}{(b_{l+1}+C)w_{l+1}}, & {\text{if}~i=l+1}  \\
+		0, & \text{if}~i>l+1
+		\end{array} \right..
+		\end{equation}
+	\end{lm}
+	\begin{proof}
+		First, we show the existence of $l$ and $x_i^{R*}$. Define $p(k)=\sum_{i=1}^{k}b_iw_i-C(\sum_{i=k+1}^{N}w_i)$, where $k=0,1,\dots,N$. If $k=0$, $p(0)=-C\sum_{i=1}^{N}w_i<0$; if $k=N$, $p(N)=\sum_{i=1}^{N}b_iw_i>0$. Note that $p(k)$ is strictly increasing with $k$. Therefore, there exists $l$ such that $p(l)\le 0$ and $p(l+1)>0$. Further, define $q(x_{l+1})=p(l)+(b_{l+1}w_{l+1}-Cw_{l+1})x_{l+1}$ with $0\le x_{l+1}\le 1$, where $q(0)=p(l)\le 0$ and $q(1)=p(l+1)>0$. As $q(x_{l+1})$ is continuous and strictly increasing with $x_{l+1}$, there exists a unique $x_{l+1}^{R*}\in[0,1]$ such that $q(x_{l+1}^{R*})=0$. Next, to verify the optimal solution $\mathbf{x}^{R*}$ in (\ref{eq:xR}), we can leverage the KKT conditions for problem (\ref{eq:problem4}). Specifically, the Lagrangian for problem (\ref{eq:problem4}) is
+		\begin{equation}%
+		\hspace{-0.0cm}
+		\begin{array}
+		[c]{lll}%
+		L(\mathbf{x},\lambda,\mu,\nu)=\sum_{i=1}^{N}b_iw_ix_i-C\sum_{i=1}^{N}w_i(1-x_i)\\
+		+\lambda(W-\sum_{i=1}^Nw_ix_i)+\sum_{i=1}^N\mu_i(x_i-1)-\sum_{i=1}^N\nu_ix_i\\
+		=\sum_{i=1}^{N}(b_iw_i+Cw_i-\lambda w_i+\mu_i-\nu_i)x_i\\
+		~~-C\sum_{i=1}^{N}w_i+\lambda W-\sum_{i=1}^{N}\mu_i,
+		\end{array}
+		\label{eq:L}
+		\end{equation}
+		where $\lambda$, $\mu$ and $\nu$ are Lagrangian multipliers. From (\ref{eq:L}), we have $b_iw_i+Cw_i-\lambda w_i+\mu_i-\nu_i=0$ for all $x_i$. It is easy to verify that $x_i^{R*}$ given by Lemma \ref{lm:optx} satisfies KKT conditions with $\lambda^*=b_{l+1}+C$, $\mu_i^*=\mathbf{1}_{\{i\le l\}}(b_{l+1}-b_i)w_i$, and $\nu_i^*=\mathbf{1}_{\{i>l+1\}}(b_i-b_{l+1})w_i$, where $\mathbf{1}_{condition}$ denotes the indicator function, i.e., $\mathbf{1}_{condition}=1$ if the condition holds and $\mathbf{1}_{condition}=0$, otherwise. Therefore, the lemma holds.
+	\end{proof}
+	
+
+	Based on Lemma \ref{lm:optx}, it is easy to show that DPDA chooses $l+1$ workers and satisfies the accuracy requirement.
+	
+	\begin{lm}\label{lm:k}
+		Let $l$ be as defined in Lemma \ref{lm:optx} and $k$ be the number of winners chosen by DPDA. Then, we have $k=l+1$ and DPDA satisfies the accuracy requirement  (i.e., $\delta(\mathbf{x})\le \Delta$).
+	\end{lm}
+	\begin{proof}
+		By construction, DPDA will choose the smallest $k$ such that $\sum_{i=1}^{k}b_iw_i-C(\sum_{i=k+1}^{N}w_i)\ge 0$, which are workers $1, 2,\dots,l+1$ from Lemma \ref{lm:optx}. Moreover, $\sum_{i=1}^{l+1}w_i\ge\sum_{i=1}^{l}w_i+w_{l+1}x_{l+1}^{R*}\ge W$, since $x_{l+1}^{R*}\in[0,1]$, which concludes the proof.
+	\end{proof}
+	
+	Now, we will show that DPDA is $\alpha$-approximation with respect to the optimal total payment, which is equivalent to showing that DPDA is $\alpha$-approximation with respect to the optimal value of problem (\ref{eq:problem4}), based on Lemma \ref{lm:transform} and Lemma \ref{lm:equivalence}. Note that the objective function in (\ref{eq:problem4}) contains a constant $C\sum_{i=1}^{N}w_i$ and removing this constant will not impact the result of the optimization problem (\ref{eq:problem4}). In other words, we can focus on the approximation of DPDA with respect to the function $h(\mathbf{x})=\sum_{i=1}^{N}(b_i+C)w_ix_i$. Let $\mathbf{x}^{DPDA}$ be the allocation by DPDA and $\mathbf{x}^*$ be the optimal allocation with $\text{OPT}=h(\mathbf{x}^*)$ Since problem (\ref{eq:problem4}) is a relaxation of problem (\ref{eq:problem2}), $h(\mathbf{x}^{R*})\le \text{OPT}$. In what follows, we will show $h(\mathbf{x}^{DPDA})\le\alpha\text{OPT}$.
+	
+	Based on Lemma \ref{lm:k}, we have
+	\begin{equation}%
+	\hspace{-0.0cm}
+	\begin{array}
+	[c]{lll}%
+	h(\mathbf{x}^{DPDA})&=&\sum_{i=1}^{l+1}(b_i+C)w_i\\
+	&=&\sum_{i=1}^{l}(b_i+C)w_i+(b_{l+1}+C)w_{l+1}x_{l+1}^{R*}\\
+	&&+(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*})\\
+	&=&h(\mathbf{x}^{R*})+(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*}),
+	\end{array}
+	\label{eq:h}
+	\end{equation}
+	where $h(\mathbf{x}^{R*})=\sum_{i=1}^{l}(b_i+C)w_i+(b_{l+1}+C)w_{l+1}x_{l+1}^{R*}$ based on (\ref{eq:xR}). Then,
+	\begin{equation}%
+	\hspace{-0.0cm}
+	\begin{array}
+	[c]{lll}%
+	\frac{h(\mathbf{x}^{R*})+(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*})}{h(\mathbf{x}^{R*})}
+	&=& 1+ \frac{(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*})}{h(\mathbf{x}^{R*})}\\
+	&\mathop{\le}\limits^{(a)}&  1+ \frac{(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*})}{(b_{l+1}+C)w_{l+1}x_{l+1}^{R*}}\\
+	&=&\frac{(b_{l+1}+C)w_{l+1}}{C\sum_{i=l+1}^N w_i-\sum_{i=1}^{l} b_iw_i}\\
+	&=&\frac{1}{x_{l+1}^{R*}}
+	\end{array}
+	\label{eq:h}
+	\end{equation}
+	where (a) follows from the fact that $h(\mathbf{x}^{R*})\ge (b_{l+1}+C)w_{l+1}x_{l+1}^{R*}$. Since $x_{l+1}^{R*}<1$, we have that $\alpha\geq 1$. Therefore, $h(\mathbf{x}^{DPDA})\leq\alpha h(\mathbf{x}^{R*})\leq \alpha OPT$, which concludes the proof of Theorem \ref{thm:ratio}. 
+	
+	Given Theorem \ref{thm:ratio} and Assumption \ref{as:small}, let $k=l+1$, we have,
+	\begin{equation}%
+	\hspace{-0.0cm}
+	\begin{array}
+	[c]{lll}%
+	\frac{h(\mathbf{x}^{DPDA})}{h(\mathbf{x}^{R*})}
+	&\leq&\frac{(b_{k}+C)w_{k}}{C\sum_{i=k}^N w_i-\sum_{i=1}^{k-1} b_iw_i}\\
+	&\leq& \frac{Cw_{k}+b_kw_k}{C w_k-\sum_{i=1}^{k-1} b_iw_i}\\
+	&\leq& \frac{Cw_{k}+b_kw_k}{C w_k-(k-1)b_kw_k}\\
+	&=& \frac{C+b_k}{C-(k-1)b_k}\\
+	&\leq&\frac{C+C/\beta}{C-(k-1)C/\beta}\\
+	&=&\frac{1+1/\beta}{1+1/\beta-k/\beta}\\
+	&=&\frac{1}{1-k/(\beta+1)}=\alpha,
+	\end{array}
+	\label{eq:h}
+	\end{equation}
+	where $\alpha > 1$ given that $\beta>N\geq k$. Therefore, $h(\mathbf{x}^{DPDA})\leq \alpha h(\mathbf{x}^{R*})\leq \alpha OPT$, which concludes the proof of Corollary \ref{cor:ratio}.
+
+
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+\section{Proof of Lemma \ref{lm:formulation2}}\label{app2}
+	We prove Lemma \ref{lm:formulation2} following the same procedure used in proving Lemma \ref{lm:transform} and Lemma \ref{lm:lp}. First, we establish the equivalence between problem (\ref{eq:problem1b}) and the following problem:
+		\begin{equation}%
+		\hspace{-0.0cm}
+		\begin{array}
+		[c]{lll}%
+		&{\text{minimize}}&~\sum_{i\in\N}b_i\e_i(\mathbf{x})
+		\\
+		&\text{subject to}&~ \sum_{i\in\N}w_ix_i\ge W,\\
+		&&~ \sum_{j\in\N}w_jx_j+\frac{w_i}{g_i}x_i\leq\sum_{j\in\N}w_i, \forall i\in\N,\\
+		&&~ x_i\in\{0,1\}, \forall i\in\N,
+		\end{array}
+		\label{eq:problem2b}
+		\end{equation}
+		The fractional relaxation of problem (\ref{eq:problem2b}) is given by:
+		\begin{equation}%
+		\hspace{-0.0cm}
+		\begin{array}
+		[c]{lll}%
+		&{\text{minimize}}&~\sum_{i\in\N}b_i\e_i(\mathbf{x})
+		\\
+		&\text{subject to}&~ \sum_{i\in\N}w_ix_i\ge W,\\
+		&&~ \sum_{j\in\N}w_jx_j+\frac{w_i}{g_i}x_i\leq\sum_{j\in\N}w_i, \forall i\in\N,\\
+		&&~ 0\leq x_i\leq 1, \forall i\in\N,
+		\end{array}
+		\label{eq:problem2c}
+		\end{equation}
+	We then establish the equivalence between problem (\ref{eq:problem2c}) and problem (\ref{eq:lpb}). It is easy to show that any feasible solution in problem (\ref{eq:lpb}) is also feasible in problem (\ref{eq:problem2c}) with the same objective value and vice versa. If $\mathbf{x}$ is feasible in problem  (\ref{eq:problem2c}), then  $y_i=\frac{x_i}{\sum_{i\in\N}w_i(1-x_i)},~\forall i\in\N$ and $z=\frac{1}{\sum_{i\in\N}w_i(1-x_i)}$ are feasible in problem (\ref{eq:lpb}), with the same objective value $\sum_{i\in\N}b_iw_iy_i=\sum_{i\in\N}b_i\e_i(\mathbf{x})$. It follows that the optimal value of problem  (\ref{eq:problem2c}) is greater than or equal to the optimal value of problem (\ref{eq:lpb}). Conversely, if $y_i$ and $z$ are feasible in problem (\ref{eq:lp}), then $x_i=y_i/z$ is feasible in problem (\ref{eq:problem3}) with the same objective value. Therefore, the optimal value of problem  (\ref{eq:problem2c}) is less than or equal to the optimal value of problem (\ref{eq:lpb}). Therefore, problem (\ref{eq:problem2c}) is equivalent to problem (\ref{eq:lpb}).
+
+\chapter{附录B第四章相关推导证明}
+
+这是附录B的内容。
+

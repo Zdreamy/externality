@@ -1,0 +1,207 @@
+\chapter{第二章相关推导证明}
+\section{定理\ref{thm:ratio}和推论\ref{cor:ratio}的证明}\label{pf:thm:ratio}
+证明定理\ref{thm:ratio}需要首先对问题（\ref{eq:problem3}）的最优分配解$\mathbf{x}^{R*}$进行刻画，并在此基础上进一步建立算法DPDA的输出与问题（\ref{eq:problem1}）最优解之间的联系。
+%To show Theorem \ref{thm:ratio}, we will first characterize the optimal allocation $\mathbf{x}^{R*}$ of problem (\ref{eq:problem3}), based on which we can establish the relationship between the outputs of DPDA and the optimal solution to problem (\ref{eq:problem1}). 
+	
+	首先，建立问题（\ref{eq:problem3}）与以下问题的等价关系：
+	%First, we need to establish the equivalence between problem (\ref{eq:problem3}) and the following problem: 
+	\begin{equation}%
+	\hspace{-0.0cm}
+	\begin{array}
+	[c]{lll}%
+	&{\text{minimize}}&~\sum_{i=1}^{N}b_iw_ix_i-C\sum_{i=1}^{N}w_i(1-x_i)
+	\\
+	&\text{subject to}&~ \sum_{i\in\N}w_ix_i\ge W,\\
+	&&~ 0\le x_i\le 1, \forall i\in\N.
+	\end{array}
+	\label{eq:problem4}
+	\end{equation}
+	
+	\begin{lm}\label{lm:equivalence}
+		问题（\ref{eq:problem3}）的最优分配解$\mathbf{x}^{R*}$与问题（\ref{eq:problem4}）的最优分配解一致。
+		%The optimal allocation $\mathbf{x}^{R*}$ of problem (\ref{eq:problem3}) is the same as the optimal allocation of problem (\ref{eq:problem4}).
+	\end{lm}
+	\begin{proof}
+		由于问题（\ref{eq:problem3}）和问题（\ref{eq:problem4}）有相同的可行域，任何对于问题（\ref{eq:problem3}）的可行解$\mathbf{x}$同样为问题（\ref{eq:problem4}）的可行解。注意到$C$是问题（\ref{eq:problem3}）的最优值，即$C=\sum_{i=1}^{N}b_iw_ix_i^{R*}/\sum_{i=1}^{N}w_i(1-x_i^{R*})$。因此，对于任何可行的$\mathbf{x}$，我们有$C\le\sum_{i=1}^{N}b_iw_ix_i/\sum_{i=1}^{N}w_i(1-x_i)$。通过一些简单的变换，可以得到$\sum_{i=1}^{N}b_iw_ix_i-C\sum_{i=1}^{N}w_i(1-x_i)\ge 0$，其中等号对于$\mathbf{x}^{R*}$成立。换句话说，$\mathbf{x}^{R*}$是问题（\ref{eq:problem4}）的最优解。因此，引理成立。		
+		%Since problem (\ref{eq:problem3}) and problem (\ref{eq:problem4}) have the same feasible set, any feasible $\mathbf{x}$ for problem (\ref{eq:problem3}) must be feasible for (\ref{eq:problem4}). Note that $C$ is the optimal value of problem (\ref{eq:problem3}), i.e., $C=\sum_{i=1}^{N}b_iw_ix_i^{R*}/\sum_{i=1}^{N}w_i(1-x_i^{R*})$. Therefore, for any feasible $\mathbf{x}$, we have $C\le\sum_{i=1}^{N}b_iw_ix_i/\sum_{i=1}^{N}w_i(1-x_i)$. By some algebra, we have $\sum_{i=1}^{N}b_iw_ix_i-C\sum_{i=1}^{N}w_i(1-x_i)\ge 0$, which holds with equality at $\mathbf{x}^{R*}$. In other words, $\mathbf{x}^{R*}$ is the optimal solution to problem (\ref{eq:problem4}). Therefore, the lemma holds.
+	\end{proof}
+	
+	基于引理\ref{lm:equivalence}，下一步可以利用问题的单调性特性来刻画问题（\ref{eq:problem4}）的最优解，以此来描述最优分配解$\mathbf{x}^{R*}$。我们有以下引理。
+	%Based on Lemma \ref{lm:equivalence}, to characterize the optimal allocation $\mathbf{x}^{R*}$, we can characterize the optimal solution to problem (\ref{eq:problem4}) by leveraging the monotonicity property, which is given by the following lemma.
+	\begin{lm}\label{lm:optx}
+		定义$l=\max\{j:\sum_{i=1}^{j}b_iw_i-C(\sum_{i=j+1}^{N}w_i)\le 0,~\forall j=1,\dots,N\}$，则问题（ \ref{eq:problem4}）的最优解$\mathbf{x}^{R*}$如下所示：
+		\begin{equation}\label{eq:xR}
+		x_i^{R*}=\left\{
+		\begin{array}{*{20}c}
+		1, & \text{if}~i\le l  \\
+		\frac{C\sum_{i=l+1}^N w_i-\sum_{i=1}^l b_iw_i}{(b_{l+1}+C)w_{l+1}}, & {\text{if}~i=l+1}  \\
+		0, & \text{if}~i>l+1
+		\end{array} \right..
+		\end{equation}
+	\end{lm}
+	\begin{proof}
+		首先需要证明$l$和$x_i^{R*}$是存在的。定义$p(k)=\sum_{i=1}^{k}b_iw_i-C(\sum_{i=k+1}^{N}w_i)$，其中$k=0,1,\dots,N$。如果$k=0$，则$p(0)=-C\sum_{i=1}^{N}w_i<0$；而如果$k=N$，则$p(N)=\sum_{i=1}^{N}b_iw_i>0$。 注意到$p(k)$是随$k$严格递增的。因此，存在$l$使得$p(l)\le 0$且$p(l+1)>0$。进一步，定义$q(x_{l+1})=p(l)+(b_{l+1}w_{l+1}-Cw_{l+1})x_{l+1}$ with $0\le x_{l+1}\le 1$，其中$q(0)=p(l)\le 0$并且$q(1)=p(l+1)>0$。由于$q(x_{l+1})$关于$x_{l+1}$是连续且严格递增的，可知存在唯一的$x_{l+1}^{R*}\in[0,1]$使得$q(x_{l+1}^{R*})=0$。接下来，利用问题（\ref{eq:problem4}）的KKT条件来验证式（\ref{eq:xR}）中的最优解 $\mathbf{x}^{R*}$。式（\ref{eq:problem4}）的拉格朗日表达式可以写为
+		%First, we show the existence of $l$ and $x_i^{R*}$. Define $p(k)=\sum_{i=1}^{k}b_iw_i-C(\sum_{i=k+1}^{N}w_i)$, where $k=0,1,\dots,N$. If $k=0$, $p(0)=-C\sum_{i=1}^{N}w_i<0$; if $k=N$, $p(N)=\sum_{i=1}^{N}b_iw_i>0$. Note that $p(k)$ is strictly increasing with $k$. Therefore, there exists $l$ such that $p(l)\le 0$ and $p(l+1)>0$. Further, define $q(x_{l+1})=p(l)+(b_{l+1}w_{l+1}-Cw_{l+1})x_{l+1}$ with $0\le x_{l+1}\le 1$, where $q(0)=p(l)\le 0$ and $q(1)=p(l+1)>0$. As $q(x_{l+1})$ is continuous and strictly increasing with $x_{l+1}$, there exists a unique $x_{l+1}^{R*}\in[0,1]$ such that $q(x_{l+1}^{R*})=0$. Next, to verify the optimal solution $\mathbf{x}^{R*}$ in (\ref{eq:xR}), we can leverage the KKT conditions for problem (\ref{eq:problem4}). Specifically, the Lagrangian for problem (\ref{eq:problem4}) is
+		\begin{equation}%
+		\hspace{-0.0cm}
+		\begin{array}
+		[c]{lll}%
+		L(\mathbf{x},\lambda,\mu,\nu)&=\sum_{i=1}^{N}b_iw_ix_i-C\sum_{i=1}^{N}w_i(1-x_i)\\
+		&~~+\lambda(W-\sum_{i=1}^Nw_ix_i)+\sum_{i=1}^N\mu_i(x_i-1)-\sum_{i=1}^N\nu_ix_i\\
+		&=\sum_{i=1}^{N}(b_iw_i+Cw_i-\lambda w_i+\mu_i-\nu_i)x_i\\
+		&~~-C\sum_{i=1}^{N}w_i+\lambda W-\sum_{i=1}^{N}\mu_i,
+		\end{array}
+		\label{eq:L}
+		\end{equation}
+		其中$\lambda$、$\mu$和$\nu$为拉格朗日乘子。从式（\ref{eq:L}）可以得出对于所有的$x_i$，$b_iw_i+Cw_i-\lambda w_i+\mu_i-\nu_i=0$成立。很容易证实当$\lambda^*=b_{l+1}+C$，$\mu_i^*=\mathbf{1}_{\{i\le l\}}(b_{l+1}-b_i)w_i$并且$\nu_i^*=\mathbf{1}_{\{i>l+1\}}(b_i-b_{l+1})w_i$时，由引理\ref{lm:optx}得到的$x_i^{R*}$满足KKT条件。其中$\mathbf{1}_{\{condition\}}$为指示函数，即条件成立时$\mathbf{1}_{\{condition\}}=1$，不成立时为0。由此，引理可证。
+		%where $\lambda$, $\mu$ and $\nu$ are Lagrangian multipliers. From (\ref{eq:L}), we have $b_iw_i+Cw_i-\lambda w_i+\mu_i-\nu_i=0$ for all $x_i$. It is easy to verify that $x_i^{R*}$ given by Lemma \ref{lm:optx} satisfies KKT conditions with $\lambda^*=b_{l+1}+C$, $\mu_i^*=\mathbf{1}_{\{i\le l\}}(b_{l+1}-b_i)w_i$, and $\nu_i^*=\mathbf{1}_{\{i>l+1\}}(b_i-b_{l+1})w_i$, where $\mathbf{1}_{condition}$ denotes the indicator function, i.e., $\mathbf{1}_{condition}=1$ if the condition holds and $\mathbf{1}_{condition}=0$, otherwise. Therefore, the lemma holds.
+	\end{proof}
+	
+	基于引理\ref{lm:optx}，易得到算法DPDA将选择$l+1$个用户同时满足准确性要求。
+	%Based on Lemma \ref{lm:optx}, it is easy to show that DPDA chooses $l+1$ workers and satisfies the accuracy requirement.
+	
+	\begin{lm}\label{lm:k}
+		令$l$的定义如引理\ref{lm:optx}中所述，$k$为算法DPDA所选的赢家的数量。于是我们有$k=l+1$且DPDA算法满足准确性要求，即$\delta(\mathbf{x})\le \Delta$。
+		%Let $l$ be as defined in Lemma \ref{lm:optx} and $k$ be the number of winners chosen by DPDA. Then, we have $k=l+1$ and DPDA satisfies the accuracy requirement  (i.e., $\delta(\mathbf{x})\le \Delta$).
+	\end{lm}
+	\begin{proof}
+		算法DPDA的设计使得其会选择最小的整数$k$使得$\sum_{i=1}^{k}b_iw_i-C(\sum_{i=k+1}^{N}w_i)\ge 0$。根据引理\ref{lm:optx}，其对应于用户$1, 2,\dots,l+1$。同时，由于$x_{l+1}^{R*}\in[0,1]$，不等式$\sum_{i=1}^{l+1}w_i\ge\sum_{i=1}^{l}w_i+w_{l+1}x_{l+1}^{R*}\ge W$可以满足，因此引理得证。
+		%By construction, DPDA will choose the smallest $k$ such that $\sum_{i=1}^{k}b_iw_i-C(\sum_{i=k+1}^{N}w_i)\ge 0$, which are workers $1, 2,\dots,l+1$ from Lemma \ref{lm:optx}. Moreover, $\sum_{i=1}^{l+1}w_i\ge\sum_{i=1}^{l}w_i+w_{l+1}x_{l+1}^{R*}\ge W$, since $x_{l+1}^{R*}\in[0,1]$, which concludes the proof.
+	\end{proof}
+	
+	接下来，证明对于平台最优总支付算法DPDA可以得到$\alpha$-近似解即等价于在引理\ref{lm:transform}和引理\ref{lm:equivalence}满足的条件下证明算法DPDA可以得到针对问题（\ref{eq:problem4}）最优解的$\alpha$-近似解。注意到式（\ref{eq:problem4}）中的目标函数包含一个常数$C\sum_{i=1}^{N}w_i$，而去掉这个常数并不影响问题（\ref{eq:problem4}）的优化。因而证明只需关注针对于项$h(\mathbf{x})=\sum_{i=1}^{N}(b_i+C)w_ix_i$算法DPDA的近似表现。令$\mathbf{x}^{DPDA}$代表算法DPDA得到的分配解，$\mathbf{x}^*$代表最优分配$\text{OPT}=h(\mathbf{x}^*)$对应的最优分配解。由于问题（\ref{eq:problem4}）是问题（\ref{eq:problem2}）的一个松弛，因而有$h(\mathbf{x}^{R*})\le \text{OPT}$。我们接下来证明$h(\mathbf{x}^{DPDA})\le\alpha\text{OPT}$。
+	基于引理\ref{lm:k}，我们有	
+	%Now, we will show that DPDA is $\alpha$-approximation with respect to the optimal total payment, which is equivalent to showing that DPDA is $\alpha$-approximation with respect to the optimal value of problem (\ref{eq:problem4}), based on Lemma \ref{lm:transform} and Lemma \ref{lm:equivalence}. Note that the objective function in (\ref{eq:problem4}) contains a constant $C\sum_{i=1}^{N}w_i$ and removing this constant will not impact the result of the optimization problem (\ref{eq:problem4}). In other words, we can focus on the approximation of DPDA with respect to the function $h(\mathbf{x})=\sum_{i=1}^{N}(b_i+C)w_ix_i$. Let $\mathbf{x}^{DPDA}$ be the allocation by DPDA and $\mathbf{x}^*$ be the optimal allocation with $\text{OPT}=h(\mathbf{x}^*)$ Since problem (\ref{eq:problem4}) is a relaxation of problem (\ref{eq:problem2}), $h(\mathbf{x}^{R*})\le \text{OPT}$. In what follows, we will show $h(\mathbf{x}^{DPDA})\le\alpha\text{OPT}$.
+%	Based on Lemma \ref{lm:k}, we have
+	\begin{equation}%
+	\hspace{-0.0cm}
+	\begin{array}
+	[c]{lll}%
+	h(\mathbf{x}^{DPDA})&=&\sum_{i=1}^{l+1}(b_i+C)w_i\\
+	&=&\sum_{i=1}^{l}(b_i+C)w_i+(b_{l+1}+C)w_{l+1}x_{l+1}^{R*}\\
+	&&+(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*})\\
+	&=&h(\mathbf{x}^{R*})+(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*}),
+	\end{array}
+	\label{eq:h}
+	\end{equation}
+	其中基于（\ref{eq:xR}），有$h(\mathbf{x}^{R*})=\sum_{i=1}^{l}(b_i+C)w_i+(b_{l+1}+C)w_{l+1}x_{l+1}^{R*}$。于是，
+	\begin{equation}%
+	\hspace{-0.0cm}
+	\begin{array}
+	[c]{lll}%
+	\frac{h(\mathbf{x}^{R*})+(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*})}{h(\mathbf{x}^{R*})}
+	&=& 1+ \frac{(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*})}{h(\mathbf{x}^{R*})}\\
+	&\mathop{\le}\limits^{(a)}&  1+ \frac{(b_{l+1}+C)w_{l+1}(1-x_{l+1}^{R*})}{(b_{l+1}+C)w_{l+1}x_{l+1}^{R*}}\\
+	&=&\frac{(b_{l+1}+C)w_{l+1}}{C\sum_{i=l+1}^N w_i-\sum_{i=1}^{l} b_iw_i}\\
+	&=&\frac{1}{x_{l+1}^{R*}}
+	\end{array}
+	\label{eq:h}
+	\end{equation}
+	其中不等式（a）由不等式$h(\mathbf{x}^{R*})\ge (b_{l+1}+C)w_{l+1}x_{l+1}^{R*}$得到。由于$x_{l+1}^{R*}<1$，可得$\alpha\geq 1$。因此，可以得出$h(\mathbf{x}^{DPDA})\leq\alpha h(\mathbf{x}^{R*})\leq \alpha OPT$，即完成了定理\ref{thm:ratio}的证明。	
+	%where (a) follows from the fact that $h(\mathbf{x}^{R*})\ge (b_{l+1}+C)w_{l+1}x_{l+1}^{R*}$. Since $x_{l+1}^{R*}<1$, we have that $\alpha\geq 1$. Therefore, $h(\mathbf{x}^{DPDA})\leq\alpha h(\mathbf{x}^{R*})\leq \alpha OPT$, which concludes the proof of Theorem \ref{thm:ratio}. 
+	基于定理\ref{thm:ratio}和假设\ref{as:small}，令$k=l+1$，可以得到以下关系，
+	%Given Theorem \ref{thm:ratio} and Assumption \ref{as:small}, let $k=l+1$, we have,
+	\begin{equation}%
+	\hspace{-0.0cm}
+	\begin{array}
+	[c]{lll}%
+	\frac{h(\mathbf{x}^{DPDA})}{h(\mathbf{x}^{R*})}
+	&\leq&\frac{(b_{k}+C)w_{k}}{C\sum_{i=k}^N w_i-\sum_{i=1}^{k-1} b_iw_i}\\
+	&\leq& \frac{Cw_{k}+b_kw_k}{C w_k-\sum_{i=1}^{k-1} b_iw_i}\\
+	&\leq& \frac{Cw_{k}+b_kw_k}{C w_k-(k-1)b_kw_k}\\
+	&=& \frac{C+b_k}{C-(k-1)b_k}\\
+	&\leq&\frac{C+C/\beta}{C-(k-1)C/\beta}\\
+	&=&\frac{1+1/\beta}{1+1/\beta-k/\beta}\\
+	&=&\frac{1}{1-k/(\beta+1)}=\alpha,
+	\end{array}
+	\label{eq:h}
+	\end{equation}
+	由于$\beta>N\geq k$，可以得出$\alpha > 1$。因而可以得到$h(\mathbf{x}^{DPDA})\leq \alpha h(\mathbf{x}^{R*})\leq \alpha OPT$，推论\ref{cor:ratio}得证。
+	%where $\alpha > 1$ given that $\beta>N\geq k$. Therefore, $h(\mathbf{x}^{DPDA})\leq \alpha h(\mathbf{x}^{R*})\leq \alpha OPT$, which concludes the proof of Corollary \ref{cor:ratio}.
+
+
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+\section{引理\ref{lm:formulation2}的证明}\label{app2}
+	本小节根据与引理\ref{lm:transform}和引理\ref{lm:lp}相同的证明思路对引理\ref{lm:formulation2}进行证明。首先，建立问题（\ref{eq:problem1b}）与以下问题的等价性：
+	%We prove Lemma \ref{lm:formulation2} following the same procedure used in proving Lemma \ref{lm:transform} and Lemma \ref{lm:lp}. First, we establish the equivalence between problem (\ref{eq:problem1b}) and the following problem:
+		\begin{equation}%
+		\hspace{-0.0cm}
+		\begin{array}
+		[c]{lll}%
+		&{\text{minimize}}&~\sum_{i\in\N}b_i\e_i(\mathbf{x})
+		\\
+		&\text{subject to}&~ \sum_{i\in\N}w_ix_i\ge W,\\
+		&&~ \sum_{j\in\N}w_jx_j+\frac{w_i}{g_i}x_i\leq\sum_{j\in\N}w_i, \forall i\in\N,\\
+		&&~ x_i\in\{0,1\}, \forall i\in\N,
+		\end{array}
+		\label{eq:problem2b}
+		\end{equation}
+		问题（\ref{eq:problem2b}）的分数松弛由下式给出：
+		%The fractional relaxation of problem (\ref{eq:problem2b}) is given by:
+		\begin{equation}%
+		\hspace{-0.0cm}
+		\begin{array}
+		[c]{lll}%
+		&{\text{minimize}}&~\sum_{i\in\N}b_i\e_i(\mathbf{x})
+		\\
+		&\text{subject to}&~ \sum_{i\in\N}w_ix_i\ge W,\\
+		&&~ \sum_{j\in\N}w_jx_j+\frac{w_i}{g_i}x_i\leq\sum_{j\in\N}w_i, \forall i\in\N,\\
+		&&~ 0\leq x_i\leq 1, \forall i\in\N,
+		\end{array}
+		\label{eq:problem2c}
+		\end{equation}
+	下一步建立问题（\ref{eq:problem2c}）和问题（\ref{eq:lpb}）之间的等价性。很容易得出对于问题（\ref{eq:lpb}）的任意可行解也是问题（\ref{eq:problem2c}）的可行解，且对应于同样的最优值，反之亦然。如果$\mathbf{x}$对于问题（\ref{eq:problem2c}）是可行的，则$y_i=\frac{x_i}{\sum_{i\in\N}w_i(1-x_i)},~\forall i\in\N$和$z=\frac{1}{\sum_{i\in\N}w_i(1-x_i)}$对于问题（\ref{eq:lpb}）是可行解，对应于同样的最优值$\sum_{i\in\N}b_iw_iy_i=\sum_{i\in\N}b_i\e_i(\mathbf{x})$。于是有问题（\ref{eq:problem2c}）的最优值大于等于问题（\ref{eq:lpb}）的最优值。反过来，如果$y_i$和$z$是问题（\ref{eq:lp}）的可行解，则有$x_i=y_i/z$是问题（\ref{eq:problem3}）的可行解，且具有同样的最优值。因此，问题（\ref{eq:problem2c}）的最优值小于等于问题（\ref{eq:lpb}）的最优值。于是可以得出问题（\ref{eq:problem2c}）与问题（\ref{eq:lpb}）的等价性。
+	%We then establish the equivalence between problem (\ref{eq:problem2c}) and problem (\ref{eq:lpb}). It is easy to show that any feasible solution in problem (\ref{eq:lpb}) is also feasible in problem (\ref{eq:problem2c}) with the same objective value and vice versa. If $\mathbf{x}$ is feasible in problem  (\ref{eq:problem2c}), then  $y_i=\frac{x_i}{\sum_{i\in\N}w_i(1-x_i)},~\forall i\in\N$ and $z=\frac{1}{\sum_{i\in\N}w_i(1-x_i)}$ are feasible in problem (\ref{eq:lpb}), with the same objective value $\sum_{i\in\N}b_iw_iy_i=\sum_{i\in\N}b_i\e_i(\mathbf{x})$. It follows that the optimal value of problem  (\ref{eq:problem2c}) is greater than or equal to the optimal value of problem (\ref{eq:lpb}). Conversely, if $y_i$ and $z$ are feasible in problem (\ref{eq:lp}), then $x_i=y_i/z$ is feasible in problem (\ref{eq:problem3}) with the same objective value. Therefore, the optimal value of problem  (\ref{eq:problem2c}) is less than or equal to the optimal value of problem (\ref{eq:lpb}). Therefore, problem (\ref{eq:problem2c}) is equivalent to problem (\ref{eq:lpb}).
+
+\chapter{第三章相关推导证明}
+\section{定理\ref{thm:conv}的证明}\label{pf:thm:conv}
+证明过程首先将两个迭代学习算法（\ref{estimation}）和（\ref{eq:reg2}）表示为两个随机逼近过程\cite{Yin} \cite{PartII}。为便于说明，以下证明过程省去下标$i$和$j$，可以得到
+%We first express the two iterative learning algorithms (\ref{estimation}) and (\ref{eq:reg2}) as two stochastic approximation processes\cite{Yin} \cite{PartII}. For ease of exposition, we omit the subscript $i$ and $j$, and have the following,
+%with corresponding Lipschitz continuous functions $F$ and martingale differences $M$.
+\begin{subequations}\label{SA0}
+%\small
+\begin{numcases}{}
+\hat{S}_n^t(a_n)=\hat{S}_n^{t-1}(a_n)+\lambda^t\left\{F_{\hat{S}_n}(\hat{S}_n^{t-1}(a_n),D_n^{t-1}(a_n))+M^t_{\hat{S}_n}\right\},\\
+D_n^t(a_n)=D_n^{t-1}(a_n)+\epsilon^t\left\{F_{D_n}(\hat{S}_n^{t-1}(a_n),D_n^{t-1}(a_n))+M^t_{D_n}\right\}.
+\end{numcases}
+\end{subequations}
+其中$F_{\hat{S}_n}$和$F_{D_n}$为Lipschitz函数，$M^t_{\hat{S}_n}$和$M^t_{D_n}$为鞅差异。具体的，Lipschitz函数（Lipschitz常数$L=1$）可以被表示为
+%where $F_{\hat{S}_n}$ and $F_{D_n}$ are the Lipschitz functions and $M^t_{\hat{S}_n}$ and $M^t_{D_n}$ are the martingale differences. Specifically, the Lipschitz functions (with Lipschitz constant $L=1$) can be expressed as
+\begin{subequations}\label{SA}
+\begin{numcases}{}
+F_{\hat{S}_n}(\hat{S}_n^{t-1}(a_n),D_n^{t-1}(a_n))=\mathbb{E}\left[\frac{\hat{S}_n^t-\hat{S}_n^{t-1}}{\lambda^t}|\hat{S}^t_n,D^t_n\right],\\
+F_{D_n}(\hat{S}_n^{t-1}(a_n),D_n^{t-1}(a_n))=\mathbb{E}\left[\frac{D_n^t-D_n^{t-1}}{\epsilon^t}|\hat{S}^t_n,D^t_n\right].
+\end{numcases}
+\end{subequations}
+
+给定鞅差异$M^t_{\hat{S}_n}$和$M^t_{D_n}$，在满足条件\textbf{C1}和\textbf{C2}的情况下，使用文献\citenum{Borkar1997}中的主定理即可证明序列$\left\{\sum_{t=0}^{k}\lambda^tM^t_{\hat{S}_n}\right\}_k$和$\left\{\sum_{t=0}^{k}\epsilon^tM^t_{D_n}\right\}_k$可以以概率1收敛。
+%Given the martingale differences $M^t_{\hat{S}_n}$ and $M^t_{D_n}$, and with conditions \textbf{C1} and \textbf{C2} satisfied, we can prove that the sequences $\left\{\sum_{t=0}^{k}\lambda^tM^t_{\hat{S}_n}\right\}_k$ and $\left\{\sum_{t=0}^{k}\epsilon^tM^t_{D_n}\right\}_k$ converge almost surely by applying the main Theorem in \cite{Borkar1997}.
+
+然后，根据随机逼近理论\cite{Yin}的常微分方程（ODE）方法，离散随机过程（\ref{SA0}a）和（\ref{SA0}b）可以看作是对于连续确定的ODE的有噪离散化形式：
+%Then according to the ordinary differential equation (ODE) approach for stochastic approximation theory \cite{Yin}, the discrete stochastic processes (\ref{SA0}a) and (\ref{SA0}b) can be treated as noisy discretisation of the continuous determined ODEs as follows:
+\begin{subequations}\label{ode}
+\begin{numcases}{}
+\dot{\hat{S}}_n(a_n)=F_{\hat{S}_n}(\hat{S}_n^{t-1}(a_n),D_n^{t-1}(a_n)),\\
+\dot{D}_n(a_n)=F_{D_n}(\hat{S}_n^{t-1}(a_n),D_n^{t-1}(a_n)).
+\end{numcases}
+\end{subequations}
+%which have the closed form of:
+%\begin{subequations}\label{ode1}
+%\begin{numcases}{}
+%\dot{\hat{R}}_n(a_n)=q_n(a_n)\left(R_n(a_n,\pi_{-n})-\hat{R}_n(a_n)\right),\\
+%\dot{q}_n(a_n)=b_n(\pi_{-n};\beta)-q_n.
+%\end{numcases}
+%\end{subequations}
+
+首先，对于（\ref{ode}a），假设对于每个固定的集合$\{D^t_n\}_{n\in\mathcal{V}}$存在一个极限群体效用期望$S_n(a_n, \{D^t_n\}_{n\in\mathcal{V}})$为（\ref{ode}a）的一个唯一的全局渐近稳定点，则容易得到对于群体效用期望$\hat{S}^t_n(a_n)$的学习将收敛到一个极限效用期望$S_n(a_n,\{D^+_n\}_{n\in\mathcal{V}})$。因此，在条件\textbf{C3}下，算法\ref{alg:RCS}的随机稳定性分析简化为对于较慢时间尺度上遗憾学习过程的收敛性分析。
+
+与针对效用学习的分析类似，我们应用随机逼近理论的ODE方法使得离散随机过程$\{D^t_n\}$的一个连续时间插值是一个由相应的ODE（\ref{ode}b）定义的半流的渐近伪轨迹。通过这种处理，随机逼近过程（\ref{SA0}b）的极限行为与ODE（\ref{ode}b）的轨迹的渐进行为直接相关。然后遵循文献\citenum{Leslie}中推论4.8的证明，定理中的收敛性结论可以得到证明。
+
+
+%We first look at (\ref{ode}a). Assume that for each fixed set $\{D^t_n\}_{n\in\mathcal{V}}$, there exists a limiting expected group utility $S_n(a_n, \{D^t_n\}_{n\in\mathcal{V}})$, that is an unique globally asymptotically stable point for (\ref{ode}a), then it can be easily shown that the learning of expected group utility $\hat{S}^t_n(a_n)$ will converge to a limiting expected performance $S_n(a_n,\{D^+_n\}_{n\in\mathcal{V}})$. Thereby, under condition \textbf{C3}, the analysis of stochastic stability of Algorithm 1 reduces to the convergence analysis of the slower learning process of the regret $\{D^t_n\}_{n\in\mathcal{V}}$.
+
+%Similar to the analysis for `utility' learning, we apply the ODE approach to stochastic approximation such that a continuous time interpolation of the discrete stochastic process $\{D^t_n\}$ is an asymptotic pseudotrajectory of the semiflow defined by the corresponding ODE (\ref{ode}b). By doing this, the limiting behaviour of the stochastic approximation process (\ref{SA0}b) is directly related to the asymptotic behaviour of trajectories of the ODE (\ref{ode}b). Then by following the proof of Corollary 4.8 in \cite{Leslie}, the convergence results can be established directly.  
+
+

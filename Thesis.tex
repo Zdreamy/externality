@@ -1,0 +1,303 @@
+\documentclass[oneside,AutoFakeBold=true]{ZJUthesis}
+%\documentclass{ctexart}
+%\documentclass[GBK,shortfn,twoside,doctor,numberorder]{ZJUthesis}
+
+% 该文档中首字符为“%”的均为注释行，不会在论文中出现
+
+% 由于fontsepc包有更新，可能造成在编译过程中的问题
+% 如果使用ZJUthesis有问题，可尝试使用ZJUthesisv2
+% 如果仍有问题，可换回ZJUthesis，尝试将下面的一行拷至本文档\documentclass之前
+% \expandafter\def\csname CTEX@spaceChar\endcsname{\hspace{1em}}
+
+% 论文默认为单面模式，需双面模式请将第一行换为如下所示：
+% \documentclass[twoside]{ZJUthesis}
+% AutoFakeBold=true 是为解决在Windows系统下，使用xelatex时中文字体不能加粗的问题
+
+% 取消目录中链接的颜色，方便打印
+% 如需颜色，请将“false”改为“true”
+\hypersetup{colorlinks=false}
+
+%\usepackage[sectionbib]{chapterbib}
+
+\usepackage{algorithmic}
+\usepackage[linesnumbered,ruled,longend]{algorithm2e}
+\usepackage{anyfontsize}
+\usepackage{subfigure}
+\usepackage{amssymb,amsmath}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{url}
+%\usepackage{epstopdf}
+
+\input{zmydef.tex}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文字体设定
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fangsong
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 论文封面部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 中文封面内容
+
+% 中图分类号
+\classification{TP393}
+
+% 单位代码
+\serialnumber{10335}
+
+% 密级，如需密级则将其前“%”去掉
+\SecretLevel{ }
+
+% 学号
+\PersonalID{11732001}
+
+\title{移动网络设计与优化}
+% 如果标题一行写不下，就写成两行，在下面的命令里写第二行，不需要两行则注释掉
+\titletl{——一种网络外部性的视角}
+%\titletl{test}
+
+%英文题目
+\Etitle{Mobile Network Design and Optimization}
+% 如果一行写不下，同中文题目设定，一行写不下则写两行，不需要就注释掉
+\Etitletl{from the View of Network Externality}
+
+%\Etitle{\begin{small}Research on the Resource Optimization in the\end{small}}
+% 如果一行写不下，同中文题目设定，一行写不下则写两行，不需要就注释掉
+%\Etitletl{\begin{small}mmWave Wireless Communication System\end{small}}
+
+% 作者
+\author{匿名}
+
+\degree{博士}
+
+% 导师
+%\supervisor{陈积明\hspace{0.5em}教授，章君山\hspace{0.5em}教授}
+\supervisor{匿名}
+
+% 合作导师，如果有的话，去掉注释，
+%\cpsupervisor{某 \quad某某}
+
+% 专业名称
+\major{控制科学与工程}
+
+% 研究方向
+\researchdm{网络资源分配与优化}
+
+% 所属学院
+\institute{控制科学与工程学院}
+
+%论文提交日期
+\submitdate{二〇二〇年一月}
+
+% 答辨日期
+\defenddate{2020年03月20日}
+\defenddateE{March 20, 2020}
+
+% 生成封面
+\makeCoverPage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 中文题名页内容
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 论文评阅人信息 注意两字名与三字名，两字职称与三字职称的写法，便于对齐
+% 多余的名额直接注释掉即可，比如三个评阅人，把评阅人D，E注释掉即可
+\reviewersA{匿名}
+\reviewersB{匿名}
+\reviewersC{匿名}
+\reviewersD{匿名}
+\reviewersE{匿名}
+
+% 答辩委员会信息，如果某一个单位比较长，
+% 请在其它较短后面补上{hspace{Xem}}，X是比最长的单位名少几个字
+% 如果实际人数少于6人，多余的注释掉即可
+%\chairman{孙优贤\hspace{1.5em}院士\hspace{1.5em}浙江大学控制科学与工程学院}
+%\commissionerA{陈\hspace{1em}谋\hspace{1.5em}教授\hspace{1.5em}南京航空航天大学自动化学院}
+%\commissionerB{郑史烈\hspace{1.5em}教授\hspace{1.5em}浙江大学信息与电子工程学院}
+%\commissionerC{余官定\hspace{1.5em}教授\hspace{1.5em}浙江大学信息与电子工程学院}
+%\commissionerD{高云君\hspace{1.5em}教授\hspace{1.5em}浙江大学计算机科学与技术学院}
+%\commissionerE{赵春晖\hspace{1.5em}教授\hspace{1.5em}浙江大学控制科学与工程学院}
+%\commissionerF{葛志强\hspace{1.5em}教授\hspace{1.5em}浙江大学控制科学与工程学院}
+
+\chairman{}
+\commissionerA{}
+\commissionerB{}
+\commissionerC{}
+\commissionerD{}
+\commissionerE{}
+%\commissionerF{}
+%\chairman{陈谋       \hspace{1.5em}教授\hspace{1.5em}南京航空航天大学 \hspace{1em}}
+%\commissionerA{郑史烈\hspace{1.5em}教授\hspace{1.5em}浙江大学 \hspace{5em}}
+%\commissionerB{高云君\hspace{1.5em}教授\hspace{1.5em}浙江大学 \hspace{5em}}
+%\commissionerC{赵春晖\hspace{1.5em}教授\hspace{1.5em}浙江大学 \hspace{5em}}
+%\commissionerD{葛志强\hspace{1.5em}教授\hspace{1.5em}浙江大学 \hspace{5em}}
+% 生成中文题名页
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 英文封面内容，硕士论文可不要此页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 英文题名
+\englishtitle{Mobile Network Design and Optimization}
+% 如果题名一行写不下，就写到第二行，不需要则将其注释掉
+\englishtitletl{from the View of Network Externality}
+
+% 评阅人信息，名字，职称，单位尽量用简写，否则会写不下
+\EreviewersA{Anonymity}
+\EreviewersB{Anonymity}
+\EreviewersC{Anonymity}
+\EreviewersD{Anonymity}
+\EreviewersE{Anonymity}
+
+% 答辩委员会信息，同样尽量用简写，否则会写不下
+%\Echairman{Youxian Sun\hspace{1.5em}Academician\hspace{1.5em}ZJU}
+%\EcommissionerA{Mou Chen\hspace{1.5em}Professor\hspace{1.5em}NUAA}
+%\EcommissionerB{Shilie Zheng\hspace{1.5em}Professor\hspace{1.5em}ZJU\hspace{1.8em}}
+%\EcommissionerC{Guanding Yu\hspace{1.5em}Professor\hspace{1.5em}ZJU\hspace{1.5em}}
+%\EcommissionerD{Yunjun Gao\hspace{1.5em}Professor\hspace{1.5em}ZJU\hspace{1.3em}}
+%\EcommissionerE{Chunhui Zhao\hspace{1.5em}Professor\hspace{1.5em}ZJU\hspace{2.3em}}
+%\EcommissionerF{Zhiqiang Ge\hspace{1.5em}Professor\hspace{1.5em}ZJU\hspace{1.5em}}
+
+\Echairman{}
+\EcommissionerA{}
+\EcommissionerB{}
+\EcommissionerC{}
+\EcommissionerD{}
+\EcommissionerE{}
+%\EcommissionerF{}
+
+% 生成英文封面
+\makeenglishtitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 原创声明与版权协议页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\SignautreDateA{}{}{}
+\SignautreDateB{}{}{}
+\SignautreDateC{}{}{}
+%\SignautreDateA{2018}{10}{30}
+%\SignautreDateB{2018}{6}{30}
+%\SignautreDateC{2018}{6}{30}
+% 生成原创声明与版权协议页
+\makeOSandCPRTpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 论文部分开始
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ZJUfrontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 勘误页，一般没有
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{./Chapters/corrigenda}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 致谢页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{./Chapters/thanks}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 序言页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{./Chapters/preface}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{./Chapters/abstractC}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 英文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{./Chapters/abstractE}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 目录页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ZJUcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 插图列表
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ZJUListofFigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 表格列表
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ZJUListofTables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 缩写、符号清单、术语表
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{./Chapters/symbol}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文内容部分开始
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ZJUmainmatter
+
+%\include{./Chapters/chap1}
+
+\include{./Chapters/chap1zmy}
+
+%\include{./Chapters/chap2}
+
+\include{./Chapters/chap2zmy}
+
+\include{./Chapters/chap3zmy}
+
+%\include{./Chapters/chap4zmy}
+
+\include{./Chapters/chap5zmy}
+
+\include{./Chapters/chap6zmy}
+
+%\include{./Chapters/chap6}
+
+%\include{./Chapters/chap7}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 附录
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\include{./Chapters/chp2appendix}
+%\include{./Chapters/chp4appendix}
+
+\ZJUbackmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 参考文献
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\ZJUthesisbib{thesisbib}
+\ZJUthesisbib{thesisbibcopy2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 索引
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ZJUindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 个人简历
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{./Chapters/resume}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 发表论文目录
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{./Chapters/publications}
+
+\end{document}

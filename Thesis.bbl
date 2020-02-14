@@ -1,0 +1,708 @@
+\begin{thebibliography}{100}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{NET}
+S.~Shakkottai, R.~Srikant.
+\newblock Network optimization and control[J].
+\newblock Foundations and Trends in Networking, 2008.
+\newblock 2(3):271--379.
+
+\bibitem{osborne}
+M.~J. Osborne, A.~Rubinstein.
+\newblock A Course in Game Theory[M].
+\newblock MIT Press, 1994.
+
+\bibitem{Rolfs}
+J.~Rohlfs.
+\newblock A theory of interdependent demand for a communications service[J].
+\newblock The Bell Journal of Economics and Management Science, 1974.
+\newblock 5(1):16--37.
+
+\bibitem{Katz}
+M.~L. Katz, C.~Shapiro.
+\newblock Network externalities, competition, and compatibility[J].
+\newblock The American Economic Review, 1985.
+\newblock 75(3):424--440.
+
+\bibitem{externality}
+R.~Cornes, T.~Sandler.
+\newblock The Theory of Externalities, Public Goods, and Club Goods[M].
+\newblock Cambridge University Press, 1996.
+
+\bibitem{negative}
+W.~H. Sandholm.
+\newblock Negative externalities and evolutionary implementation[J].
+\newblock The Review of Economic Studies, 2005.
+\newblock 72(3):885--915.
+
+\bibitem{jianweibook}
+J.~Huang, L.~Gao.
+\newblock Wireless network pricing[J].
+\newblock Synthesis Lectures on Communication Networks, 2013.
+\newblock 6(2):1--176.
+
+\bibitem{Kahneman}
+D.~Kahneman, .~Tversky.
+\newblock Prospect theory: An analysis of decision under risk[J].
+\newblock Econometrica, 1979.
+\newblock 47(2):263--291.
+
+\bibitem{wang2010game}
+B.~Wang, Y.~Wu, K.J. Liu.
+\newblock Game theory for cognitive radio networks: An overview[J].
+\newblock Computer Networks, 2010.
+\newblock 54(14):2537--2561.
+
+\bibitem{chen2012spatial}
+X.~Chen, J.~Huang.
+\newblock Spatial spectrum access game: Nash equilibria and distributed
+  learning[C]//Proceedings of ACM MOBIHOC.
+\newblock 2012.
+
+\bibitem{yang2012crowdsourcing}
+D.~Yang, G.~Xue, X.~Fang, J.~Tang.
+\newblock Crowdsourcing to smartphones: Incentive mechanism design for mobile
+  phone sensing[C]//Proceedings of {ACM} MobiCom'12.
+\newblock 2012:173--184.
+
+\bibitem{FB}
+Connect with friends and the world around you on {F}acebook.
+\newblock \url{http://www.facebook.com/}.
+
+\bibitem{Twitter}
+Twitter: {I}t's {W}hat's {H}appening.
+\newblock \url{http://twitter.com/}.
+
+\bibitem{Niyato}
+N.~Kayastha, D.~Niyato, P.~Wang, E.~Hossain.
+\newblock Applications, architectures, and protocol design issues for mobile
+  social networks: A survey[J].
+\newblock Proceedings of the IEEE, 2011.
+\newblock 99(12):2130--2158.
+
+\bibitem{David10}
+E.~David, K.~Jon.
+\newblock Networks, Crowds, and Markets: Reasoning About a Highly Connected
+  World[M].
+\newblock Cambridge University Press, 2010.
+
+\bibitem{Baochun}
+Y.~Chen, B.~Li, Q.~Zhang.
+\newblock Incentivizing crowdsourcing systems with network
+  effects[C]//Proceedings of 35th IEEE INFOCOM.
+\newblock 2016:1--9.
+
+\bibitem{social}
+F.~Malandrino, M.~Kurant, A.~Markopoulou, C.~Westphal, U.~C. Kozat.
+\newblock Proactive seeding for information cascades in cellular
+  networks[C]//Proceedings of 31st IEEE INFOCOM.
+\newblock 2012:1719--1727.
+
+\bibitem{Chen13}
+X.~Chen, B.~Proulx, X.~Gong, J.~Zhang.
+\newblock Social trust and social reciprocity based cooperative {D2D}
+  communications[C]//Proceedings of 14th ACM MobiHoc.
+\newblock 2013.
+
+\bibitem{li2011propagation}
+H.~Li, C.~Chen, L.~Lai.
+\newblock Propagation of spectrum preference in cognitive radio networks: A
+  social network approach[C]//Proceedings of IEEE ICC.
+\newblock 2011:1--5.
+
+\bibitem{Ashraf}
+M.~I. Ashraf, M.~Bennis, W.~Saad, M.~Katz, C.~S. Hong.
+\newblock Dynamic clustering and user association in wireless small-cell
+  networks with social considerations[J].
+\newblock IEEE Transactions on Vehicular Technology, July 2017.
+\newblock 66(7):6553--6568.
+
+\bibitem{Guang}
+G.~Yang, S.~He, Z.~Shi, J.~Chen.
+\newblock Promoting cooperation by the social incentive mechanism in mobile
+  crowdsensing[J].
+\newblock IEEE Communications Magazine, 2017.
+\newblock 55(3):86--92.
+
+\bibitem{Chen14}
+X.~Chen, X.~Gong, L.~Yang, J.~Zhang.
+\newblock A social group utility maximization framework with applications in
+  database assisted spectrum access[C]//Proc. 33rd IEEE INFOCOM.
+\newblock 2014.
+
+\bibitem{Asuman07}
+Daron A., Asuman O.
+\newblock Competition and efficiency in congested markets[J].
+\newblock Mathematics of Operations Research, 2007:1--31.
+
+\bibitem{Fang09}
+X.~Yin, X.~Zhou, R.~Huang, Y.~Fang, S.~Li.
+\newblock A fairness-aware congestion control scheme in wireless sensor
+  networks[J].
+\newblock IEEE Transactions on Vehicular Technology, Nov 2009.
+\newblock 58(9):5225--5234.
+
+\bibitem{Tran12}
+N.~H. Tran, C.~S. Hong, S.~Lee.
+\newblock Joint congestion control and power control with outage constraint in
+  wireless multihop networks[J].
+\newblock IEEE Transactions on Vehicular Technology, Feb 2012.
+\newblock 61(2):889--894.
+
+\bibitem{rayliu2}
+Y.~{Yang}, Y.~{Chen}, C.~{Jiang}, C.~{Wang}, K.~J.~R. {Liu}.
+\newblock Wireless access network selection game with negative network
+  externality[J].
+\newblock IEEE Transactions on Wireless Communications, 2013.
+\newblock 12(10):5048--5060.
+
+\bibitem{rayliu3}
+{B. Zhang}, Y.~{Chen}, C.~{Wang}, K.~J.~R. {Liu}.
+\newblock Learning and decision making with negative externality for
+  opportunistic spectrum access[C]//Proceedings of 2012 IEEE Global
+  Communications Conference (GLOBECOM).
+\newblock 2012:1404--1409.
+
+\bibitem{rayliu1}
+C.~{Jiang}, Y.~{Chen}, K.~J.~R. {Liu}.
+\newblock Multi-channel sensing and access game: Bayesian social learning with
+  negative network externality[J].
+\newblock IEEE Transactions on Wireless Communications, April 2014.
+\newblock 13(4):2176--2188.
+
+\bibitem{christin2011survey}
+D.~Christin, A.~Reinhardt, S.~S. Kanhere, M.~Hollick.
+\newblock A survey on privacy in mobile participatory sensing applications[J].
+\newblock Journal of Systems and Software, 2011.
+\newblock 84(11):1928--1946.
+
+\bibitem{dandekar2014privacy}
+P.~Dandekar, N.~Fawaz, S.~Ioannidis.
+\newblock Privacy auctions for recommender systems[J].
+\newblock ACM Transactions on Economics and Computation, 2014.
+\newblock 2(3):12.
+
+\bibitem{ghosh2015selling}
+A.~Ghosh, A.~Roth.
+\newblock Selling privacy at auction[J].
+\newblock Games and Economic Behavior, 2015.
+\newblock 91:334--346.
+
+\bibitem{jin2016inception}
+H.~Jin, L.~Su, H.~Xiao, K.~Nahrstedt.
+\newblock {INCEPTION}: Incentivizing privacy-preserving data aggregation for
+  mobile crowd sensing systems[C]//Proceedings of {ACM} MobiHoc'16.
+\newblock volume~16. 2016:341--350.
+
+\bibitem{zhang2016privacy}
+M.~Zhang, L.~Yang, X.~Gong, J.~Zhang.
+\newblock Privacy-preserving crowdsensing: Privacy valuation, network effect,
+  and profit maximization[C]//Proceedings of {IEEE} Globecom'16.
+\newblock 2016:1--6.
+
+\bibitem{wang2016value}
+W.~Wang, L.~Ying, J.~Zhang.
+\newblock The value of privacy: Strategic data subjects, incentive mechanisms
+  and fundamental limits[C]//Proceedings of {ACM} SIGMETRICS'16.
+\newblock 2016:249--260.
+
+\bibitem{gong2017truthful}
+X.~Gong, N.~B. Shroff.
+\newblock Truthful mobile crowdsensing for strategic users with private
+  qualities[C]//Proceedings of WiOpt'17.
+\newblock 2017.
+
+\bibitem{wang2016buying}
+W.~Wang, L.~Ying, J.~Zhang.
+\newblock Buying data from privacy-aware individuals: the effect of negative
+  payments[C]//Proceedings of {WINE}'16.
+\newblock Springer, 2016:87--101.
+
+\bibitem{DejunJ}
+D.~Yang, G.~Xue, X.~Fang, J.~Tang.
+\newblock Incentive mechanisms for crowdsensing: Crowdsourcing with
+  smartphones[J].
+\newblock IEEE/ACM Transactions on Networking, 2016.
+\newblock 24(3):1732--1744.
+
+\bibitem{he2017exchange}
+S.~He, D.~Shin, J.~Zhang, J.~Chen, P.~Lin.
+\newblock An exchange market approach to mobile crowdsensing: Pricing, task
+  allocation and {W}alrasian equilibrium[J].
+\newblock {IEEE} J. Sel. Areas Commun., 2017.
+
+\bibitem{Yang17}
+G.~Yang, S.~He, Z.~Shi, J.~Chen.
+\newblock Promoting cooperation by the social incentive mechanism in mobile
+  crowdsensing[J].
+\newblock {IEEE} Commun. Mag., 2017.
+\newblock 55(3):86--92.
+
+\bibitem{Kun1}
+Z.~{Zhang}, S.~{He}, J.~{Chen}, J.~{Zhang}.
+\newblock {REAP}: An efficient incentive mechanism for reconciling aggregation
+  accuracy and individual privacy in crowdsensing[J].
+\newblock IEEE Transactions on Information Forensics and Security, 2018.
+\newblock 13(12):2995--3007.
+
+\bibitem{Agrawal:Privacy}
+R.~Agrawal, R.~Srikant.
+\newblock Privacy-preserving data mining[C]//Proceedings of ACM SIGMOD.
+\newblock 2000.
+
+\bibitem{Beresford:Mix}
+A.~Beresford, F.~Stajano.
+\newblock Mix zones: user privacy in location-aware services[C]//Proceedings of
+  IEEE PerSec.
+\newblock 2004.
+
+\bibitem{Gongjournal}
+X.~Gong, X.~Chen, K.~Xing, D.~H. Shin, M.~Zhang, J.~Zhang.
+\newblock From social group utility maximization to personalized location
+  privacy in mobile networks[J].
+\newblock IEEE/ACM Transactions on Networking, June 2017.
+\newblock 25(3):1703--1716.
+
+\bibitem{Shin:AnonySense}
+M.~Shin, C.~Cornelius, D.~Peebles, A.~Kapadia, D.~Kotz, N.~Triandopoulos.
+\newblock Anony{S}ense: A system for anonymous opportunistic sensing[J].
+\newblock Journal of Pervasive and Mobile Computing, 2010.
+\newblock 7:16--30.
+
+\bibitem{Ghinita:Private}
+G.~Ghinita, P.~Kalnis, A.~Khoshgozaran, C.~Shahabi, K.~Tan.
+\newblock Private queries in location based services: Anonymizers are not
+  necessary[C]//Proceedings of ACM SIGMOD.
+\newblock 2008.
+
+\bibitem{Khoshgozaran:Blind}
+A.~Khoshgozaran, C.~Shahabi.
+\newblock Blind evaluation of nearest neighbor queries using space
+  transformation to preserve location privacy[C]//Proceedings of SSTD.
+\newblock 2007.
+
+\bibitem{Dwork:Differential}
+C.~Dwork.
+\newblock Differential privacy[C]//Proceedings of ICALP.
+\newblock 2006.
+
+\bibitem{Jiang07}
+T.~Jiang, H.~J. Wang, Y.~Hu.
+\newblock Preserving location privacy in wireless {LAN}s[C]//Proceedings of ACM
+  MobiSys.
+\newblock 2007:246--257.
+
+\bibitem{EI10}
+R.~El-Badry, A.~Sultan, M.~Youssef.
+\newblock Hyber{L}oc: Providing physical layer location privacy in hybrid
+  sensor networks[C]//Proceedings of IEEE ICC.
+\newblock 2010.
+
+\bibitem{Ting11}
+T.~Wang, Y.~Yang.
+\newblock Location privacy protection from {RSS} localization system using
+  antenna pattern synthesis[C]//Proceedings of IEEE INFOCOM.
+\newblock April 2011:2408--2416.
+
+\bibitem{location}
+Z.~Gao, H.~Zhu, Y.~Liu, M.~Li, Z.~Cao.
+\newblock Location privacy in database-driven cognitive radio networks: Attacks
+  and countermeasures[C]//Proceedings of IEEE INFOCOM.
+\newblock April 2013:2751--2759.
+
+\bibitem{Tianming}
+T.~Li, N.~B. Mandayam.
+\newblock When users interfere with protocols: Prospect theory in wireless
+  networks using random access and data pricing as an example[J].
+\newblock IEEE Transactions on Wireless Communications, 2014.
+\newblock 13(4):1888--1907.
+
+\bibitem{Yu}
+J.~Yu, M.~H. Cheung, J.~Huang, H.~V. Poor.
+\newblock Mobile data trading: A behavioral economics perspective[C]//Proc.
+  13th WiOpt.
+\newblock May 2015:363--370.
+
+\bibitem{sheng2013sensing}
+X.~Sheng, J.~Tang, X.~Xiao, G.~Xue.
+\newblock Sensing as a service: Challenges, solutions and future directions[J].
+\newblock {IEEE} Sensors J., 2013.
+\newblock 13(10):3733--3741.
+
+\bibitem{feng2014trac}
+Z.~Feng, Y.~Zhu, Q.~Zhang, L.~M. Ni, A.~V. Vasilakos.
+\newblock {TRAC}: Truthful auction for location-aware collaborative sensing in
+  mobile crowdsourcing[C]//Proceedings of {IEEE} {INFOCOM}'14.
+\newblock 2014:1231--1239.
+
+\bibitem{Zhao}
+D.~Zhao, X.~Li, H.~Ma.
+\newblock How to crowdsource tasks truthfully without sacrificing utility:
+  Online incentive mechanisms with budget constraint[C]//Proceedings of {IEEE}
+  {INFOCOM}'14.
+\newblock 2014:1213--1221.
+
+\bibitem{wen2015quality}
+Y.~Wen, J.~Shi, Q.~Zhang, X.~Tian, Z.~Huang, H.~Yu, Y.~Cheng, X.~Shen.
+\newblock Quality-driven auction-based incentive mechanism for mobile crowd
+  sensing[J].
+\newblock {IEEE} Trans. Veh. Technol., 2015.
+\newblock 64(9):4203--4214.
+
+\bibitem{zhang2015incentivize}
+Q.~Zhang, Y.~Wen, X.~Tian, X.~Gan, X.~Wang.
+\newblock Incentivize crowd labeling under budget constraint[C]//Proceedings of
+  {IEEE} {INFOCOM}'15.
+\newblock 2015:2812--2820.
+
+\bibitem{zhang2015truthful}
+X.~Zhang, G.~Xue, R.~Yu, D.~Yang, J.~Tang.
+\newblock Truthful incentive mechanisms for crowdsourcing[C]//Proceedings of
+  {IEEE} {INFOCOM}'15.
+\newblock 2015:2830--2838.
+
+\bibitem{jin2015quality}
+H.~Jin, L.~Su, D.~Chen, K.~Nahrstedt, J.~Xu.
+\newblock Quality of information aware incentive mechanisms for mobile crowd
+  sensing systems[C]//Proceedings of {ACM} {MobiHoc}'15.
+\newblock 2015:167--176.
+
+\bibitem{duan2012incentive}
+L.~Duan, K.~Kubo, T.and~Sugiyama, J.~Huang, T.~Hasegawa, J.~Walrand.
+\newblock Incentive mechanisms for smartphone collaboration in data acquisition
+  and distributed computing[C]//Proceedings of {IEEE} {INFOCOM}'12.
+\newblock 2012:1701--1709.
+
+\bibitem{Shibo14}
+S.~He, D.~Shin, J.~Zhang, J.~Chen.
+\newblock Toward optimal allocation of location dependent tasks in
+  crowdsensing[C]//Proceedings of {IEEE} {INFOCOM}'14.
+\newblock 2014.
+
+\bibitem{peng2015pay}
+D.~Peng, F.~Wu, G.~Chen.
+\newblock Pay as how well you do: A quality based incentive mechanism for
+  crowdsensing[C]//Proceedings of {ACM} MobiHoc'15.
+\newblock 2015:177--186.
+
+\bibitem{cheung2015distributed}
+M.~Cheung, R.~Southwell, F.~Hou, J.~Huang.
+\newblock Distributed time-sensitive task selection in mobile
+  crowdsensing[C]//Proc. {ACM} MobiHoc'15.
+\newblock 2015:157--166.
+
+\bibitem{frugal}
+A.~Archer, \'{E}va Tardos.
+\newblock Frugal path mechanisms[J].
+\newblock ACM Trans. Algorithms, February 2007.
+\newblock 3(1).
+
+\bibitem{AGT}
+H.~D. Jason, K.~R. Anna.
+\newblock Profit Maximization in Mechanism Design[M]//Noam Nisan, Tim
+  Roughgarden, Eva Tardos, {Vijay V.} Vazirani.
+\newblock Algorithmic Game Theory.
+\newblock Cambridge University Press, 2007:331--362.
+
+\bibitem{milgrom2004putting}
+P.~R. Milgrom.
+\newblock Putting auction theory to work[M].
+\newblock Cambridge University Press, 2004.
+
+\bibitem{Dwork}
+Cynthia Dwork.
+\newblock Differential privacy.
+\newblock //Automata, Languages and Programming, volume 4052 of \emph{Lecture
+  Notes in Computer Science}. Springer Berlin Heidelberg, 2006.
+\newblock 1--12.
+
+\bibitem{Duan14}
+L.~Duan, T.~Kubo, K.~Sugiyama, J.~Huang, T.~Hasegawa, J.~C. Walrand.
+\newblock Motivating smartphone collaboration in data acquisition and
+  distributed computing[J].
+\newblock {IEEE} Trans. Mob. Comput., 2014.
+\newblock 13(10):2320--2333.
+
+\bibitem{li2014resolving}
+Q.~Li, Y.~Li, J.~Gao, B.~Zhao, W.~Fan, J.~Han.
+\newblock Resolving conflicts in heterogeneous data by truth discovery and
+  source reliability estimation[C]//Proceedings of {ACM} {SIGMOD}'14.
+\newblock 2014:1187--1198.
+
+\bibitem{meng2015truth}
+C.~Meng, W.~Jiang, Y.~Li, J.~Gao, L.~Su, H.~Ding, Y.~Cheng.
+\newblock Truth discovery on crowd sensing of correlated
+  entities[C]//Proceedings of {ACM} SenSys'15.
+\newblock 2015:169--182.
+
+\bibitem{kotz2012laplace}
+S.~Kotz, T.~Kozubowski, K.~Podgorski.
+\newblock The Laplace distribution and generalizations: a revisit with
+  applications to communications, economics, engineering, and finance[M].
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem{tmc}
+X.~{Wang}, W.~{Cheng}, P.~{Mohapatra}, T.~{Abdelzaher}.
+\newblock Enabling reputation and trust in privacy-preserving mobile
+  sensing[J].
+\newblock IEEE Transactions on Mobile Computing, 2014.
+\newblock 13(12):2777--2790.
+
+\bibitem{CPLEX}
+ILOG(IBM).
+\newblock Introducing ibm ilog cplex optimization studio v12.5.1[J].
+
+\bibitem{megiddo1986complexity}
+N.~Megiddo.
+\newblock On the complexity of linear programming[M].
+\newblock IBM Thomas J. Watson Research Division, 1986.
+
+\bibitem{FCCApril52012}
+{FCC}.
+\newblock
+\newblock Third memorandum opinion and order[C].
+\newblock April 5, 2012.
+
+\bibitem{db4}
+R.~Murty, R.~Chandra, T.~Moscibroda, P.~Bahl.
+\newblock Senseless: A database-driven white spaces network[C]//IEEE Symposia
+  on New Frontiers in Dynamic Spectrum Access Netoworks (DySpan).
+\newblock 2011.
+
+\bibitem{TII-crypo}
+M.~Wang, Z.~Yan.
+\newblock Privacy-preserving authentication and key agreement protocols for
+  {D2D} group communications[J].
+\newblock IEEE Transactions on Industrial Informatics, Aug 2018.
+\newblock 14(8).
+
+\bibitem{TIE-DP}
+C.~Yin, J.~Xi, R.~Sun, J.~Wang.
+\newblock Location privacy protection based on differential privacy strategy
+  for big data in industrial internet of things[J].
+\newblock IEEE Transactions on Industrial Informatics, Aug 2018.
+\newblock 14(8).
+
+\bibitem{TOARSS}
+J.~Lategahn, M.~Muller, C.~Rohrig.
+\newblock {TDoA} and {RSS} based {E}xtended {K}alman {F}ilter for indoor person
+  localization[C]//Proc. IEEE 78th Vehicular Technology Conference (VTC Fall).
+\newblock Sept 2013:1--5.
+
+\bibitem{Gezici:08}
+S.~Gezici.
+\newblock A survey on wireless position estimation[J].
+\newblock Wirel. Pers. Commun., February 2008.
+\newblock 44(3):263--282.
+
+\bibitem{Sangho12}
+S.~Oh, T.~Vu, M.~Gruteser, S.~Banerjee.
+\newblock Phantom: Physical layer cooperation for location privacy
+  protection[C]//Proceedings of IEEE INFOCOM.
+\newblock 2012:3061--3065.
+
+\bibitem{TII-game}
+T.~M. Chiwewe, C.~F. Mbuya, G.~P. Hancke.
+\newblock Using cognitive radio for interference-resistant industrial wireless
+  sensor networks: An overview[J].
+\newblock IEEE Transactions on Industrial Informatics, Dec 2015.
+\newblock 11(6).
+
+\bibitem{TII-dynamic}
+P.~K. Sahoo, S.~Mohapatra, J.~Sheu.
+\newblock Dynamic spectrum allocation algorithms for industrial cognitive radio
+  networks[J].
+\newblock IEEE Transactions on Industrial Informatics, July 2018.
+\newblock 14(7).
+
+\bibitem{Chenjournal}
+X.~Chen, X.~Gong, L.~Yang, J.~Zhang.
+\newblock Exploiting social tie structure for cooperative wireless networking:
+  A social group utility maximization framework[J].
+\newblock IEEE/ACM Transactions on Networking, December 2016.
+\newblock 24(6):3593--3606.
+
+\bibitem{Lasaulce2011}
+S.~Lasaulce, H.~Tembine.
+\newblock Game Theory and Learning for Wireless Networks: Fundamentals and
+  Applications[M].
+\newblock Academic Press, 2011.
+
+\bibitem{Hart_areinforcement}
+S.~Hart, A.~Mas-colell.
+\newblock A reinforcement procedure leading to correlated equilibrium[J].
+\newblock In: Debreu, G., Neuefeind, W., Trockel, W. (Eds.), Economic:181--200.
+
+\bibitem{TIEYuanchao}
+Y.~Shu, Y.~Huang, J.~Zhang, P.~CouÃ, P.~Cheng, J.~Chen, K.~G. Shin.
+\newblock Gradient-based fingerprinting for indoor localization and
+  tracking[J].
+\newblock IEEE Transactions on Industrial Electronics, 2016.
+\newblock 63(4):2424--2433.
+
+\bibitem{RSSguang}
+M.~R. Gholami, R.~M. Vaghefi, E.~G. Str\"{o}m.
+\newblock {RSS}-based sensor localization in the presence of unknown channel
+  parameters[J].
+\newblock IEEE Transactions on Signal Processing, Aug 2013.
+\newblock 61(15):3752--3759.
+
+\bibitem{Hart00asimple}
+S.~Hart, A.~Mas-colell.
+\newblock A simple adaptive procedure leading to correlated equilibrium[J].
+\newblock Econometrica, 2000:1127--1150.
+
+\bibitem{Yin}
+H.~Kushner, G.~Yin.
+\newblock {Stochastic Approximation and Recursive Algorithms and
+  Applications}[M].
+\newblock Springer, 2003.
+
+\bibitem{Borkar1997}
+Vivek~S. Borkar.
+\newblock Stochastic approximation with two time scales[J].
+\newblock Systems \& Control Letters, 1997.
+\newblock 29(5):291 -- 294.
+
+\bibitem{ZhangGlobe}
+M.~Zhang, L.~Yang, D.-H. Shin, X.~Gong, J.~Zhang.
+\newblock Privacy-preserving database assisted spectrum access: A
+  socially-aware distributed learning approach[C]//Proceedings of IEEE
+  GLOBECOM.
+\newblock 2015:1--6.
+
+\bibitem{Wearesocial}
+Digital in 2017: {G}lobal {O}verview.
+\newblock
+  \url{https://wearesocial.com/special-reports/digital-in-2017-global-overview}.
+
+\bibitem{Walrand08}
+J.~Walrand.
+\newblock Economic models of communication networks[J].
+\newblock Performance Modeling and Engineering, 2008:57--89.
+
+\bibitem{Huang10}
+L.~Huang, M.~J. Neely.
+\newblock The optimality of two prices: Maximizing revenue in a stochastic
+  communication system[J].
+\newblock IEEE/ACM Transaction on Networking, April 2010.
+\newblock 18(2):406--419.
+
+\bibitem{Xinbin}
+H.~Yu, L.~Gao, Z.~Li, X.~Wang, E.~Hossain.
+\newblock Pricing for uplink power control in cognitive radio networks[J].
+\newblock IEEE Transactions on Vehicular Technology, May 2010.
+\newblock 59(4):1769--1778.
+
+\bibitem{CaoTVT}
+Q.~Cao, H.~V. Zhao, Y.~Jing.
+\newblock Power allocation and pricing in multiuser relay networks using
+  {S}tackelberg and bargaining games[J].
+\newblock IEEE Transactions on Vehicular Technology, Sept 2012.
+\newblock 61(7):3177--3190.
+
+\bibitem{Xiaoming}
+X.~Duan, C.~Zhao, S.~He, P.~Cheng, J.~Zhang.
+\newblock Distributed algorithms to compute {W}alrasian equilibrium in mobile
+  crowdsensing[J].
+\newblock IEEE Transactions on Industrial Electronics, 2017.
+\newblock 64(5):4048--4057.
+
+\bibitem{Hartline08}
+J.~D. Hartline, V.~S. Mirrokni, M.~Sundararajan.
+\newblock Optimal marketing strategies over social networks[C]//Proc. 17th WWW.
+\newblock 2008.
+
+\bibitem{Candogan12}
+O.~Candogan, K.~Bimpikis, A.~Ozdaglar.
+\newblock Optimal pricing in networks with externalities[J].
+\newblock INFORMS Operation Research, 2012.
+\newblock 60(4):883--905.
+
+\bibitem{SwapnaES12}
+B.~T. Swapna, A.~Eryilmaz, N.~B. Shroff.
+\newblock Dynamic pricing strategies for social networks in the presence of
+  externalities[C]//Information Theory and Applications Workshop, San Diego,
+  CA, USA, February 5-10, 2012.
+\newblock 2012.
+
+\bibitem{GongDCZ17}
+X.~Gong, L.~Duan, X.~Chen, J.~Zhang.
+\newblock When social network effect meets congestion effect in wireless
+  networks: Data usage equilibrium and optimal pricing[J].
+\newblock {IEEE} Journal on Selected Areas in Communications, 2017.
+\newblock 35(2):449--462.
+
+\bibitem{GoogleFi}
+Google introduces wireless service called {P}roject {F}i.
+\newblock \url{http://goo.gl/aLYgrY}.
+
+\bibitem{Von}
+J.~V.~Neumann, O.~Morgenstern.
+\newblock Theory of games and economic behavior[M].
+\newblock Princeton University Press, 1953.
+
+\bibitem{camerer2011behavioral}
+C.~F. Camerer.
+\newblock Behavioral Game Theory: Experiments in Strategic Interaction[M].
+\newblock Princeton University Press, 2011.
+
+\bibitem{lcp}
+K.~G. Murty.
+\newblock Linear Complementarity, Linear and Nonlinear Programming[M].
+\newblock Heldermann Verlag, 1988.
+
+\bibitem{Horn85}
+R.~Horn, C.~Johnson.
+\newblock Matrix Analysis[M].
+\newblock Cambridge University Press, 1985.
+
+\bibitem{econometrica}
+J.~B. Rosen.
+\newblock Existence and uniqueness of equilibrium points for concave $n$-person
+  games[J].
+\newblock Econometrica, 1965.
+\newblock 33:520--534.
+
+\bibitem{MYCISS16}
+M.~Zhang, L.~Yang, X.~Gong, J.~Zhang.
+\newblock Impact of network effect and congestion effect on price competition
+  among wireless service providers[C]//Proc. 50th CISS.
+\newblock 2016.
+
+\bibitem{Prelec}
+D.~Prelec, G.~Loewenstein.
+\newblock Decision making over time and under uncertainty: A common
+  approach[J].
+\newblock Management Science, 1991.
+\newblock 37(7):770--786.
+
+\bibitem{Fudenberg}
+D.~Fudenberg, J.~Tirole.
+\newblock {Game Theory}[M].
+\newblock MIT Press, 1991.
+
+\bibitem{Hofbauer02}
+J.~Hofbauer, W.~H. Sandholm.
+\newblock On the global convergence of stochastic fictitious play[J].
+\newblock Econometrica, 2002.
+\newblock 70.
+
+\bibitem{PartII}
+M.~Benaïm, J.~Hofbauer, S.~Sorin.
+\newblock Stochastic approximations and differential inclusions, part {II}:
+  Applications[J].
+\newblock Mathematics of Operations Research, 2006.
+\newblock 31(4):673--695.
+
+\bibitem{Leslie}
+S.~Perkins, D.~S. Leslie.
+\newblock Asynchronous stochastic approximation with differential
+  inclusions[J].
+\newblock Stochastic Systems, 2012.
+\newblock 2(2):409--446.
+
+\end{thebibliography}
