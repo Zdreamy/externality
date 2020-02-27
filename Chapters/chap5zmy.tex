@@ -313,35 +313,41 @@ z_{k}(\pi_{k}^*,\pi_{-k}^*)\ge z_{k}(\pi_{k},\pi_{-k}^*) + \epsilon,~\forall \pi
 \subsection{前景理论下的提供商收入期望}
 %\subsection{Provider's Expected Revenue under Prospect Theory}
 
-我们考虑前景理论的两个主要特征。第一个是\emph{概率失真效应}，指现实中决策者倾向于看重小概率事件，但是看轻中等和大概率事件。具体而言，这种特性可以通过将客观概率$p$映射到主观概率的概率失真函数$w(p)$来刻画。使用较为广泛的概率失真函数有Prelec函数\cite{Prelec}：
+我们考虑前景理论的两个主要特征。第一个是\emph{概率失真效应}，指现实中决策者倾向于看重小概率事件，但是看轻中等和大概率事件。
+%具体而言，这种特性可以通过将客观概率$p$映射到主观概率的概率失真函数$w(p)$来刻画。
+我们考虑同类服务提供商并使用较为广泛的概率失真函数有Prelec函数\cite{Prelec}。则
 %We consider two main features of Prospect Theory. The first one is the \emph{probability distortion effect}, which states that decision maker is prone to overweigh events with small probability, but underweight medium and large probability events. Specifically, this characteristic can be captured by a probability distortion function $w(p)$ that maps an objective probability $p$ to a subjective one. A widely used probability distortion function is the Prelec function \cite{Prelec}:
-\begin{equation}\label{eq:distortion}
-w(p)=\exp(-(-\ln p)^{\alpha}), 0<\alpha\leq 1,
-\end{equation}
-其中$p$是事件的真实概率，$\alpha$是概率失真参数，$w(p)$是对应的主观概率。图\ref{fg:dist_func}阐明了具有不同参数的概率失真函数(\ref{eq:distortion})。我们可以看到所有曲线在点$1/e$相交。此外，当$0\leq p < 1/e$时，函数是凸的，$w(p)<p$（即低估客观概率）；而当$1/e\leq p<1$时，函数是凹的，我们有$w(p)\geq p$（即高估客观规律）。失真参数$\alpha$的值越小，则概率失真效应越明显。当$\alpha$设置为1时，该函数即变为客观概率。在这里我们考虑同类服务提供商，其主观评估可以通过(\ref{eq:distortion})中给出的具有相同$\alpha$取值的失真函数来表征。同时，我们假设服务提供商能够客观地评估自身的策略。因而在前景理论下，用户$k$对联合定价策略$\mathbf{p}\in\Delta\mathcal{P}$的评估可以表示为$\pi_k(p_k)w(\prod_{k'\in\K,k'\neq k}\pi_{k'}(p_{k'}))$。
+%\begin{equation}\label{eq:distortion}
+%w(p)=\exp(-(-\ln p)^{\alpha}), 0<\alpha\leq 1,
+%\end{equation}
+%其中$p$是事件的真实概率，$\alpha$是概率失真参数，$w(p)$是对应的主观概率。图\ref{fg:dist_func}阐明了具有不同参数的概率失真函数(\ref{eq:distortion})。我们可以看到所有曲线在点$1/e$相交。此外，当$0\leq p < 1/e$时，函数是凸的，$w(p)<p$（即低估客观概率）；而当$1/e\leq p<1$时，函数是凹的，我们有$w(p)\geq p$（即高估客观规律）。失真参数$\alpha$的值越小，则概率失真效应越明显。当$\alpha$设置为1时，该函数即变为客观概率。
+提供商的主观评估可以通过式（\ref{eq:distortion}）中给出的具有相同$\alpha$取值的失真函数来表征。同时，我们假设服务提供商能够客观地评估自身的策略。因而在前景理论下，用户$k$对联合定价策略$\mathbf{p}\in\Delta\mathcal{P}$的评估可以表示为$\pi_k(p_k)w(\prod_{k'\in\K,k'\neq k}\pi_{k'}(p_{k'}))$。
 %where $p$ is the real probability of an event, $\alpha$ is the probability distortion parameter, and $w(p)$ is the corresponding subjective probability. Fig. \ref{fg:dist_func} illustrates the probability distortion function (\ref{eq:distortion}) with different parameters. We can see that all the curves intersect at the point $1/e$. Besides, we have when $0\leq p < 1/e$, the function is convex, and $w(p)<p$ (under-weighting); when $1/e\leq p<1$, the function is concave, and we have $w(p)\geq p$ (over-weighting). A smaller value of distortion parameter $\alpha$ corresponds to a more significant probability distortion effect. When $\alpha$ is set to 1, the function reduces to the objective probability. In our work, we consider homogeneous service providers whose subjective evaluation can be characterized by the distortion function given in (\ref{eq:distortion}) with a same fixed value of $\alpha$. Meanwhile, we assume that service providers are able to evaluate their own strategies objectively. Thus, user $k$'s evaluation for a joint pricing strategy $\mathbf{p}\in\Delta\mathcal{P}$ under Prospect Theory can be expressed as $\pi_k(p_k)w(\prod_{k'\in\K,k'\neq k}\pi_{k'}(p_{k'}))$.
-\begin{figure}
-\centering
-\includegraphics[scale=0.58]{./pic/dist_func.eps}
-%\caption{Probability distortion functions under different distortion parameters $\alpha$.}\label{fg:dist_func}
-\caption{失真参数$\alpha$不同取值下的概率失真函数。}\label{fg:dist_func}
-\vspace{0.1cm}
-\centering
-\includegraphics[scale=0.58]{./pic/fram_func.eps}
-%\caption{Framing functions under different utility aversion parameters $\beta$ and loss penalty parameter $\lambda$.}\label{fg:fram_func}
-\caption{不同效用规避参数$\beta$和损失惩罚参数$\lambda$下的框架函数。}\label{fg:fram_func}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.58]{./pic/dist_func.eps}
+%%\caption{Probability distortion functions under different distortion parameters $\alpha$.}\label{fg:dist_func}
+%\caption{失真参数$\alpha$不同取值下的概率失真函数。}\label{fg:dist_func}
+%\vspace{0.1cm}
+%\centering
+%\includegraphics[scale=0.58]{./pic/fram_func.eps}
+%%\caption{Framing functions under different utility aversion parameters $\beta$ and loss penalty parameter $\lambda$.}\label{fg:fram_func}
+%\caption{不同效用规避参数$\beta$和损失惩罚参数$\lambda$下的框架函数。}\label{fg:fram_func}
+%\end{figure}
 
-我们考虑的前景理论的另一个特征是\emph{效用框架效应}。此效应反映了每个服务提供商对自己的收益进行主观评估的实际情况。实际中，仅当其收入超过参照点$R$（$R$无需等于零）时，每名用户才会将其视为收益增益，否则将视为收益损失。同样，在给定参考点$R$的情况下，S型单调框架函数$f(\cdot)$会进一步调整客观收入，其中函数在$v>R$侧为凹函数，而在$v<R$一侧是凸函数。此外，在$R$附近，收益损失比收益增益增长得更快，表明收益损失的边际效用大于收益增益的边际效用。在本文中，我们使用的框架函数基于\cite{Kahneman}提出的框架函数，
+我们考虑的前景理论的另一个特征是\emph{效用框架效应}。此效应反映了每个服务提供商对自己的收益进行主观评估的实际情况。
+%实际中，仅当其收入超过参照点$R$（$R$无需等于零）时，每名用户才会将其视为收益增益，否则将视为收益损失。同样，在给定参考点$R$的情况下，S型单调框架函数$f(\cdot)$会进一步调整客观收入，其中函数在$v>R$侧为凹函数，而在$v<R$一侧是凸函数。此外，在$R$附近，收益损失比收益增益增长得更快，表明收益损失的边际效用大于收益增益的边际效用。
+在本文中，我们使用基于Kahneman提出的框架函数\cite{Kahneman}，
 %Another characteristic of Prospect Theory we considered is the \emph{utility framing effect}. This effect captures the practical situation where each service provider has subjective evaluation of her own payoff. In practice, each user might consider her payoff as a gain only if it is above a reference point $R$ (not necessarily equals zero), and consider it as a loss otherwise. Also, given the reference point $R$, the objective payoff is further tuned by a S-shaped monotone framing function $f(\cdot)$, which is concave at the side where $v>R$, and convex at the side where $v<R$. In addition, in the neighborhood of $R$, the losses loom larger than gains indicating that the marginal utility in losses is larger than in gains. In this work, we use a framing function based on the one proposed in \cite{Kahneman},
-\begin{equation}\label{eq:framing}
-f(x;R)=
-\begin{cases}
-(v - R)^{\beta}, &v\geq R\\
--\lambda(R-v)^{\beta}, &v<R
-\end{cases}
-\end{equation}
-其中参数$0<\beta\leq 1$和$\lambda\geq 1$分别用于刻画风险规避和损失规避的因素。图\ref{fg:fram_func}展示了不同参数取值下的框架函数。特别地，当博弈参与者收入远离参照点时，$\beta$值越大，表示风险规避程度较小；$\lambda$值的增大则刻画了博弈参与者在客观上经历等同的收益的损失和增益时，所主观上体验到的损失要大于所体验到的增益。容易看出，当$\beta=\lambda=1$时，主观收益曲线与原始的客观收益曲线一致。我们假设每个服务提供商$k$基于式（\ref{eq:framing}）来评估其收入。则在前景理论模型下，服务提供商$ k\in\K$的预期收入$z_k^{PT}$可写为
+%\begin{equation}\label{eq:framing}
+%f(x;R)=
+%\begin{cases}
+%(v - R)^{\beta}, &v\geq R\\
+%-\lambda(R-v)^{\beta}, &v<R
+%\end{cases}
+%\end{equation}
+%其中参数$0<\beta\leq 1$和$\lambda\geq 1$分别用于刻画风险规避和损失规避的因素。图\ref{fg:fram_func}展示了不同参数取值下的框架函数。特别地，当博弈参与者收入远离参照点时，$\beta$值越大，表示风险规避程度较小；$\lambda$值的增大则刻画了博弈参与者在客观上经历等同的收益的损失和增益时，所主观上体验到的损失要大于所体验到的增益。容易看出，当$\beta=\lambda=1$时，主观收益曲线与原始的客观收益曲线一致。我们假设每个服务提供商$k$基于式（\ref{eq:framing}）来评估其收入。
+则在前景理论模型下，服务提供商$ k\in\K$的预期收入$z_k^{PT}$可写为
 %where the parameters $0<\beta\leq 1$ and $\lambda\geq 1$ model the risk aversion and loss aversion respectively. Fig. \ref{fg:fram_func} illustrates the framing function with different parameters. In particular, a larger $\beta$ characterizes less degree of risk aversion when the player's payoff is away from the reference point; and a larger $\lambda$ captures the greater loss experienced by the player with her payoff being reduced by a certain amount, in comparison to the corresponding gain she experiences with the same amount of the payoff increase. It is easy to see that when $\beta=\lambda=1$, the subjective payoff boil down to the original objective payoff. We assume each service provider $k$ evaluate her revenue using (\ref{eq:framing}) with parameter $\beta_k$, and reference point $R_k, \forall k\in\K$. Under Prospect Theory model, the expected revenue $z_k^{PT}$ of service provider $k\in\K$ can be written as
 
 \begin{equation}\label{eq:PT}
@@ -349,7 +355,7 @@ f(x;R)=
 z_{k}^{PT}(\pi_{k},\pi_{-k})=\sum_{\mathbf{p}\in \mathcal{P}}\pi_k(p_k)w\left(\prod_{k'\in\K,k'\neq k}\pi_{k'}(p_{k'})\right)f_k(v_k).
 \end{equation}
 
-我们将前景理论讨论下的定价博弈表示为$\mathcal{G}_P^{PT}\left(\mathcal{K},\Delta\mathcal{P},\{z_k^{PT}(R_k)\}_{k\in\mathcal{K}}\right)$，然后在下一节中重新讨论价格博弈的均衡解的存在。
+我们将前景理论讨论下的定价博弈表示为$\mathcal{G}_P^{PT}\left(\mathcal{K},\Delta\mathcal{P},\{z_k^{PT}(R_k)\}_{k\in\mathcal{K}}\right)$，并在下一节中重新讨论价格博弈的均衡解的存在。
 %We denote the pricing game under Prospect Theory as $\mathcal{G}_P^{PT}\left(\mathcal{K},\Delta\mathcal{P},\{z_k^{PT}(R_k)\}_{k\in\mathcal{K}}\right)$, and revisit the existence of equilibrium solution for the pricing game in the next section.
 
 
