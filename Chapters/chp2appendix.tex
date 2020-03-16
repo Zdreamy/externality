@@ -1,4 +1,4 @@
-\chapter{第三章相关推导证明}
+\chapter{第三章相关推导证明}\label{sec:appA}
 \section{定理\ref{thm:ratio}和推论\ref{cor:ratio}的证明}\label{pf:thm:ratio}
 证明定理\ref{thm:ratio}需要首先对问题（\ref{eq:problem3}）的最优分配解$\mathbf{x}^{R*}$进行刻画，并在此基础上进一步建立算法DPDA的输出与问题（\ref{eq:problem1}）最优解之间的联系。
 %To show Theorem \ref{thm:ratio}, we will first characterize the optimal allocation $\mathbf{x}^{R*}$ of problem (\ref{eq:problem3}), based on which we can establish the relationship between the outputs of DPDA and the optimal solution to problem (\ref{eq:problem1}). 
@@ -155,7 +155,7 @@
 	下一步建立问题（\ref{eq:problem2c}）和问题（\ref{eq:lpb}）之间的等价性。很容易得出对于问题（\ref{eq:lpb}）的任意可行解也是问题（\ref{eq:problem2c}）的可行解，且对应于同样的最优值，反之亦然。如果$\mathbf{x}$对于问题（\ref{eq:problem2c}）是可行的，则$y_i=\frac{x_i}{\sum_{i\in\N}w_i(1-x_i)},~\forall i\in\N$和$z=\frac{1}{\sum_{i\in\N}w_i(1-x_i)}$对于问题（\ref{eq:lpb}）是可行解，对应于同样的最优值$\sum_{i\in\N}b_iw_iy_i=\sum_{i\in\N}b_i\e_i(\mathbf{x})$。于是有问题（\ref{eq:problem2c}）的最优值大于等于问题（\ref{eq:lpb}）的最优值。反过来，如果$y_i$和$z$是问题（\ref{eq:lp}）的可行解，则有$x_i=y_i/z$是问题（\ref{eq:problem3}）的可行解，且具有同样的最优值。因此，问题（\ref{eq:problem2c}）的最优值小于等于问题（\ref{eq:lpb}）的最优值。于是可以得出问题（\ref{eq:problem2c}）与问题（\ref{eq:lpb}）的等价性。
 	%We then establish the equivalence between problem (\ref{eq:problem2c}) and problem (\ref{eq:lpb}). It is easy to show that any feasible solution in problem (\ref{eq:lpb}) is also feasible in problem (\ref{eq:problem2c}) with the same objective value and vice versa. If $\mathbf{x}$ is feasible in problem  (\ref{eq:problem2c}), then  $y_i=\frac{x_i}{\sum_{i\in\N}w_i(1-x_i)},~\forall i\in\N$ and $z=\frac{1}{\sum_{i\in\N}w_i(1-x_i)}$ are feasible in problem (\ref{eq:lpb}), with the same objective value $\sum_{i\in\N}b_iw_iy_i=\sum_{i\in\N}b_i\e_i(\mathbf{x})$. It follows that the optimal value of problem  (\ref{eq:problem2c}) is greater than or equal to the optimal value of problem (\ref{eq:lpb}). Conversely, if $y_i$ and $z$ are feasible in problem (\ref{eq:lp}), then $x_i=y_i/z$ is feasible in problem (\ref{eq:problem3}) with the same objective value. Therefore, the optimal value of problem  (\ref{eq:problem2c}) is less than or equal to the optimal value of problem (\ref{eq:lpb}). Therefore, problem (\ref{eq:problem2c}) is equivalent to problem (\ref{eq:lpb}).
 
-\chapter{第四章相关推导证明}
+\chapter{第四章相关推导证明}\label{sec:appB}
 \section{定理\ref{thm:conv}的证明}\label{pf:thm:conv}
 证明过程首先将两个迭代学习算法（\ref{estimation}）和（\ref{eq:reg2}）表示为两个随机逼近过程\cite{Yin} \cite{PartII}。为便于说明，以下证明过程省去下标$i$和$j$，可以得到
 %We first express the two iterative learning algorithms (\ref{estimation}) and (\ref{eq:reg2}) as two stochastic approximation processes\cite{Yin} \cite{PartII}. For ease of exposition, we omit the subscript $i$ and $j$, and have the following,
