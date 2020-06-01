@@ -1,2 +1,9 @@
 *.aux
 *.rtf
+
+*.log
+*.bbl
+
+*.blg
+
+.DS_Store
