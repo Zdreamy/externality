@@ -1,7 +1,10 @@
 %\chapter{具有社交意识的数据库辅助频谱访问：位置隐私、分布式学习和频谱共享}
 \chapter{双重网络外部性下频谱共享网络吞吐量最大化研究}
 \textbf{本章摘要：} 
-在无线网络基础设施飞速发展的今天，随着移动用户数量的爆炸式增长，无线频谱资源短缺的问题已经日益凸显出来。数据库辅助频谱共享技术则长期以来被视为解决频谱短缺问题颇有前景的解决方案之一，尽管其在用户位置隐私保护方面的不足一直给用户带来担忧和顾虑。本章讨论了具有社交感知的数据库辅助频谱共享网络，其中移动用户在制定频谱共享决策时同时考虑其与附近用户在地理位置上的耦合（负网络外部性）以及其与社交好友在社交关系上的耦合（正网络外部性）。而为了应对基于RSS（Received Signal Strength）的网络物理层位置隐私攻击，本文采用了一种信号传输功率扰动的措施，允许每个次级用户巧妙地在传输功率水平上添加一个服从一定分布的负偏分量。本章第3节将这种隐私保护下的次级用户具有社交感知的频谱共享问题建模成一个随机信道选择博弈。博弈中次级用户作为策略性的玩家动态调整其策略，以最大化其社交群体效用。本章第4节进一步针对提出的博弈模型设计了一个基于无悔学习规则（No-regret learning rule）的双时间尺度分布式学习算法，并证明其几乎可以肯定收敛至博弈的相关均衡集合。本章第5节的数值结果证实，隐私保护级别越高，网络吞吐量的下降就越显着。
+%在无线网络基础设施飞速发展的今天，随着移动用户数量的爆炸式增长，无线频谱资源短缺的问题已经日益凸显出来。数据库辅助频谱共享技术则长期以来被视为解决频谱短缺问题颇有前景的解决方案之一，尽管其在用户位置隐私保护方面的不足一直给用户带来担忧和顾虑。
+本章讨论了具有社交感知的数据库辅助频谱共享网络，其中移动用户在制定频谱共享决策时同时考虑其与附近用户在地理位置上的耦合（负网络外部性）以及其与社交好友在社交关系上的耦合（正网络外部性）。而为了应对基于RSS（Received Signal Strength）的网络物理层位置隐私攻击，本文采用了一种信号传输功率扰动的措施，允许每个次级用户巧妙地在传输功率水平上添加一个服从一定分布的负偏分量。本章第3节将这种隐私保护下的次级用户具有社交感知的频谱共享问题建模成一个随机信道选择博弈。
+%博弈中次级用户作为策略性的玩家动态调整其策略，以最大化其社交群体效用。
+本章第4节进一步针对提出的博弈模型设计了一个基于无悔学习规则（No-regret learning rule）的双时间尺度分布式学习算法，并证明其几乎可以肯定收敛至博弈的相关均衡集合。本章第5节的数值结果证实，隐私保护级别越高，网络吞吐量的下降就越显着。
 
 %Database assisted spectrum sharing is envisaged to be a promising solution to the spectrum shortage, caused by the immense growth of devices in both industrial and commercial wireless networks. Meanwhile, the lack of effective location privacy protection remains to be a concern for the potential participants in spectrum sharing. In this paper, we consider socially-aware database assisted spectrum access with location privacy protection, where mobile users jointly take into account their physical coupling (due to locational proximity) and social coupling while making spectrum sharing decisions. In particular, to mitigate RSS-based PHY-layer location privacy threat, we employ a power perturbation approach where each secondary user judiciously ``reduces'' its transmission power by choosing a power level following a statistical distribution (with a negative bias). Accordingly, we cast the privacy-preserving spectrum sharing among users as a stochastic channel selection game, where strategic players (secondary users) adjust their strategies dynamically aiming to maximize their social group utilities. Specifically, we devise a two-time-scale distributed learning algorithm based on no regret-based rule, and show that it converges almost surely to the set of socially-aware correlated equilibrium. The numerical results corroborate that the higher the privacy protection level, the more significant the degradation of the network throughput would be.
 
@@ -32,7 +35,7 @@
 
 %Although the game theoretic modeling has been widely applied in spectrum resource management \cite{wang2010game}, this work is the first to investigate the socially-aware channel selection game under the threat of PHY-layer location privacy attack. Specifically, each user is allowed to transmit the signal using stochastic noisy power levels to degrade the localization accuracy. 
 本章将隐私保护下的频谱接入问题表述为一个SGUM博弈。其中，次级用户在选择信道时同时考虑了其在物理域和社交域内与其他用户之间的耦合。为了应对基于RSS的定位攻击，每个用户将使用随机噪声功率电平进行数据传输，以混淆隐私攻击者对其的定位结果。
-本文中通过分析博弈均衡解的特征来刻画博弈的动态特性。具体而言，本文使用了相关均衡（Correlated Equilibrium）的博弈均衡概念。相关均衡允许不同玩家的策略之间存在相关性，相比纳什均衡更具有一般性，并且有利于实际中的分布式实现\cite{Lasaulce2011}。
+本文中通过分析博弈均衡解的特征来刻画博弈的动态特性。具体而言，本文使用了相关均衡（Correlated Equilibrium）的博弈均衡概念\cite{Aumann}。相关均衡允许不同玩家的策略之间存在相关性，相比纳什均衡更具有一般性，并且有利于实际中的分布式实现\cite{Lasaulce2011}。
 %Following \cite{Chenjournal}, we formulate the privacy-preserving spectrum access problem as a SGUM game in which secondary users take both physical aspect and social aspect into account while choosing a channel. To combat the RSS-based localization attack, each user is allowed to transmit the signal using stochastic noisy power levels to obfuscate the localization.
 %We analyze the dynamics of the game based on the characterization of the equilibrium criteria. Specifically, we consider the correlated equilibrium (CE), a generalization of Nash equilibrium, which allows for dependencies among players' strategies and is easily amenable to distributed implementation \cite{Lasaulce2011}. 
 
@@ -67,15 +70,15 @@
 与大多数现有工作不同，本文的问题建模与求解过程中将频谱管理与用户位置隐私保护紧密地结合在一起。
 %\cite{Bennis13}启发了提出的两时尺度学习算法的思想，该研究使用基于增强学习的算法研究了分散式小蜂窝网络中的干扰缓解。
 %与我们较为相关的工作是\cite{ZhangGlobe}，该文中作者使用博弈论模型研究了在具有社交意识的动态频谱访问情况下的位置隐私保护。在这项研究中，我们考虑了一个不同的均衡标准（即相关均衡），该标准通过放宽对玩家渠道选择策略的独立性假设来概括\cite{ZhangGlobe}中考虑的纳什均衡。此外，物联网设备旨在适应基于后悔规则\cite{Hart00asimple}的策略，而不是\cite{ZhangGlobe}中使用的随机虚拟对弈动态过程。
-综上，我们的工作包含以下几点贡献：
+综上，本文的工作包含以下几点贡献：
 %Summarizing, we have made the following contributions:
 \begin{itemize}
-\item 我们从双重网络外部性的视角阐释了频谱共享网络中存在的物理信号干扰（负网络外部性）与社交效应（正网络外部性），并通过社交群体效用函数的定义对两种效应进行了刻画。
-\item 我们指出了在数据库辅助频谱接入系统中的基于RSS的位置隐私攻击隐患，并考虑了一种轻量级的功率扰动方法来降低隐私攻击者的定位精度。
+\item 从双重网络外部性的视角阐释了频谱共享网络中存在的物理信号干扰（负网络外部性）与社交效应（正网络外部性），并通过社交群体效用函数的定义对两种效应进行了刻画。
+\item 指出了在数据库辅助频谱接入系统中的基于RSS的位置隐私攻击隐患，并考虑了一种轻量级的功率扰动方法来降低隐私攻击者的定位精度。
 %We identify the issue of RSS based adversarial localization attacks against IoT devices in database-assisted spectrum access, and consider a light-weight power perturbation approach to reduce the localization accuracy.
-\item 我们通过一个隐私保护下信道选择博弈的建模来研究在动态频谱接入系统中进行位置隐私保护的问题。我们允许移动设备使用添加有扰动项的传输功率水平进行信号传输并策略性地做出信道选择决策以最大化其社交群体效用。
+\item 通过一个隐私保护下信道选择博弈的建模来研究在动态频谱接入系统中进行位置隐私保护的问题。本文允许移动设备使用添加有扰动项的传输功率水平进行信号传输并策略性地做出信道选择决策以最大化其社交群体效用。
 %We jointly study the dynamic spectrum access and location privacy protection by formulating a privacy-preserving channel selection game where IoT devices use perturbed transmission power level and strategically make channel selection decisions to maximize their utilities.
-\item 我们提出了一种基于无悔学习规则的双时间尺度学习算法。该算法弱收敛于相关均衡集合，并且在用户使用随机功率扰动的情况下可以获得优于单一时间尺度学习算法的系统吞吐量指标。
+\item 提出了一种基于无悔学习规则的双时间尺度学习算法。该算法弱收敛于相关均衡集合，并且在用户使用随机功率扰动的情况下可以获得优于单一时间尺度学习算法的系统吞吐量指标。
 %We propose a two-timescale learning algorithm based on regret learning rule, which converges weakly to the set of correlated equilibria and is shown to outperform the single timescale learning approach in alleviating the system throughput degradation from random power perturbation.
 \end{itemize}
 本章的其余部分安排如下。第\ref{sec:model}节首先介绍了隐私保护下具有社交意识的频谱共享的系统模型。第\ref{sec:game}节给出了用于频谱共享的SGUM博弈建模，并介绍了{\kaishu 无悔学习规则}（No-regret learning rule）。接下来，第\ref{sec:algorithm}节提出了隐私保护下频谱共享的双度尺度无悔学习算法，并在第\ref{sec:simulation}节中对算法的表现进行了评估。最后，第\ref{sec:con}节对本章进行了总结。
@@ -114,8 +117,8 @@
 
 %\subsection{Basic Setting}\label{sec:system-model}
 \subsection{基本设置}\label{sec:system-model}
-根据FCC\cite{FCCApril52012}的规定，在数据库辅助频谱访问中，每个空白用户将首先向数据库发送频谱访问请求，然后数据库将向该用户显示在特定位置处空闲的TV信道。我们考虑这样的一个由主信道（例如电视频道）频谱集合$\mathcal{M}athcal{A}=\{1,2,\cdots,M\}$组成的频谱接入网络。在这个网络中有一组次级用户$\mathcal{M}athcal{V}=\{1,2,\cdots,N\}$会去尝试在信道未被主用户占用的情况下访问这些空闲的信道。具体来说，每个用户$n\in\mathcal{M}athcal{V}$可以访问数据库公布的一个可用信道子集$\mathcal{M}_n\subseteq\mathcal{M}athcal{A}$。显然，如果次级用户之间没有适当的协调，则可能会发生信道使用的冲突，且所产生的信道干扰会严重影响网络的性能。 {\kaishu 因此，在存在时变信道占用和干扰的环境中，数据库辅助频谱接入可以被归结为次级用户之间的动态信道分配。}
-%According to the recent ruling by FCC \cite{FCC}, in database-assisted spectrum access, each white-space user will first send a spectrum access request to a database, and the database will reveal the vacant TV channels at a particular location to that user. We consider such a spectrum access network with a set $\mathcal{M}athcal{A}=\{1,2,\cdots,M\}$ of primary channels (e.g., TV channels). And a set $\mathcal{M}athcal{V}=\{1,2,\cdots,N\}$ of secondary users (i.e., IoT devices) try to access these channels when the channels are not occupied by licensed users. In particular, each user $n\in\mathcal{M}athcal{V}$ can access a subset of available channels $\mathcal{M}_n\subseteq\mathcal{M}athcal{A}$, as revealed by the database. Apparently, without proper coordination among secondary users, the conflict on channel usage may occur, and the generated interference could severely degrade the network performance. {\em Accordingly,  database-assisted spectrum access boils down to the dynamic channel allocation among secondary users, in a time-varying channel occupancy and interference environment.}
+根据FCC\cite{FCCApril52012}的规定，在数据库辅助频谱访问中，每个空白用户将首先向数据库发送频谱访问请求，然后数据库将向该用户显示在特定位置处空闲的TV信道。我们考虑这样的一个主信道（例如电视频道）频谱集合$\mathcal{A}=\{1,2,\cdots,M\}$组成的频谱接入网络。在这个网络中有一组次级用户$\mathcal{V}=\{1,2,\cdots,N\}$会去尝试在信道未被主用户（拥有主信道使用授权的用户）占用的情况下访问这些空闲的信道。具体来说，每个用户$n\in\mathcal{V}$可以访问数据库公布的一个可用信道子集$\mathcal{M}_n\subseteq\mathcal{A}$。显然，如果次级用户之间没有适当的协调，则可能会发生信道使用的冲突，且所产生的信道干扰会严重影响网络的性能。 {\kaishu 因此，在存在时变信道占用和干扰的环境中，数据库辅助频谱接入可以被归结为次级用户之间的动态信道分配。}
+%According to the recent ruling by FCC \cite{FCC}, in database-assisted spectrum access, each white-space user will first send a spectrum access request to a database, and the database will reveal the vacant TV channels at a particular location to that user. We consider such a spectrum access network with a set $\mathcal{A}=\{1,2,\cdots,M\}$ of primary channels (e.g., TV channels). And a set $\mathcal{V}=\{1,2,\cdots,N\}$ of secondary users (i.e., IoT devices) try to access these channels when the channels are not occupied by licensed users. In particular, each user $n\in\mathcal{V}$ can access a subset of available channels $\mathcal{M}_n\subseteq\mathcal{A}$, as revealed by the database. Apparently, without proper coordination among secondary users, the conflict on channel usage may occur, and the generated interference could severely degrade the network performance. {\em Accordingly,  database-assisted spectrum access boils down to the dynamic channel allocation among secondary users, in a time-varying channel occupancy and interference environment.}
 \begin{figure}[!t]
 %\hspace{-0.35cm}
 \centering
@@ -123,33 +126,33 @@
 \caption{认知无线电网络的社交域-地理域说明}\label{fg:domain}
 \end{figure}
 
-参照文献\cite{Chenjournal}，我们考虑一个具有社交意识的认知无线电网络（如图\ref{fg:domain}所示），其中每个次级用户在选择频道时都考虑了地理位置和社交关系所决定的双重网络外部性的影响。
+参照文献[\citenum{Chenjournal}]，我们考虑一个具有社交意识的认知无线电网络（如图\ref{fg:domain}所示），其中每个次级用户在选择频道时都考虑了地理位置和社交关系所决定的双重网络外部性的影响。
 %Following \cite{Chenjournal}, we consider a socially-aware cognitive radio network (as illustrated in Fig. \ref{fg:domain}), where each secondary user takes both physical and social aspects into account during channel selection. 
 %In particular, the social relationships among secondary users are leveraged to facilitate cooperation in spectrum sharing. 
 一方面，由于数据传输产生的信道干扰，次级用户在地理域中耦合，并希望通过减弱干扰来增加其传输效用。而接入同一信道的用户越多，单一用户的效用越差（负网络外部性）。另一方面，次级用户通过他们之间的社交联系在社交域中相互耦合。由于用户的大部分通信流量产生于同社交好友之间的互动，因此社交好友通信吞吐量的提升对于用户个人的效用带来非直接的正向影响（正网络外部性）。对于具有社交意识的次级用户，在进行通信时考虑与其有社交联系的其他次级用户的效用，将形成一种双赢的局面。
 %On the one hand, secondary users are coupled in the physical domain due to the interference relationship in data transmissions, and would like to increase their utilities through interference mitigation. On the other hand, secondary users are coupled in the social domain via the social ties among them. It would be a win-win case for socially-aware secondary users to consider the utilities of those users having social trust with him (her).
 
-我们使用一个信道干扰模型来刻画设备之间的地理位置上的耦合。具体来说，我们令$a_n\in\mathcal{M}_n$表示为用户$n\in\mathcal{M}athcal{V}$所访问的信道，并将其通信链接上的信道增益表示为$g_{nn}^{a_n}$。然后我们令$g_{mn}^{a_n}$表示用户$m\in\mathcal{M}athcal{V}$和用户$n$的通信链路之间在信道$a_n$上的干扰增益。我们用$N_{a_n}$表示用户$n$的链路在信道$a_n$上的噪声，对应的信噪比（SINR）$\gamma_n(P_n)$可以表示为
-%To capture the physical coupling among devices, we assume a physical interference model. Specifically, we denote $a_n\in\mathcal{M}_n$ as the channel that user $n\in\mathcal{M}athcal{V}$ have accessed, and denote the channel gain on her communication link as $g_{nn}^{a_n}$. We then let $g_{mn}^{a_n}$ denote the channel gain of $a_n$ over the interference link between user $m\in\mathcal{M}athcal{V}$ and user $n$. The noise of channel $a_n$ on the link of user $n$ is denoted as $N_{a_n}$. The Signal-to-Interference and Noise Ratio (SINR) $\gamma_n(P_n)$ of user $n$ can be written as
+我们使用一个信道干扰模型来刻画设备之间的地理位置上的耦合。具体来说，我们令$a_n\in\mathcal{M}_n$表示为用户$n\in\mathcal{V}$所访问的信道，并将其通信链接上的信道增益表示为$g_{nn}^{a_n}$。然后我们令$g_{mn}^{a_n}$表示用户$m\in\mathcal{V}$和用户$n$的通信链路之间在信道$a_n$上的干扰增益。我们用$N_{a_n}$表示用户$n$的链路在信道$a_n$上的噪声，对应的信噪比（SINR）$\gamma_n(P_n)$可以表示为
+%To capture the physical coupling among devices, we assume a physical interference model. Specifically, we denote $a_n\in\mathcal{M}_n$ as the channel that user $n\in\mathcal{V}$ have accessed, and denote the channel gain on her communication link as $g_{nn}^{a_n}$. We then let $g_{mn}^{a_n}$ denote the channel gain of $a_n$ over the interference link between user $m\in\mathcal{V}$ and user $n$. The noise of channel $a_n$ on the link of user $n$ is denoted as $N_{a_n}$. The Signal-to-Interference and Noise Ratio (SINR) $\gamma_n(P_n)$ of user $n$ can be written as
 \begin{equation}
 \small
-\gamma_n(P_n)=\frac{P_{n}g_{nn}^{a_n}}{\sum_{m\in \mathcal{M}athcal{V}/\{n\}}P_{m}g_{mn}^{a_n}\mathcal{M}athds{1}_{\{a_m=a_n\}}+N_{a_n}},
+\gamma_n(P_n)=\frac{P_{n}g_{nn}^{a_n}}{\sum_{m\in \mathcal{V}/\{n\}}P_{m}g_{mn}^{a_n}\mathds{1}_{\{a_m=a_n\}}+N_{a_n}},
 \end{equation}
-其中$P_n$是用户$n$使用的传输功率；当用户$m$和用户$n$访问同一信道时，指示函数$\mathcal{M}athds{1}_{\{a_m = a_n\}}$等于1，反之等于零。我们用$W$表示带宽，并将功率水平为$P_n$时的吞吐量定义为用户$n$的个体效用函数，即
-%where $P_n$ is the transmission power used by user $n$; the indicator function $\mathcal{M}athds{1}_{\{a_m=a_n\}}$ is equal to 1 when user $m$ and user $n$ access to the same channel (i.e., $a_m=a_n$), and zero otherwise. We let $W$ denote the bandwidth, and define the individual utility of user $n$ as her throughput with power level $P_n$,
+其中$P_n$是用户$n$使用的传输功率；当用户$m$和用户$n$访问同一信道时，指示函数$\mathds{1}_{\{a_m = a_n\}}$等于1，反之等于零。我们用$W$表示带宽，并将功率水平为$P_n$时的吞吐量定义为用户$n$的个体效用函数，即
+%where $P_n$ is the transmission power used by user $n$; the indicator function $\mathds{1}_{\{a_m=a_n\}}$ is equal to 1 when user $m$ and user $n$ access to the same channel (i.e., $a_m=a_n$), and zero otherwise. We let $W$ denote the bandwidth, and define the individual utility of user $n$ as her throughput with power level $P_n$,
 \vspace{-0.2cm}
 \begin{equation}\label{indiu}
 U_n=W\log[1+\gamma_n(P_n)].
 \end{equation}
 
-我们使用无向社交图$G^S=\{\mathcal{M}athcal{V},E\}$来对用户之间的社交耦合进行建模。其中每个顶点对应于集合$\mathcal{M}athcal{V}$中的一个用户，用图中无向的边表示用户之间的社交关系。特别的，我们对于联结任意两个用户$n$和$m$的边赋予一个权重$e_{nm}\in [0,1]$来量化两个用户之间社交关系的亲密程度。此外，我们所定义的权重具有以下特性：$e_{nm}=e_{mn},e_{nn}=1, \forall n,m\in\mathcal{M}athcal{V}$。
-%The social coupling among users is modeled by using an undirected social graph $G^S=\{\mathcal{M}athcal{V},E\}$, with each vertex corresponding to a user within set $\mathcal{M}athcal{V}$, and undirected edges indicating the social relationship among users. In particular, we assign a weight $e_{nm}\in [0,1]$ to the edge connecting two arbitrary users $n$ and $m$ to quantify the closeness of the social relationship between the two users. Further, the edge weights have the following characteristics: $e_{nm}=e_{mn},e_{nn}=1, \forall n,m\in\mathcal{M}athcal{V}$.
+我们使用无向社交图$G^S=\{\mathcal{V},E\}$来对用户之间的社交耦合进行建模。其中每个顶点对应于集合$\mathcal{V}$中的一个用户，用图中无向的边表示用户之间的社交关系。特别的，我们对于联结任意两个用户$n$和$m$的边赋予一个权重$e_{nm}\in [0,1]$来量化两个用户之间社交关系的亲密程度。此外，我们所定义的权重具有以下特性：$e_{nm}=e_{mn},e_{nn}=1, \forall n,m\in\mathcal{V}$。
+%The social coupling among users is modeled by using an undirected social graph $G^S=\{\mathcal{V},E\}$, with each vertex corresponding to a user within set $\mathcal{V}$, and undirected edges indicating the social relationship among users. In particular, we assign a weight $e_{nm}\in [0,1]$ to the edge connecting two arbitrary users $n$ and $m$ to quantify the closeness of the social relationship between the two users. Further, the edge weights have the following characteristics: $e_{nm}=e_{mn},e_{nn}=1, \forall n,m\in\mathcal{V}$.
 %\subsection{Social Group Utility Maximization (SGUM) for Spectrum Access}
 %As hand-held devices are carried by human beings, the social relationships among users can be leveraged to enable such collaborations among users. Intuitively, by taking into consideration of the social aspect, users are expected to select channels more wisely instead of in a fully selfish manner. 
 我们使用社交群体效用模型来刻画存在社交联系的设备之间潜在的社交耦合，在这里，我们定义用户$n$的社交群体效用函数为
 \vspace{-0.2cm}
 \begin{equation}\label{sgu}
-S_n=U_n+\sum_{m\in \mathcal{M}athcal{V}/\{n\}}e_{nm}U_m.
+S_n=U_n+\sum_{m\in \mathcal{V}/\{n\}}e_{nm}U_m.
 \end{equation}
 该定义中用户的个体效用刻画了用户间的{\kaishu 负网络外部性}影响，而对于社交好友个体效用的加权求和则刻画了用户之间的{\kaishu 正网络外部性}效应。
 %。直观地，$e_n$的值越大，设备$n$与其所关联的群体之间的社交联系越强。
@@ -192,16 +195,16 @@ f(\Delta p_n|b,\bar{p})=\frac{\frac{1}{b}\exp(\Delta p_n/b)}{1-\exp(\bar{p}/b)},
 %In our study, all the transmitter-receiver pairs in the system are modeled as self-interested users interacting strategically and repeatedly with each other, aiming to maximize their social group utilities in the long run. 
 %To this end, we formulate the privacy-preserving spectrum sharing problem as a \emph{social group utility maximization (SGUM) game} with the players corresponding to the users\footnote{We use the terms ``user'' and ``player'' interchangeably throughout the paper.}.
 %In addition, each $TR$ will actively perturb her transmission power in order to mitigate the threat of RSS based location privacy attack.
-每个玩家$n\in\mathcal{M}athcal{V}$的行为空间在这里被定义为用户$n$可以接入的可用信道集合$\mathcal{M}_n$。我们令$\A=(a_1,a_2,\cdots,a_N)\in\mathcal{M}$表示所有用户的联合频谱接入选择方案，其中$\mathcal{M}\triangleq\prod_{n=1}^N\mathcal{M}_n$。
-%The action space of each player $n\in\mathcal{M}athcal{V}$ is the set of available channels $\mathcal{M}_n$ that user $n$ can access. We let $\A=(a_1,a_2,\cdots,a_N)\in\mathcal{M}$ denote the joint spectrum access profile of all the users, where $\mathcal{M}\triangleq\prod_{n=1}^N\mathcal{M}_n$. 
+每个玩家$n\in\mathcal{V}$的行为空间在这里被定义为用户$n$可以接入的可用信道集合$\mathcal{M}_n$。我们令$\A=(a_1,a_2,\cdots,a_N)\in\mathcal{M}$表示所有用户的联合频谱接入选择方案，其中$\mathcal{M}\triangleq\prod_{n=1}^N\mathcal{M}_n$。
+%The action space of each player $n\in\mathcal{V}$ is the set of available channels $\mathcal{M}_n$ that user $n$ can access. We let $\A=(a_1,a_2,\cdots,a_N)\in\mathcal{M}$ denote the joint spectrum access profile of all the users, where $\mathcal{M}\triangleq\prod_{n=1}^N\mathcal{M}_n$. 
 %Since the observed social group utility is noisy due to the power perturbation implemented by each user, it makes more sense for each user to target on maximizing its 
 为了便于评估每个用户的长期社交群组效用期望，我们令$\Delta\mathcal{M}_n$表示用户$n$的混合策略空间，并令$\pi_n=\left(\pi(a_{n,1}),\pi(a_{n,2}),\cdots,\pi(a_{n,|\mathcal{M}_n|})\right)\in\Delta\mathcal{M}_n$表示用户$n$的混合策略。其本质上可看作为是定义在$\mathcal{M}_n$上的一个概率分布，其中$q(a_{n,i})$代表用户选择信道$a_{n,i}$的概率。因此，所有玩家的联合混合策略可以被表示为$\p=(\pi_1,\pi_2,\cdots,\pi_N)\in\Delta\mathcal{M}\triangleq\prod_{n=1}^N\Delta\mathcal{M}_n$，而按照管理除用户$n$外的其他玩家的联合策略可以表示为$\p_{-n}=(\pi_1,\cdots,\pi_{n-1},\pi_{n+1},\cdots,\pi_N)$ 。我们进一步令$\pi(\A)$表示联合决策$\A\in\mathcal{M}$在博弈中出现的概率。
 
 
 %To facilitate the evaluation of each user's long-term expected group utilities, we denote $\Delta\mathcal{M}_n$ as the mixed strategy space of user $n$, and let $\pi_n=\left(\pi(a_{n,1}),\pi(a_{n,2}),\cdots,\pi(a_{n,|\mathcal{M}_n|})\right)\in\Delta\mathcal{M}_n$ denote user $n$'s mixed strategy, a probability distribution over $\mathcal{M}_n$ with $q(a_{n,i})$ representing the probability of selecting the channel $a_{n,i}$. It follows that the joint mixed-strategy over all players is $\p=(\pi_1,\pi_2,\cdots,\pi_N)\in\Delta\mathcal{M}\triangleq\prod_{n=1}^N\Delta\mathcal{M}_n$, and the joint strategy of players excluding user $n$ can be denoted as $\p_{-n}=(\pi_1,\cdots,\pi_{n-1},\pi_{n+1},\cdots,\pi_N)$ by convention. We further denote $\pi(\A)$ as the probability of joint action $\A\in\mathcal{M}$ being played. 
 
-基于以上模型，我们将隐私保护下的频谱共享问题视为一个非合作信道选择博弈，用一个三元组$\Gamma=\left(\mathcal{M}athcal{V},\Delta\mathcal{M},\{S_n\}_{n=1}^N\right)$来表示，博弈中每个玩家旨在最大化自身的期望社交群体效用。我们研究中考虑的均衡标准是{\kaishu 相关均衡（Correlated Equilibrium）}。由于相关均衡允许不同玩家的之间的策略存在相关性，因此可被看做是{\kaishu 纳什均衡（Nash Equilibrium）}的一个泛化。数学上来看，一个相关均衡对应一个凸多面体，凸面体的极值点对应于纳什均衡。因此，通常系统可以在达到相关均衡时比达到纳什均衡时获得更好的总体性能。
-%Summarizing, we cast the privacy-preserving spectrum sharing problem as a non-cooperative game denoted by a 3-tuple $\Gamma=\left(\mathcal{M}athcal{V},\Delta\mathcal{M},\{S_n\}_{n=1}^N\right)$. The equilibrium criteria considered in our study is the \textsl{correlated equilibrium}, which generalizes the Nash equilibrium by permitting players' strategies to be dependent. Mathematically, a correlated equilibrium is a convex polytope with its extrema points corresponding to the set of Nash equilibria. Thereby, in general, a better overall performance can be achieved under the correlated equilibrium than that under a Nash equilibrium. 
+基于以上模型，我们将隐私保护下的频谱共享问题视为一个非合作信道选择博弈，用一个三元组$\Gamma=\left(\mathcal{V},\Delta\mathcal{M},\{S_n\}_{n=1}^N\right)$来表示，博弈中每个玩家旨在最大化自身的期望社交群体效用。我们研究中考虑的均衡标准是{\kaishu 相关均衡（Correlated Equilibrium）}\cite{Aumann}。由于相关均衡允许不同玩家的之间的策略存在相关性，因此可被看做是{\kaishu 纳什均衡（Nash Equilibrium）}的一个泛化（见第\ref{sec:neconcept}节的讨论）。数学上来看，一个相关均衡对应一个凸多面体，凸面体的极值点对应于纳什均衡。因此，通常系统可以在达到相关均衡时比达到纳什均衡时获得更好的总体性能。
+%Summarizing, we cast the privacy-preserving spectrum sharing problem as a non-cooperative game denoted by a 3-tuple $\Gamma=\left(\mathcal{V},\Delta\mathcal{M},\{S_n\}_{n=1}^N\right)$. The equilibrium criteria considered in our study is the \textsl{correlated equilibrium}, which generalizes the Nash equilibrium by permitting players' strategies to be dependent. Mathematically, a correlated equilibrium is a convex polytope with its extrema points corresponding to the set of Nash equilibria. Thereby, in general, a better overall performance can be achieved under the correlated equilibrium than that under a Nash equilibrium. 
 我们在下面给出相关均衡的正式定义。
 %The formal definition of correlated equilibrium is given below.
 
@@ -234,31 +237,30 @@ f(\Delta p_n|b,\bar{p})=\frac{\frac{1}{b}\exp(\Delta p_n/b)}{1-\exp(\bar{p}/b)},
 
 具体来说，对于每个用户$n\in\V$，给定其对手的策略$\A_{-n}$，则截止到$t$时刻，其在当前策略$a^t_n=a_{n,i}$与某一其他策略$a_{n,j}\neq a_{n,i}$下的平均群体效用之差为
 %Specifically, for each user $n\in\V$, given her opponents' actions $\A_{-n}$, the difference between averaged group utility under current action $a^t_n=a_{n,i}$ and that under any other action $a_{n,j}\neq a_{n,i}$ until time $t$ can be measured as
-\begin{align}\label{eq:reg1}
+\begin{equation}\label{eq:reg1}
 \small
-D_n^t&(a_{n,j},a_{n,i})=\nonumber\\
-&\frac{\sum_{l\leq t}S_n(a_{n,j},\A^l_{-n})\mathcal{M}athds{1}_{\{a^l_n=a_{n,i}\}}}{t}-\frac{\sum_{l\leq t}S_n(\A^l)\mathcal{M}athds{1}_{\{a^l_n=a_{n,i}\}}}{t},
-\end{align}
-其中第二项量化了用户$n$在策略$a_{n,i}$下截止到时间$t$时刻的平均群组效用，而第一项表明了如果用户如果在之前每次选择策略$a_{n,i}$时都换为使用策略$a_{n,j}$所能获得的平均群组效用。直观地来说，用户$n$会产生“遗憾”如果一个替代的策略可以带来更高的效用。在这里，我们就用$R^t_n(a_{n,j},a_{n,i})=\mathcal{M}ax\left\{D^t_n(a_{n,j},a_{n,i}),0\right\}$来表示用户因未使用$a_{n,j}$替代$a_{n,i}$所产生的“遗憾”。
-%where the second term quantifies the average group utility perceived by user $n$ under action $a_{n,i}$ until time $t$, and the first term indicates the average utility she would have obtained if she had chosen $a_{n,j}$ every time when $a_{n,i}$ was played. Then user $n$'s ``regret'' for not having played action $a_{n,j}$, instead of $a_{n,i}$ in the previous plays, is given as $R^t_n(a_{n,j},a_{n,i})=\mathcal{M}ax\left\{D^t_n(a_{n,j},a_{n,i}),0\right\}$. Intuitively, user $n$ would regret if an alternate action could have brought her higher utility.
+D_n^t(a_{n,j},a_{n,i})=\frac{\sum_{l\leq t}S_n(a_{n,j},\A^l_{-n})\mathds{1}_{\{a^l_n=a_{n,i}\}}}{t}-\frac{\sum_{l\leq t}S_n(\A^l)\mathds{1}_{\{a^l_n=a_{n,i}\}}}{t},
+\end{equation}
+其中第二项量化了用户$n$在策略$a_{n,i}$下截止到时间$t$时刻的平均群组效用，而第一项表明了如果用户如果在之前每次选择策略$a_{n,i}$时都换为使用策略$a_{n,j}$所能获得的平均群组效用。直观地来说，用户$n$会产生“遗憾”如果一个替代的策略可以带来更高的效用。在这里，我们就用$R^t_n(a_{n,j},a_{n,i})=\max\left\{D^t_n(a_{n,j},a_{n,i}),0\right\}$来表示用户因未使用$a_{n,j}$替代$a_{n,i}$所产生的“遗憾”。
+%where the second term quantifies the average group utility perceived by user $n$ under action $a_{n,i}$ until time $t$, and the first term indicates the average utility she would have obtained if she had chosen $a_{n,j}$ every time when $a_{n,i}$ was played. Then user $n$'s ``regret'' for not having played action $a_{n,j}$, instead of $a_{n,i}$ in the previous plays, is given as $R^t_n(a_{n,j},a_{n,i})=\max\left\{D^t_n(a_{n,j},a_{n,i}),0\right\}$. Intuitively, user $n$ would regret if an alternate action could have brought her higher utility.
 
 根据时间$t$时刻的遗憾度量，用户$n$将根据以下概率调整其策略，
 %Based on the regret measures at time $t$, user $n$ adapts her action according to the probabilistic strategy given as follows,
 \vspace{-0.3cm}
 \begin{equation}\label{eq:st1}
 \begin{cases}
-q^{t+1}_n(a_{n,j})=\frac{1}{\mathcal{M}u}R^t_n(a_{n,j},a_{n,i}), ~~~~\forall a_{n,j}\in\mathcal{M}_n/\{a_{n,i}\}, \\
+q^{t+1}_n(a_{n,j})=\frac{1}{\mu}R^t_n(a_{n,j},a_{n,i}), ~~~~\forall a_{n,j}\in\mathcal{M}_n/\{a_{n,i}\}, \\
 q^{t+1}_n(a_{n,i})=1-\sum_{a_{n,j}\neq a_{n,i}}q^{t+1}_n(a_{n,j}).
 \end{cases}
 \end{equation}
-这里，选择某一替代策略$a_{n,j}\in\mathcal{M}_n/\{a_{n,i}\}$的概率正比于相应的遗憾度量$R^{t}_n(a_{n,j},a_{n,i})$。我们设定参数$\mathcal{M}u$为一个较大的值，以确保用户始终会以一定非负的概率维持当前所选择的信道。较大的$\mathcal{M}u$值会降低切换到其他可选信道的概率，因此$\mathcal{M}u$可以被视为一个“惯性”参数。类似的，在算法进行过程中用户不断地更新自己的遗憾度量。
-%Here the probability of changing to an alternate action $a_{n,j}\in\mathcal{M}_n/\{a_{n,i}\}$ is proportional to the corresponding regret measure $R^{t}_n(a_{n,j},a_{n,i})$. The parameter $\mathcal{M}u$ is chosen to be a large value to guarantee that there is always a positive probability of remaining at the currently selected channel. A higher $\mathcal{M}u$ lowers the probability of switching to an alternate channel, therefore can be treated as an `inertia' parameter. The algorithm then moves on by users updating their regret measures at time step $t+1$. 
+这里，选择某一替代策略$a_{n,j}\in\mathcal{M}_n/\{a_{n,i}\}$的概率正比于相应的遗憾度量$R^{t}_n(a_{n,j},a_{n,i})$。我们设定参数$\mu$为一个较大的值，以确保用户始终会以一定非负的概率维持当前所选择的信道。较大的$\mu$值会降低切换到其他可选信道的概率，因此$\mu$可以被视为一个“惯性”参数。类似的，在算法进行过程中用户不断地更新自己的遗憾度量。
+%Here the probability of changing to an alternate action $a_{n,j}\in\mathcal{M}_n/\{a_{n,i}\}$ is proportional to the corresponding regret measure $R^{t}_n(a_{n,j},a_{n,i})$. The parameter $\mu$ is chosen to be a large value to guarantee that there is always a positive probability of remaining at the currently selected channel. A higher $\mu$ lowers the probability of switching to an alternate channel, therefore can be treated as an `inertia' parameter. The algorithm then moves on by users updating their regret measures at time step $t+1$. 
 我们令$f^t(\A)\in\Delta\mathcal{M}$表示联合决策$\A\in\mathcal{M}$截止到$t$时刻的经验分布，表示为
 %For each joint action $\A\in\mathcal{M}$, we let $f^t(\A)\in\Delta\mathcal{M}$ denote its empirical distribution by time slot $t$, expressed as
 \vspace{-0.2cm}
 \begin{equation}\label{eq:empi}
 %\small
-f^t(\A)=\frac{1}{t}\sum_{l\leq t}\mathcal{M}athds{1}_{\{\A^l=\A\}}.
+f^t(\A)=\frac{1}{t}\sum_{l\leq t}\mathds{1}_{\{\A^l=\A\}}.
 %f^t(\A)=\frac{|l\leq t:\A^l=\A|}{t}.
 \end{equation}
 %\vspace{-0.2cm}
@@ -291,30 +293,30 @@ f^t(\A)=\frac{1}{t}\sum_{l\leq t}\mathcal{M}athds{1}_{\{\A^l=\A\}}.
 %The learning algorithm, as outlined in Algorithm \ref{alg:RCS}, consists of a `faster' and a `slower' learning process. Specifically, on a faster timescale, each user continuously updates the expected group utility corresponding to each available channel given the noisy utility observation at each time step. Calibrating to the maintained expected group utility, each user adapts her strategy by following the regret-based learning rule at the `slower' time scale. In what follows, we elaborate further on `faster' and `slower' learning processes, respectively.
 
 \subsubsection{较小时间尺度上的效用学习}
-在较小的时间尺度上，用户$n$持续更新一个向量$\mathcal{M}athbf{\hat{s}^t_n}=\left(\hat{S}^t_n(a_{n,1}),\hat{S}^t_n(a_{n,2}),\cdots,\hat{S}^t_n(a_{n,|\mathcal{M}_n|})\right)$，其中每个元素$\hat{S}^t_n(a_{n,i})$表示在$t$时刻对于信道$a_{n,i}$所对应的群体效用的估计。随着算法的推进，群体效用的估计更新如下式所示
-%In the `faster' learning process, user $n$ maintains a vector $\mathcal{M}athbf{\hat{s}^t_n}=\left(\hat{S}^t_n(a_{n,1}),\hat{S}^t_n(a_{n,2}),\cdots,\hat{S}^t_n(a_{n,|\mathcal{M}_n|})\right)$, with each element $\hat{S}^t_n(a_{n,i})$ denoting the estimated group utility under action $a_{n,i}$ at time step $t$. As time evolves, the estimated group utility is updated as follows:
+在较小的时间尺度上，用户$n$持续更新一个向量$\mathbf{s^t_n}=\left(\hat{S}^t_n(a_{n,1}),\hat{S}^t_n(a_{n,2}),\cdots,\hat{S}^t_n(a_{n,|\mathcal{M}_n|})\right)$，其中每个元素$\hat{S}^t_n(a_{n,i})$表示在$t$时刻对于信道$a_{n,i}$所对应的群体效用的估计。随着算法的推进，群体效用的估计更新如下式所示
+%In the `faster' learning process, user $n$ maintains a vector $\mathbf{\hat{s}^t_n}=\left(\hat{S}^t_n(a_{n,1}),\hat{S}^t_n(a_{n,2}),\cdots,\hat{S}^t_n(a_{n,|\mathcal{M}_n|})\right)$, with each element $\hat{S}^t_n(a_{n,i})$ denoting the estimated group utility under action $a_{n,i}$ at time step $t$. As time evolves, the estimated group utility is updated as follows:
 \begin{equation}\label{estimation}
-\hat{S}^t_n(a_{n,i})=(1-\lambda^t)\hat{S}^{t-1}_n(a_{n,i})+\lambda^t\mathcal{M}athds{1}_{\{a^t_n=a_{n,i}\}}S^t_n(a_n^t),
+\hat{S}^t_n(a_{n,i})=(1-\lambda^t)\hat{S}^{t-1}_n(a_{n,i})+\lambda^t\mathds{1}_{\{a^t_n=a_{n,i}\}}S^t_n(a_n^t),
 \end{equation}
-其中$0<\lambda^t<1$表示学习率。具体地，为了得到$S^t_n(a^t_n)$，每个用户$n$首先观测自己受到的干扰并计算个体效用$U^t_n(a^t_n)$，并查询每个用户$m\in\mathcal{M}athcal{N}_n$所获得的效用$U^t_n(a^t_n)$\footnote{两个有社交关系的用户之间的信息交换可以通过一个公共控制信道来完成。}，然后根据式（\ref{sgu}）进行求和。在每次迭代$t$中，向量$\mathcal{M}athbf{s^t_n}$中只有元素$\hat{S}^t_n(a_{n,i})$会被更新。通过这种效用学习过程，用户$n$可以渐近地形成对期望群体效用的准确评估，从而确保在较大的时间尺度所进行的策略学习最终可以收敛到CE的集合中。
-%where $0<\lambda^t<1$ denotes the learning rate. Specifically, for each user $n$, $S^t_n(a^t_n)$ is obtained by first measuring its own received interference $U^t_n(a^t_n)$, querying the $U^t_m$ received by each user $m\in\mathcal{M}athcal{N}_n$ \footnote{The information exchange among two users within a same group could be fulfilled via a common control channel.}, and then conducting the summation according to (\ref{sgu}). Note that at each iteration $t$, only the element $\hat{S}^t_n(a_{n,i})$ of vector $\mathcal{M}athbf{s^t_n}$ is actually updated. Through this recursive utility learning process, user $n$ can asymptotically form accurate evaluation of the expected group utility which ensures that the strategy learning on slower timescale can finally reach the set of CE.
+其中$0<\lambda^t<1$表示学习率。具体地，为了得到$S^t_n(a^t_n)$，每个用户$n$首先观测自己受到的干扰并计算个体效用$U^t_n(a^t_n)$，并查询每个用户$m\in\mathcal{N}_n$所获得的效用$U^t_n(a^t_n)$\footnote{两个有社交关系的用户之间的信息交换可以通过一个公共控制信道来完成。}，然后根据式（\ref{sgu}）进行求和。在每次迭代$t$中，向量$\mathbf{s^t_n}$中只有元素$\hat{S}^t_n(a_{n,i})$会被更新。通过这种效用学习过程，用户$n$可以渐近地形成对期望群体效用的准确评估，从而确保在较大的时间尺度所进行的策略学习最终可以收敛到CE的集合中。
+%where $0<\lambda^t<1$ denotes the learning rate. Specifically, for each user $n$, $S^t_n(a^t_n)$ is obtained by first measuring its own received interference $U^t_n(a^t_n)$, querying the $U^t_m$ received by each user $m\in\mathcal{N}_n$ \footnote{The information exchange among two users within a same group could be fulfilled via a common control channel.}, and then conducting the summation according to (\ref{sgu}). Note that at each iteration $t$, only the element $\hat{S}^t_n(a_{n,i})$ of vector $\mathbf{s^t_n}$ is actually updated. Through this recursive utility learning process, user $n$ can asymptotically form accurate evaluation of the expected group utility which ensures that the strategy learning on slower timescale can finally reach the set of CE.
 \begin{algorithm}
 \caption{双时间尺度分布式学习算法}
 \label{alg:RCS}
 \begin{algorithmic}[1]
 \STATE \textbf{initialization:} 对于每个用户$n$,
-\STATE 初始化$\mathcal{M}athbf{s^0_n}$和遗憾度量$R_n^0(a_{n,j},a_{n,i}), \forall a_{n,i}, a_{n,j}\in\mathcal{M}_n$.
+\STATE 初始化$\mathbf{s^0_n}$和遗憾度量$R_n^0(a_{n,j},a_{n,i}), \forall a_{n,i}, a_{n,j}\in\mathcal{M}_n$.
 \STATE 每个用户$i$以概率$q^0_n(a_{n,i})=\frac{1}{|\mathcal{M}_n|}$随机选择一个信道$a_{n,i}\in\A_n$。
 \STATE 初始化学习率$\lambda^0$和$\epsilon^0$；初始化参数$\gamma$.
 \STATE \textbf{end initialization}
-\FOR {$n\in\mathcal{M}athcal{V}$}
-\STATE \emph{效用学习（较小时间尺度）：}
+\FOR {$n\in\mathcal{V}$}
+\STATE {\heiti 效用学习（较小时间尺度）：}
 \STATE 观测受到的干扰并计算个体效用$U_n^t(a^t_n)$ by (\ref{indiu}).
 \STATE 查询社交邻居的个体效用并根据式（\ref{sgu}）计算即时社交群体效用$S_{n}^t(a^t_n)$
 %Enquiry the individual utility of neighbors and compute instantaneous group utility $S_{n}^t(a^t_n)$ by (\ref{sgu}).
 \STATE 基于式（\ref{estimation}）更新对于期望群体效用$\hat{S}_{n}^t(a^t_n)$的估计
 %Update the estimation of expected utility $\hat{S}_{n}^t(a^t_n)$ by (\ref{estimation}).
-\STATE \emph{策略学习（较大时间尺度）：}
+\STATE {\heiti 策略学习（较大时间尺度）：}
 \STATE 基于式（\ref{eq:insreg}）计算即时遗憾$Q^t_n(a_{n,j},a_{n,i})$，基于式（\ref{eq:reg2}）计算遗憾度量$D^t_n(a_{n,j},a_{n,i})$。
 % according to (\ref{eq:insreg}), and compute the regret measures $D^t_n(a_{n,j},a_{n,i})$ according to (\ref{eq:reg2}).
 \STATE 根据（\ref{eq:str2}）更新信道选择策略$\{q^t_n(a_n)\}$，并基于$\{q^t_n(a_n)\}$随机选择下一时刻的信道$a^{t+1}_n$
@@ -335,33 +337,33 @@ f^t(\A)=\frac{1}{t}\sum_{l\leq t}\mathcal{M}athds{1}_{\{\A^l=\A\}}.
 \begin{equation}\label{eq:reg2}
 D^t_n(a_{n,j},a_{n,i})=(1-\epsilon^t)D^{t-1}_n(a_{n,j},a_{n,i})+\epsilon^tQ^t_n(a_{n,j},a_{n,i}),
 \end{equation}
-其中$Q^t_n(a_{n,j},a_{n,i})\triangleq[S_n(a_{n,j},\A^t_{-n})-S_n(\A^t)]\mathcal{M}athds{1}_{\{a^t_n=a_{n,i}\}}$定义了在时刻$t$使用了决策$a_{n,i}$而不是$a_{n,j}$所产生的即时遗憾。学习率$0<\epsilon^t<1$的取值决定了无悔策略学习的时间尺度，且应当在设置时与$\lambda^t$的值相对应以保证算法收敛到博弈的CE，这一点将在下文进一步讨论。值得注意的是，式（\ref{eq:reg2}）是对式（\ref{eq:reg1}）的推广，并且当学习率$\epsilon^t=1/t$时可以约简为式（\ref{eq:reg1}）。
-%where $Q^t_n(a_{n,j},a_{n,i})\triangleq[S_n(a_{n,j},\A^t_{-n})-S_n(\A^t)]\mathcal{M}athds{1}_{\{a^t_n=a_{n,i}\}}$ is defined as the instantaneous regret for not playing actions $a_{n,j}$ instead of $a_{n,i}$ at time $t$. The learning rate $0<\epsilon^t<1$ determines the timescale of the regret-based strategy learning, and should be set in accordance with the value of $\lambda^t$ to guarantee the convergence to the CE, to be discussed next.
+其中$Q^t_n(a_{n,j},a_{n,i})\triangleq[S_n(a_{n,j},\A^t_{-n})-S_n(\A^t)]\mathds{1}_{\{a^t_n=a_{n,i}\}}$定义了在时刻$t$使用了决策$a_{n,i}$而不是$a_{n,j}$所产生的即时遗憾。学习率$0<\epsilon^t<1$的取值决定了无悔策略学习的时间尺度，且应当在设置时与$\lambda^t$的值相对应以保证算法收敛到博弈的CE，这一点将在下文进一步讨论。值得注意的是，式（\ref{eq:reg2}）是对式（\ref{eq:reg1}）的推广，并且当学习率$\epsilon^t=1/t$时可以约简为式（\ref{eq:reg1}）。
+%where $Q^t_n(a_{n,j},a_{n,i})\triangleq[S_n(a_{n,j},\A^t_{-n})-S_n(\A^t)]\mathds{1}_{\{a^t_n=a_{n,i}\}}$ is defined as the instantaneous regret for not playing actions $a_{n,j}$ instead of $a_{n,i}$ at time $t$. The learning rate $0<\epsilon^t<1$ determines the timescale of the regret-based strategy learning, and should be set in accordance with the value of $\lambda^t$ to guarantee the convergence to the CE, to be discussed next.
 %Note that (\ref{eq:reg2}) generalizes (\ref{eq:reg1}) and can reduce to (\ref{eq:reg1}) with learning rate $\epsilon^t$ being set to $1/t$.  
 
 如上一节所提到的，时刻$t$时，在不知道其他用户的决策$\A^t_{-n}$以及他们的个体效用函数的情况下，计算某一替代决策$a_{n,j}\neq a_{n,i}$所对应的效用是非常困难的。
-%As mentioned in the previous section, the perceivable utility under an alternate action $a_{n,j}\neq a_{n,i}$ at time $t$, $S_n(a_{n,j},\A^t_{-n})\mathcal{M}athds{1}_{\{a^t_n=a_{n,i}\}}$, is challenging to compute without the knowledge of other users' actions $\A^t_{-n}$ and their individual utility functions.
+%As mentioned in the previous section, the perceivable utility under an alternate action $a_{n,j}\neq a_{n,i}$ at time $t$, $S_n(a_{n,j},\A^t_{-n})\mathds{1}_{\{a^t_n=a_{n,i}\}}$, is challenging to compute without the knowledge of other users' actions $\A^t_{-n}$ and their individual utility functions.
 %\footnote{It is challenging to directly calculate the regret since the computation of group utility requires the information about group neighbors' individual utilities, which is difficult to get in practice.}. 
-因此，我们使用一种经过修正的无悔学习规则\cite{Hart_areinforcement}，并用估计项$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathcal{M}athds{1}_{\{a^t_n=a_{n,j}\}}S_n(\A^t)$来代替所需的明确群体效用，其中$q^t_n(a_{n,j})$和$q^t_n(a_{n,i})$分别为选择对应两个决策的概率。特别的，用户$n$将根据下式计算时刻$t$的瞬时遗憾度量：
-%Thus, we resort to the modified no-regret matching rule \cite{Hart_areinforcement}, and replace the explicit perceivable utility with an estimated term $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathcal{M}athds{1}_{\{a^t_n=a_{n,j}\}}S_n(\A^t)$, where $q^t_n(a_{n,j})$ and $q^t_n(a_{n,i})$ are the probabilities of choosing the two actions being considered.
+因此，我们使用一种经过修正的无悔学习规则\cite{Hart_areinforcement}，并用估计项$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathds{1}_{\{a^t_n=a_{n,j}\}}S_n(\A^t)$来代替所需的明确群体效用，其中$q^t_n(a_{n,j})$和$q^t_n(a_{n,i})$分别为选择对应两个决策的概率。特别的，用户$n$将根据下式计算时刻$t$的瞬时遗憾度量：
+%Thus, we resort to the modified no-regret matching rule \cite{Hart_areinforcement}, and replace the explicit perceivable utility with an estimated term $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathds{1}_{\{a^t_n=a_{n,j}\}}S_n(\A^t)$, where $q^t_n(a_{n,j})$ and $q^t_n(a_{n,i})$ are the probabilities of choosing the two actions being considered.
 %In particular, user $n$ calculates her instantaneous regret at time $t$ according to the following equation:
 \begin{equation}\label{eq:insreg}
-Q^t_n(a_{n,j},a_{n,i})\triangleq\left[\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathcal{M}athds{1}_{\{a^t_n=a_{n,j}\}}-\mathcal{M}athds{1}_{\{a^t_n=a_{n,i}\}}\right]\hat{S}^t_n(a_{n,i}).
+Q^t_n(a_{n,j},a_{n,i})\triangleq\left[\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}\mathds{1}_{\{a^t_n=a_{n,j}\}}-\mathds{1}_{\{a^t_n=a_{n,i}\}}\right]\hat{S}^t_n(a_{n,i}).
 \end{equation}
-这里我们依旧定义用户因未使用$a_{n,j}$替代$a_{n,i}$所产生的“遗憾”度量为$R_n^t(a_{n,j},a_{n,i})=\mathcal{M}ax\{D_n^t(a_{n,j},a_{n,i}),0\}$。简单说来，遗憾度量表征了平均群体效用在决策$a_{n,j}$和决策$a_{n,i}$下的差异。而权值$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$的作用则是对即时群体效用进行归一化，以使得式（\ref{eq:insreg}）中的两项具有可比性。
-%And we again define the ``regret'' measure for not having played $a_{n,j}$ instead of $a_{n,i}$ as $R_n^t(a_{n,j},a_{n,i})=\mathcal{M}ax\{D_n^t(a_{n,j},a_{n,i}),0\}$. Simply put, the regret measure characterizes the difference of the averaged group utility between $a_{n,j}$ and $a_{n,i}$. And the weight $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$ is employed to normalize the instantaneous group utility to make the two terms in the brackets comparable.
+这里我们依旧定义用户因未使用$a_{n,j}$替代$a_{n,i}$所产生的“遗憾”度量为$R_n^t(a_{n,j},a_{n,i})=\max\{D_n^t(a_{n,j},a_{n,i}),0\}$。简单说来，遗憾度量表征了平均群体效用在决策$a_{n,j}$和决策$a_{n,i}$下的差异。而权值$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$的作用则是对即时群体效用进行归一化，以使得式（\ref{eq:insreg}）中的两项具有可比性。
+%And we again define the ``regret'' measure for not having played $a_{n,j}$ instead of $a_{n,i}$ as $R_n^t(a_{n,j},a_{n,i})=\max\{D_n^t(a_{n,j},a_{n,i}),0\}$. Simply put, the regret measure characterizes the difference of the averaged group utility between $a_{n,j}$ and $a_{n,i}$. And the weight $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$ is employed to normalize the instantaneous group utility to make the two terms in the brackets comparable.
 
 基于遗憾度量$R_n^t(a_{n,j},a_{n,i})$，每个用户按照下式对其策略进行更新：
 %With the regret measure $R_n^t(a_{n,j},a_{n,i})$, each user updates her strategy as follows:
 \vspace{-0.1cm}
 \begin{equation}\label{eq:str2}
 \begin{cases}
-q^{t}_n(a_{n,j})=&(1-\delta^t)\mathcal{M}in\left\{\frac{R^t_n(a_{n,j},a_{n,i})}{\mathcal{M}u},\frac{1}{|\mathcal{M}_n|-1}\right\}+\frac{\delta^t}{|\mathcal{M}_n|},\\ &~~\forall a_{n,j}\neq a_{n,i}, \\
-q^{t}_n(a_{n,i})=&1-\sum_{a_{n,j}\neq a_{n,i}}q^t_n(a_{n,j}),
+q^{t}_n(a_{n,j})=&(1-\delta^t)\min\left\{\frac{R^t_n(a_{n,j},a_{n,i})}{\mu},\frac{1}{|\mathcal{M}_n|-1}\right\}+\frac{\delta^t}{|\mathcal{M}_n|}, ~~\forall a_{n,j}\neq a_{n,i}, \\
+q^{t}_n(a_{n,i})=&1-\sum_{a_{n,j}\neq a_{n,i}}q^t_n(a_{n,j}).
 \end{cases}
 \end{equation}
-其中$\mathcal{M}u>2S_{max}(|\mathcal{M}|-1)$，$S_{max}$表示用户群组效用的上限。由于$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$的数值可以无限大，为保证$q^{t}_n(a_{n,i})\geq0$，我们采用加权遗憾项和$\frac{1}{|\mathcal{M}_n|-1}$中的较小的一个。每个用户基于这周策略更新的规则调整其信道选择，并在下一个时间步长内继续更新其遗憾度量。
-%where $\mathcal{M}u>2S_{max}(|\mathcal{M}|-1)$ with $S_{max}$ denotes an upper bound on a user's group utiltiy. Since $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$ can go unbounded, to guarantee that $q^{t}_n(a_{n,i})\geq0$,  we take the minimum of the weighted regret term and $\frac{1}{|\mathcal{M}_n|-1}$. Given the updated strategy, each user then adjusts her channel selection and proceeds to update her regret measures in the next time step.
+其中$\mu>2S_{max}(|\mathcal{M}|-1)$，$S_{max}$表示用户群组效用的上限。由于$\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$的数值可以无限大，为保证$q^{t}_n(a_{n,i})\geq0$，我们采用加权遗憾项和$\frac{1}{|\mathcal{M}_n|-1}$中的较小的一个。每个用户基于这周策略更新的规则调整其信道选择，并在下一个时间步长内继续更新其遗憾度量。
+%where $\mu>2S_{max}(|\mathcal{M}|-1)$ with $S_{max}$ denotes an upper bound on a user's group utiltiy. Since $\frac{q^t_n(a_{n,i})}{q^t_n(a_{n,j})}$ can go unbounded, to guarantee that $q^{t}_n(a_{n,i})\geq0$,  we take the minimum of the weighted regret term and $\frac{1}{|\mathcal{M}_n|-1}$. Given the updated strategy, each user then adjusts her channel selection and proceeds to update her regret measures in the next time step.
 
 通过引入参数$\delta$，我们的策略更新规则（\ref{eq:str2}）实现了探索与利用（Exploration and Exploitation）之间的权衡。一方面，导致更大“遗憾”的替代行动将有更大的概率被选择，这可以被视为对于更好策略的充分利用。另一方面，每个替代决策都会以至少$\frac{\delta^t}{|\mathcal{M}_n|}$的概率被选择，实现对于策略空间的充分探索。因此，每个决策可以被尝试足够多的次数，这是使策略学习和效用学习收敛所需要的。这里为保证策略学习的收敛性能，我们将权重参数设置为数值上递减的形式$\delta^t=1/t^\rho$ with $\rho<1/4$。
 %Notice that by introducing the parameter $\delta$, the strategy update rule (\ref{eq:str2}) strikes an exploration-exploitation trade-off. On one hand, an alternate action with a larger `regret' will have a larger probability of being chosen, which can be regarded as the exploitation process for a better strategy. On the other hand, each of the alternate actions will be selected with a probability of at least $\frac{\delta^t}{|\mathcal{M}_n|}$, enabling the exploration of the strategy space. As a result, each action could be visited for enough amount of times, which is the necessity for the convergence of both strategy adaptation and utility learning. By standard, we set a diminishing weight $\delta^t=1/t^\rho$ with $\rho<1/4$ in order to guarantee the convergence of the strategy adaptation. 
@@ -395,15 +397,15 @@ q^{t}_n(a_{n,i})=&1-\sum_{a_{n,j}\neq a_{n,i}}q^t_n(a_{n,j}),
 令$f^t\in\Delta\mathcal{M}$为式（\ref{eq:empi}）中定义的经验分布。在满足假设\ref{as1}且式（\ref{eq:reg2}）中$\epsilon^t=1/t$的条件下，算法\ref{alg:RCS}收敛到博弈$\Gamma$的相关均衡（CE）的集合$\{\p^*\}$，其中$\pi^*=(\pi^*_1,\pi^*_2,\cdots,\pi^*_N)\in\Delta\mathcal{M}$。特别的，我们有
 %Let $f^t\in\Delta\mathcal{M}$ be the empirical distribution as defined in (\ref{eq:empi}). With $\epsilon^t=1/t$ in (\ref{eq:reg2}) and Assumption \ref{as1} being satisfied, Algorithm 1 converges almost surely to the set of CE $\{\p^*\}$ of the game $\Gamma$ with $\pi^*=(\pi^*_1,\pi^*_2,\cdots,\pi^*_N)\in\Delta\mathcal{M}$. In particular, we have,
 \begin{align}\label{sne}
-&\lim_{t\rightarrow\infty}\hat{S}^t_n(a_{n,i})=\bar{S}_n(a_{n,i},\p^*_{-n}),~\forall n\in\mathcal{M}athcal{V},~\forall i=1,\cdots,|\mathcal{M}_n|,\\
-&\mathcal{M}box{and}~~f^t\xrightarrow[\text{}]{\text{a.s.}}\{\pi^*\}~\mathcal{M}box{as}~t\rightarrow\infty.
+&\lim_{t\rightarrow\infty}\hat{S}^t_n(a_{n,i})=\bar{S}_n(a_{n,i},\p^*_{-n}),~\forall n\in\mathcal{V},~\forall i=1,\cdots,|\mathcal{M}_n|,\\
+&\mbox{and}~~f^t\xrightarrow[\text{}]{\text{a.s.}}\{\pi^*\}~\mbox{as}~t\rightarrow\infty.
 \end{align}
 其中$\bar{S}_n(a_{n,i},\p^*_{-n})$是当用户$n$选择决策$a_{n,i}$，其他用户联合策略为$\pi^*_{-n}$时的期望社交群体效用。
 %where $\bar{S}_n(a_{n,i},\p^*_{-n})$ is the expected group utility of user $n$ with action $a_{n,i}$ and others' strategies $\pi^*_{-n}$.
 \end{thm}
 
 %\textbf{Outline of the proof.}
-定理证明的主要思想是首先引入离散学习过程（\ref{estimation}）和（\ref{eq:reg2}）的连续时间插值过程。首先，每个学习过程在数学上分别对应于一个微分包含（differential inclusion）\cite{Yin}。而其连续时间差值过程可被证明为对应的微分包含的半流渐近伪轨迹（asymptotic pseudotrajectory of the semiflow）。因而，我们可以通过微分包含来研究序列$\{S_n(\A)\}$和$\{\pi(\A)\}$的极限行为。在满足假设\ref{as1}的前提下，通过结合异步随机逼近框架\cite{Borkar1997}，我们可以获得两个并行的学习过程的渐近弱收敛结果。由于篇幅所限，我们在线附录\ref{pf:thm:conv}部分提供详细的证明。
+定理证明的主要思想是首先引入离散学习过程（\ref{estimation}）和（\ref{eq:reg2}）的连续时间插值过程。首先，每个学习过程在数学上分别对应于一个微分包含（Differential inclusion）\cite{Yin}。而其连续时间差值过程可被证明为对应的微分包含的半流渐近伪轨迹（Asymptotic pseudotrajectory of the semiflow）。因而，我们可以通过微分包含来研究序列$\{S_n(\A)\}$和$\{\pi(\A)\}$的极限行为。在满足假设\ref{as1}的前提下，通过结合异步随机逼近框架\cite{Borkar1997}，我们可以获得两个并行的学习过程的渐近弱收敛结果。由于篇幅所限，我们在线附录\ref{pf:thm:conv}部分提供详细的证明。
 %The main idea of the proof is to first introduce the continuous time interpolated process of the discrete learning process (\ref{estimation}) and (\ref{eq:reg2}), which can be shown to be the asymptotic pseudotrajectory of the semiflow corresponding to the differential inclusion defined by the two learning dynamics\cite{Yin}. Thus the limiting behaviors of the sequences $\{S_n(\A)\}$ and $\{\pi(\A)\}$ can be studied via the differential inclusion. By combining the asynchronous stochastic approximation framework \cite{Borkar1997}, and under the Assumption \ref{as1}, we can obtain the asymptotic weak convergence result of the two concurrent learning processes. Due to the lack of space, we leave the detailed proof to the online appendix \cite{MY18}.
 
 %\vspace{-0.2cm}
@@ -412,8 +414,8 @@ q^{t}_n(a_{n,i})=&1-\sum_{a_{n,j}\neq a_{n,i}}q^t_n(a_{n,j}),
 %In this section, we evaluate the performance of the proposed two-timescale distributed learning algorithm for the privacy-preserving spectrum sharing.
 %\vspace{-0.4cm}
 \subsection{仿真设置}
-我们考虑一个数据库辅助的频谱接入网络，该网络由$N=80$个次级用户组成，我们假设这些用户随机分布在$1km \times 1km$的正方形地理区域中。每个用户$n$对应于一个有数据发送需求的移动设备，其默认传输功率为$P_n=100$ mW\cite{FCCApril52012}。我们假设每个用户的可用信道集合即为总的可用信道集合，即$\mathcal{M}_n=\mathcal{M}athcal{A}$，并设置默认的信道总数为$M=5$。我们考虑瑞利信道衰落模型，其中用户$n$和$m$之间的信道增益反比于他们之间的物理距离（路径损耗因子$\alpha = 4$）。我们令$N_{a_n}$表示用户$n$使用信道$a_n$时的背景干扰功率，并假设其数值服从区间[-100，-90] dBm上的均匀分布。我们假设所有的用户被随机分到两个社交群体中，每个群体中用户$n$的权重因子$e_{n}$从均匀分布$\mathcal{M}athcal{U}(e_{min},1)$采样获得，并且设置$e_{min}$的默认值为0.5。
-%We consider a database-assisted spectrum access network consisting of $N=80$ IoT devices that are randomly scattered in a square area of 1 km $\times$ 1 km and are categorized into either one of two groups with equal probability. For each secondary user $n$, we set the transmission power before being perturbed as $P_n=100$ mW \cite{FCC} and the available channel set $\mathcal{M}_n=\mathcal{M}athcal{A}$ with $M=5$ by default. We consider a Rayleigh fading channel environment where the channel gain between user $n$ and $m$ is inversely proportional to their physical distance powered by the path-loss factor $\alpha=4$. The background interference power $N_{a_n}$ for each user $n$ using channel $a_n$ is uniformly assigned in the interval of [-100,-90] dBm. The weight factor $e_{n}$ for each user $n$ in either group is generated following a uniform distribution $\mathcal{M}athcal{U}(e_{min},1)$ with $e_{min}=0.5$ by default.
+我们考虑一个数据库辅助的频谱接入网络，该网络由$N=80$个次级用户组成，我们假设这些用户随机分布在$1km \times 1km$的正方形地理区域中。每个用户$n$对应于一个有数据发送需求的移动设备，其默认传输功率为$P_n=100$ mW\cite{FCCApril52012}。我们假设每个用户的可用信道集合即为总的可用信道集合，即$\mathcal{M}_n=\mathcal{A}$，并设置默认的信道总数为$M=5$。我们考虑瑞利信道衰落模型，其中用户$n$和$m$之间的信道增益反比于他们之间的物理距离（路径损耗因子$\alpha = 4$）。我们令$N_{a_n}$表示用户$n$使用信道$a_n$时的背景干扰功率，并假设其数值服从区间[-100，-90] dBm上的均匀分布。我们假设所有的用户被随机分到两个社交群体中，每个群体中用户$n$的权重因子$e_{n}$从均匀分布$\mathcal{U}(e_{min},1)$采样获得，并且设置$e_{min}$的默认值为0.5。
+%We consider a database-assisted spectrum access network consisting of $N=80$ IoT devices that are randomly scattered in a square area of 1 km $\times$ 1 km and are categorized into either one of two groups with equal probability. For each secondary user $n$, we set the transmission power before being perturbed as $P_n=100$ mW \cite{FCC} and the available channel set $\mathcal{M}_n=\mathcal{A}$ with $M=5$ by default. We consider a Rayleigh fading channel environment where the channel gain between user $n$ and $m$ is inversely proportional to their physical distance powered by the path-loss factor $\alpha=4$. The background interference power $N_{a_n}$ for each user $n$ using channel $a_n$ is uniformly assigned in the interval of [-100,-90] dBm. The weight factor $e_{n}$ for each user $n$ in either group is generated following a uniform distribution $\mathcal{U}(e_{min},1)$ with $e_{min}=0.5$ by default.
 如节\ref{sec:privacy-model}中所述，我们的设计中每个用户通过对其传输功率进行随机扰动以对抗基于RSS的定位攻击。功率扰动程度越大，对于攻击者定位准确性的影响越显著，继而对于位置隐私的保护作用越好。在实验中，我们使用功率扰动的期望值$E(\Delta p_n)$来量化隐私保护程度的大小。
 根据式（\ref{eq:noise}），我们可以得出功率扰动项的期望值的表达式为$E(\Delta p_n)=b\left[\frac{1-(k+1)\exp(-k)}{1-\exp(-k)}\right]$，其中$k=\bar{p}/b>0$。我们固定$\bar{p}=15$ mW并默认设置$b=12$，以使平均功率扰动水平约为-6mW。
 对于前文提出的双时间尺度学习算法\ref{alg:RCS}，我们分别设置学习率为$\lambda^t=t^{-0.5}$和$\epsilon^t=t^{-0.2}$。在满足条件\textbf{C1-C3}的前提下，我们通过网格搜索确定超参数的取值。对于参数$\rho$，我们使用与文献\cite{Hart_areinforcement}中同样的设置，即$\rho=1/8$。
@@ -423,8 +425,8 @@ q^{t}_n(a_{n,i})=&1-\sum_{a_{n,j}\neq a_{n,i}}q^t_n(a_{n,j}),
 %\vspace{-0.2cm}
 \subsection{结果与讨论}
 \subsubsection{收敛表现}
-我们首先检查算法的收敛性能。在默认设置$E(\Delta p_n)=-6$ mW，$e_{min}=0.5$的条件下，我们针对不同数量的可用信道集合进行实验，即$M=4,5,6$。我们使用网络吞吐量$T=\frac{1}{N}\sum_{n\in\mathcal{M}athcal{V}}T_n$作为性能指标，其中$T_n$表示用户$n$的平均吞吐量。从图\ref{fg:conv1}中我们观察到算法在1500次迭代内可以收敛，而通道总数的增加会导致收敛时间的增长。同时可以看出，系统可实现的最大网络吞吐量大约占网络吞吐量最优值的90％，且并不会受到信道集合大小变化的影响。图\ref{fg:conv2}则分别展示了任意选择的一个用户（\#10）所对应的每一个信道的策略的收敛性表现。
-%We first examine the convergence performance of our algorithm. We adjust the value of $b$ so that the mean value of power perturbation magnitude is -5 mW and the minimum group-relationship strength $e_{min}=0.5$. We first run the experiment with different number of available channels, $M=4,5,6$. The network throughput $T=\frac{1}{N}\sum_{n\in\mathcal{M}athcal{V}} T_n$ is used as the performance metric, where $T_n$ denotes the average throughput of user $n$. From Fig. \ref{fg:conv1}, we observe that the proposed algorithm converges within 1500 iterations in general with increased number of channels leading to longer convergence time. It can be observed that changing the size of channel set does not impact the maximum achievable network throughput, which accounts for about 90\% of the optimal network throughput. For an arbitrary selected user \#10, we further evaluate the convergence of her strategies over each of the available channels, as shown in Fig. \ref{fg:conv2}.
+我们首先检查算法的收敛性能。在默认设置$E(\Delta p_n)=-6$ mW，$e_{min}=0.5$的条件下，我们针对不同数量的可用信道集合进行实验，即$M=4,5,6$。我们使用网络吞吐量$T=\frac{1}{N}\sum_{n\in\mathcal{V}}T_n$作为性能指标，其中$T_n$表示用户$n$的平均吞吐量。从图\ref{fg:conv1}中我们观察到算法在1500次迭代内可以收敛，而通道总数的增加会导致收敛时间的增长。同时可以看出，系统可实现的最大网络吞吐量大约占网络吞吐量最优值的90％，且并不会受到信道集合大小变化的影响。图\ref{fg:conv2}则分别展示了任意选择的一个用户（\#10）所对应的每一个信道的策略的收敛性表现。
+%We first examine the convergence performance of our algorithm. We adjust the value of $b$ so that the mean value of power perturbation magnitude is -5 mW and the minimum group-relationship strength $e_{min}=0.5$. We first run the experiment with different number of available channels, $M=4,5,6$. The network throughput $T=\frac{1}{N}\sum_{n\in\mathcal{V}} T_n$ is used as the performance metric, where $T_n$ denotes the average throughput of user $n$. From Fig. \ref{fg:conv1}, we observe that the proposed algorithm converges within 1500 iterations in general with increased number of channels leading to longer convergence time. It can be observed that changing the size of channel set does not impact the maximum achievable network throughput, which accounts for about 90\% of the optimal network throughput. For an arbitrary selected user \#10, we further evaluate the convergence of her strategies over each of the available channels, as shown in Fig. \ref{fg:conv2}.
 %\begin{figure}[htb]
 %\centering
 %\subfloat[]{

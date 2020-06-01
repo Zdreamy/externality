@@ -406,7 +406,7 @@ includehead, includefoot]{geometry}
         委员2 & \ZJUunderline[260pt]{\ZJU@value@commissionerB}\\[2.2mm]
         委员3 & \ZJUunderline[260pt]{\ZJU@value@commissionerC}\\[2.2mm]
         委员4 & \ZJUunderline[260pt]{\ZJU@value@commissionerD}\\[2.2mm]
-        委员5 & \ZJUunderline[260pt]{\ZJU@value@commissionerE}\\[2.2mm]
+%        委员5 & \ZJUunderline[260pt]{\ZJU@value@commissionerE}\\[2.2mm]
 %        委员6 & \ZJUunderline[260pt]{\ZJU@value@commissionerF}\\
       \end{tabular}
 
@@ -510,7 +510,7 @@ includehead, includefoot]{geometry}
     \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@EcommissionerB}\\[1.2mm]
     \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@EcommissionerC}\\[1.2mm]
     \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@EcommissionerD}\\[1.2mm]
-    \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@EcommissionerE}\\[1.2mm]
+%    \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@EcommissionerE}\\[1.2mm]
 %    \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@EcommissionerF}\\
     
     % 加一段空白

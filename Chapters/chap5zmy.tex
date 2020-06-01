@@ -1,7 +1,8 @@
 \chapter{双重网络外部性下移动数据服务提供商收益最大化研究}
 
 \textbf{本章摘要：} 
-移动社交网络极大地增强了人们的在线社交互动，产生了海量的移动数据流量，为无线服务提供商带来了可观的收入。然而，潜在的收入增长正面临着通信基础设施网络容量的限制，以及服务提供商之间竞争的影响。本章研究了竞争性数据服务市场中多个服务提供商的定价策略，其中移动用户的数据消费行为受到两方面因素的影响：社交效应（正网络外部性）和拥塞效应（负网络外部性）。为了分析移动用户和服务提供商之间的策略互动，我们设计了一个两阶段的斯塔克伯格博弈，分别由第一阶段的提供商博弈和第二阶段的用户博弈组成。针对用户博弈，本章刻画了均衡解的特征并建立了它的唯一存在性。对于提供商博弈，本章的分析表明，在提供商行为理性的场景以及提供商行为有限理性的场景下，混合策略均衡解的存在性都是有所保证的。进一步，本章提出了一种分布式学习算法，用于寻找混合策略均衡解决方案。本章第6节的的数值仿真结果对于社交效应和拥塞效应如何影响系统性能提出了见解，并验证了提供商有限理性行为为其收益带来的损失。
+%移动社交网络极大地增强了人们的在线社交互动，产生了海量的移动数据流量，为无线服务提供商带来了可观的收入。然而，潜在的收入增长正面临着通信基础设施网络容量的限制，以及服务提供商之间竞争的影响。
+本章研究了竞争性数据服务市场中多个服务提供商的定价策略，其中移动用户的数据消费行为受到两方面因素的影响：社交效应（正网络外部性）和拥塞效应（负网络外部性）。为了分析移动用户和服务提供商之间的策略互动，本文设计了一个两阶段的斯塔克伯格博弈，分别由第一阶段的提供商博弈和第二阶段的用户博弈组成。针对用户博弈，本章刻画了均衡解的特征并建立了它的唯一存在性。对于提供商博弈，本章的分析表明，在提供商行为理性的场景以及提供商行为有限理性的场景下，混合策略均衡解的存在性都是有所保证的。进一步，本章提出了一种分布式学习算法，用于寻找混合策略均衡解决方案。本章第6节的的数值仿真结果对于社交效应和拥塞效应如何影响系统性能提出了见解，并验证了提供商有限理性行为为其收益带来的损失。
 
 %Mobile social networks have greatly strengthened people's online social interactions, generating massive volume of mobile data traffic, and bringing remarkable revenues to the wireless service providers. Meanwhile, the potential revenue growth is restrained by the network capacity of physical communication infrastructure, and also challenged by the competition among service providers themselves. In this paper, we study the pricing strategies of multiple service providers in a competitive data service market, where mobile users' data consumption behaviors are influenced by two effects: the positive network effect and the congestion effect. To analyze the strategic interactions between mobile users and service providers, we device a two-stage Stackelberg game consisting a pricing game in Stage I and a usage game in Stage II, respectively. In particular, for the usage game, we characterize the equilibrium solution and establish its uniqueness. For the pricing game, our analysis indicates that a mixed-strategy equilibrium solution is guaranteed for the scenario with rational providers as well as the scenario with providers of bounded rationality. We further develop a distributed learning algorithm for finding a mixed-strategy equilibrium solution in the second scenario. Our numerical results provide insights into how positive network effect and congestion effect would impact the system performance, and demonstrate that the bounded rational behavior incurs degradation to service providers' revenues.
 
@@ -31,7 +32,9 @@
 简而言之，本章研究了一个具有多个服务提供商的竞争型无线数据服务市场，其中移动用户在确定其数据使用量时同时考虑两方面因素的影响，即对应于正网络外部性的社交效应以及对应于负网络外部性的拥塞效应。本文使用斯塔克伯格（Stackelberg）博弈\cite{osborne}的模型将提供商定价问题与用户数据使用问题结合起来进行建模。当博弈中服务提供商和个人用户的策略行为达到均衡状态时，任何独立的个体无法通过改变其策略获得更好的自身效用。对于刻画用户博弈均衡时的一个挑战在于每个用户的策略空间为多维空间（每个用户可以同时选用多个服务提供商的数据服务）。为了应对这一挑战，本文将连接任一用户和任一提供商的链接视为一个“虚拟用户”，并相应地对于每个“虚拟用户”的数据使用量进行考量。具体来说，在博弈的第一阶段，提供商会审慎地对其数据服务的单价进行设置以最大程度提高其潜在收益。在博弈的第二阶段中，给定每个提供商的单位数据服务价格，每个“虚拟用户”会策略性地确定其数据使用量，以优化其自身所获得的效用。在满足一定条件时，“虚拟用户”之间博弈均衡解的存在性以及唯一性可以被证明。在此基础上，可以进一步证明提供商定价博弈中$\epsilon$-混合策略价格均衡的存在性。
 %In a nut shell, this paper studies a wireless service market with multiple competitive service providers, and a group of data consuming mobile users that strategically determine their data usage subject to the two different effects, namely positive network effect and congestion effect. To this end, we formulate the pricing-usage problem as a \emph{Stackelberg game}\cite{osborne}, in which service providers and individual users determine their strategies aiming to get to an equilibrium state, where no one could be better off by unilaterally deviate from the equilibrium point. One key challenge in characterizing the game lies in the high dimensionality of each user's strategy space. To tackle this challenge, we treat each link connecting one user and one provider as a ``virtual user'', and quantify the data usage of each ``virtual user'' accordingly. Specifically, in Stage I of the game, providers deliberately set the unit price of their data service in order to maximize her potential revenue. In Stage II, each ``virtual user'' determines her data usage strategically to optimize the corresponding payoff, given the service price of each provider. Under some technical conditions, we show both the existence and uniqueness of the equilibrium solution among ``virtual users'', based on which, we further show the existence of an $\epsilon$-mixed-strategy pricing equilibrium for the providers.
 
-为了描述有限理性提供者的定价决策行为，本章第5节应用{\kaishu 展望理论}\cite{Kahneman}对第一阶段提供商之间的定价博弈作了进一步分析研究。作为诺贝尔经济学奖获奖理论，展望理论被用以模拟和解释存在风险和不确定性下的个人决策\cite{Tianming,Yu}，并已被应用于一些实际问题场景中。本文主要考虑了展望理论所涉及的两个主要现象：{\kaishu 概率失真效应}和{\kaishu 效用框架效应}。本章的分析表明，在这两种效应影响下​​，给定一定条件，$\epsilon$-混合策略定价均衡仍然存在。由于这种情况下服务提供商的收益函数不再被假设为已知信息，本文诉诸于分布式学习算法，使得服务提供商通过观察到的部分信息可以学习得到$\epsilon$-混合策略的定价均衡。数值结果表明，提供商的有限理性行为最终会导致其期望收入的下降。
+为了描述有限理性提供者的定价决策行为，本章第5节应用{\kaishu 展望理论}\cite{Kahneman}对第一阶段提供商之间的定价博弈作了进一步分析研究。作为诺贝尔经济学奖获奖理论，展望理论被用以模拟和解释存在风险和不确定性下的个人决策\cite{Tianming,Yu}，并已被应用于一些实际问题场景中。例如，Li等\cite{Tianming}研究了一种无线环境下的随机接入博弈，其中用户考虑了展望理论中的{\kaishu 概率失真效应}作用，策略性地确定其在冲突信道上的传输概率。
+%Yu等\cite{Yu}研究了一种数据市场模型，模型中用户需要选择成为数据卖方还是数据买方，并确定交易的数据量。他们考虑了展望理论中的{\kaishu 概率失真效应}和{\kaishu 效用框架效应}对用户决策行为的影响，并将该问题表述为非凸优化问题。
+本章同时考虑了展望理论所涉及的两个主要现象：{\kaishu 概率失真效应}和{\kaishu 效用框架效应}。本章的分析表明，在这两种效应影响下​​，给定一定条件，$\epsilon$-混合策略定价均衡仍然存在。由于这种情况下服务提供商的收益函数不再被假设为已知信息，本文诉诸于分布式学习算法，使得服务提供商通过观察到的部分信息可以学习得到$\epsilon$-混合策略的定价均衡。数值结果表明，提供商的有限理性行为最终会导致其期望收入的下降。
 %In order to characterize the pricing behaviors of bounded rational providers, we further study the pricing game in Stage II by appealing to \emph{Prospect Theory}\cite{Kahneman}. This Nobel-prize-winning theory has been utilized in several real-life applications to model and explain individuals' decisions under risks and uncertainty \cite{Tianming, Yu}. In this study, we particularly consider two main aspects of Prospect Theory: the \emph{probability distortion effect} and the \emph{utility framing effect}. We show that the existence of an $\epsilon$-mixed-strategy pricing equilibrium still holds under the two effects given a mild condition. Since service providers' payoffs are no longer public information, we resort to a distributed learning algorithm, by which service providers with partial observation can learn to play out an $\epsilon$-mixed-strategy pricing equilibrium. Through numerical results, we show that the expected revenue of provider suffers from a degradation as a result of providers' bounded rational behaviors.
 
 本章的剩余部分组织如下。第\ref{sec:tvtmodel}节描述了无线服务提供商和移动用户之间的两阶段斯塔克伯格博弈的基本建模。第\ref{sec:stageII}节研究了针对用户之间流量使用的用户博弈，并描述了博弈的联边需求均衡解。第\ref{sec:stageI}节对提供商之间的定价博弈进行讨论和分析。最后，第\ref{sec:stageI2}节从展望理论的角度重新审视了服务提供商之间的定价博弈问题。相关的数值仿真结果在第\ref{sec:sim}节中给出，第\ref{sec:tvtcon}节对本章进行了总结。
@@ -103,7 +106,7 @@ u_i&(\mathbf{x}_i,\mathbf{X}_{-i},\mathbf{p})=\underbrace{a_i\sum_{k\in\K}x^k_i-
 %where $p_k$ is determined by provider $k$ by choosing a value from her price space $\mathcal{P}_k\triangleq\{p_k^1,p_k^2,\cdots,p_k^{M_k}\}$, which consists of $M_k$ different price levels. The joint price space of all service providers is defined as $\mathcal{P}\triangleq\prod_{k\in\K}\mathcal{P}_{k}$. Fig. \ref{fg:scheme} illustrates the system model and the interactions among service providers and mobile users. Basically, the service providers compete for data demanding mobile users by strategically pricing their services; given the pricing profiles, the self-interested mobile users need to decide their data usage profile under the impacts of network effect and congestion effect. In the next section, we introduce the game theoretic formulation of the problem.
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.6]{./pic/scheme0.pdf}
+\includegraphics[scale=0.56]{./pic/scheme0.pdf}
 \vspace{-0.0cm}
 %\caption{An illustration of the system model and interactions among service providers and mobile users.}\label{fg:scheme}
 \caption{系统模型以及服务提供商和移动用户之间的交互关系示意图。}\label{fg:scheme}
@@ -121,14 +124,14 @@ u_i&(\mathbf{x}_i,\mathbf{X}_{-i},\mathbf{p})=\underbrace{a_i\sum_{k\in\K}x^k_i-
 \begin{df}[两阶段提供商定价-用户数据使用博弈]\label{def:mlmf}
 \mbox{}
 \begin{itemize}
-    \item \emph{阶段\uppercase\expandafter{\romannumeral1}(提供商定价博弈 $\mathcal{G}_P\triangleq\{\K,\mathcal{P},\{v_k\}_{k\in\K}\}$):} \\
+    \item 阶段\uppercase\expandafter{\romannumeral1}（提供商定价博弈 $\mathcal{G}_P\triangleq\{\K,\mathcal{P},\{v_k\}_{k\in\K}\}$）:\\
     在用户（链接）数据使用量为$\mathbf{x}$的情况下，给定其他提供商的定价策略$\mathbf{p}_{-k}$，每个提供商$k\in\K$选择$p_k$来最大化其收入$v_k$。定价博弈的均衡解可表示为一个联合定价策略$\mathbf{p}^*=(p^{*}_{1}\cdots,p^{*}_{K})$满足下式
     %Under the links' usage profile $\mathbf{x}$, each provider $k\in\K$ chooses $p_k$ to maximize its revenue $v_k$, given other providers' pricing strategies $\mathbf{p}_{-k}$. The pricing equilibrium is a joint pricing profile $\mathbf{p}^*=(p^{*}_{1}\cdots,p^{*}_{K})$ such that 
         \begin{equation}
           p^*_k=\arg\max_{p_k\in\mathcal{P}_k}v_k(p_k,\mathbf{p}^{*}_{-k},\mathbf{x}), ~\forall k\in\K.
         \end{equation}
         
-    \item \emph{阶段\uppercase\expandafter{\romannumeral2}(用户数据使用博弈$\mathcal{G}_U\triangleq\{\mathcal{L},\mathbb{R}_+^L,\{u_i\}_{i\in\N}\}$):}\\
+    \item 阶段\uppercase\expandafter{\romannumeral2}（用户数据使用博弈$\mathcal{G}_U\triangleq\{\mathcal{L},\mathbb{R}_+^L,\{u_i\}_{i\in\N}\}$）:\\
     给定提供商的定价策略$\mathbf{p}$和其他链接的数据使用量$\mathbf{x}_{-(i,k)}$，每个链接$(i,k)\in\mathcal{L}$选择从服务商$k$处使用量为$x^{k}_i$的服务以最大化其收益$u_ {i}$。用户数据使用博弈的均衡解可表示为$\mathbf{x^*}=(\mathbf{x}^*_{1},\mathbf{x}^*_{2},\cdots,\mathbf{x}^*_{K})$，这种情况下任何用户都无法通过单方面更改其使用量来增加其个人收益：
     %Given providers' pricing profile $\mathbf{p}$, each link $(i,k)\in\mathcal{L}$ chooses a usage demand $x^{k}_i$ to maximize her payoff $u_{i}$ given other links' usage profile $\mathbf{x}_{-(i,k)}$. The link demand equilibrium is a joint usage profile $\mathbf{x^*}=(\mathbf{x}^*_{1}, \mathbf{x}^*_{2},\cdots,\mathbf{x}^*_{K})$ such that no user can increase its payoff by unilaterally changing its usage profile:    
         \begin{equation}
@@ -140,15 +143,18 @@ u_i&(\mathbf{x}_i,\mathbf{X}_{-i},\mathbf{p})=\underbrace{a_i\sum_{k\in\K}x^k_i-
 当博弈问题处于均衡解时任何参与博弈的玩家单方面偏离其均衡策略的行为都将导致其自身的收益降低。按照惯例，我们采用反向归纳法\cite{osborne}来分析斯塔克伯格博弈。我们首先来研究阶段\uppercase\expandafter{\romannumeral2}中的数据使用博弈。
 %The equilibrium solution of the game (if exists) would provide a satisfying solution in the sense that any unilaterally deviation from the equilibrium solution would lead to a payoff degradation. By convention, we appeal to the backward induction approach\cite{osborne} to analyze the Stackelberg game. Next, we first study the usage game in Stage II. 
 
+
+
 \section{用户数据使用博弈中的联结需求均衡}\label{sec:stageII}
 
 在本节中，我们将在给定服务提供商定价策略的情况下研究提供商-用户链接的数据使用需求。根据公式（\ref{eq:userU}）和一阶条件$\frac{\partial u_{i}}{\partial x^{k}_{i}} = 0$，我们获得了链接$(i,k)$的最佳响应函数为
 %In this section, we study the usage demand over links given the joint pricing profile of service providers. Using function (\ref{eq:userU}) and the first-order condition, $\frac{\partial u_{i}}{\partial x^{k}_{i}}=0$, we obtain the best response function of link $(i,k)$ as
-\begin{align}\label{br1}
+\begin{equation}\label{br1}
 %\small
-\bold{B}^{k}_{i}\left(\mathbf{x}_{-(i,k)}\right)=&\max\left\{0,\frac{a_i-p_k}{b_i+c}-\frac{b_i\sum_{k'\neq k}x^{k'}_i}{b_i+c}\right.\nonumber\\
-&\left.+\frac{\sum_{j\neq i}g_{ij}\sum_{m\neq k}x_{j}^{m}}{b_i+c}+\frac{\sum_{j\neq i}(g_{ij}-c)x_{j}^{k}}{b_i+c}\right\}.
-\end{align}
+\bold{B}^{k}_{i}\left(\mathbf{x}_{-(i,k)}\right)=\max\left\{0,\frac{a_i-p_k}{b_i+c}-\frac{b_i\sum_{k'\neq k}x^{k'}_i}{b_i+c} + \frac{\sum_{j\neq i}g_{ij}\sum_{m\neq k}x_{j}^{m}}{b_i+c}+\frac{\sum_{j\neq i}(g_{ij}-c)x_{j}^{k}}{b_i+c}\right\}.
+\end{equation}
+
+
 
 根据（\ref{br1}），每个链接的最佳响应包括两部分：独立于其他链接的内在需求$\frac{a_i-p_k}{b_i + c}$，和取决于其他链接的外部需求$-\frac{b_i\sum_{k'\neq k}x^{k'}_i}{b_i + c} + \frac {\sum_{j\neq i}g_{ij}\sum_{m\neq k}x_{j}^{m}}{b_i + c} + \frac{\sum_{j\neq i}(g_{ij} -c)x_{j}^{k}}{b_i + c}$。具体来说，对于外部需求，第一项$-\frac{b_i \sum_{k'\neq k}x^{k'}_i}{b_i + c}$表征了其他同样始于用户$i$的链接对链接$(i,k)$的负面影响，这体现了使用除去提供商$k$以外的其他提供商的数据服务将削弱对于服务提供商$k$的数据使用。第二项$\frac{\sum_{j\neq i}g_{ij}\sum_{m\in\K}x_{j}^{m}}{b_i + c}$刻画了联结除用户$i$和提供商$k$的其他链接对于$(i,k)$所产生的正面网络外部性影响。第三项中的系数$\frac{g_{ij}-c}{b_i + c}$则刻画了与提供商$k$连接的其他链接对链接$(i,k)$上需求的边际影响。显然，如果社会效应主导了拥挤效应（即$g_{ij}\geq c$），则边际影响是正面的；而如果拥塞效应占主导地位（即$g_{ij} <c$），则边际影响为负面的。
 %According to (\ref{br1}), the best response of each link consists of two parts: the internal demand, $\frac{a_i-p_k}{b_i+c}$, which is independent of other links, and the external demand, $-\frac{b_i\sum_{k'\neq k}x^{k'}_i}{b_i+c}+\frac{\sum_{j\neq i}g_{ij}\sum_{m\neq k}x_{j}^{m}}{b_i+c}+\frac{\sum_{j\neq i}(g_{ij}-c)x_{j}^{k}}{b_i+c}$, which depends on those links that are owned by the same user or are connected with the same service provider. Specifically, the first term $-\frac{b_i\sum_{k'\neq k}x^{k'}_i}{b_i+c}$ characterizes the negative effect on link $(i,k)$ from other links starting from user $i$, implying that the data usage from providers other than $k$ would dampen the usage from service provider $k$. The second term $\frac{\sum_{j\neq i}g_{ij}\sum_{m\in\K}x_{j}^{m}}{b_i+c}$ indicates the level of positive network effect on link $(i,k)$ from the links that connect user $i$'s social neighbors and service providers excluding $k$. The coefficient $\frac{g_{ij}-c}{b_i+c}$ characterizes the marginal impact on the demand of link $(i,k)$ from other links that also connect with provider $k$. Clearly, if the social effect dominates the congestion effect (i.e., $g_{ij}\geq c$), the marginal impact is positive; while if the congestion effect dominates (i.e., $g_{ij}<c$), the marginal impact is negative.
@@ -196,6 +202,8 @@ w_{\tau(i,k),\tau(i',k')}=
 \end{cases}
 \end{equation}
 \end{lm}
+
+
 
 首先，我们声明用户数据使用博弈存在一个链接需求均衡解。
 %Firstly, we claim the existence of a link demand equilibrium for the usage game.
@@ -310,38 +318,44 @@ z_{k}(\pi_{k}^*,\pi_{-k}^*)\ge z_{k}(\pi_{k},\pi_{-k}^*) + \epsilon,~\forall \pi
 在第五节中，服务提供商的收入是基于期望效用理论建模的，其前提假设是完全理性的提供商在价格竞争中采取客观的行为。但是我们观察到，卖方在实践中的行为通常偏离经典的期望效用理论\cite{Kahneman}所预测的理性行为路径。具体来说，服务提供商可能会对其对手的概率定价策略以及自己的收益函数进行主观评估。我们使用展望理论（PT）来捕捉定价博弈中的行为因素。
 %In Section V, service provider's revenue is modeled based on Expected Utility Theory assuming fully rational providers acting objectively during the pricing competition. However, it has been observed that, sellers' behavior in practice usually deviate from the rational path predicted by this classic Expected Utility Theory \cite{Kahneman}. Specifically, service providers may have subjective evaluation on the probabilistic pricing strategy of their opponents as well as their own revenue functions, which are used for decision making. In order to capture such behavioral factors in our proposed pricing game, we resort to Prospect Theory (PT).
 
-\subsection{前景理论下的提供商收入期望}
+\subsection{展望理论下的提供商收入期望}
 %\subsection{Provider's Expected Revenue under Prospect Theory}
 
-我们考虑前景理论的两个主要特征。第一个是\emph{概率失真效应}，指现实中决策者倾向于看重小概率事件，但是看轻中等和大概率事件。具体而言，这种特性可以通过将客观概率$p$映射到主观概率的概率失真函数$w(p)$来刻画。使用较为广泛的概率失真函数有Prelec函数\cite{Prelec}：
+我们考虑展望理论的两个主要特征。第一个是\emph{概率失真效应}，指现实中决策者倾向于看重小概率事件，但是看轻中等和大概率事件。
+%具体而言，这种特性可以通过将客观概率$p$映射到主观概率的概率失真函数$w(p)$来刻画。
+我们考虑同类服务提供商并使用较为广泛的概率失真函数有Prelec函数\cite{Prelec}。则
 %We consider two main features of Prospect Theory. The first one is the \emph{probability distortion effect}, which states that decision maker is prone to overweigh events with small probability, but underweight medium and large probability events. Specifically, this characteristic can be captured by a probability distortion function $w(p)$ that maps an objective probability $p$ to a subjective one. A widely used probability distortion function is the Prelec function \cite{Prelec}:
-\begin{equation}\label{eq:distortion}
-w(p)=\exp(-(-\ln p)^{\alpha}), 0<\alpha\leq 1,
-\end{equation}
-其中$p$是事件的真实概率，$\alpha$是概率失真参数，$w(p)$是对应的主观概率。图\ref{fg:dist_func}阐明了具有不同参数的概率失真函数(\ref{eq:distortion})。我们可以看到所有曲线在点$1/e$相交。此外，当$0\leq p < 1/e$时，函数是凸的，$w(p)<p$（即低估客观概率）；而当$1/e\leq p<1$时，函数是凹的，我们有$w(p)\geq p$（即高估客观规律）。失真参数$\alpha$的值越小，则概率失真效应越明显。当$\alpha$设置为1时，该函数即变为客观概率。在这里我们考虑同类服务提供商，其主观评估可以通过(\ref{eq:distortion})中给出的具有相同$\alpha$取值的失真函数来表征。同时，我们假设服务提供商能够客观地评估自身的策略。因而在前景理论下，用户$k$对联合定价策略$\mathbf{p}\in\Delta\mathcal{P}$的评估可以表示为$\pi_k(p_k)w(\prod_{k'\in\K,k'\neq k}\pi_{k'}(p_{k'}))$。
+%\begin{equation}\label{eq:distortion}
+%w(p)=\exp(-(-\ln p)^{\alpha}), 0<\alpha\leq 1,
+%\end{equation}
+%其中$p$是事件的真实概率，$\alpha$是概率失真参数，$w(p)$是对应的主观概率。图\ref{fg:dist_func}阐明了具有不同参数的概率失真函数(\ref{eq:distortion})。我们可以看到所有曲线在点$1/e$相交。此外，当$0\leq p < 1/e$时，函数是凸的，$w(p)<p$（即低估客观概率）；而当$1/e\leq p<1$时，函数是凹的，我们有$w(p)\geq p$（即高估客观规律）。失真参数$\alpha$的值越小，则概率失真效应越明显。当$\alpha$设置为1时，该函数即变为客观概率。
+提供商的主观评估可以通过式（\ref{eq:distortion}）中给出的具有相同$\alpha$取值的失真函数来表征。同时，我们假设服务提供商能够客观地评估自身的策略。因而在展望理论下，用户$k$对联合定价策略$\mathbf{p}\in\Delta\mathcal{P}$的评估可以表示为$\pi_k(p_k)w(\prod_{k'\in\K,k'\neq k}\pi_{k'}(p_{k'}))$。
 %where $p$ is the real probability of an event, $\alpha$ is the probability distortion parameter, and $w(p)$ is the corresponding subjective probability. Fig. \ref{fg:dist_func} illustrates the probability distortion function (\ref{eq:distortion}) with different parameters. We can see that all the curves intersect at the point $1/e$. Besides, we have when $0\leq p < 1/e$, the function is convex, and $w(p)<p$ (under-weighting); when $1/e\leq p<1$, the function is concave, and we have $w(p)\geq p$ (over-weighting). A smaller value of distortion parameter $\alpha$ corresponds to a more significant probability distortion effect. When $\alpha$ is set to 1, the function reduces to the objective probability. In our work, we consider homogeneous service providers whose subjective evaluation can be characterized by the distortion function given in (\ref{eq:distortion}) with a same fixed value of $\alpha$. Meanwhile, we assume that service providers are able to evaluate their own strategies objectively. Thus, user $k$'s evaluation for a joint pricing strategy $\mathbf{p}\in\Delta\mathcal{P}$ under Prospect Theory can be expressed as $\pi_k(p_k)w(\prod_{k'\in\K,k'\neq k}\pi_{k'}(p_{k'}))$.
-\begin{figure}
-\centering
-\includegraphics[scale=0.58]{./pic/dist_func.eps}
-%\caption{Probability distortion functions under different distortion parameters $\alpha$.}\label{fg:dist_func}
-\caption{失真参数$\alpha$不同取值下的概率失真函数。}\label{fg:dist_func}
-\vspace{0.1cm}
-\centering
-\includegraphics[scale=0.58]{./pic/fram_func.eps}
-%\caption{Framing functions under different utility aversion parameters $\beta$ and loss penalty parameter $\lambda$.}\label{fg:fram_func}
-\caption{不同效用规避参数$\beta$和损失惩罚参数$\lambda$下的框架函数。}\label{fg:fram_func}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.58]{./pic/dist_func.eps}
+%%\caption{Probability distortion functions under different distortion parameters $\alpha$.}\label{fg:dist_func}
+%\caption{失真参数$\alpha$不同取值下的概率失真函数。}\label{fg:dist_func}
+%\vspace{0.1cm}
+%\centering
+%\includegraphics[scale=0.58]{./pic/fram_func.eps}
+%%\caption{Framing functions under different utility aversion parameters $\beta$ and loss penalty parameter $\lambda$.}\label{fg:fram_func}
+%\caption{不同效用规避参数$\beta$和损失惩罚参数$\lambda$下的框架函数。}\label{fg:fram_func}
+%\end{figure}
 
-我们考虑的前景理论的另一个特征是\emph{效用框架效应}。此效应反映了每个服务提供商对自己的收益进行主观评估的实际情况。实际中，仅当其收入超过参照点$R$（$R$无需等于零）时，每名用户才会将其视为收益增益，否则将视为收益损失。同样，在给定参考点$R$的情况下，S型单调框架函数$f(\cdot)$会进一步调整客观收入，其中函数在$v>R$侧为凹函数，而在$v<R$一侧是凸函数。此外，在$R$附近，收益损失比收益增益增长得更快，表明收益损失的边际效用大于收益增益的边际效用。在本文中，我们使用的框架函数基于\cite{Kahneman}提出的框架函数，
+我们考虑的展望理论的另一个特征是\emph{效用框架效应}。此效应反映了每个服务提供商对自己的收益进行主观评估的实际情况。
+%实际中，仅当其收入超过参照点$R$（$R$无需等于零）时，每名用户才会将其视为收益增益，否则将视为收益损失。同样，在给定参考点$R$的情况下，S型单调框架函数$f(\cdot)$会进一步调整客观收入，其中函数在$v>R$侧为凹函数，而在$v<R$一侧是凸函数。此外，在$R$附近，收益损失比收益增益增长得更快，表明收益损失的边际效用大于收益增益的边际效用。
+在本文中，我们使用基于Kahneman提出的框架函数\cite{Kahneman}，
 %Another characteristic of Prospect Theory we considered is the \emph{utility framing effect}. This effect captures the practical situation where each service provider has subjective evaluation of her own payoff. In practice, each user might consider her payoff as a gain only if it is above a reference point $R$ (not necessarily equals zero), and consider it as a loss otherwise. Also, given the reference point $R$, the objective payoff is further tuned by a S-shaped monotone framing function $f(\cdot)$, which is concave at the side where $v>R$, and convex at the side where $v<R$. In addition, in the neighborhood of $R$, the losses loom larger than gains indicating that the marginal utility in losses is larger than in gains. In this work, we use a framing function based on the one proposed in \cite{Kahneman},
-\begin{equation}\label{eq:framing}
-f(x;R)=
-\begin{cases}
-(v - R)^{\beta}, &v\geq R\\
--\lambda(R-v)^{\beta}, &v<R
-\end{cases}
-\end{equation}
-其中参数$0<\beta\leq 1$和$\lambda\geq 1$分别用于刻画风险规避和损失规避的因素。图\ref{fg:fram_func}展示了不同参数取值下的框架函数。特别地，当博弈参与者收入远离参照点时，$\beta$值越大，表示风险规避程度较小；$\lambda$值的增大则刻画了博弈参与者在客观上经历等同的收益的损失和增益时，所主观上体验到的损失要大于所体验到的增益。容易看出，当$\beta=\lambda=1$时，主观收益曲线与原始的客观收益曲线一致。我们假设每个服务提供商$k$基于式（\ref{eq:framing}）来评估其收入。则在前景理论模型下，服务提供商$ k\in\K$的预期收入$z_k^{PT}$可写为
+%\begin{equation}\label{eq:framing}
+%f(x;R)=
+%\begin{cases}
+%(v - R)^{\beta}, &v\geq R\\
+%-\lambda(R-v)^{\beta}, &v<R
+%\end{cases}
+%\end{equation}
+%其中参数$0<\beta\leq 1$和$\lambda\geq 1$分别用于刻画风险规避和损失规避的因素。图\ref{fg:fram_func}展示了不同参数取值下的框架函数。特别地，当博弈参与者收入远离参照点时，$\beta$值越大，表示风险规避程度较小；$\lambda$值的增大则刻画了博弈参与者在客观上经历等同的收益的损失和增益时，所主观上体验到的损失要大于所体验到的增益。容易看出，当$\beta=\lambda=1$时，主观收益曲线与原始的客观收益曲线一致。我们假设每个服务提供商$k$基于式（\ref{eq:framing}）来评估其收入。
+则在展望理论模型下，服务提供商$ k\in\K$的预期收入$z_k^{PT}$可写为
 %where the parameters $0<\beta\leq 1$ and $\lambda\geq 1$ model the risk aversion and loss aversion respectively. Fig. \ref{fg:fram_func} illustrates the framing function with different parameters. In particular, a larger $\beta$ characterizes less degree of risk aversion when the player's payoff is away from the reference point; and a larger $\lambda$ captures the greater loss experienced by the player with her payoff being reduced by a certain amount, in comparison to the corresponding gain she experiences with the same amount of the payoff increase. It is easy to see that when $\beta=\lambda=1$, the subjective payoff boil down to the original objective payoff. We assume each service provider $k$ evaluate her revenue using (\ref{eq:framing}) with parameter $\beta_k$, and reference point $R_k, \forall k\in\K$. Under Prospect Theory model, the expected revenue $z_k^{PT}$ of service provider $k\in\K$ can be written as
 
 \begin{equation}\label{eq:PT}
@@ -349,22 +363,22 @@ f(x;R)=
 z_{k}^{PT}(\pi_{k},\pi_{-k})=\sum_{\mathbf{p}\in \mathcal{P}}\pi_k(p_k)w\left(\prod_{k'\in\K,k'\neq k}\pi_{k'}(p_{k'})\right)f_k(v_k).
 \end{equation}
 
-我们将前景理论讨论下的定价博弈表示为$\mathcal{G}_P^{PT}\left(\mathcal{K},\Delta\mathcal{P},\{z_k^{PT}(R_k)\}_{k\in\mathcal{K}}\right)$，然后在下一节中重新讨论价格博弈的均衡解的存在。
+我们将展望理论讨论下的定价博弈表示为$\mathcal{G}_P^{PT}\left(\mathcal{K},\Delta\mathcal{P},\{z_k^{PT}(R_k)\}_{k\in\mathcal{K}}\right)$，并在下一节中重新讨论价格博弈的均衡解的存在。
 %We denote the pricing game under Prospect Theory as $\mathcal{G}_P^{PT}\left(\mathcal{K},\Delta\mathcal{P},\{z_k^{PT}(R_k)\}_{k\in\mathcal{K}}\right)$, and revisit the existence of equilibrium solution for the pricing game in the next section.
 
 
 \subsection{混合策略定价均衡点的存在性}
-在节\ref{sec:exist1}中建立混合策略纳什均衡的存在时，概率上期望收入（\ref{eq:EUT}）的线性性起着关键作用。然而正如前一节所述，在前景理论中参与者对通过非线性失真函数建模的信念进行主观加权。因此，我们需要重新评估游戏定价均衡的存在。我们首先对前景理论下的混合策略纳什均衡给出以下定义。
+在节\ref{sec:exist1}中建立混合策略纳什均衡的存在时，概率上期望收入（\ref{eq:EUT}）的线性性起着关键作用。然而正如前一节所述，在展望理论中参与者对通过非线性失真函数建模的信念进行主观加权。因此，我们需要重新评估游戏定价均衡的存在。我们首先对展望理论下的混合策略纳什均衡给出以下定义。
 %The mixed-strategy Nash equilibrium requires players optimally choosing their strategies given their beliefs of other players' strategies. The linearity of expected revenue (\ref{eq:EUT}) in probabilities plays a key role in establishing the existence of a mixed-strategy Nash equilibrium. However, as mentioned in the previous section, players will subjectively weight their beliefs modeled via non-linear distortion function on the probabilities under Prospect Theory. Thus, we need to reevaluate the existence of the pricing equilibrium of the game. We first provide the following definition for the mixed-strategy Nash equilibrium under Prospect Theory.
 
-\begin{df}[前景理论（PT）下的混合策略价格均衡]
+\begin{df}[展望理论（PT）下的混合策略价格均衡]
 如果对于每个服务提供商$k\in\mathcal{K}$有，
 %We call a mixed-strategy profile $\pi^*=(\pi_{1}^*,\cdots,\pi_{K}^*)\in\Delta\mathcal{P}$ a mixed-strategy pricing equilibrium under Prospect Theory, if for each service provider $k\in\mathcal{K}$,
 \begin{equation}
 %\small
 z_{k}^{PT}(\pi_{k}^*,\pi_{-k}^*)\geq z_{k}^{PT}(\pi_{k},\pi_{-k}^*),~\forall \pi_k\ne\pi_k^*.
 \end{equation}
-则我们称该混合价格策略$\pi^*=(\pi_{1}^*,\cdots,\pi_{K}^*)\in\Delta\mathcal{P}$为前景理论下的混合策略定价均衡。
+则我们称该混合价格策略$\pi^*=(\pi_{1}^*,\cdots,\pi_{K}^*)\in\Delta\mathcal{P}$为展望理论下的混合策略定价均衡。
 \end{df}
 
 我们在以下定理中证明，当每个服务提供商的参考点固定时，我们的定价博弈$\mathcal{G}_{P}^{PT}$存在混合纳什均衡。
@@ -384,7 +398,7 @@ z_{k}^{PT}(\pi_{k}^*,\pi_{-k}^*)\geq z_{k}^{PT}(\pi_{k},\pi_{-k}^*),~\forall \pi
 
 \subsection{混合策略定价均衡的分布式学习算法}
 %\subsection{Distributed Learning Algorithm for Finding Mixed-strategy Pricing Equilibrium}
-在本节中，我们为有限理性的服务提供商设计寻找混合策略定价均衡的算法，而其中的挑战主要来自前景理论模型的效用框架效应。具体来说，参数$\beta_k$和$R_k$都是仅服务提供商$k$自己所掌握的私有信息。因而没有一个集中式的个体知道所有服务提供商的效用函数，而这恰恰是对于计算$\epsilon$-混合策略纳什均衡所需的。
+在本节中，我们为有限理性的服务提供商设计寻找混合策略定价均衡的算法，而其中的挑战主要来自展望理论模型的效用框架效应。具体来说，参数$\beta_k$和$R_k$都是仅服务提供商$k$自己所掌握的私有信息。因而没有一个集中式的个体知道所有服务提供商的效用函数，而这恰恰是对于计算$\epsilon$-混合策略纳什均衡所需的。
 %In this section, we develop the algorithm for service providers of bounded rationality to find a mixed-strategy pricing equilibrium. One main challenge is raised by the utility framing effect of Prospect Theory model. Specifically, the parameters $\beta_k$ and $R_k$ are all private information only known to service provider $k\in\K$. As a result, no centralized party has the knowledge of all service providers' utility function, which are necessary for calculating an $\epsilon$-mixed-strategy Nash equilibrium. 
 
 为了应对这一挑战，我们采用了基于虚拟对弈的分布式学习算法。通过该算法，博弈参与者可以通过观察对手的动作学习得到均衡策略。基于纳什均衡和最佳响应之间的直接联系，如果在算法结束时信念成功收敛，则可以达到纳什均衡。但是，这种标准的虚拟对弈算法并不总是能很好地发挥作用，因为在某些博弈中这些信念无法收敛。在某些其他情况中，虽然信念收敛，但是混合策略或收入无法收敛。
@@ -412,10 +426,9 @@ z_{k}^{PT}(\pi_{k}^*,\pi_{-k}^*)\geq z_{k}^{PT}(\pi_{k},\pi_{-k}^*),~\forall \pi
 
 接下来，我们详细描述学习算法（如算法\ref{alg:4}中所述）。在初始化阶段，每个服务提供商$k\in\K$根据其初始混合定价策略$\pi_k^{(0)}\in\mathcal{P}_k$设置其初始价格水平。初始化后，每个提供者只有在等待一个随机退避时间后才能获得更新策略的机会。这个随机退避时间是由参数为$\tau$的指数分布中采样得到的。因而，策略的更新过程为一个异步过程\footnote{根据指数分布的属性，有多于一个提供商同时更新其策略的概率为零。}。在阶段$t$，每个服务提供者$k\in\K$观察其对手$l\in\K$的当前行为并基于下式更新其对于对手$l$的信念：
 %Next we describe the learning algorithm (as outlined in Algorithm \ref{alg:4}) in details. At the initialization stage, each service provider $k\in\K$ sets her initial mixed pricing strategy $\pi_k^{(0)}$ over her pricing strategy space $\mathcal{P}_k$, based on which she chooses an initial pricing level. After the initialization, each provider can have the revision opportunity only after waiting for a random back-off time sampled from an exponential distribution with rate $\tau$, i.e., an asynchronous strategy updating process\footnote{Appealing to the property of exponential distribution, the probability that more than one providers simultaneously update their channel selection strategies equals to zero.}. At stage $t$, each service provider $k\in\K$ observes her opponent $l$'s current action and updates her belief as follows \cite{Fudenberg98}:
-\begin{align}\label{eq:belief}
-\pi_l^{(t)}(p_l^m)&=\pi_l^{(t-1)}(p_l^m)+\frac{1}{t}\left\{\mathds{1}_{\{p_l^{(t)}=p_l^m\}}-\pi_l^{(t-1)}(p_l^m)\right\},\nonumber\\
-&\forall p^m_l\in\mathcal{P}_l.
-\end{align}
+\begin{equation}\label{eq:belief}
+\pi_l^{(t)}(p_l^m)=\pi_l^{(t-1)}(p_l^m)+\frac{1}{t}\left\{\mathds{1}_{\{p_l^{(t)}=p_l^m\}}-\pi_l^{(t-1)}(p_l^m)\right\},~~\forall p^m_l\in\mathcal{P}_l.
+\end{equation}
 
 每次当服务提供商$k$更新价格时，其首先基于其对于对手策略的当前信念计算其在使用不同价格水平时所可以获得的期望收益（即$z^{PT(t)}_k(p^m_k,\pi^{(t)}_{-k}),\forall p^m_k\in\mathcal{P}_k$）。然后，她基于分布$\bold{b}_k(\p_{-k}^{(t)};\eta)=\left(\bold{b}_k(\p_{-k}^{(t)};\eta)(p_k^{1}),\cdots,\bold{b}_k(\p_{-k}^{(t)};\eta)(p_k^{M_k})\right)$（\ref{eq:gibbs}）做出平滑最优响应。最后，提供商依据下式推进其对于混合策略的学习演化：
 %When service provider $k$ updates the price level, she first calculates her expected payoff under all possible actions with respect to the current beliefs of her opponents (i.e., $z^{PT(t)}_k(p^m_k,\pi^{(t)}_{-k}),\forall p^m_k\in\mathcal{P}_k$). Then she makes the smooth best response by randomly selecting a price level with respect to the distribution $\bold{b}_k(\p_{-k}^{(t)};\eta)=\left(\bold{b}_k(\p_{-k}^{(t)};\eta)(p_k^{1}),\cdots,\bold{b}_k(\p_{-k}^{(t)};\eta)(p_k^{M_k})\right)$ as calculated according to (\ref{eq:gibbs}). Finally, she evolves the learning of her mixed-strategy by
@@ -491,7 +504,7 @@ z_{k}^{PT}(\pi_{k}^*,\pi_{-k}^*)\geq z_{k}^{PT}(\pi_{k},\pi_{-k}^*),~\forall \pi
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=0.54]{./pic/normusage2.eps}
+\includegraphics[scale=0.53]{./pic/normusage2.eps}
 \vspace{-0.0cm}
 %\caption{Impact of mean of social tie $\mu_{G}$ on total data usage.}\label{fg:Fig1}
 \caption{社交联结权值平均值$\mu_{G}$对总数据使用量的影响。}\label{fg:Fig1}
@@ -499,7 +512,7 @@ z_{k}^{PT}(\pi_{k}^*,\pi_{-k}^*)\geq z_{k}^{PT}(\pi_{k},\pi_{-k}^*),~\forall \pi
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.54]{./pic/normrev2.eps}
+\includegraphics[scale=0.53]{./pic/normrev2.eps}
 \vspace{-0.0cm}
 %\caption{Normalized optimal revenue versus number of users $N$.}\label{fg:Fig2}
 \caption{归一化最佳收益与用户数量$N$变化关系。}\label{fg:Fig2}
@@ -507,7 +520,7 @@ z_{k}^{PT}(\pi_{k}^*,\pi_{-k}^*)\geq z_{k}^{PT}(\pi_{k},\pi_{-k}^*),~\forall \pi
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.54]{./pic/cost2.eps}
+\includegraphics[scale=0.53]{./pic/cost2.eps}
 \vspace{-0.0cm}
 %\caption{Normalized optimal revenue versus service cost difference.}\label{fg:Fig3}
 \caption{归一化的最佳收益与服务成本差异之间的关系。}\label{fg:Fig3}
@@ -515,7 +528,7 @@ z_{k}^{PT}(\pi_{k}^*,\pi_{-k}^*)\geq z_{k}^{PT}(\pi_{k},\pi_{-k}^*),~\forall \pi
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.54]{./pic/prospect2.eps}
+\includegraphics[scale=0.53]{./pic/prospect2.eps}
 \vspace{-0.0cm}
 %\caption{Impact of bounded rationality on service providers' total revenue.}\label{fg:prospect}
 \caption{有限理性对服务提供商总收益的影响。}\label{fg:prospect}

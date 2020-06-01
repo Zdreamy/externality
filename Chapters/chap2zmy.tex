@@ -1,9 +1,14 @@
 \chapter{单重网络外部性下群智感知系统平台成本最小化研究}
 
 \textbf{本章摘要：} 
-本章提出了一种用于移动群智感知系统的保隐私数据聚合框架。其中感知平台通过给予用户奖励的方式征召一组移动用户完成特定的感知任务。用户则为保护自身数据隐私，将夹带有一定噪声扰动的感知数据提交给感知平台。这种由用户本地完成数据加噪的隐私保护方式给群智感知系统引入了{\kaishu 负网络外部性}的影响因素：每个用户的隐私保护程度取决于聚合结果中的总噪声量，而总噪声量又取决于选择哪些移动用户以及这些用户所添加的噪声。在这种{\kaishu 单重}网络外部性作用下，感知平台通过有限的市场力量，根据用户的隐私偏好和感知能力，选择合适的参与用户群组以最小化平台用于奖励用户的总成本，同时满足对于数据聚合结果的准确性要求。具体而言，本章第3节首先考虑一种“消极隐私保护”的场景，即一旦平台可以通过奖励充分补偿用户的隐私损失，用户即愿意参与感知任务。本文使用解析表达式对问题的负网络外部性因素与隐藏的单调性特性进行了刻画与分析。
+本章提出了一种用于移动群智感知系统的保隐私数据聚合框架。其中用户为保护自身数据隐私，将本地数据加噪的感知数据提交给感知平台。这种由用户本地完成数据加噪的隐私保护方式给群智感知系统引入了{\kaishu 负网络外部性}的影响因素。
+%：每个用户的隐私保护程度取决于聚合结果中的总噪声量，而总噪声量又取决于选择哪些移动用户以及这些用户所添加的噪声。
+在这种网络外部性作用下，感知平台通过有限的市场力量，根据用户的隐私偏好和感知能力，选择合适的参与用户群组
+%以最小化平台用于奖励用户的总成本，同时满足对于数据聚合结果的准确性要求。本章第3节首先考虑一种“消极隐私保护”的场景，即一旦平台可以通过奖励充分补偿用户的隐私损失，用户即愿意参与感知任务。
+%本文使用解析表达式对问题的负网络外部性因素与隐藏的单调性特性进行了刻画与分析。
 %，并基于此设计出一个具有诚实性、个体理性，计算效率高的激励机制。
-本章第4节将讨论扩展到一种“积极隐私保护”的场景，其中参与用户除了要求隐私成本得到补偿外，还对其所得到的数据隐私保护级别有固有的要求。针对两种场景，本文分别提出了具备诚实性、个体合理性，计算高效性的拍卖激励机制，可以近似地最小化感知平台用于奖励参与用户的总成本并同时满足数据聚合结果的准确性要求。本章通过理论分析结合充分的仿真实验对于提出的方案进行了验证。
+%本章第4节将讨论扩展到一种“积极隐私保护”的场景，其中参与用户除了要求隐私成本得到补偿外，还对其所得到的数据隐私保护级别有固有的要求。
+本章第3节和第4节分别针对“消极隐私保护”和“积极隐私保护”两种场景，提出了具备诚实性、个体合理性，计算高效性的拍卖激励机制，可以近似地最小化感知平台总成本同时满足数据聚合结果的准确性要求。本章通过理论分析结合充分的仿真实验对于提出的方案进行了验证。
 
 
 %本章提出了一种用于移动群智感知保隐私数据聚合的拍卖框架，其中感知平台作为拍卖商征召移动用户完成感知任务并给予用户一定奖励以补偿其隐私损失。为保护自身数据隐私，移动用户将带有噪声的数据提交给感知平台。为确保数据聚合结果的准确性，感知平台只能通过有限的市场力量，即根据用户的隐私偏好和感知能力选择合适的感知用户群体，以此控制聚合数据中的噪声水平。这种由用户本地完成数据加噪的方式给群智感知系统引入了{\kaishu 负网络外部性}的影响因素：每个用户的隐私保护程度取决于聚合结果中的总噪声量，而总噪声量又取决于选择哪些移动用户以及这些用户所添加的噪声。本章研究了在这种{\kaishu 单重}负网络外部性作用下的拍卖激励机制设计。具体而言，本章第3节首先考虑一种“消极隐私保护”的场景，即一旦平台可以通过奖励充分补偿用户的隐私损失，用户即愿意参与感知任务并提供感知结果数据。本文通过解析表达式明确地描述了问题的负网络外部性因素与隐藏的单调性特性，并基于此设计出一个具有诚实性、个体理性，计算效率高的激励机制。本章第4节将讨论扩展到“积极隐私保护”的场景，即参与用户对其可获得的数据隐私保护级别有固有的要求。针对两种场景，本文提出的激励机制所确定的用户子集及相应奖励可以近似地最小化感知平台购买用户隐私数据的成本，同时满足对于数据聚合结果准确性的要求。本章通过理论分析结合充分的仿真实验对于提出的方案进行了验证。
@@ -165,7 +170,7 @@
 	\begin{figure}[h!]
 		\vspace{-0.0cm}
 		\centering
-		\includegraphics[scale=0.75]{./pic/sys.eps}
+		\includegraphics[scale=0.64]{./pic/sys2.pdf}
 				\vspace{-0.2cm}
 		\caption{基于拍卖模型框架的保隐私数据聚合}\label{fg:sys}
 		\vspace{-0.3cm}
@@ -362,7 +367,7 @@
 	\end{pp}
 	
 	\begin{proof}
-		证明命题\ref{prop:aggreation}的成立只需证明聚合后的噪声服从拉普拉斯分布。基于拉普拉斯分布\cite{kotz2012laplace}的的可分性，拉普拉斯分布可以被构造为一系列i.i.d.伽玛分布的加和。根据伽马分布的缩放定律，$w_in_i=G_1(S,\sigma)-G_2(S,\sigma)$。因此，我们有
+		证明命题\ref{prop:aggreation}的成立只需证明聚合后的噪声服从拉普拉斯分布。基于拉普拉斯分布\cite{kotz2012laplace}的可分性，拉普拉斯分布可以被构造为一系列i.i.d.伽玛分布的加和。根据伽马分布的缩放定律，$w_in_i=G_1(S,\sigma)-G_2(S,\sigma)$。因此，我们有
 		%To show Proposition \ref{prop:aggreation}, it suffices to show that the aggregated noise follows the Laplace distribution. Based on the divisible property of Laplace distribution \cite{kotz2012laplace}, the Laplace distribution is divisible and can be constructed as the sum of \textit{i.i.d.} gamma distributions. Based on the scaling law of gamma distribution,  $w_in_i=G_1(S,\sigma)-G_2(S,\sigma)$. Therefore, we have
 		\begin{equation}
 		\begin{array}
@@ -561,11 +566,31 @@
 	
 	我们将问题的解$C$作为目标成本，并根据$C$通过选择总成本大于或等于$C$的最小用户集合来确定参与的用户。因为问题（\ref{eq:problem3}）的约束比问题（\ref{eq:problem2}）的约束要松弛，因此$C$是问题（\ref{eq:problem2}）解的下限。为了找到最小的一组用户，我们探索了问题\ref{eq:problem3}的解的结构。基于问题（\ref{eq:problem3}）和问题（\ref{eq:problem2}）之间的关系，我们发现了问题的{\kaishu 单调性}属性（参见附录中定理\ref{thm:ratio}的证明）。进而基于这种单调性属性，我们通过逐步将用户添加到参与用户集合中直到总成本大于等于目标成本（参见算法\ref{alg:auction-winner}中的第6-10行的主循环部分）。本质上，我们希望找到最小的$k$，使得$\sum_{i\le k}b_iw_i/(\sum_{i\ge k+1}w_i)\ge C$，即$k=\min\{j: \sum_{i\le j}b_iw_i/(\sum_{i\ge j+1}w_i)\ge C,~\forall j\in\N\}$，继而所有下标$i\le k$的用户属于参与用户集合中。值得注意的是，由于负网络外部性的影响，这种单调性属性是隐藏于问题（\ref{eq:problem2}）中的，这使我们的问题比现有的移动群智感知拍卖工作更具技术难度。
 	%which is chosen as the target cost. Based on the target cost $C$, the set of winners can be determined by choosing the smallest set of workers with the total cost greater than or equal to $C$. Because problem (\ref{eq:problem3}) is less constrained than problem (\ref{eq:problem2}) and thus $C$ is a lower bound of the solution to problem (\ref{eq:problem2}). To find this smallest set of workers, we explore the solution structure of problem (\ref{eq:problem3}). Based on the relationship between problem (\ref{eq:problem3}) and problem (\ref{eq:problem2}), we discover the property of \textit{monotonicity} (see the proof of Theorem \ref{thm:ratio} in Appendix), based on which the set of winners can be found by gradually adding the workers into the winner set until the total cost is greater than or equal to the target cost (see the main loop (line 6-10) in  Algorithm \ref{alg:auction-winner}).  Essentially, we want to find the smallest $k$ such that $\sum_{i\le k}b_iw_i/(\sum_{i\ge k+1}w_i)\ge C$, i.e., $k=\min\{j: \sum_{i\le j}b_iw_i/(\sum_{i\ge j+1}w_i)\ge C,~\forall j\in\N\}$,  and all the workers with $i\le k$ are in the winner set. Note that due to the externalities, this monotonicity property is \textit{hidden} in problem (\ref{eq:problem2}), which makes our problem more technically challenging than the existing auction works on mobile crowdsensing.
+
+	\begin{algorithm}
+		%\caption{Differentially Private Data Auction: Winner Determination}
+		\caption{DPDA-确定参与用户集合}
+		\label{alg:auction-winner}
+		\begin{algorithmic}[1]
+			\STATE \textbf{Input:} 总用户集合$\mathcal{N}$，每个用户的权值$w_i, \forall i\in\mathcal{N}$，每个用户的竞价$b_i, \forall i\in\mathcal{N}$。
+			\STATE \textbf{Output:} 获胜者（参与用户）集合$\mathcal{S}$
+			\STATE 按照$w_ib_i$数值的递增顺序对用户进行排序。
+			\STATE 通过求解问题（\ref{eq:lp}）得到目标成本$C$。
+			\STATE 令$k=1$, $x_1=1$且$x_i=0,~\forall i=2,\dots,N$
+			\STATE 令$\mathcal{S}=\{1\}$，计算$C'=b_1\e_1(\mathbf{x})$。
+			\STATE \textbf{while} $C'<C$ \textbf{do} $\backslash\backslash$ 确定获胜者
+			\STATE \quad $k=k+1$. 
+			\STATE \quad 令$x_k=1$，同时令$\mathcal{S}=\mathcal{S}\cup\{k\}$.
+			\STATE \quad $C'=\sum_{i=1}^kb_i\e_i(\mathbf{x})$.
+			\STATE \textbf{end while}
+			\STATE \textbf{return} $\mathcal{S}$.
+		\end{algorithmic}
+	\end{algorithm}
 	
 	在算法\ref{alg:auction-payment}中，我们应用了拍卖理论\cite{milgrom2004putting}中的临界值方法。其思想是是确定关键竞标价$b_c$，进而只选择竞标价小于$b_c$的用户作为拍卖的胜出者。具体实现时，我们首先从用户集合$\mathcal{N}$中移除用户$i$，找出将导致该用户输掉拍卖的最小出价（算法\ref{alg:auction-payment}中的第5行）。这里我们将用户的出价按升序排列。关键竞标价$b_c$即被设为所有这些投标的最高价（算​​法\ref{alg:auction-payment}中的第6行）。使用此关键竞标价，我们根据每个获奖者的权重确定每个获奖者的付款（算法\ref{alg:auction-payment}中的第8行）。通过节\ref{sec:analysis}中对DPDA的分析，我们可以看到算法\ref{alg:auction-winner}和\ref{alg:auction-payment}给出的解是可行的，并且为问题（\ref{eq:problem1}）的近似解。
 	%In Algorithm \ref{alg:auction-payment}, we leverage the critical value approach in Auction theory \cite{milgrom2004putting}. The idea is to determine the critical bid $b_c$ such that a worker will not be selected if her bid is larger than or equal to $b_c$. Specifically, we first remove worker $i$ from the worker set $\mathcal{N}$ and find out the smallest bid by which the worker would lose the auction (line 5 in Algorithm \ref{alg:auction-payment}). Note that the bids are ordered in the increasing order. The critical bid is determined based on the supremum of all these bids (line 6 in Algorithm \ref{alg:auction-payment}). Using this critical bid, we determine the payment for each winner based on their weights (line 8 in Algorithm \ref{alg:auction-payment}). From the analysis of DPDA in Section \ref{sec:analysis}, we can see that the solution given by Algorithms \ref{alg:auction-winner} and \ref{alg:auction-payment} is feasible and close to the optimal solution to problem (\ref{eq:problem1}).
 
-	
+
 	
 	
 	求解目标成本$C$的问题（\ref{eq:problem3}）为一个线性分数规划问题。为了在计算上有效地求解$C$，我们可以根据以下引理将问题（\ref{eq:problem3}）转换为线性规划问题。
@@ -596,29 +621,7 @@
 	%Based on Lemma \ref{lm:lp}, we can solve $C$ by solving a linear program (\ref{eq:lp}). Note that the computational complexity of Algorithm \ref{alg:auction-winner} consists of two parts: solving a linear program (\ref{eq:lp}) (line 3) and finding the set of winners (line 6-10). To solve (\ref{eq:lp}) efficiently, we can use many solvers for linear programs, e.g., CPLEX \cite{CPLEX}, which can solve the linear program (\ref{eq:lp}) in polynomial time \cite{megiddo1986complexity}. To find the set of winners, it takes at most $O(N)$ time in the worst case. Therefore, Algorithm \ref{alg:auction-winner} can  determine the winner set for problem (\ref{eq:problem1}) in polynomial time. For Algorithm  \ref{alg:auction-payment}, it needs to run Algorithm  \ref{alg:auction-winner} for each winner, and the worst case is to run $N$ times, which means that it is also solvable in polynomial time.
 	
 	%Then, the main loop (line 6-10) in  Algorithm \ref{alg:auction-winner} finds the set of winners by gradually adding the workers into the winner set until the total cost is greater than or equal to the target cost. Essentially, we want to find the smallest $k$ such that $\sum_{i\le k}b_iw_i/(\sum_{i\ge k+1}w_i)\ge C$, i.e., $k=\min\{j: \sum_{i\le j}b_iw_i/(\sum_{i\ge j+1}w_i)\ge C,~\forall j\in\N\}$,  and all the workers with $i\le k$ are in the winner set. Once the set of winners is determined, the payment of each winner is given by Algorithm \ref{alg:auction-payment}, which determines the payment of every winner based on the supremum of all the bids that can make her a winner, namely critical bid $b_c$.
-	
 
-	
-	
-	\begin{algorithm}
-		%\caption{Differentially Private Data Auction: Winner Determination}
-		\caption{DPDA-确定参与用户集合}
-		\label{alg:auction-winner}
-		\begin{algorithmic}[1]
-			\STATE \textbf{Input:} 总用户集合$\mathcal{N}$，每个用户的权值$w_i, \forall i\in\mathcal{N}$，每个用户的竞价$b_i, \forall i\in\mathcal{N}$。
-			\STATE \textbf{Output:} 获胜者（参与用户）集合$\mathcal{S}$
-			\STATE 按照$w_ib_i$数值的递增顺序对用户进行排序。
-			\STATE 通过求解问题（\ref{eq:lp}）得到目标成本$C$。
-			\STATE 令$k=1$, $x_1=1$且$x_i=0,~\forall i=2,\dots,N$
-			\STATE 令$\mathcal{S}=\{1\}$，计算$C'=b_1\e_1(\mathbf{x})$。
-			\STATE \textbf{while} $C'<C$ \textbf{do} $\backslash\backslash$ 确定获胜者
-			\STATE \quad $k=k+1$. 
-			\STATE \quad 令$x_k=1$，同时令$\mathcal{S}=\mathcal{S}\cup\{k\}$.
-			\STATE \quad $C'=\sum_{i=1}^kb_i\e_i(\mathbf{x})$.
-			\STATE \textbf{end while}
-			\STATE \textbf{return} $\mathcal{S}$.
-		\end{algorithmic}
-	\end{algorithm}
 	
 	\begin{algorithm}
 		\caption{DPDA-确定用户奖励}

@@ -1,34 +1,81 @@
 \chapter{绪论}
 
-\textbf{本章摘要：} 本章首先介绍了网络经济学的背景、网络外部性效应的基本概念及其在移动网络中的体现; 
-接着分析总结了近些年国内外涉及到激励机制设计、隐私保护等与本文中网络性能优化场景相关领域的研究现状；
-最后阐述了本文的研究思路和研究内容。
+\textbf{本章摘要：} 本章首先介绍了移动网络发展概况及移动网络效用优化的重要意义、网络外部性效应的基本概念及其在移动网络中的体现，阐述了对于本文研究主题以及研究视角的思考; 
+接着分析总结了近些年国内外涉及到与本文中三个移动网络效用优化问题相关的研究现状；
+最后概述了本文的研究思路和研究内容及论文结构。
 
-\textbf{关键词：} 网络经济学；网络外部性；机制设计；隐私保护；群智感知；研究背景；研究现状
+\textbf{关键词：} 移动网络；效用优化；网络外部性；研究背景；研究现状；研究内容
 
 %\keywords{毫米波通信；5G；资源优化}
 
 \section{研究背景}
 %当今世界是一个网络的世界，各种形式的网络在人们生活中随处可见、无处不在。例如，由移动设备作为节点，由通信链路连接而成的移动通信网；社交网络是由每个人作为节点，每条边由人们之间的社交关系定义；电力网络则是由包含了发电站、配电站、工厂、办公楼、电动车充电站等电力设施以及它们之间的电力传输线路所组成的网络；而交通运输网络则是由各个运输枢纽以及连接他们的运输线路、运输工具所定义的。这些客观存在的以及人们创造出来的网络充斥着整个社会和我们的生活。
 
-当今世界是一个网络的世界，各种形式的网络在人们生活中随处可见、无处不在。这其中包括，由移动通信设备作为节点、通信链路连接而成的移动通信网，节点对应每个人、连边代表人与人之间社交联系的社交网络，由发电站、配电站、工厂、办公楼、电动车充电站这些电力设施以及它们之间的电力传输线路所组成的电力网络，以及由各个运输枢纽与连接他们的运输线路、运输工具所定义的交通运输网络。在本研究中，我们所关注的主要对象是移动通信网络，同时也涉及到由移动网络中用户之间社交联系所定义的社交网络。
+%当今的世界是一个网络的世界，各种形式的网络在人们生活中随处可见、无处不在。
+%\subsection{移动网络性能优化}
 
-\subsection{移动网络中的网络经济学}
+21世纪见证了人类进入到以网络为核心的信息时代。现实社会中的群体与设施越来越多地呈现出网络化的特征，使得当今世界俨然发展成为一个网络的世界。不论是实体网络（如通信、电力、交通等基础设施网络），还是虚拟网络（如使用同一产品的用户网络、彼此间存在社交联系的社交网络），各种网络自身的结构特征与网络节点之间的信息交互都深刻地影响着网络整体以及网络中每一个参与个体的效用（Utility）。随着通信网络技术迅猛发展和移动智能终端广泛普及，移动网络以其突出特点和优势，越来越成为人们学习、工作、生活离不开的新空间和经济社会发展最具生机活力的新领域。与此同时，人们对移动网络的服务质量的要求日益增高、对隐私保护和安全风险的担忧日益加深，对网络资源分配的高效性与公正性更加关注，迫切要求从更广泛和多维的视角对移动网络理论、技术及机制进行创新性研究，以引领和推动移动网络更好地造福人类。
 
-移动通信网络具有两个显著的特征。首先，相对于不断增长的用户数量以及流量需求，移动通信网络普遍存在资源有限甚至缺乏的特性。其具体表现在每一个移动设备上的通信、计算、能耗等资源都是有限的，此外移动无线通信所能使用的频谱资源是有限的，通信总带宽是一定的。由此，通信运营商始终面临的一个难题即是如何高效、公平地对带宽进行分配，使用户在通信过程中受到的信号干扰控制在可接受的范围内，实现尽可能高的通信质量保证。移动通信网络的另一个特征则是网络中的个体相对独立，且具有自利属性。这些个体大到不同的网络运营商（例如中国移动、中国联通），小到终端的一个移动设备（例如智能手机），都是以最大化自身利益为目标的。这种情况下，网络系统的全局最优解通常是难以达到的，而实现网络性能的提升与优化则依赖于个体之间在有效的激励机制作用下的协同合作。  
 
-上述的两个特征使得移动通信网络中的很多性能优化问题具有明显的经济学特征。针对资源有限的特性，网络效用最大化（Network utility maximization）的一系列理论工具已经在对于诸如网络吞吐量、延迟、公平性等指标的优化研究中取得了显著的成果\cite{NET}。而针对网络中用户的个体自利属性，则更多需要借助网络经济学中的一些概念工具对相关问题进行建模求解。包括“非合作博弈”、“拍卖理论”、“纳什均衡”在内的一系列经济学概念原理\cite{osborne}已经被广泛应用于各种移动通信网络中的资源分配与系统优化问题中。在一些问题背景下，移动用户的集合、他们对应的行为策略集合以及他们各自效用函数的集合即可构成一个典型的博弈模型。在博弈模型中，每个用户作为玩家以最大化自身的效用为目标，针对其他用户的策略做出最优相应（Best response）。当博弈处于其均衡状态时，给定其他用户的决策，任何用户都无法通过单独改变自己的决策以获得个体效用的提升。然而，从网络整体的角度来看，博弈均衡状态下的系统性能可能较全局优化得到的系统性能有所损失。这种损失正是由于网络中个体的自利属性以及他们决策间的关联性所导致的。
+%在通讯技术的高速发展下，现代人类社会中的群体与设施越来越多地呈现出网络化的特征，使得当今的世界俨然发展成为一个网络的世界。不论是实体网络（如通信、电力、交通等基础设施网络），还是虚拟网络（如使用同一产品的用户网络、彼此间存在社交联系的社交网络），网络自身的结构特征与网络节点之间的信息交互都深刻地影响着网络整体以及网络中每一个参与个体的效能（Utility）。
+%这其中包括，由移动通信设备作为节点、通信链路连接而成的移动通信网，节点对应每个人、连边代表人与人之间社交联系的社交网络，由发电站、配电站、工厂、办公楼、电动车充电站这些电力设施以及它们之间的电力传输线路所组成的电力网络，以及由各个运输枢纽与连接他们的运输线路、运输工具所定义的交通运输网络。
+
+\subsection{移动网络的发展}
+
+本文所研究的移动网络（Mobile network），泛指用户使用移动智能终端设备（如智能手机）依托各种无线通信技术，进行文本、语音、图像等多种类型的数据传输，使用包括移动社交、媒体资讯、在线游戏、电子商务、移动物联网在内的多种互联网应用服务的网络架构。它是在现代移动通信技术与互联网技术、平台、商业模式融合发展过程中形成的，由无线通信基础设施、具有强大感知能力的智能终端与新型业务及其管理、计费平台共同构成的一个新的业务体系。
+%本文所研究关注的对象是由大量具备无线通信和感知能力的智能终端设备（如智能手机）所组成的移动网络（Mobile network）。移动网络作为接入网在包括移动社交、在线游戏、移动物联网在内的多种应用服务场景中提供对于语音、文本、图像、视频等多种类型的数据传输。
+移动网络以其泛在、便捷、智能、普惠的突出优势得以在全球快速发展，其工具属性、社交属性、媒体属性、平台属性越来越凸显，推动人类从传统互联网进入了移动互联网时代。
+%近年来，无线通信技术的飞速进步、智能终端感知能力的不断提升，使得移动网络的规模得到前所未有的扩张。
+根据思科公司（Cisco）最新发布的年度互联网报告白皮书\cite{Cisco2023}，全球移动网络用户将在2023年达到57亿，占全球总人口的71\%，预计每年产生高达930EB（exabyte）的数据流量。而全球11\%的移动设备届时将在5G通信技术的支持下达到575Mbps的通信速率。作为全球最大的移动市场，中国早在2018年底就已拥有近12亿独立移动用户，占中国总人口的82\%，接近于欧洲的86\%和美国的85\%，并预计在2025年达到88\%的移动连接普及率\cite{GSMA}。在可预见的未来，移动网络与云计算/边缘计算、人工智能、大数据、区块链等技术的深度融合，将在车联网、智慧城市、智慧交通、智慧医疗等“万物互联”的场景中带给人们更加智能化的生活生产方式，引领人类社会信息技术与经济形态的加速变革。
+
+与此同时，移动网络在快速发展中也一直面临诸多的矛盾问题甚至多种风险，特别是随着移动网络达到相当规模和移动用户日趋普及，人们对移动网络的通信、数据和各种应用业务的服务质量的要求日益增高、对个人隐私保护和数据安全的担忧日益加深，不断给移动网络的技术性能、资源配置、有序运行和整体效用优化提出新的挑战。因此，从更宽广和多维的视角，深化细化移动网络相关理论、技术和机制的创新研究，是具有重要价值和现实意义的，这正是本文选定研究主题的首要考虑。
+
+%移动网络仍然发挥着其重要的技术支撑作用，同时也不断面对着新的技术挑战与更高的性能要求。}
+
+\subsection{移动网络中的效用优化}
+
+随着移动网络的快速扩张，移动用户对于数据流量的需求日益增长，对于网络服务质量的要求不断提高，这既给移动网络的设计运营持续带来新的挑战，同时也成为移动技术持续发展的动力。其中，无线通信资源的有限性一直以来是移动网络技术的主要挑战。从总体上看，移动网络发展中的基本矛盾一直是网络资源供给与用户需求之间的矛盾。按照目前的发展趋势，移动网络容量的扩建速度仍然很难匹配网络流量的需求增长。这种供需的不平衡涉及到方方面面，既有网络基础设施能力和终端设备性能的问题、又有网络协议标准和算法机制的问题，既有宏观层面的资源规划调度问题、又有微观层面的资源高效利用问题。随着移动网络技术的升级换代，特别是以5G技术为核心的新一代移动网络技术进入商用，移动网络的速率、时延、带宽、吞吐量等技术性能有望大为提升，可以在一定程度上有效缓解现阶段的供需矛盾。而相比移动网络技术的快速演进和应用功能的广泛拓展，移动网络运作中效用优化机制的更新发展则显得有些滞后。
+
+在移动网络资源管理的微观层面，如何在资源有限（例如，无线通信可用带宽一定）的情况下高效、公平地对进行资源分配，一方面使移动用户获得满意的服务体验，另一方面使移动网络运营商或管理者实现收益的优化一直是一个突出的难题。针对移动网络资源有限的特性，网络效用最大化NUM（Network utility maximization）的一系列优化理论工具被提出并被运用于不同移动网络场景中移动用户和网络管理者效用的优化。通过从数学上对于网络中独立个体的效用进行建模，进而使用分布式的协议设计对网络中的个体进行协调，NUM在对诸如网络吞吐量、延迟、公平性等性能指标的优化研究中已经取得了显著的成果\cite{NET}。
+
+除了资源有限的特性外，移动网络还具有另一个重要特征，即网络中的参与个体通常为相对独立，且具有自利属性的理性（Rational）个体。这些理性个体大到网络运营商（例如中国移动、中国联通）、网络管理者，小到一个移动智能终端，通常都是以最大化自身效用为出发点做出行为决策的。例如，在一个移动数据服务市场中，网络运营商所追求的核心目标是尽可能多地占据市场份额并通过向注册的移动用户收取网络服务费用最大化其收益。而移动用户则希望在满足自身对网络服务需求的情况下尽可能减小所需开支。再比如，在频谱共享网络中，由于智能终端由不同的移动用户个体所携带使用，因而每个终端会通过策略性地选择接入的频段和发射功率以获取尽可能大的数据吞吐率，而不会考虑给其他设备带来的信号干扰以及网络的整体性能表现。
+
+在移动网络中理性个体所追求的利益之间存在差异甚至相互冲突的情况下，NUM理论框架下的系统效能的全局最优状态在多数情况下是难以达到的。一种替代的问题解决思路是寻求一种参与者行为决策相对稳定的系统均衡状态。在经济学与运筹学中被广泛研究的博弈论（Game Theory）方法则是对这类问题进行建模求解最合适的理论工具。一个博弈模型通常由参与博弈的个体的集合、他们对应的行为策略集合，以及他们各自效用函数的集合这三部分构成。在网络中其他个体行为决策一定的情况下，如果任何个体在单方面改变其决策时无法获得其个体效用的提升，则此时博弈即达到了一个均衡稳定的状态。不同的博弈模型可以有效地刻画个体在最大化自身收益过程中互相之间的策略交互。包括“非合作博弈”、“零和博弈”、“纳什均衡”在内的一系列经济学概念原理\cite{osborne}已经被广泛应用于各种移动网络中的资源分配与系统优化问题中\cite{han2012game}。
+%\footnote{博弈论模型中，每个玩家以最大化自身效用为目标，针对其他玩家的策略做出最优响应（Best response）。}
+不同于NUM，从网络整体的角度来看，博弈所追求的均衡状态下的网络整体效用可能较全局优化得到的系统性能有所折损。这种损失正是由于网络中个体的效用目标与系统整体的效用目标不一致所导致的。
+
+理性个体的存在所导致的移动网络效用优化问题的复杂性还体现在其他一些方面。例如，在移动群智感知应用中，感知平台管理者需要借助移动用户的感知能力来完成感知任务。对于作为理性个体的移动用户来说，这需要消耗其终端设备上有限的能量资源、计算存储资源，甚至影响到其隐私安全，因而会降低他们参与的积极性。而使用传统的定价机制激励用户的参与在这种场景中效果并不理想，原因是平台管理者通常无法准确获取用户个体的效用函数信息，从而很难通过价格策略的优化使得用户在获取足够激励的同时自身效用得到最大化。解决这类问题则需要应用博弈论中的一个重要分支：机制设计（Mechanism Design）的理论工具\cite{Nisan07}。机制设计理论研究的即是如何通过逆向工程的方法根据给定的效用优化目标设计相应的市场机制和博弈规则。当系统按照所设计机制运行时，即使当系统管理者和参与个体之间存在信息不完全和信息不对等的情况时，个体依然可以获得足够的激励参与到系统中，而系统可以达到某些既定的性能要求。常见的基本性能要求包括个体合理性（Individual Rationality）和诚实性（Truthfulness），前者即要求机制设计提供系统参与者足够的激励，而后者则要求机制的设计须使参与者没有提供虚假信息的动机（具体定义见本文第二章）。在包括群智感知、动态频谱拍卖在内的一些移动网络问题场景中，使用高效的激励机制设计往往可以实现理性个体之间的协同合作与互利双赢。
+
+%然而，从网络整体的角度来看，博弈均衡状态下的系统性能可能较全局优化得到的系统性能有所损失。这种损失正是由于网络中个体的自利属性以及他们决策间的关联性所导致的。
+在移动网络机制设计中，充分考虑个体行为模型上的差异性是至关重要的。在传统的博弈论理论模型中，通常假设理性个体对自己的效用有客观的认知，对于可以选择的决策有充分的了解，并对不同决策所得到的不同结果有明确的偏好。这些独立个体执行最大化个人效用的行为被称之为完全理性行为。而在实际应用中，传统博弈论的完全理性模型常常由于其较为理想的假设使得其使用合理性遭到质疑。一些研究者们认为个体信息的不完整性和不确定性、个体对自身或他人策略的非客观评估，会使得个体行为偏离完全理性行为，即所谓的有限理性（Bounded-rational）行为。行为经济学（Behavioral Economics）对于个体的有限理性行为有着广泛且深入的研究，其中就包括获得2002年诺贝尔经济学奖的展望理论（Prospect Theory）\cite{Kahneman}。在具有不确定性的环境中，相比于通常在求解最优策略时所使用的期望效用理论（Expected Utility Theory），展望理论提供了对于个体决策制定在行为心理学上更加准确的描述，从相关实验研究的结果上看更加贴近现实中的情况。在移动网络的一些问题场景中，由于网络参与的个体通常包括服务运营商和手持移动设备的移动用户群体，个体之间普遍存在着信息不对等和不确定性的情况。因而，展望理论在移动网络的效用优化问题研究中有着较大的应用价值。
 
 %以移动通信网络中的数据服务定价问题为例，该问题中作为买方的移动用户购买使用服务提供商的数据流量。作为卖方的服务提供商需要考虑如何优化其定价策略以最大化其收益。该问题本质上即是一个市场交易模型下的商品定价问题，可以被建模成纳什博弈问题进行分析。
 
+通过分析可以看出，移动网络发展和应用中微观层面的许多矛盾问题，其背后实质上是移动网络运营主体、使用主体乃至监管主体之间的利益关系问题。换言之，这其中不仅仅存在由物质和技术方面的约束，更关键的是存在个体理性（完全理性或有限理性）行为与集体效用目标的冲突。因此，很有必要运用先进适用的博弈论和机制设计理论工具，深入具体地研究移动网络运行中的机制设计问题，以达到优化移动网络整体效用、改善移动网络性能的目的。本文就是考虑基于个体自利属性，运用博弈论和机制设计理论工具，选择移动网络中的若干具体场景，通过在相关机制设计上的创新提出移动网络效用优化的有效方案及相关算法，为促进移动网络中不同主体之间的协同合作提供借鉴。
 
-\subsubsection{网络外部性效应}
+\subsection{移动网络中的网络外部性}
 
-网络外部性作为网络经济学的主要研究对象之一，描述了存在于网络中个体之间相互影响的一种现象。其概念最早由Rolfs于1974年提出的\cite{Rolfs}，之后Katz和Shapiro在1985年完成了正式的定义\cite{Katz}。在经济学中，网络外部性通常指某物品的一个用户给该物品对于其他用户的价值带来的影响。在本文中，网络外部性则更具一般性地指任一网络参与者受到网络中其他参与者非直接影响所导致其效用（Utility）上的损失或受益。这种影响可能简单取决于其他参与者的数量，也就是网络的规模，同时也可能取决于网络中个体的参与程度或者个体之间的关联强度\cite{externality}。
+移动网络规模的不断扩大直接导致了网络中理性个体的交互会变得愈发复杂，对网络整体效用产生显著影响，进而反向作用到网络中个体的效用上。这种网络规模与结构对个体产生的影响使得移动网络在许多场景下具有典型的{\kaishu 网络外部性（Network Externality）}效应。因此，要深入地研究设计移动网络的有效机制、优化移动网络的整体效用，需要认清和把握移动网络的网络外部性特征。否则，将很容易导致相关机制的失效与资源的错误配置。这也正是本文从网络外部性视角研究移动网络整体效用优化的考量所在。
+
+在传统经济学中，外部性（Externality）是指一个市场参与者的行为影响到其他参与者或者公共利益，而行为人却没有因为该行为做出赔偿或得到补偿。如果经济体中存在外部性，市场自发达到的均衡就不是帕累托（Pareto）最优，存在着改进的可能。1974年，Rohlfs\cite{Rolfs}在研究通信行业的消费外部经济中，发现通信网络中用户的效用水平会随着用户数量的增加而增加，进而分析了通信服务的需求特征，将用户数量作为通信网络用户效用函数的重要变量之一。其后，经济学家Katz和Shapiro 于1985年在《美国经济评论》上发表《网络外部性、竞争与兼容性》一文，正式定义了“网络外部性”这一概念：随着使用同一产品或服务的用户数量变化，每个用户从消费此产品或服务中所获得的效用的变化\cite{Katz}。著名的梅特卡夫法则（Metcalfe Law）则描述了网络的价值以网络节点数平方的速度增长的经济现象。他指出网络的效益随着网络用户的增加而呈指数增长，认为网络对每个人的价值与网络中其他人的数量成正比。从20世纪80年代以来，网络外部性就一直是研究具有网络结构产业特征的网络经济理论最基础、最核心的概念。
+%，普遍认为当一种产品对用户的价值随着采用相同产品或兼容产品的用户增加而增加时，就出现了网络外部性。
+
+%在网络经济学的研究领域一直被作为主要的研究对象之一，并被称之为{\kaishu 网络外部性（Network Externality）}。作为研究具有网络结构产业的经济学分支，网络经济学萌芽于20世纪50年代至80年代初。1974年，Rolfs\cite{Rolfs}在研究通信行业的“消费外部经济”时将用户数量作为通信网络用户效用函数的变量之一，形成了网络经济学的理论雏形。20世纪80年代中期开始，得益于博弈论等理论工具的渐趋成熟，网络经济学研究进入到理论奠基和快速发展期。1985年，经济学家Katz和Shapiro在《美国经济评论上》发表的《网络外部性、竞争与兼容性》一文\cite{Katz}正式定义了网络外部性的概念。在网络经济学中，从市场主体的消费者层面来认识，当一种产品对用户的价值随着采用相同产品或可兼容产品的用户增大而增大时，就出现了网络外部性。本文中所讨论的移动网络中的网络外部性则更具一般性地指任一移动网络参与者受到网络中其他参与者非直接影响所导致其效用上的损失或受益。这种影响可能简单取决于其他参与者的数量（网络的规模），亦或是网络中个体的参与程度和个体之间的关联强度\cite{externality}。
+
+依据不同的分析视角，网络外部性现象可以被进一步细分。常见的划分方式将网络外部性分为正网络外部性与负网络外部性两类。简单来说，如果用户所获得的效用随着其他用户参与程度的增加而增加，则为正网络外部性，相反若用户效用随其他用户参与程度的增加而减少则为负网络网络外部性。网络外部性还可以被分为直接网络外部性和间接网络外部性。直接网络外部性即“通过消费相同产品的个体数量所导致的直接效果”而产生的外部性。间接网络外部性则源自于产品周边系统所提供的效用，例如产品现有的使用规模，刺激生产周边兼容或互补性产品的厂商，愿意不断提供更多样化或低价的互补品，促使使用该产品的效用不断提升。此外，当个体只受到网络中一部分用户的影响时，网络外部性还可以被定义为局部网络效应，例如社交网络下的网络外部性影响\cite{jianweibook}。
+
+本文中讨论的网络外部性是一般性地指移动网络参与者受到网络中其他参与者非直接影响所导致其效用上的受益或损失。这种影响既可能简单取决于其他参与者的数量，也就是网络的规模，同时也可能取决于网络中个体的参与程度或者个体之间的关联强度\cite{externality}。例如在网络服务定价问题中，使用无线数据服务给用户带来的价值可以被分成两部分，一部分是用户使用服务获得的自有效用，另一部分是与其有社交关联的用户同时使用服务所带来的协同效用。对于服务提供商来说，如果其掌握了移动用户的社交关联信息，其便可以在同时考虑正网络外部性影响下用户的自有效用和协同效用的基础上，进行定价策略的优化。相反，若其仅考虑了前者而忽略了后者则可能导致得到的收益偏离实际可达到的最优收益。进一步，如果提供商适当降低服务价格以吸引更多用户的参与，则用户在正网络外部性影响下可获得更多的效用，进而使用更多的数据服务，给服务提供商带来额外的收益。
+
+除了移动社交网络中的正网络外部性效应，负网络外部性现象也存在于许多移动网络问题中。例如，在移动通信中，当用户数量增加使得流量负载超出基础架构容量时，就会发生拥塞（Congestion）现象。这种影响在许多数据通信速率较高的移动网络系统中尤为明显，目前已有相关工作对其进行了深入的研究\cite{Asuman07,Fang09,Tran12,rayliu2,rayliu3}。其中Yang等\cite{rayliu2}使用随机博弈模型对无线接入网络选择问题进行建模，并充分考虑了不同用户选择同一无线网络所导致的拥塞效应。移动网络中的另一种常见的负网络外部性现象是移动设备间的信号干扰。接入一个信道的用户越多，每个用户所获得的吞吐量越低。因而当移动设备在做信道接入决策时，除了考虑信道的通信质量，还需要考虑其它设备的信道接入选择。Jiang等\cite{rayliu1}在研究多信道感知接入的问题时，就从网络外部性的角度将信号干扰作为影响次级用户顺序信道接入决策的主要因素并进行相关分析。
+
+从上述基于有限具体场景和问题的研究中，都可以看出研究移动网络性能和效用优化问题时充分考虑网络外部性效应的必要性和可能性，这也为本文选定以网络外部性作为研究视角提供了有益启示。
+
+%在移动网络中，网络外部性效应对于系统的影响尚未被很好地理解。而如不考虑个体行为对其他个体或系统性能的影响，将导致相关机制对资源的错误配置。
 
 %这时网络外部性通常也被称为网络效应。比如，在一个有线电话网络中，如果参与这个网络的用户越多，每一个用户可能从这个网络中获得的好处越大，因为用户可以使用电话或传真来联络的用户会越多，通信交流更加方便。每一个新增的用户，都给所有现存的用户增加了潜在的联系对象，因此也会提高所有老用户的效用。
 %除了网络规模的影响外，网络外部性在一些更为复杂的情况下还体现为参与者的参与程度对每一个独立个体的影响。
-依据不同的分析视角，网络外部性现象可以被进一步细分。常见的划分方式将网络外部性分为正网络外部性与负网络外部性两类。简单来说，如果用户所获得的效用随其他用户参与程度增加而增加，则为正网络外部性，相反若用户效用随其他用户参与程度增加而降低则为负网络外部性。典型的正网络外部性的例子包括电话网络，使用电话进行联络的用户数量越多，则对于每一个使用电话的用户其效用越大。负网络外部性现象\cite{negative}也较为普遍的存在于生活中的很多场景中，例如机动车辆数量增多带来的交通拥堵，化工企业数量增多带来的空气污染、水污染等。网络外部性的其他分类方式还包括直接网络外部性或间接网络外部性、单边网络外部性或双边网络外部性等。此外，当个体只受到网络中一部分用户的影响时，网络外部性还可以被定义为一种{\kaishu 局部网络影响}，例如社交网络影响\cite{jianweibook}。
+
+%依据不同的分析视角，网络外部性现象可以被进一步细分。常见的划分方式将网络外部性分为正网络外部性与负网络外部性两类。简单来说，如果用户所获得的效用随其他用户参与程度增加而增加，则为正网络外部性，相反若用户效用随其他用户参与程度增加而降低则为负网络外部性。典型的正网络外部性的例子包括电话网络，使用电话进行联络的用户数量越多，则对于每一个使用电话的用户其效用越大。负网络外部性现象\cite{negative}也较为普遍的存在于生活中的很多场景中，例如机动车辆数量增多带来的交通拥堵，化工企业数量增多带来的空气污染、水污染等。网络外部性的其他分类方式还包括直接网络外部性或间接网络外部性、单边网络外部性或双边网络外部性等。此外，当个体只受到网络中一部分用户的影响时，网络外部性还可以被定义为一种{\kaishu 局部网络影响}，例如社交网络影响\cite{jianweibook}。
 %	\item \textbf{单边网络效应/双边网络效应} 单边效应是指产生于单边网络中同类用户之间的网络效应。而在一个双边网络里，两类不同的用户之间会产生跨边的网络效应，即网络一边参与用户的效用会受到网络另一边参与用户的影响。例如阿里巴巴的支付宝服务，接受支付宝付款的商户越多，支付宝用户就会享受到越多的支付便利。反过来，支付宝用户越多，接受支付宝付款的商户就可能获得更多的商机。另一个例子比如操作系统与其兼容的软件。
 
 
@@ -36,49 +83,160 @@
 %例如基于社交网络的在线游戏应用，通常用户的效用体验是随着其在线好友数量增多而增加的。对于一个移动用户，如果其社交好友都热衷于某一手机游戏，那么该用户很有可能也会成为该游戏的玩家。
 %这种社交影响最终会导致用户更多的数据流量使用。这种现象即是我们所要讨论的网络外部性的一种典型的体现。
 
-近年来，移动通信技术的飞速发展、移动设备的普及、网络规模的不断扩大、以及移动社交应用的盛行，使得一些移动网络问题中的网络外部性现象愈发凸显出来。而在对这些问题的分析建模过程中考虑网络外部性的影响则具有十分重要的意义。
+%近年来，移动通信技术的飞速发展、移动设备的普及、网络规模的不断扩大、以及移动社交应用的盛行，使得一些移动网络问题中的网络外部性现象愈发凸显出来。而在对这些问题的分析建模过程中考虑网络外部性的影响则具有十分重要的意义。
 %当一个移动网络场景中存在网络外部性现象时，在建模过程中充分将网络外部性的影响考虑进去将有利于网络设计的优化，有效提升网络中个体效用以及网络的整体性能。
-例如在网络服务定价问题中，作为一个服务提供商，如果其掌握了移动用户的社交关联信息，那么其可以在考虑社交影响带来的正网络外部性的基础上，进行定价策略的优化。在这种情况下，使用无线数据服务给用户带来的价值可以被分成两部分，一部分是用户自身使用服务获得的效用，另一部分是与其有社交关联的用户同时使用服务所带来的额外效用。因此，如果提供商在优化定价策略时仅考虑前者而忽略了后者则可能使得到的收益偏离实际可达到的最优收益。相反如果提供商适当降低服务价格以吸引更多用户的参与，则用户在正网络外部性影响下可获得更多的效用，进而使用更多的数据服务，给服务提供商带来额外的收益。
+%例如在网络服务定价问题中，作为一个服务提供商，如果其掌握了移动用户的社交关联信息，那么其可以在考虑社交影响带来的正网络外部性的基础上，进行定价策略的优化。在这种情况下，使用无线数据服务给用户带来的价值可以被分成两部分，一部分是用户自身使用服务获得的效用，另一部分是与其有社交关联的用户同时使用服务所带来的额外效用。因此，如果提供商在优化定价策略时仅考虑前者而忽略了后者则可能使得到的收益偏离实际可达到的最优收益。相反如果提供商适当降低服务价格以吸引更多用户的参与，则用户在正网络外部性影响下可获得更多的效用，进而使用更多的数据服务，给服务提供商带来额外的收益。
 
-\subsubsection{理性行为模型}
-在移动网络中，通常假设通信或数据资源的持有者和使用者为独立的个体，他们了解自己可以选择的决策，对于所得到的不同的结果有明确的偏好。这些独立个体执行最大化个人效用的行为则被称之为理性（Rational）行为。而个体信息的不完整以及不确定性，甚至个体对自身或他人策略的非客观性评估，会使得实际中个体行为偏离理性行为，其被称之为有限理性（Bounded-rational）行为。行为经济学（Behavioral Economics）对于个体的非完全理性行为有着广泛且深入的研究，其中就包括获得2002年诺贝尔奖经济学奖的展望理论（Prospect Theory）\cite{Kahneman}。在具有不确定性的环境中，相比于通常用于求解最优策略所使用的期望效用理论（Expected Utility Theory），展望理论提供了对于决策制定在行为心理学上更加准确的描述，从相关实验研究的结果上看其更加贴近真实中的情况。在移动网络的一些问题场景中，展望理论有着较大的应用价值。在移动网络中的机制设计中，充分的考虑不同用户行为模型上的异质性是至关重要的。
-
-\subsection{移动网络性能优化机制设计}
-借助于网络经济学的理论工具，人们可以通过对移动网络运作机制的巧妙设计实现对于复杂网络系统建立更加实际的模型并进行求解。下面我们对本文所涉及的三个移动网络机制设计问题进行简单的介绍：
-\begin{itemize}
-\item \textbf{分布式频谱接入机制：} 移动通信网络中所使用的的频谱是一种典型的稀缺资源，当空间上临近的两个通信链路同时使用同一频段时会互相产生干扰，影响通信的质量。在这种情况下，有限的频谱带宽中又有大部分被划分为只有“主用户”可以使用的专用频段。动态频谱共享技术的出现大大改善了频谱的使用效率，使得无频谱使用执照的移动设备可以以“次级用户”的身份机会性地在“主用户”未使用其频段时接入频段，被认为是解决频谱利用问题的有效解决方案。然而在规模较大的移动网络场景中，由于个体用户普遍具有自利属性，如何为大量次级用户设计高效的分布式频谱共享接入机制以优化系统的整体性能仍然面临着较大的挑战。较为常见的一类解决方案是将次级用户之间的交互建模成非合作博弈\cite{wang2010game, chen2012spatial}。
-
-
-\item \textbf{数据服务定价机制：} 一个移动通信网络是由网络运营商（数据服务提供商）和众多移动用户（数据服务使用者）所组成的。运营商制定数据服务的价格，而用户基于观察到的价格决定自己的数据使用需求量。对于数据服务定价机制的研究需要将对于用户行为的分析与对于运营商价格策略的优化有效地结合起来。价格策略是运营商追求收益优化的重要杠杆。较高的价格在得到更大边际收益的同时可能会抑制用户的需求，而较低的价格有助于扩大其用户市场，而会造成一定的收益损失。在对用户行为的建模中，当假设其决策不考虑自身数据使用行为对于价格的潜在影响时，这些用户被称为价格接受者（price-taker）。相反，当假设用户的决策考虑了网络中其他用户的行为及其影响时，这些用户被称为价格预期者（price-anticipator），此时对于用户的行为策略的建模和分析需借助博弈论的理论工具。价格预期者类型的用户、多个运营商之间的竞争以及服务市场供需两侧的信息不完整都会给数据服务定价机制的设计带来不小的挑战。
-
-\item \textbf{群智感知激励机制：} 群智感知基于众包的思想，将感知任务指派给移动设备来完成，并支付给移动用户一定奖励以补偿用户的资源消耗。与频谱选择和数据服务消费场景所不同，群智感知中的感知、计算资源属于移动用户，系统则需要通过有效的激励机制向用户提供激励，鼓励用户参与并贡献其感知资源。在一些场景中，为了对用户资源进行协调调度，系统需向用户获取一些有关用户资源的信息（例如移动用户的感知成本、数据隐私偏好等）。而对于激励机制设计的一个主要挑战即是如何促使用户诚实地提供所需的个人相关信息。常见的用于群智感知激励机制设计包括基于反向拍卖模型的机制\cite{yang2012crowdsourcing}，具体包括确定拍卖赢家（Winner-determination）和确定相应的奖励金额（Price-determination）两步。此外，如何消除用户对于贡献个人数据所产生的隐私顾虑也已成为相关研究关注的重点。
-\end{itemize}
+%\subsubsection{理性行为模型}
+%在移动网络中，通常假设通信或数据资源的持有者和使用者为独立的个体，他们了解自己可以选择的决策，对于所得到的不同的结果有明确的偏好。这些独立个体执行最大化个人效用的行为则被称之为理性（Rational）行为。而个体信息的不完整以及不确定性，甚至个体对自身或他人策略的非客观性评估，会使得实际中个体行为偏离理性行为，其被称之为有限理性（Bounded-rational）行为。行为经济学（Behavioral Economics）对于个体的非完全理性行为有着广泛且深入的研究，其中就包括获得2002年诺贝尔奖经济学奖的展望理论（Prospect Theory）\cite{Kahneman}。在具有不确定性的环境中，相比于通常用于求解最优策略所使用的期望效用理论（Expected Utility Theory），展望理论提供了对于决策制定在行为心理学上更加准确的描述，从相关实验研究的结果上看其更加贴近真实中的情况。在移动网络的一些问题场景中，展望理论有着较大的应用价值。在移动网络中的机制设计中，充分的考虑不同用户行为模型上的异质性是至关重要的。
 
 %\subsection{移动网络中的隐私保护}
-%由于移动设备与用户的强关联性，移动网络中的隐私保护问题早已成为国内外社会所共同关注的焦点问题。近年来，由于隐私保护措施不力导致的严重隐私泄露事件时有发生
 
+\iffalse
+
+移动设备与人们日常生活的密切融合一方面改变了人们的日常生活方式，另一方面也带来了隐私安全的隐患，成为国内外社会所共同关注的焦点问题。早期移动网络中的隐私攻击以通过窃取用户账号密码以获得个人信息的形式为主。如今，随着大数据技术的发展以及移动互联网各类应用的涌现，隐私攻击的目标以及扩展到用户移动设备上所产生的各类隐私数据。
+
+近年来，由于数据隐私保护措施不力导致的严重隐私泄露事件时有发生。XX年。。。这些事件使得移动网络技术领域的工作者逐渐认识到，隐私保护不论从工程技术的角度还是社会的角度都具有极其重要的意义。
+
+
+
+另一方面，随着移动设备定位技术的演进与更迭，移动用户的位置隐私受到了极大的威胁。由于移动设备的便携性，设备所出现位置的轨迹基本反映了用户日常活动的轨迹。而这些位置信息与用户的职业、生活习惯等属性具有紧密的关联，不但关系到用户的隐私更影响到用户的安全。本文所强调的位置隐私威胁并非针对于基于地理位置的个性化服务（LBS）所产生的地理位置数据，而是通过对移动设备的定位而直接获取用户的位置信息。
+%移动互联网的大量新型应用，使用移动网络作为接入网，结合了移动设备便携性、可定位的特点，为用户提供。
+
+在移动网络效用优化问题的一些最新研究中，对于移动数据隐私和位置隐私的保护已被作为影响效用的重要因素之一。用户对于隐私保护的偏好与要求被建模并作为网络效用优化的目标或约束条件。而基于密码学的信息加密技术、差分隐私\cite{}的相关理论工具等已被大量应用在效用优化的问题中。相关研究中的技术难点在于效用优化与隐私保护的目标之间时常存在矛盾，一些保护隐私的措施往往会对个体的效用产生负面影响。因此，如何达到效用优化与隐私保护之间的平衡具有较大的研究空间和研究价值。
+
+
+\fi
 
 \section{研究现状}
 
-\subsection{移动网络中的网络外部性效应}
-%在这一小节，我们结合一些移动网络中的具体场景，对移动网络中涉及到网络外部性效应的一些现有研究进行介绍。
+近些年来，国内外有不少研究者对移动网络的效用优化问题进行了富有成果的研究探讨。事实上移动网络的效用优化问题普遍存在于众多实际场景中。在不同问题中，所需优化的效用目标与限制条件因问题场景以及网络参与者而异。本节主要对本文所涉及的三个典型移动网络场景中效用优化问题及相关研究现状进行介绍分析，考虑到移动网络的网络外部性有关的研究现状在上一节已作了介绍，这里不再赘述。
 
-%我们首先简要回顾一下有关具有社交意识的频谱共享的相关工作。Li等\cite{li2011propagation}对认知无线电网络中的社交行为进行了社交网络上的分析。另一种常见的基于社交互动的频谱共享模型是将次级用户具有利己性质的行为互动建模为非合作博弈\cite{wang2010game}。
+\subsection{移动群智感知系统保隐私激励机制设计}
+%\subsection{移动群智感知系统中的机制设计与数据隐私保护}
 
-随着越来越多的移动用户通过在线社交网络（例如Facebook \cite{FB}，Twitter\cite{Twitter}）进行联络，用户的影响力和信息传播速度已经达到了前所未有的速度\cite{Niyato}。作为一种典型的局部网络外部性效应，移动网络的社交影响引起了服务提供商以及平台开发人员的广泛关注。David等\cite{David10}将用户之间的社交效应建模为一种正网络外部性效应。Chen等\cite{Baochun}采用了类似的想法来刻画众包系统中不断增长的社交用户数量所带来的内在收益的增长，及其对于平台外在奖励开支的削减。为了减少蜂窝网络峰值负载，Malandrino等\cite{social}提出了一系列算法，根据用户在社交网络中的地位将数据内容主动地推送给一些特定用户。一些研究工作已经在解决网络设计和优化问题中对于个体间的社交影响进行充分的考量。Chen等\cite{Chen13}利用社交信任和互惠互利因素，通过将问题转化为联合博弈来改进D2D合作通信质量。Li等\cite{li2011propagation}针对认知无线电网络中个体的社交行为进行了社交网络分析。Ashraf等\cite{Ashraf}使用用户之间的社交距离确定用户关联，基于此实现了具有底层D2D通信的小型蜂窝网络系统性能上的提升。Yang等\cite{Guang}提出了一种移动群智感知系统设计，利用移动用户之间的社交联系来激励他们的参与和合作，以获取更高的回报。Chen等\cite{Chen14}提出了一个社交群体效用最大化（SGUM）框架，其中每个用户以自己的个人效用与社交朋友的效用所组成的“群体效用”为优化目标。
+基于众包的思想，{\kaishu\bfseries 移动群智感知}系统将感知任务指派给移动用户来完成。由于用于完成感知任务的感知、计算资源属于移动用户个体，因此系统需要通过有效的激励机制向用户提供奖励，鼓励用户参与并贡献其感知资源。在一些场景中，为了对用户资源进行协调调度，系统需向用户获取一些有关用户资源的信息（例如移动用户的感知成本、数据隐私偏好等）。而对于激励机制设计的一个主要挑战，即是如何促使用户诚实地提供所需的个人相关信息。基于反向拍卖模型的机制设计是群智感知激励机制设计中的一类主流方法\cite{yang2012crowdsourcing}。简单说，拍卖机制的设计需解决拍卖赢家确定（Winner-determination）和奖励金额确定（Price-determination）两个子问题。给定某一目标（如最大化拍卖商收益），所设计机制需基于拍卖参与者的竞价信息（Bids）确定合适的参与者（赢家）集合，进而确定对于这些参与者的奖励金额。在移动群智感知的场景中，感知平台作为拍卖商需通过拍卖获取移动用户的感知数据，移动用户则通过竞价使得自己获取满意的奖励（如果被选为赢家）。
 
-%在移动频谱共享机制的研究领域，近年来的一些以优化系统效用为目标的研究工作都考虑了用户间的社交影响。Li等\cite{li2011propagation}针对认知无线电网络中个体的社交行为进行了社交网络分析。另一种
+在群智感知系统中，用户在向感知平台提供数据的过程中往往会直接或者间接地泄露与用户相关的敏感信息。因次，参与用户在产生感知成本的同时也会付出一定隐私成本。
+近些年，研究者们开始对群智感知系统中的数据隐私保护给予更多的关注\cite{christin2011survey,dandekar2014privacy,ghosh2015selling,jin2016inception,zhang2016privacy,wang2016value,gong2017truthful}。其中大多数工作\cite{christin2011survey,dandekar2014privacy,ghosh2015selling,jin2016inception,zhang2016privacy}在建模中假定群智感知平台是值得信赖的，用户直接将原始感知数据发送给作为数据收集方的感知平台，将数据隐私保护控制权完全交给了感知平台。近期的工作\cite{wang2016value,wang2016buying}更多考虑了感知平台为非可信的情况，并允许用户通过报告含有噪声的数据来对其隐私进行保护。本小节将介绍几种与本文相关的移动群智感知隐私保护设计，这些设计将基于差分隐私的数据加噪与激励机制设计相结合，把对于用户隐私成本的补偿考虑到激励机制的设计中。下文根据所使用的激励机制的类型对相关工作进行分类，包括基于{\kaishu 拍卖模型}的方法，基于{\kaishu 博弈模型}的方法和基于{\kaishu 合约模型}的方法。
 
-%We start with a brief review on related work on socially-aware spectrum sharing. Xing \emph{et al.}~proposed to use anthropological models in human society to enhance the performance of cognitive radio networks \cite{xing2008human}. Li \emph{et al.} \cite{li2011propagation} carried out social network analysis of the social behavior in cognitive radio networks. Another common approach for spectrum sharing based on social interactions is to model secondary users' interactions as noncooperative game (e.g., \cite{wang2010game} and many others) assuming they are \emph{selfish yet rational}. Notably, Chen \emph{et al.} \cite{chen2012spatial} developed a spatial spectrum access game framework to model the competitive spectrum access among the secondary users by taking the spatial reuse effect into account. 
-%\subsubsection{移动网络中的负网络外部性}
-除了社交效应所导致的正网络外部性效应，负网络外部性现象也存在于很多移动网络问题场景中。例如，在通信网络中，当用户数量增加使得流量负载超出基础架构容量时，就会发生拥塞现象。
-%拥塞效应在一些数据速率较低的通信场景（例如\cite{Jiming}和\cite{Deng}）中的影响可能并不突出，然而其在
-这种影响在许多数据通信速率较高的移动网络系统中尤为显著，目前已有相关工作对其进行了深入的研究\cite{Asuman07,Fang09,Tran12,rayliu2,rayliu3}。其中Yang等\cite{rayliu2}使用随机博弈模型对无线接入网络选择问题进行建模，并充分考虑了不同用户选择同一无线网络所导致的拥塞效应。移动网络中的另一种常见的负网络外部性现象是移动设备间的信号干扰。接入一个信道的用户越多，每个用户所可以获得的吞吐量越低。因而当移动设备在做信道接入决策时，除了考虑信道的通信质量，还需考虑其他设备的信道接入选择。Jiang等\cite{rayliu1}在研究多信道感知接入的问题时就从网络外部性的角度将信号干扰作为影响次级用户顺序信道接入决策的主要因素并进行相关分析。
+%\rv{并在博弈论模型框架下把隐私数据作为可交易的私人商品，然而}
+
+
+%In this section, we give an overview of several state-of-art privacy-preserving MCS designs that integrate differential-private noise injection with incentive mechanism design. We classify these works according to the types of incentive mechanisms they used, which includes \emph{auction} based approach, \emph{game theory} based approach, and \emph{contract theory} based approach.
+
+
+
+%\subsubsection{基于拍卖模型的方法}
+%The (reverse) auction mechanism is one of the most popular approaches for platform-centric MCS incentive mechanism design. In specific, the platform acts as the auctioneer and the mobile users report their bids reflecting their participation costs to the platform. The platform selects the participants and determines the corresponding payments, aiming to minimize the total payment or to maximize the platform utility under the budget constraint, or to maximize the participants' social welfare\cite{DejunJ}. 
+
+\textbf{基于拍卖模型的方法:}反向拍卖机制是移动群智感知系统常用的激励机制类型之一。具体来说，由平台充当拍卖商，移动用户向平台报告其出价，反映其参与成本。该平台选择参与者并确定相应的付款，目的是在预算约束下使总付款最小化或使平台效用最大化，或使参与者的社会福利最大化\cite{DejunJ}。Ghosh和Roth的工作\cite{ghosh2015selling}首创性地提出了一种可用于保护用户数据隐私的拍卖机制，其中用户的出价反映了其单位隐私成本，并令用户单位隐私成本与差分隐私保护级别$\epsilon$的乘积来刻画用户的隐私损失。文章作者所设计的拍卖机制满足激励机制设计的两个基本要求，即诚实性（Truthfulness）和个体合理性（Individual Rationality）：
+%In the seminar work by Ghosh and Roth \cite{ghosh2015selling}, an auction mechanism was proposed, where the private data is treated as goods procured by a data analyzer running a survey. Each individual's privacy cost is modeled as a linear function of her differential-privacy-preserving level $\epsilon$. The designed auction mechanism satisfies two fundamental requirements for incentive mechanism design, i.e., truthfulness and individual rationality:
+\begin{itemize}
+%\item Truthfulness: A participated user cannot benefit from bidding untruthfully.
+\item \textbf{诚实性}：参与用户无法通过不诚实的出价行为获取收益上的提升。
+%\item Individual Rationality: Each participated user receives a payment that is larger than or equal to her privacy cost.
+\item \textbf{个体合理性}：每个参与用户收到的奖励不低于其隐私损失。
+\end{itemize}
+%This work\cite{ghosh2015selling} characterizes the tradeoff between the total payment and the result accuracy from the following two perspectives: 1) to minimize the total payment given an accuracy requirement, or 2) to maximize the result accuracy under a payment budget. 
+Ghosh等\cite{ghosh2015selling}从以下两个角度描述了数据收集者付给用户的总奖励额与数据聚合结果准确性之间的折衷：（1）在给定准确性要求的情况下最小化总奖励额；（2）在给定总奖励额预算情况下最大化数据聚合结果准确性。在此基础上，Jin等\cite{jin2016inception}开发了一个用于在移动群智感知系统中保护用户数据隐私的组合拍卖机制框架。除了在建模中将隐私成本作为用户感知成本的一部分，作者在解决用户选择问题中还考虑了感知用户可靠性对聚合结果准确性的影响。另一相关工作[\citenum{zhang2016privacy}]则考虑了移动用户行为受社交因素的影响。值得注意的是，以上工作在建模过程中都假设数据收集者为可信第三方。
+%Along this line, Jin \textsl{et al.} developed a combinatorial auction based framework for preserving data privacy in MCS \cite{jin2016}. Specifically, the privacy cost is modeled as part of each user's sensing cost. In addition, the reliability of mobile users, which influences the accuracy of aggregated sensing results, is further considered during the user selection. Related works \cite{zhang2016privacy} considered a setting where the mobile users are embedded in a social network. Worth noting is that both assumed a trusted data collector in their models.
+
+% In addition, they also considered the case of real-time data aggregation in which their proposed mechanism provides long-term incentives aiming to maintain continuous participation. 
+%Although the above mentioned works posses some differences in the models they used, all of them apply the Laplacian mechanism for data perturbation. 
+
+%\subsubsection{基于博弈模型的方法}
+%The game theoretic model is another popular approach for incentive mechanism design \cite{DejunJ, he2017exchange,Yang17}. 
+\textbf{基于博弈模型的方法:}使用基于博弈论模型的问题建模\cite{DejunJ, he2017exchange,Yang17}是网络经济学中研究激励机制的另一种典型方法。
+%As a user-centric approach, game theory based approach enables mobile users more involvements into the payment determination process. 
+与基于拍卖的激励机制设计相似，基于博弈论模型的方法需要指定一种支付策略以激励用户的参与。所不同的是，在基于博弈的方法中，用户是否参与不由平台选择确定，而是用户根据平台的奖励规则做出策略性的决策。
+%Similar to the auction based mechanism design, game-theoretic approaches need to specify a payment policy that incentives users' participation. However, in game based approaches, the participated users are not selected by the platform; instead, given the payment policy of the platform, users make strategic participation decisions. 
+Wang等\cite{wang2016value}在一种特定背景下设计了一种博弈机制，其中数据收集者购得的用户私人数据为用户对于系统状态的认知。不同于文献[\citenum{ghosh2015selling,jin2016inception,zhang2016privacy}]中所考虑的可信平台对聚合后数据进行中心式数据加噪，Wang等\cite{wang2016value}使用了数据收集者不可信的假设。在这种前提下，每个参与用户策略性地对于其原始数据进行扰动，随后将带噪声的数据发送给数据收集者。在博弈模型中，用户为玩家其行动对应于其数据扰动策略。通过对于数据收集者定价策略的精心设计，该机制可以实现当博弈达到纳什均衡时，参与用户的隐私成本得到补偿且数据聚合结果满足一定的准确性要求。然而使用博弈论建模的方法可能会导致系统处于效率较低的均衡状态，使得数据聚合结果难以达到较高的准确性标准。
+%Wang \textsl{et al.} in \cite{wang2016value} devised a game-theoretic mechanism in a setting where a data collector purchases users' private data which represents their knowledge about an underlying system state. Different from \cite{ghosh2015selling,jin2016,zhang2016privacy} where a trusted platform carries out centralized data perturbation over aggregated data, an underlying assumption in \cite{wang2016value} is that the data collector is not trustworthy, in which case each participated user is allowed to locally perturb her raw data strategically before releasing it to the data collector. In their game theoretic model, individual users are the players of the game whose actions correspond to their data perturbation strategies. And the pricing strategy is carefully designed by the data collector, so that a Nash equilibrium of the game can be achieved with participated users' privacy cost being compensated and the accuracy requirement of the collected data being satisfied.
+
+%\subsubsection{基于合约模型的方法}
+\textbf{基于契约模型的方法:}在基于契约的机制中，契约设计者将精心设计一组付出-报酬的对应选项，以激励具有不同类型的个体的参与，同时优化设计者自身的收益。基于契约的方法不要求实时的竞标信息，而是利用个体成本的统计信息来确定报酬契约，从而克服了信息不对称的问题并减少了通信和计算开销。Zhang等\cite{Kun1}提出了一种基于契约的移动群智感知隐私保护框架。具体来说，感知平台设计并公布其契约选项，每个选项都指定一种类型的查分隐私保护级别，以及用户在同意该契约选项后所可收到的相应报酬。此后，每个用户选择使自己效用最大化的契约选项之一。作者选取了适当的指标并得出了个人隐私保护级别与数据聚合准确性之间的定量关系。
+%In a contract-based mechanism, the contract designer would sophistically design a menu of effort-payment pairs to incentivize the participation of individuals with different types, while at the same time optimize its own payoff. Instead of requiring real-time bid information, contract-based approach exploits the statistical information of individuals' costs to determine payment contracts, which overcomes the information asymmetry and reduces communication and computation overhead. In \cite{Kun1}, a contract-based privacy-preserving MCS framework was proposed. Specifically, the platform designs and broadcasts a menu of contracts, each of which specifies one type of differential-privacy-preserving level and the corresponding payment that a user will receive if she agrees with that contract. Each user then chooses one of the contracts that maximizes her utility. The authors derived the quantitative relationship between individual privacy and aggregation accuracy with proper metrics. 
+表\ref{table:comparison}总结对上面所介绍的三类方法进行了对比。
+%The three approaches reviewed above are summarized in Table 1. Although they applied different mechanism design approaches, their is one common thread: the $DPL$ of each individual user remains unchanged throughout the crowdsensing procedure. In the next section, we extend the current scenario to a more general one, in which case the mobile users' $DPL$s are not static and the platform needs to dynamically adjust the pricing policy to optiize the operation of the MCS system.
+
+\begin{table}[!htp]
+	%\caption{Summary of existing data privacy-preserving approaches for mobile crowdsensing}
+	\caption{针对现有移动群智感知数据保隐私方法类型的总结}
+	\centering
+	\tabcolsep=10pt
+	\begin{tabular}[c]{|c|c|c|c|c|}
+		\hline \label{table:comparison}
+		\textbf{文献} & \textbf{激励机制类型} & \textbf{平台可信} &  \textbf{数据扰动机制} & \textbf{特征} \\ \hline
+		
+		\cite{jin2016inception}  & 拍卖  &   是  &	拉普拉斯机制 & 考虑用户可靠性 \\ \hline
+
+%		\cite{Kun1}	  & Auction	       &        No  	  & Laplace mechanism & Provide long-term incentive mechanism 	\\ \hline
+		
+		\cite{zhang2016privacy}  & 拍卖  &   是  & 拉普拉斯机制  & 考虑用户社交联系 \\ \hline
+
+		\cite{wang2016value}  & 博弈 &    否   &   随机回应 & 分析了用户的均衡行为	\\ \hline
+
+		\cite{Kun1}  & 契约  & 否  & 拉普拉斯机制 & 解决信息不对称问题 \\ \hline
+
+	\end{tabular}
+\end{table}
+
+
+
+
+\subsection{移动网络保隐私频谱共享机制设计}
+
+移动通信网络中所使用的的频谱是一种典型的稀缺资源，当空间上临近的两个通信链路同时使用同一频段时会互相产生干扰，影响通信的质量。在这种情况下，有限的频谱带宽中又有大部分被划分为只有“主用户”可以使用的专用频段。动态频谱共享技术的出现大大改善了频谱的使用效率，使得无频谱使用执照的移动设备可以以“次级用户”的身份机会性地在“主用户”未使用其频段时接入频段，被公认为是解决频谱利用问题的有效解决方案。然而在规模较大的移动网络场景中，由于个体用户普遍具有自利属性，如何为大量次级用户设计高效的分布式频谱接入机制以优化系统的整体性能仍然面临着较大的挑战。较为常见的一类解决方案是将次级用户之间的交互建模成非合作博弈\cite{wang2010game, chen2012spatial}。
+
+无线网络中的另一种常见隐私攻击是针对于移动用户位置信息的攻击，其相关问题一直以来被众多学者所关注。这其中有较大一部分工作侧重于在网络应用层中对于位置隐私攻击与防护的研究。用于解决网络层位置隐私保护的方法包括位置混淆（Location obfuscation）\cite{Agrawal:Privacy}、用户匿名化（Anonymization）\cite{Beresford:Mix, Gongjournal, Shin:AnonySense}、以及基于密码学的位置变换\cite{Ghinita:Private, Khoshgozaran:Blind}。这些方法分别适用于不同的应用场景，其中位置混淆通过在位置信息上添加扰动将真实位置与临近位置进行混淆，并可以进一步结合差分隐私的工具从数学上量化位置隐私保护的级别\cite{Dwork}。匿名化方法中则包括基于虚假名（Pseudonym）的方法\cite{Beresford:Mix}以及基于$k$-匿名的方法\cite{Shin:AnonySense}。其中前者致力于将用户真实身份与其位置信息解耦，后者的核心思想则是保证至少$k$个用户的位置是难以区分的。基于密码学的位置变换方法则通过对位置信息的加密提供对于敏感位置信息的保护。
+
+然而针对于无线网络物理层面中的位置隐私攻击，以上这些隐私保护方案效果则十分有限。在网络物理层的位置隐私攻击中，攻击者主要利用信号的物理信息来推测用户的位置。在这种情况下，对传输信号的物理信息进行模糊化成为更为有效的防御手段。在[\citenum{Jiang07}]和[\citenum{EI10}]所设计的防御方案中，移动设备通过策略性地降低其传输功率，可以有效减少可参与完成RSS定位的攻击者数量，或降低攻击者RSS定位的准确性。 Wang等\cite{Ting11}则聚焦于定向天线的设计，以应对物理层位置隐私攻击的问题。Gao等\cite{location}所应用的位置隐私保护措施与本文中所使用的较为接近。然而不同于本文所考虑的基于RSS的定位攻击，文献[\citenum{location}]中考虑的是通过推断目标用户所使用的信道来判断其位置。因而目标用户可以通过选择最有利的信道来缓解隐私攻击的威胁。
+
+%与大多数现有工作不同，本文我们共同考虑频谱管理和位置隐私保护。\cite{Bennis13}启发了提出的两时尺度学习算法的思想，该研究使用基于增强学习的算法研究了分散式小蜂窝网络中的干扰缓解。也许与我们最相关的工作是\cite{ZhangGlobe}，它使用博弈论模型研究了在具有社交意识的动态频谱访问情况下的位置隐私保护。在这项研究中，我们考虑了一个不同的均衡标准（即相关均衡），该标准通过放宽对玩家渠道选择策略的独立性假设来概括\cite{ZhangGlobe}中考虑的纳什均衡。此外，物联网设备旨在适应基于后悔规则\cite{Hart00asimple}的策略，而不是\cite{ZhangGlobe}中使用的随机虚拟游戏动力学。
+
+\subsection{移动数据服务定价机制设计}
+
+一个移动通信网络是由网络运营商（数据服务提供商）和众多移动用户（数据服务使用者）所组成的。运营商制定数据服务的价格，而用户基于观察到的价格决定自己的数据使用需求量。对于数据服务定价机制的研究需要将对于用户行为的分析与对于运营商价格策略的优化有效地结合起来。价格策略是运营商追求收益优化的重要杠杆。较高的价格在得到更大边际收益的同时可能会抑制用户的需求，而较低的价格有助于扩大其用户市场，而会造成一定的收益损失。在对用户行为的建模中，当假设其决策不考虑自身数据使用行为对于价格的潜在影响时，这些用户被称为价格接受者（price-taker）。相反，当假设用户的决策考虑了网络中其他用户的行为及其影响时，这些用户被称为价格预期者（price-anticipator），此时对于用户的行为策略的建模和分析需借助博弈论的理论工具。价格预期者类型的用户、多个运营商之间的竞争以及服务市场供需两侧的信息不完整都会给数据服务定价机制的设计带来不小的挑战。
+
+通信网络中的定价问题已经在文献\cite{Walrand08,Huang10,Xinbin,CaoTVT,Xiaoming}中得到了较好的解决。在一些重点关注单个服务提供商定价策略的研究工作中，移动用户的数据使用行为所受到正面网络影响已经被考虑进来，如\cite{Hartline08,Candogan12,SwapnaES12}。而据我们所知，目前还很少有在研究网络服务定价问题中同时考虑到网络效应和拥塞效应的影响。最近，Gong等\cite{GongDCZ17}首先研究了垄断市场中单个服务提供商的定价策略，在该市场中，移动用户的数据使用行为会同时受到这两种影响。相比于上述工作中所考虑的垄断市场，我们的前期工作\cite{MYCISS16}研究了寡头市场环境下的定价问题，即存在多个服务提供商之间争夺移动用户的数据市场的竞争。
+
+从以上分析可以看出，研究者们针对移动网络不同应用场景及其问题中的性能效用优化及机制设计研究取得了很多进展，然而现有研究难免仍然存在诸多不足和尚需进一步研究的问题。比如：1）在解决网络效用优化的问题时大多专注于技术性能领域，缺乏从网络外部性角度的深入分析和讨论；2）优化网络性能与用户隐私保护相结合的研究分析还较少，尤其缺乏针对性能提升—隐私保护之间权衡的考量与刻画；3）现有激励机制设计中对于用户个体在交互中的策略性行为假设还过于理想，与实际情况存在差距其效果有明显局限性。以上这些研究不足不同程度上限制了网路整体效用优化的提升空间，为本文研究提供了有益启示和创新研究的难得契机。
+%本文涉及到以下三个典型场景，分别为移动群智感知、分布式频谱接入网络、
+%借助于博弈论与机制设计的理论工具，人们可以通过对算法机制的巧妙设计实现对于存在理性个体的复杂移动网络系统的效用优化。本文对移动网络中及的三个典型移动网络效用优化问题进行简单的介绍：
+%\begin{itemize}
+%\item \textbf{分布式频谱接入机制：} 移动通信网络中所使用的的频谱是一种典型的稀缺资源，当空间上临近的两个通信链路同时使用同一频段时会互相产生干扰，影响通信的质量。在这种情况下，有限的频谱带宽中又有大部分被划分为只有“主用户”可以使用的专用频段。动态频谱共享技术的出现大大改善了频谱的使用效率，使得无频谱使用执照的移动设备可以以“次级用户”的身份机会性地在“主用户”未使用其频段时接入频段，被认为是解决频谱利用问题的有效解决方案。然而在规模较大的移动网络场景中，由于个体用户普遍具有自利属性，如何为大量次级用户设计高效的分布式频谱共享接入机制以优化系统的整体性能仍然面临着较大的挑战。较为常见的一类解决方案是将次级用户之间的交互建模成非合作博弈\cite{wang2010game, chen2012spatial}。
+%
+%
+%\item \textbf{数据服务定价机制：} 一个移动通信网络是由网络运营商（数据服务提供商）和众多移动用户（数据服务使用者）所组成的。运营商制定数据服务的价格，而用户基于观察到的价格决定自己的数据使用需求量。对于数据服务定价机制的研究需要将对于用户行为的分析与对于运营商价格策略的优化有效地结合起来。价格策略是运营商追求收益优化的重要杠杆。较高的价格在得到更大边际收益的同时可能会抑制用户的需求，而较低的价格有助于扩大其用户市场，而会造成一定的收益损失。在对用户行为的建模中，当假设其决策不考虑自身数据使用行为对于价格的潜在影响时，这些用户被称为价格接受者（price-taker）。相反，当假设用户的决策考虑了网络中其他用户的行为及其影响时，这些用户被称为价格预期者（price-anticipator），此时对于用户的行为策略的建模和分析需借助博弈论的理论工具。价格预期者类型的用户、多个运营商之间的竞争以及服务市场供需两侧的信息不完整都会给数据服务定价机制的设计带来不小的挑战。
+%
+%\item \textbf{群智感知激励机制：} 群智感知基于众包的思想，将感知任务指派给移动设备来完成，并支付给移动用户一定奖励以补偿用户的资源消耗。与频谱选择和数据服务消费场景所不同，群智感知中的感知、计算资源属于移动用户，系统则需要通过有效的激励机制向用户提供激励，鼓励用户参与并贡献其感知资源。在一些场景中，为了对用户资源进行协调调度，系统需向用户获取一些有关用户资源的信息（例如移动用户的感知成本、数据隐私偏好等）。而对于激励机制设计的一个主要挑战即是如何促使用户诚实地提供所需的个人相关信息。常见的用于群智感知激励机制设计包括基于反向拍卖模型的机制\cite{yang2012crowdsourcing}，具体包括确定拍卖赢家（Winner-determination）和确定相应的奖励金额（Price-determination）两步。此外，如何消除用户对于贡献个人数据所产生的隐私顾虑也已成为相关研究关注的重点。
+%\end{itemize}
+
+
+
+%\subsection{网络外部性在移动网络中的体现}
+%%在这一小节，我们结合一些移动网络中的具体场景，对移动网络中涉及到网络外部性效应的一些现有研究进行介绍。
+%
+%%我们首先简要回顾一下有关具有社交意识的频谱共享的相关工作。Li等\cite{li2011propagation}对认知无线电网络中的社交行为进行了社交网络上的分析。另一种常见的基于社交互动的频谱共享模型是将次级用户具有利己性质的行为互动建模为非合作博弈\cite{wang2010game}。
+%
+%依据不同的分析视角，网络外部性现象可以被细分为为正网络外部性与负网络外部性两类。简单来说，如果用户所获得的效用随其他用户参与程度增加而增加，则为正网络外部性，相反若用户效用随其他用户参与程度增加而降低则为负网络外部性。典型的正网络外部性的例子包括电话网络，使用电话进行联络的用户数量越多，则对于每一个使用电话的用户其效用越大。负网络外部性现象\cite{negative}也较为普遍的存在于生活中的很多场景中，例如机动车辆数量增多带来的交通拥堵，化工企业数量增多带来的空气污染、水污染等。网络外部性的其他分类方式还包括直接网络外部性或间接网络外部性、单边网络外部性或双边网络外部性等。此外，当个体只受到网络中一部分用户的影响时，网络外部性还可以被定义为一种{\kaishu 局部网络影响}，例如社交网络影响\cite{jianweibook}。
+%
+%%随着越来越多的移动用户通过在线社交网络（例如Facebook \cite{FB}，Twitter\cite{Twitter}）进行联络，用户的影响力和信息传播速度已经达到了前所未有的速度\cite{Niyato}。
+%作为一种典型的局部网络外部性效应，移动网络中的社交影响引起了众多研究人员的关注。David等\cite{David10}将用户之间的社交效应建模为一种正网络外部性效应。Chen等\cite{Baochun}采用了类似的想法来刻画众包系统中不断增长的社交用户数量所带来的内在收益的增长，及其对于平台外在奖励开支的削减。为了减少蜂窝网络峰值负载，Malandrino等\cite{social}提出了一系列算法，根据用户在社交网络中的地位将数据内容主动地推送给一些特定用户。一些研究工作已经在解决网络设计和优化问题中对于个体间的社交影响进行充分的考量。Chen等\cite{Chen13}利用社交信任和互惠互利因素，通过将问题转化为联合博弈来改进D2D合作通信质量。Li等\cite{li2011propagation}针对认知无线电网络中个体的社交行为进行了社交网络分析。Ashraf等\cite{Ashraf}使用用户之间的社交距离确定用户关联，基于此实现了具有底层D2D通信的小型蜂窝网络系统性能上的提升。Yang等\cite{Guang}提出了一种移动群智感知系统设计，利用移动用户之间的社交联系来激励他们的参与和合作，以获取更高的回报。Chen等\cite{Chen14}提出了一个社交群体效用最大化（SGUM）框架，其中每个用户以自己的个人效用与社交朋友的效用所组成的“群体效用”为优化目标。
+%
+%%在移动频谱共享机制的研究领域，近年来的一些以优化系统效用为目标的研究工作都考虑了用户间的社交影响。Li等\cite{li2011propagation}针对认知无线电网络中个体的社交行为进行了社交网络分析。另一种
+%
+%%We start with a brief review on related work on socially-aware spectrum sharing. Xing \emph{et al.}~proposed to use anthropological models in human society to enhance the performance of cognitive radio networks \cite{xing2008human}. Li \emph{et al.} \cite{li2011propagation} carried out social network analysis of the social behavior in cognitive radio networks. Another common approach for spectrum sharing based on social interactions is to model secondary users' interactions as noncooperative game (e.g., \cite{wang2010game} and many others) assuming they are \emph{selfish yet rational}. Notably, Chen \emph{et al.} \cite{chen2012spatial} developed a spatial spectrum access game framework to model the competitive spectrum access among the secondary users by taking the spatial reuse effect into account. 
+%%\subsubsection{移动网络中的负网络外部性}
+%除了社交效应所导致的正网络外部性效应，负网络外部性现象也存在于很多移动网络问题场景中。例如，在通信网络中，当用户数量增加使得流量负载超出基础架构容量时，就会发生拥塞现象。
+%%拥塞效应在一些数据速率较低的通信场景（例如\cite{Jiming}和\cite{Deng}）中的影响可能并不突出，然而其在
+%这种影响在许多数据通信速率较高的移动网络系统中尤为显著，目前已有相关工作对其进行了深入的研究\cite{Asuman07,Fang09,Tran12,rayliu2,rayliu3}。其中Yang等\cite{rayliu2}使用随机博弈模型对无线接入网络选择问题进行建模，并充分考虑了不同用户选择同一无线网络所导致的拥塞效应。移动网络中的另一种常见的负网络外部性现象是移动设备间的信号干扰。接入一个信道的用户越多，每个用户所可以获得的吞吐量越低。因而当移动设备在做信道接入决策时，除了考虑信道的通信质量，还需考虑其他设备的信道接入选择。Jiang等\cite{rayliu1}在研究多信道感知接入的问题时就从网络外部性的角度将信号干扰作为影响次级用户顺序信道接入决策的主要因素并进行相关分析。
 %\subsubsection{Ray Liu}
 %负网络外部性
 
 \iffalse
-\subsection{移动无线网络机制设计}
+\subsection{移动网络机制设计}
 \subsubsection{群智感知激励机制}
 移动群智感知系统的激励机制设计最近受到了广泛关注\cite{yang2012crowdsourcing,feng2014trac,Zhao,wen2015quality,zhang2015incentivize,zhang2015truthful,jin2015quality,jin2016inception,zhang2016privacy,duan2012incentive,Shibo14,peng2015pay,cheung2015distributed,he2017exchange}。不同的模型例如拍卖模型\cite{yang2012crowdsourcing,feng2014trac,Zhao,wen2015quality,zhang2015incentivize,zhang2015truthful,jin2015quality,jin2016inception,zhang2016privacy}和博弈模型\cite{duan2012incentive,Shibo14,peng2015pay,cheung2015distributed,he2017exchange}已经被用于设计具有不同目标的激励机制，其中包括社会福利最大化\cite{cheung2015distributed,gao2015providing,jin2015quality}，成本或付款最小化\cite{feng2014trac,jin2016inception}以及平台的利润最大化\cite{Shibo14,zhang2016privacy}。然而现有的大多数工作\cite{yang2012crowdsourcing,feng2014trac,Zhao,wen2015quality,zhang2015incentivize,zhang2015truthful,jin2015quality}仅考虑了参与者的感知成本。
 
@@ -120,120 +278,68 @@ Randomized response is another tool that can provide local differential privacy 
 
 
 %\subsection{移动无线保隐私机制设计}
-\subsection{群智感知系统中的数据隐私保护}
-在群智感知系统中，用户在向感知平台提供数据的过程中往往会直接或者间接地泄露与用户相关的敏感信息。因次，参与用户在产生感知成本的同时也会付出一定隐私成本。
-近些年，研究者们开始对群智感知系统中的数据隐私保护给予更多的关注\cite{christin2011survey,dandekar2014privacy,ghosh2015selling,jin2016inception,zhang2016privacy,wang2016value,gong2017truthful}。其中大多数工作\cite{christin2011survey,dandekar2014privacy,ghosh2015selling,jin2016inception,zhang2016privacy}在建模中假定群智感知平台是值得信赖的，用户直接将原始感知数据发送给作为数据收集方的感知平台，将数据隐私保护控制权完全交给了感知平台。近期的工作\cite{wang2016value,wang2016buying}更多考虑了感知平台为非可信的情况，并允许用户通过报告含有噪声的数据来对其隐私进行保护。本小节将介绍几种与本文相关的移动群智感知隐私保护设计，这些设计将基于差分隐私的数据加噪与激励机制设计相结合，把对于用户隐私成本的补偿考虑到激励机制的设计中。下文根据所使用的激励机制的类型对相关工作进行分类，包括基于{\kaishu 拍卖模型}的方法，基于{\kaishu 博弈模型}的方法和基于{\kaishu 合约模型}的方法。
-
-%\rv{并在博弈论模型框架下把隐私数据作为可交易的私人商品，然而}
 
 
-%In this section, we give an overview of several state-of-art privacy-preserving MCS designs that integrate differential-private noise injection with incentive mechanism design. We classify these works according to the types of incentive mechanisms they used, which includes \emph{auction} based approach, \emph{game theory} based approach, and \emph{contract theory} based approach.
+%\subsection{移动网络频谱共享与用户位置隐私保护}
 
-
-
-%\subsubsection{基于拍卖模型的方法}
-%The (reverse) auction mechanism is one of the most popular approaches for platform-centric MCS incentive mechanism design. In specific, the platform acts as the auctioneer and the mobile users report their bids reflecting their participation costs to the platform. The platform selects the participants and determines the corresponding payments, aiming to minimize the total payment or to maximize the platform utility under the budget constraint, or to maximize the participants' social welfare\cite{DejunJ}. 
-
-\noindent\textbf{基于拍卖模型的方法:}反向拍卖机制是移动群智感知系统常用的激励机制类型之一。具体来说，由平台充当拍卖商移动用户向平台报告其出价，反映其参与成本。该平台选择参与者并确定相应的付款，目的是在预算约束下使总付款最小化或使平台效用最大化，或使参与者的社会福利最大化\cite{DejunJ}。Ghosh和Roth的工作\cite{ghosh2015selling}首创性地提出了一种可用于保护用户数据隐私的拍卖机制，其中用户的出价反映了其单位隐私成本，并令用户单位隐私成本与差分隐私保护级别$\epsilon$的乘积来刻画用户的隐私损失。文中所设计的拍卖机制满足激励机制设计的两个基本要求，即诚实性（Truthfulness）和个体合理性（Individual Rationality）：
-%In the seminar work by Ghosh and Roth \cite{ghosh2015selling}, an auction mechanism was proposed, where the private data is treated as goods procured by a data analyzer running a survey. Each individual's privacy cost is modeled as a linear function of her differential-privacy-preserving level $\epsilon$. The designed auction mechanism satisfies two fundamental requirements for incentive mechanism design, i.e., truthfulness and individual rationality:
-\begin{itemize}
-%\item Truthfulness: A participated user cannot benefit from bidding untruthfully.
-\item \textbf{诚实性}：参与用户无法通过不诚实的出价行为获取收益上的提升。
-%\item Individual Rationality: Each participated user receives a payment that is larger than or equal to her privacy cost.
-\item \textbf{个体合理性}：每个参与用户收到的奖励不低于其隐私损失。
-\end{itemize}
-%This work\cite{ghosh2015selling} characterizes the tradeoff between the total payment and the result accuracy from the following two perspectives: 1) to minimize the total payment given an accuracy requirement, or 2) to maximize the result accuracy under a payment budget. 
-Ghosh等\cite{ghosh2015selling}从以下两个角度描述了数据收集者付给用户的总奖励额与数据聚合结果准确性之间的折衷：（1）在给定准确性要求的情况下最小化总奖励额；（2）在给定总奖励额预算情况下最大化数据聚合结果准确性。在此基础上，Jin等\cite{jin2016inception}开发了一个用于在移动群智感知系统中保护用户数据隐私的组合拍卖机制框架。除了在建模中将隐私成本作为用户感知成本的一部分，作者在解决用户选择问题中还考虑了感知用户可靠性对聚合结果准确性的影响。另一相关工作[\citenum{zhang2016privacy}]则考虑了移动用户行为受社交因素的影响。值得注意的是，以上工作在建模过程中都假设数据收集者为可信第三方。
-%Along this line, Jin \textsl{et al.} developed a combinatorial auction based framework for preserving data privacy in MCS \cite{jin2016}. Specifically, the privacy cost is modeled as part of each user's sensing cost. In addition, the reliability of mobile users, which influences the accuracy of aggregated sensing results, is further considered during the user selection. Related works \cite{zhang2016privacy} considered a setting where the mobile users are embedded in a social network. Worth noting is that both assumed a trusted data collector in their models.
-
-% In addition, they also considered the case of real-time data aggregation in which their proposed mechanism provides long-term incentives aiming to maintain continuous participation. 
-%Although the above mentioned works posses some differences in the models they used, all of them apply the Laplacian mechanism for data perturbation. 
-
-%\subsubsection{基于博弈模型的方法}
-%The game theoretic model is another popular approach for incentive mechanism design \cite{DejunJ, he2017exchange,Yang17}. 
-\noindent\textbf{基于博弈模型的方法:}使用基于博弈论模型的问题建模\cite{DejunJ, he2017exchange,Yang17}是网络经济学中研究激励机制的另一种典型方法。
-%As a user-centric approach, game theory based approach enables mobile users more involvements into the payment determination process. 
-与基于拍卖的激励机制设计相似，基于博弈论模型的方法需要指定一种支付策略以激励用户的参与。所不同的是，在基于博弈的方法中，用户是否参与不由平台选择确定，而是用户根据平台的奖励规则做出策略性的决策。
-%Similar to the auction based mechanism design, game-theoretic approaches need to specify a payment policy that incentives users' participation. However, in game based approaches, the participated users are not selected by the platform; instead, given the payment policy of the platform, users make strategic participation decisions. 
-Wang等\cite{wang2016value}在一种特定背景下设计了一种博弈机制，其中数据收集者购得的用户私人数据为用户对于系统状态的认知。不同于文献[\citenum{ghosh2015selling,jin2016inception,zhang2016privacy}]中所考虑的可信平台对聚合后数据进行中心式数据加噪，Wang等\cite{wang2016value}使用了数据收集者不可信的假设。在这种前提下，每个参与用户策略性地对于其原始数据进行扰动，随后将带噪声的数据发送给数据收集者。在博弈模型中，用户为玩家其行动对应于其数据扰动策略。通过对于数据收集者定价策略的精心设计，该机制可以实现当博弈达到纳什均衡时，参与用户的隐私成本得到补偿且数据聚合结果满足一定的准确性要求。然而使用博弈论建模的方法可能会导致系统处于效率较低的均衡状态，使得数据聚合结果难以达到较高的准确性标准。
-%Wang \textsl{et al.} in \cite{wang2016value} devised a game-theoretic mechanism in a setting where a data collector purchases users' private data which represents their knowledge about an underlying system state. Different from \cite{ghosh2015selling,jin2016,zhang2016privacy} where a trusted platform carries out centralized data perturbation over aggregated data, an underlying assumption in \cite{wang2016value} is that the data collector is not trustworthy, in which case each participated user is allowed to locally perturb her raw data strategically before releasing it to the data collector. In their game theoretic model, individual users are the players of the game whose actions correspond to their data perturbation strategies. And the pricing strategy is carefully designed by the data collector, so that a Nash equilibrium of the game can be achieved with participated users' privacy cost being compensated and the accuracy requirement of the collected data being satisfied.
-
-%\subsubsection{基于合约模型的方法}
-\noindent\textbf{基于契约模型的方法:}在基于契约的机制中，契约设计者将精心设计一组付出-报酬的对应选项，以激励具有不同类型的个体的参与，同时优化设计者自身的收益。基于契约的方法不要求实时的竞标信息，而是利用个体成本的统计信息来确定报酬契约，从而克服了信息不对称的问题并减少了通信和计算开销。Zhang等\cite{Kun1}提出了一种基于契约的移动群智感知隐私保护框架。具体来说，感知平台设计并公布其契约选项，每个选项都指定一种类型的查分隐私保护级别，以及用户在同意该契约选项后所可收到的相应报酬。此后，每个用户选择使自己效用最大化的契约选项之一。作者选取了适当的指标并得出了个人隐私保护级别与数据聚合准确性之间的定量关系。
-%In a contract-based mechanism, the contract designer would sophistically design a menu of effort-payment pairs to incentivize the participation of individuals with different types, while at the same time optimize its own payoff. Instead of requiring real-time bid information, contract-based approach exploits the statistical information of individuals' costs to determine payment contracts, which overcomes the information asymmetry and reduces communication and computation overhead. In \cite{Kun1}, a contract-based privacy-preserving MCS framework was proposed. Specifically, the platform designs and broadcasts a menu of contracts, each of which specifies one type of differential-privacy-preserving level and the corresponding payment that a user will receive if she agrees with that contract. Each user then chooses one of the contracts that maximizes her utility. The authors derived the quantitative relationship between individual privacy and aggregation accuracy with proper metrics. 
-表\ref{table:comparison}总结对上面所介绍的三类方法进行了对比。
-%The three approaches reviewed above are summarized in Table 1. Although they applied different mechanism design approaches, their is one common thread: the $DPL$ of each individual user remains unchanged throughout the crowdsensing procedure. In the next section, we extend the current scenario to a more general one, in which case the mobile users' $DPL$s are not static and the platform needs to dynamically adjust the pricing policy to optiize the operation of the MCS system.
-
-\begin{table}[!htp]
-	%\caption{Summary of existing data privacy-preserving approaches for mobile crowdsensing}
-	\caption{针对现有移动群智感知数据保隐私方法类型的总结}
-	\centering
-	\tabcolsep=10pt
-	\begin{tabular}[c]{|c|c|c|c|c|}
-		\hline \label{table:comparison}
-		\textbf{文献} & \textbf{激励机制类型} & \textbf{平台可信} &  \textbf{数据扰动机制} & \textbf{特征} \\ \hline
-		
-		\cite{jin2016inception}  & 拍卖  &   是  &	拉普拉斯机制 & 考虑用户可靠性 \\ \hline
-
-%		\cite{Kun1}	  & Auction	       &        No  	  & Laplace mechanism & Provide long-term incentive mechanism 	\\ \hline
-		
-		\cite{zhang2016privacy}  & 拍卖  &   是  & 拉普拉斯机制  & 考虑用户社交联系 \\ \hline
-
-		\cite{wang2016value}  & 博弈 &    否   &   随机回应 & 分析了用户的均衡行为	\\ \hline
-
-		\cite{Kun1}  & 契约  & 否  & 拉普拉斯机制 & 解决信息不对称问题 \\ \hline
-
-	\end{tabular}
-\end{table}
-
-
-\subsection{频谱共享中的位置隐私保护}
-
-无线网络中的另一种常见隐私攻击是针对于移动用户位置信息的攻击，其相关问题一直以来被众多学者所关注。这其中有较大一部分工作侧重于在网络应用层中对于位置隐私攻击与防护的研究。用于解决网络层位置隐私保护的方法包括位置混淆（Location obfuscation）\cite{Agrawal:Privacy}、用户匿名化（Anonymization）\cite{Beresford:Mix, Gongjournal, Shin:AnonySense}、以及基于密码学的位置变换\cite{Ghinita:Private, Khoshgozaran:Blind}。这些方法分别适用于不同的应用场景，其中位置混淆通过在位置信息上添加扰动将真实位置与临近位置进行混淆，并可以进一步结合差分隐私的工具从数学上量化位置隐私保护的级别\cite{Dwork:Differential}。匿名化方法中则包括基于虚假名（Pseudonym）的方法\cite{Beresford:Mix}以及基于$k$-匿名的方法\cite{Shin:AnonySense}。其中前者致力于将用户真实身份与其位置信息解耦，后者的核心思想则是保证至少$k$个用户的位置是难以区分的。基于密码学的位置变换方法则通过对位置信息的加密提供对于敏感位置信息的保护。
-
-然而针对于无线网络物理层面中的位置隐私攻击，以上这些隐私保护方案效果则十分有限。在网络物理层的位置隐私攻击中，攻击者主要利用信号的物理信息来推测用户的位置。在这种情况下，对传输信号的物理信息进行模糊化成为更为有效的防御手段。在[\citenum{Jiang07}]和[\citenum{EI10}]所设计的防御方案中，移动设备通过策略性地降低其传输功率，可以有效减少可参与完成RSS定位的攻击者数量，或降低攻击者RSS定位的准确性。 Wang等\cite{Ting11}则聚焦于定向天线的设计，以应对物理层位置隐私攻击的问题。Gao等\cite{location}所应用的位置隐私保护措施与本文中所使用的较为接近。然而不同于本文所考虑的基于RSS的定位攻击，文献[\citenum{location}]中考虑的是通过推断目标用户所使用的信道来判断其位置。因而目标用户可以通过选择最有利的信道来缓解隐私攻击的威胁。
-
-%与大多数现有工作不同，本文我们共同考虑频谱管理和位置隐私保护。\cite{Bennis13}启发了提出的两时尺度学习算法的思想，该研究使用基于增强学习的算法研究了分散式小蜂窝网络中的干扰缓解。也许与我们最相关的工作是\cite{ZhangGlobe}，它使用博弈论模型研究了在具有社交意识的动态频谱访问情况下的位置隐私保护。在这项研究中，我们考虑了一个不同的均衡标准（即相关均衡），该标准通过放宽对玩家渠道选择策略的独立性假设来概括\cite{ZhangGlobe}中考虑的纳什均衡。此外，物联网设备旨在适应基于后悔规则\cite{Hart00asimple}的策略，而不是\cite{ZhangGlobe}中使用的随机虚拟游戏动力学。
 
 %\subsection{通信网络服务定价问题}
 %通信网络中的定价问题已经在文献\cite{Walrand08,Huang10,Xinbin,CaoTVT,Xiaoming}中得到了较好的解决。在一些重点关注单个服务提供商定价策略的研究工作中，移动用户的数据使用行为所受到正面网络影响已经被考虑进来，如\cite{Hartline08,Candogan12,SwapnaES12}。Candogan等\cite{Candogan12}考虑了一个社交网络中用户的数据消费模型，并将数据服务提供商与用户之间的交互建模为一个斯塔克伯格博弈，其中用户的效用函数为线性-二次函数。
 %Hartline \emph{et al.} propose a basic ``Influence and Exploit Marketing'' strategy in \cite{Hartline08}, which takes into consideration of sequential purchases, where myopic consumers make their consumption decisions based on their neighboring consumers who have already bought the product. Candogan \emph{et al.} in \cite{Candogan12} consider a simultaneous consumption decision making model for rational agents embedded in a social network. They formulate the interactions between the monopolist and agents as a Stackelberg game with linear-quadratic utility function for the agents. 
 %据我们所知，目前还很少有在研究网络服务定价问题中同时考虑到社交效应和网络拥塞效应的影响。最近，Gong等\cite{GongDCZ17}首先研究了垄断市场中单个服务提供商的定价策略，在该市场中，移动用户的数据使用行为会同时受到这两种影响。相比于上述工作中所考虑的垄断市场，本文考虑了寡头市场环境下的定价问题，即存在多个服务提供商之间争夺移动用户的数据市场的竞争。
 
-\subsection{移动网络中的非完全理性行为}
-近些年，人们在解决一些实际的无线网络中个体的决策问题时，采用了展望理论（Prospect Theory）\cite{Kahneman}对决策过程进行建模。 例如，Li等\cite{Tianming}研究了一种无线环境下的随机接入博弈，其中用户考虑了展望理论中的{\kaishu 概率失真效应}作用，策略性地确定其在冲突信道上的传输概率。Yu等\cite{Yu}研究了一种数据市场模型，模型中用户需要选择成为数据卖方还是数据买方，并确定交易的数据量。他们考虑了展望理论中的{\kaishu 概率失真效应}和{\kaishu 效用框架效应}对用户决策行为的影响，并将该问题表述为非凸优化问题。
+%\subsection{移动网络数据服务定价与个体非完全理性行为}
+%近些年，人们在解决一些实际的无线网络中个体的决策问题时，采用了展望理论（Prospect Theory）\cite{Kahneman}对决策过程进行建模。 例如，Li等\cite{Tianming}研究了一种无线环境下的随机接入博弈，其中用户考虑了展望理论中的{\kaishu 概率失真效应}作用，策略性地确定其在冲突信道上的传输概率。Yu等\cite{Yu}研究了一种数据市场模型，模型中用户需要选择成为数据卖方还是数据买方，并确定交易的数据量。他们考虑了展望理论中的{\kaishu 概率失真效应}和{\kaishu 效用框架效应}对用户决策行为的影响，并将该问题表述为非凸优化问题。
 
 \section{本文研究内容}
 
-近年来，研究者们在不同应用场景中对网络性能优化的研究取得了很多进展，然而现有工作仍然存在以下三方面的不足：（1）在解决网络性能优化的问题时缺乏从网络外部性的角度的分析与讨论；（2）结合网络性能优化与用户隐私保护的研究分析还较少，尤其缺乏针对性能提升-隐私保护之间权衡的刻画与考量；（3）现有激励机制设计中对于用户个体在交互中的策略性行为假设较为理想，与实际情况存在差距。以上这些研究不足一定程度上限制了网络性能优化的提升空间，为本文提供了充分的研究动机。
+%近年来，研究者们在不同应用场景中对网络性能优化的研究取得了很多进展，然而现有工作仍然存在以下三方面的不足：（1）在解决网络性能优化的问题时缺乏从网络外部性的角度的分析与讨论；（2）结合网络性能优化与用户隐私保护的研究分析还较少，尤其缺乏针对性能提升-隐私保护之间权衡的刻画与考量；（3）现有激励机制设计中对于用户个体在交互中的策略性行为假设较为理想，与实际情况存在差距。以上这些研究不足一定程度上限制了网络性能优化的提升空间，为本文提供了充分的研究动机。
 
 \subsection{研究思路}
 
-基于对移动通信网络中网络外部性现象的认识，本文从网络外部性的视角，对不同场景中的移动网络资源分配与优化问题进行研究。借助网络经济学的相关原理与工具，对问题进行分析，提出相应的机制设计和协议算法，以达到提升网络系统性能的目的。全文的思路和基本组织架构如图（\ref{fig:the}）所示。第1章绪论介绍网络外部性的概念以及隐私保护、群智感知激励机制等相关研究背景和国内外研究现状，第2-4章为文章的主体部分，第5章对全文进行总结和展望。主题内容可分为三大部分，对应于三种场景下不同网络性能目标的优化，其中第一个场景中移动网络受单重网络外部性的影响，后两个场景中网络则受到正网络外部性和负网络外部性的双重影响。具体来看，第一部分以群智感知平台成本最小化为目标，研究了数据隐私保护下考虑了{\kaishu 负网络外部性}效应的数据聚合激励机制设计，对应的章节为第2章。第二部分研究了信号干扰（{\kaishu 负网络外部性}）和社交效应（{\kaishu 正网络外部性}）共同影响下以吞吐量最大化为优化目标的频谱接入机制设计，对应于本文的第3章。第三部分研究了社交效应（{\kaishu 正网络外部性}）拥塞效应（{\kaishu 负网络外部性}）共存的移动数据服务市场中，服务提供商的定价机制收益最大化问题，对应的章节为第5章。
+基于对移动网络特点特别是具有典型网络外部性特征的认识，针对现有网络效用优化及机制设计研究的不足，本文研究总的思路是：在国内外现有研究基础上，围绕提升移动网络运行中各主体的整体效用，从网络外部性的视角，运用运筹优化理论及博弈论与机制设计工具，对移动网络中群智感知、频谱共享、数据服务三个基本场景中的网络效用优化问题进行具体的基础理论层面的研究，提出相关机制设计的改进方案计协议算法，力求丰富移动网络效用优化和机制设计理论，同时也尝试探索技术与经济多学科交叉研究的方法。
+
+本文所选择的三个问题场景，一方面包含了移动网络效用优化较为热点的现实问题，同时也涵盖了移动网络中网络外部性效应的不同具体表现。第一个场景是考虑移动网络的单重网络外部性的情形，研究数据隐私保护下受负网络外部性影响时的数据聚合激励机制设计，求证群智感知平台成本最小化的有效方案及算法。第二、三个场景是考虑移动网络的双重网络外部性的情形，其中第二个场景研究信号干扰（负网络外部性）和社交效应（正网络外部性）共同影响下，以吞吐量最大化为优化目标的频谱接入机制设计；第三个场景研究社交效应（正网络外部性）和拥塞效应（负网络外部性）共存的移动数据服务市场中的数据服务定价机制，以求实现服务提供商收益的最大化。
+
+%基于对移动通信网络中网络外部性现象的认识，本文从网络外部性的视角，对不同场景中的移动网络资源分配与优化问题进行研究。借助网络经济学的相关原理与工具，对问题进行分析，提出相应的机制设计和协议算法，以达到提升网络系统性能的目的。全文的思路和基本组织架构如图（\ref{fig:the}）所示。第1章绪论介绍网络外部性的概念以及隐私保护、群智感知激励机制等相关研究背景和国内外研究现状，第2-4章为文章的主体部分，第5章对全文进行总结和展望。主题内容可分为三大部分，对应于三种场景下不同网络性能目标的优化，其中第一个场景中移动网络受单重网络外部性的影响，后两个场景中网络则受到正网络外部性和负网络外部性的双重影响。具体来看，第一部分以群智感知平台成本最小化为目标，研究了数据隐私保护下考虑了{\kaishu 负网络外部性}效应的数据聚合激励机制设计，对应的章节为第2章。第二部分研究了信号干扰（{\kaishu 负网络外部性}）和社交效应（{\kaishu 正网络外部性}）共同影响下以吞吐量最大化为优化目标的频谱接入机制设计，对应于本文的第3章。第三部分研究了社交效应（{\kaishu 正网络外部性}）拥塞效应（{\kaishu 负网络外部性}）共存的移动数据服务市场中，服务提供商的定价机制收益最大化问题，对应的章节为第5章。
 
 %本文研究在下一代毫米波无线通信系统中的资源分配与优化问题。全文的思路和基本组织结构如图（\ref{fig:the}）所示。第一章介绍了下一代毫米波无线通信系统，及其相关的多目标跟踪实时性与资源优化分配问题的研究背景及研究现状；第二至四章为本文的主体部分，其中第二章研究了毫米波无线通信系统中多目标跟踪实时性问题，提高了用户位置信息获取的实时性，为后续第三、四章不同网络拓扑场景下的毫米波通信建立了基础；之后第三章研究了星型网络拓扑下的毫米波通信资源分配问题，主要针对蜂窝小区中基站侧天线资源进行优化；接着在第四章研究了网状网络拓扑下的毫米波通信资源优化分配问题，主要针对无线数据中心网络中机架天线资源进行优化；第五章对全文做了总结与展望。
 
+%\begin{figure}[t]
+%\centering
+%\includegraphics[width=1.05\textwidth]{pic/jiegou2.pdf}
+%\caption{全文组织结构图}
+%\label{fig:the}
+%\end{figure}
+
+\subsection{研究重点}
+
+本文主要研究以下三个问题：
+
+第一、单重网络外部性下移动群智感知系统平台成本最小化研究。移动群智感知是移动大数据时代重要的数据采集方式，同时是移动网络用户个人数据隐私保护的重点。本文以数据隐私保护下群智感知系统平台成本最小化为效用优化目标，提出研究一种用于移动群智感知中隐私数据聚合的拍卖框架。由于移动用户的感知能力和提供数据的隐私成本是有差异的，充当拍卖者角色的感知平台的主要挑战在于选择合适的参与用户，为此本文为他们设计用于隐私保护的数据噪声分布，使得数据聚合结果达到准确性指标，同时用户的隐私得到保护并获取足够的奖励。同时，本文提出一种允许用户进行本地数据加噪的方案。其中用户所允许添加的噪声分布由感知平台决定，其数据隐私保护程度可以使用差分隐私的量化指标进行衡量。本文分析揭示了该数据加噪的方案下用户间所存在的{\kaishu 负网络外部性}效应，并根据用户对于隐私保护级别的偏好分成“消极隐私保护”和“积极隐私保护”两种情形进行问题的建模与求解。在“消极隐私保护”情形中当平台可以通过支付奖励充分补偿用户的隐私损失时，用户即愿意参与并提供感知数据。而在更具一般性的“积极隐私保护”情形中，参与用户对其数据隐私保护级别存在固有要求，仅当要求满足时才同意参与任务。进一步，基于问题隐藏的单调性特性，本文分别针对两种情形设计了具有诚实性、个体理性，计算效率高的激励机制，以近似地最小化感知平台用于购买用户数据的成本，同时满足对于聚合结果准确性的要求。最后，通过理论分析结合充分的仿真实验验证所提出方案的可行性。
+
+第二、双重网络外部性下频谱共享网络吞吐量最大化研究。在数据库辅助频谱共享场景中，便携式移动设备与用户的强关联性，对移动设备的定位攻击给用户带来了位置隐私保护方面的担忧。本文为移动用户设计了为信号传输功率水平添加随机扰动的策略，以削弱基于RSS的潜在位置隐私攻击的威胁。另一方面，虽然频谱共享网络中用户之间的物理信号干扰（{\kaishu 负网络外部性}）会给网络整体性能带来负面影响，但用户之间社交关联引入的社交效应（{\kaishu 正网络外部性}）给系统效用带来了一定的提升空间。本文中，每个次级用户在进行频谱接入决策时，把包含其社交好友效用的“社交群体效用”作为自己的优化目标。进一步，本文将这种隐私保护下的具有社交意识的频谱共享问题建模成一个随机信道选择博弈。博弈中次级用户作为策略性的玩家动态调整其策略，以最大化其社交群体效用。针对提出的博弈模型，本文还设计了一个基于无悔规则的双时间尺度分布式学习算法，并证明其几乎可以肯定收敛至博弈的相关均衡集合。仿真实验得到的数值结果证实了所提出方案的可行性。
+
+第三、双重网络外部性下移动数据服务提供商收益最大化研究。
+在竞争性数据服务市场中多个服务提供商通过定价策略的制定以最大化自身收益。市场中移动用户的数据消费行为同时受到两方面因素的影响：社交效应（{\kaishu 正网络外部性}）和拥塞效应（{\kaishu 负网络外部性}）。为了分析移动用户和服务提供商之间的策略互动，本文设计了一个两阶段的斯塔克伯格博弈，分别由第一阶段的提供商博弈和第二阶段的用户博弈组成。针对用户博弈，本文刻画了均衡解的特征并建立了它的唯一性。对于提供商博弈，分析表明，在提供商行为理性以及提供商行为有限理性的情形下，混合策略均衡解均是有保证的。进一步，本文提出了一种分布式学习算法，用于寻求提供商博弈的混合策略均衡解。最后，数值仿真结果对于正网络外部性和负网络外部性如何影响系统性能的提供了见解，并验证了提供商有限理性行为对其收益所产生的负面影响。
+
+
+%第二章考虑了数据隐私保护下群智感知系统平台成本最小化问题，提出了一种用于移动群智感知中隐私数据聚合的拍卖框架。由于移动用户的感知能力和提供数据的隐私成本皆有所差异，充当拍卖者角色的感知平台的主要挑战在于选择合适的参与用户，并针对性地为他们设计用于隐私保护的数据噪声分布，使得数据聚合结果达到准确性指标，同时用户的隐私得到保护并获取足够的奖励。本文提出了一种允许用户进行本地数据加噪的方案。其中用户所允许添加的噪声分布由感知平台决定，其数据隐私保护程度可以使用差分隐私的量化指标进行衡量。本文揭示了用户间所存在的{\kaishu 负网络外部性}效应，并根据用户对于隐私保护级别的偏好分成“消极隐私保护”和“积极隐私保护”两种场景进行问题的建模与求解。在“消极隐私保护”场景中当平台可以通过支付奖励充分补偿用户的隐私损失时，用户即愿意参与并提供感知数据。而在更具一般性的“积极隐私保护”场景中，参与用户对其数据隐私保护级别存在固有要求，仅当要求满足时才同意参与任务。基于问题隐藏的单调性特性，本文分别针对两种场景设计了具有诚实性、个体理性，计算效率高的激励机制，以近似地最小化感知平台用于购买用户数据的成本，同时满足对于聚合结果准确性的要求。我们通过理论分析结合充分的仿真实验验证了所提出的方案。
+%
+%第三章考虑了位置隐私保护下具有社交意识的网络吞吐量最大化问题。在数据库辅助频谱共享的场景中，由于便携式移动设备与用户的强关联性，对移动设备的定位攻击给用户带来了位置隐私保护方面的担忧。本文中移动用户对信号传输功率水平添加随机扰动，以削弱基于RSS的潜在位置隐私攻击的威胁。另一方面，虽然用户之间的物理信号干扰（{\kaishu 负网络外部性}）会给网络整体性能带来负面影响，但用户之间社交关联引入的社交效应（{\kaishu 正网络外部性}）给系统效用带来了一定的提升空间。本文中，每个次级用户在进行频谱接入决策时，把包含其社交好友效用的“社交群体效用”作为自己的优化目标。进一步，本文将这种隐私保护下的具有社交意识的频谱共享问题建模成一个随机信道选择博弈。博弈中次级用户作为策略性的玩家动态调整其策略，以最大化其社交群体效用。我们针对博弈模型设计了一个基于无悔规则的双时间尺度分布式学习算法，并证明其几乎可以肯定收敛至博弈的相关均衡集合。数值结果证实，隐私保护级别越高，网络吞吐量的下降就越显着。
+%
+%第四章考虑了服务提供商收益最大化问题。在竞争性数据服务市场中多个服务提供商通过定价策略的制定以最大化自身收益。市场中移动用户的数据消费行为同时受到两方面因素的影响：社交效应（{\kaishu 正网络外部性}）和拥塞效应（{\kaishu 负网络外部性}）。为了分析移动用户和服务提供商之间的策略互动，本文设计了一个两阶段的斯塔伯格博弈，分别由第一阶段的提供商博弈和第二阶段的用户博弈组成。针对用户博弈，本文刻画了均衡解的特征并建立了它的唯一性。对于提供商博弈，分析表明，对于提供商行为理性的场景以及提供商行为有限理性的场景，混合策略均衡解均是有保证的。进一步，本文提出了一种分布式学习算法，用于寻找提供商博弈的混合策略均衡解。最后，数值仿真结果对于正网络外部性和负网络外部性如何影响系统性能的提供了见解，并验证了提供商有限理性行为对其收益所产生的负面影响。
+
+
+%最后，第六章对全文进行了总结，并提出了未来可能的研究方向。
+
+\subsection{本文结构}
+
+本文共分六章及附录。第一章为绪论，主要是首先介绍了移动网络的发展及其效用优化的重要性、分析了移动网络的网络外部性特征和有关研究进展，概述了本文选定研究主题以及研究视角的思考；接着分析综述了近些年国内外涉及与本文中移动网络效用优化场景相关领域的研究现状，以及有待研究的问题；最后阐述了本文的研究思路和主要内容。第二章主要介绍本文研究中所用到的基础理论工具，包括博弈原理、拍卖机制设计理论及展望理论等相关理论的概念、思想和模型，以及在本文研究中的应用及其体会。第三章、第四章、第五章是本文研究的主体，分章阐述移动网络三个场景中的效用优化和机制设计改进方案及其算法的分析研究过程和结论，其中第二、三章中的相关定理、引理和推论的推导证明另列为本文的附录\ref{sec:appA}、附录\ref{sec:appB}。第六章是对本文的总结和展望，概括了研究重点内容及其成果，分析了可能产生的主要贡献，并提出未来可能的研究方向及有关问题。全文的基本思路和组织架构如图\ref{fig:the}所示。
+
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.05\textwidth]{pic/jiegou2.pdf}
+\includegraphics[width=1.05\textwidth]{pic/jiegou2b.pdf}
 \caption{全文组织结构图}
 \label{fig:the}
 \end{figure}
-
-\subsection{研究内容}
-
-本文的具体研究内容如下：
-
-%毫米波通信系统中的多用户快速跟踪问题。由于毫米波通信与波束成形技术的引入，基站会通过很窄的波束与用户进行通信。精确的用户位置信息能够帮助更好地进行波束对准，因此基站需要准确地感知并估计小区内处于移动中的用户的个数及其各自位置信息，这就是一个多目标跟踪问题。同时，准确而快速的跟踪意味着更低的通信时延，因此毫米波通信中多目标跟踪的实时性也亟需提高。现有的高效多目标跟踪算法，如概率假设密度粒子滤波算法等，由于其中重采样算法的限制，难以做到流水线化计算，制约了实时性的进一步提高。本章提出一种改进的重采样算法，通过引入粒子复制序列集合以及待复制粒子序列，使得需要重采样的粒子在只获得自身信息与之前重采样粒子信息的时即可进行粒子复制运算，而不用等待所有粒子完成权重值过滤后才能继续重采样。通过引入此改进的重采样算法，整个概率假设密度粒子滤波算法能够实现完全流水线化的运算。在此基础上，本文提出基于多核处理器硬件平台的计算资源分配优化算法，通过解决一组混合整数规划问题，得到了高时效的近似解法。仿真结果验证了提出的算法在保证跟踪精度的情况下，能显著降低整个滤波算法的计算时延，有效地提高了用户跟踪的实时性，为基站中每个用户的低时延通信提供了保证。
-
-%第3章研究了毫米波通信在星型网络拓扑下的典型应用——蜂窝小区网络中的资源优化问题。基站在已知小区内多个用户位置的情况下，优化分配资源以最大化系统收益即吞吐量。基站上的大规模天线阵列虚拟的分成若干个均匀线性子阵列，分别通过波束成形技术与对应的用户进行通信。由于大规模天线阵列与每个均匀线性子阵列都有着一定的固定的形状，因此问题建模为如何在矩形阵列中合理的放置这些子阵列，使得系统收益最大，这既需要考虑每个用户所占用子阵列的天线的数量，又需要考虑这些子阵列在矩形阵列中的位置分配。此场景根据不同的子阵列放置方式，又包含了两种不同的情况：1）所有线性子阵列都互相平行且平行于矩形阵列的一条边；2）为了进一步提高系统收益，线性子阵列可以平行于矩形阵列的任意一条边，即存在相互垂直的子阵列。对两种情况分别进行问题建模，对两个NP难问题进行分解并逐步求解。通过解决一系列的多选择背包问题，多背包问题和带状装箱问题，得到了两种情况下多项式时间的近似算法，并给出了每个算法的计算复杂度和下界。仿真结果验证了提出的两种算法在不同的情况下都能有效地分配天线资源，得到有性能保证的系统收益。
-
-第二章考虑了数据隐私保护下群智感知系统平台成本最小化问题，提出了一种用于移动群智感知中隐私数据聚合的拍卖框架。由于移动用户的感知能力和提供数据的隐私成本皆有所差异，充当拍卖者角色的感知平台的主要挑战在于选择合适的参与用户，并针对性地为他们设计用于隐私保护的数据噪声分布，使得数据聚合结果达到准确性指标，同时用户的隐私得到保护并获取足够的奖励。本文提出了一种允许用户进行本地数据加噪的方案。其中用户所允许添加的噪声分布由感知平台决定，其数据隐私保护程度可以使用差分隐私的量化指标进行衡量。本文揭示了用户间所存在的{\kaishu 负网络外部性}效应，并根据用户对于隐私保护级别的偏好分成“消极隐私保护”和“积极隐私保护”两种场景进行问题的建模与求解。在“消极隐私保护”场景中当平台可以通过支付奖励充分补偿用户的隐私损失时，用户即愿意参与并提供感知数据。而在更具一般性的“积极隐私保护”场景中，参与用户对其数据隐私保护级别存在固有要求，仅当要求满足时才同意参与任务。基于问题隐藏的单调性特性，本文分别针对两种场景设计了具有诚实性、个体理性，计算效率高的激励机制，以近似地最小化感知平台用于购买用户数据的成本，同时满足对于聚合结果准确性的要求。我们通过理论分析结合充分的仿真实验验证了所提出的方案。
-
-第三章考虑了位置隐私保护下具有社交意识的网络吞吐量最大化问题。在数据库辅助频谱共享的场景中，由于便携式移动设备与用户的强关联性，对移动设备的定位攻击给用户带来了位置隐私保护方面的担忧。本文中移动用户对信号传输功率水平添加随机扰动，以削弱基于RSS的潜在位置隐私攻击的威胁。另一方面，虽然用户之间的物理信号干扰（{\kaishu 负网络外部性}）会给网络整体性能带来负面影响，但用户之间社交关联引入的社交效应（{\kaishu 正网络外部性}）给系统效用带来了一定的提升空间。本文中，每个次级用户在进行频谱接入决策时，把包含其社交好友效用的“社交群体效用”作为自己的优化目标。进一步，本文将这种隐私保护下的具有社交意识的频谱共享问题建模成一个随机信道选择博弈。博弈中次级用户作为策略性的玩家动态调整其策略，以最大化其社交群体效用。我们针对博弈模型设计了一个基于无悔规则的双时间尺度分布式学习算法，并证明其几乎可以肯定收敛至博弈的相关均衡集合。数值结果证实，隐私保护级别越高，网络吞吐量的下降就越显着。
-
-第四章考虑了服务提供商收益最大化问题。在竞争性数据服务市场中多个服务提供商通过定价策略的制定以最大化自身收益。市场中移动用户的数据消费行为同时受到两方面因素的影响：社交效应（{\kaishu 正网络外部性}）和拥塞效应（{\kaishu 负网络外部性}）。为了分析移动用户和服务提供商之间的策略互动，本文设计了一个两阶段的斯塔伯格博弈，分别由第一阶段的提供商博弈和第二阶段的用户博弈组成。针对用户博弈，本文刻画了均衡解的特征并建立了它的唯一性。对于提供商博弈，分析表明，对于提供商行为理性的场景以及提供商行为有限理性的场景，混合策略均衡解均是有保证的。进一步，本文提出了一种分布式学习算法，用于寻找提供商博弈的混合策略均衡解。最后，数值仿真结果对于正网络外部性和负网络外部性如何影响系统性能的提供了见解，并验证了提供商有限理性行为对其收益所产生的负面影响。
-
-%第四章研究在毫米波通信在网状网络拓扑下的典型应用——无线数据中心网络中的资源优化问题。在下一代数据中心网络中利用毫米波高速无线传输代替传统服务器间有线连接，以提高数据中心网络灵活性及可扩展性等。随着数据流量特性的变化，网络中出现了流量极度不平衡现象，降低了整个网络的通信性能。数据中心的机房环境相对稳定，服务器间位置也相对密集且固定，因此可以通过60GHz毫米波无线通信建立服务器间点对点直接连接，减小通信热点带来的通信性能下降。设计在每个服务器机架顶（Top of Rack, ToR）布置毫米波天线，并提出适用于阵列天线的点对点视距通信六边形机架布置方案，同时建立了单层和三层的数据中心无线网络拓扑结构，提出了对应的网络节点与边生成方式。进而对建立的无线数据中心网络结构提出了天线资源优化分配问题，通过变量替换等方式将其转化为一几何规划问题进行求解。仿真结果验证了所提出毫米波无线数据中心网络结构与优化算法能够有效降低系统的最大通信时延。
-
-最后，第六章对全文进行了总结，并提出了未来可能的研究方向。
